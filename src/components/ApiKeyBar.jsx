@@ -50,7 +50,7 @@ function ProviderIcon({ provider, label }) {
   }
 
   return (
-    <span className="w-4 h-4 bg-accent/10 text-[8px] font-bold text-accent flex items-center justify-center flex-shrink-0">
+    <span className="w-4 h-4 bg-zinc-500/10 text-[8px] font-bold text-zinc-600 dark:text-zinc-300 flex items-center justify-center flex-shrink-0">
       OR
     </span>
   )
@@ -176,7 +176,7 @@ export default function ApiKeyBar({
           onChange={setProvider}
           options={availableProviders}
           className="w-auto min-w-[130px]"
-          triggerClassName="h-8 py-0 px-2.5 font-semibold text-xs border dark:bg-surface-input dark:border-border hover:border-accent/30 dark:hover:border-accent/40 bg-white border-gray-200"
+          triggerClassName="h-8 py-0 px-2.5 font-semibold text-xs border dark:bg-surface-input dark:border-border hover:border-zinc-400 dark:hover:border-zinc-400 bg-white border-gray-200"
         />
 
         {/* Model Select */}
@@ -187,7 +187,7 @@ export default function ApiKeyBar({
           disabled={geminiLoading}
           placeholder={geminiLoading ? 'Loading models...' : 'Select Model'}
           className="w-auto min-w-[150px]"
-          triggerClassName="h-8 py-0 px-2.5 font-semibold text-xs border dark:bg-surface-input dark:border-border hover:border-accent/30 dark:hover:border-accent/40 bg-white border-gray-200"
+          triggerClassName="h-8 py-0 px-2.5 font-semibold text-xs border dark:bg-surface-input dark:border-border hover:border-zinc-400 dark:hover:border-zinc-400 bg-white border-gray-200"
         />
 
         {/* API Key Input */}
@@ -204,14 +204,14 @@ export default function ApiKeyBar({
                 }
             }}
             placeholder={`Enter your ${provider} API key...`}
-            className="w-full h-8 px-3 pr-10 text-xs font-mono transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+            className="w-full h-8 px-3 pr-10 text-xs font-mono transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
           />
           <div className="absolute right-8 top-1/2 -translate-y-1/2">
             <ApiKeyInfo provider={provider} url={providerUrls[provider]} />
           </div>
           <button
             onClick={() => setShowKey(!showKey)}
-            className="absolute right-2 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-400 hover:text-accent transition-colors"
+            className="absolute right-2 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             aria-label={showKey ? 'Hide key' : 'Show key'}
           >
             {showKey ? <EyeOff size={14} /> : <Eye size={14} />}
@@ -228,7 +228,7 @@ export default function ApiKeyBar({
               if (!apiKey?.trim()) return;
               setSaveForSession(e.target.checked);
             }}
-            className="w-3.5 h-3.5 accent-accent cursor-pointer disabled:cursor-not-allowed"
+            className="w-3.5 h-3.5 accent-zinc-500 cursor-pointer disabled:cursor-not-allowed"
           />
           <span className="text-[11px] dark:text-text-secondary text-gray-500 whitespace-nowrap">
             Save for session
@@ -239,14 +239,14 @@ export default function ApiKeyBar({
       {/* Disclaimer */}
       <div className="flex items-center justify-between mt-2">
         <div className="flex items-center gap-1.5">
-          <ShieldCheck size={12} className="text-success flex-shrink-0" />
+          <ShieldCheck size={12} className="text-zinc-500 dark:text-zinc-400 flex-shrink-0" />
           <span className="text-[10px] dark:text-text-muted text-gray-400">
             Your key is never sent to our servers. It's used directly from your browser.
           </span>
         </div>
         <Link
           to="/settings"
-          className="text-[10px] font-medium text-accent hover:underline transition-colors whitespace-nowrap ml-2"
+          className="text-[10px] font-medium text-zinc-900 dark:text-white hover:underline transition-colors whitespace-nowrap ml-2"
         >
           Manage keys →
         </Link>
@@ -254,8 +254,8 @@ export default function ApiKeyBar({
 
       {/* Warning if no key */}
       {!apiKey && (
-        <div className="mt-2 px-2.5 py-1.5 bg-warning/10 border border-warning/20">
-          <span className="text-[11px] text-warning font-medium">
+        <div className="mt-2 px-2.5 py-1.5 bg-zinc-500/10 border border-zinc-500/20">
+          <span className="text-[11px] text-zinc-600 dark:text-zinc-300 font-medium">
             Enter an API key to run this agent.
           </span>
         </div>
@@ -263,8 +263,8 @@ export default function ApiKeyBar({
 
       {/* Gemini model fetch error */}
       {geminiError && (
-        <div className="mt-2 px-2.5 py-1.5 bg-warning/10 border border-warning/20">
-          <span className="text-[11px] text-warning font-medium">
+        <div className="mt-2 px-2.5 py-1.5 bg-zinc-500/10 border border-zinc-500/20">
+          <span className="text-[11px] text-zinc-600 dark:text-zinc-300 font-medium">
             {geminiError}
           </span>
         </div>

@@ -34,14 +34,14 @@ import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 const STATUS_COLORS = {
   waiting: 'dark:text-text-muted text-gray-400',
-  running: 'text-accent',
+  running: 'text-zinc-900 dark:text-white',
   done: 'text-zinc-400',
   failed: 'text-zinc-400',
 }
 
 function StepStatusIcon({ status }) {
   if (status === 'waiting') return <Clock size={15} className={STATUS_COLORS.waiting} />
-  if (status === 'running') return <Loader2 size={15} className="text-accent animate-spin" />
+  if (status === 'running') return <Loader2 size={15} className="text-zinc-900 dark:text-white animate-spin" />
   if (status === 'done') return <CheckCircle2 size={15} className={STATUS_COLORS.done} />
   if (status === 'failed') return <XCircle size={15} className={STATUS_COLORS.failed} />
   return null
@@ -306,7 +306,7 @@ export default function WorkflowRunner() {
   if (loadingWorkflow) {
     return (
       <div className="flex flex-col items-center justify-center py-20 gap-3 animate-fade-in">
-        <Loader2 size={24} className="animate-spin text-accent" />
+        <Loader2 size={24} className="animate-spin text-zinc-900 dark:text-white" />
         <p className="text-sm dark:text-text-secondary text-gray-500">Loading workflow...</p>
       </div>
     )
@@ -319,7 +319,7 @@ export default function WorkflowRunner() {
         <p className="text-sm dark:text-text-secondary text-gray-500 mb-4">{fetchError}</p>
         <button
           onClick={() => navigate('/workflows')}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-200"
         >
           <ArrowLeft size={14} /> Back to Library
         </button>
@@ -385,7 +385,7 @@ export default function WorkflowRunner() {
           placeholder="Paste your main input here. The first agent will process this, and each subsequent agent receives the previous output."
           rows={4}
           disabled={running}
-          className="w-full px-3 py-2.5 border text-sm transition-all resize-y dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/50 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full px-3 py-2.5 border text-sm transition-all resize-y dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500 disabled:opacity-60 disabled:cursor-not-allowed"
         />
       </div>
 
@@ -396,7 +396,7 @@ export default function WorkflowRunner() {
             id="run-workflow-btn"
             onClick={hasRun && (allDone || hasFailed) ? handleRunAgain : handleRun}
             disabled={!userInput.trim() || !apiKey || running}
-            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
+            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
           >
             {running ? (
               <>
@@ -423,7 +423,7 @@ export default function WorkflowRunner() {
         ) : (
           <button
             disabled
-            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-black bg-accent opacity-40 cursor-not-allowed"
+            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold bg-black text-white dark:bg-white dark:text-black opacity-40 cursor-not-allowed"
           >
             <Loader2 size={15} className="animate-spin" />
             Running...
@@ -459,18 +459,18 @@ export default function WorkflowRunner() {
               >
                 {/* Step Header */}
                 <div className="flex items-center gap-3 p-3 border-b dark:border-border border-gray-100">
-                  <div className="flex items-center justify-center w-5 h-5 bg-accent/10 text-[10px] font-bold text-accent flex-shrink-0">
+                  <div className="flex items-center justify-center w-5 h-5 bg-zinc-500/10 text-[10px] font-bold text-zinc-600 dark:text-zinc-300 flex-shrink-0">
                     {index + 1}
                   </div>
-                  <div className="w-7 h-7 bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <IconComponent size={13} className="text-accent" />
+                  <div className="w-7 h-7 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+                    <IconComponent size={13} className="text-zinc-600 dark:text-zinc-300" />
                   </div>
                   <div className="flex-1">
                     <span className="text-sm font-medium dark:text-text-primary text-gray-900">
                       {step.agentName}
                     </span>
                     {step.branchLabel && step.kind !== 'conditional' && (
-                      <span className="ml-2 px-1.5 py-0.5 text-[10px] font-medium bg-accent/10 text-accent">
+                      <span className="ml-2 px-1.5 py-0.5 text-[10px] font-medium bg-zinc-500/10 text-zinc-900 dark:text-white">
                         {step.branchLabel}
                       </span>
                     )}
@@ -487,7 +487,7 @@ export default function WorkflowRunner() {
                 {step.status === 'running' && (
                   <div className="p-4 text-center">
                     <div className="flex items-center justify-center gap-2">
-                      <Loader2 size={14} className="animate-spin text-accent" />
+                      <Loader2 size={14} className="animate-spin text-zinc-900 dark:text-white" />
                       <span className="text-xs dark:text-text-secondary text-gray-500">Processing...</span>
                     </div>
                   </div>
@@ -495,12 +495,12 @@ export default function WorkflowRunner() {
 
                 {step.kind === 'conditional' && step.status === 'done' && (
                   <div className="p-4">
-                    <div className="flex items-start gap-2 p-3 bg-accent/5 border border-accent/20">
-                      <GitBranch size={14} className="text-accent flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-2 p-3 bg-zinc-500/5 border border-zinc-500/20">
+                      <GitBranch size={14} className="text-zinc-900 dark:text-white flex-shrink-0 mt-0.5" />
                       <p className="text-xs dark:text-text-secondary text-gray-600">
                         Condition resolved to{' '}
-                        <span className="font-semibold text-accent">"{step.conditionValue}"</span>, taking the{' '}
-                        <span className="font-semibold text-accent">{step.branchLabel}</span> branch.
+                        <span className="font-semibold text-zinc-900 dark:text-white">"{step.conditionValue}"</span>, taking the{' '}
+                        <span className="font-semibold text-zinc-900 dark:text-white">{step.branchLabel}</span> branch.
                       </p>
                     </div>
                   </div>
@@ -517,7 +517,7 @@ export default function WorkflowRunner() {
                           key={label}
                           className={`p-3 text-xs transition-colors flex items-start gap-2 ${
                             label === step.branchLabel && step.status === 'done'
-                              ? 'bg-accent/15 border border-accent/40 text-accent'
+                              ? 'bg-zinc-900/10 border border-zinc-900 text-zinc-900 dark:bg-white/10 dark:border-white dark:text-white'
                               : 'bg-gray-50 dark:bg-surface-secondary border border-gray-200 dark:border-border text-gray-700 dark:text-text-secondary'
                           }`}
                         >
@@ -561,7 +561,7 @@ export default function WorkflowRunner() {
                     </div>
                     <button
                       onClick={handleRunAgain}
-                      className="mt-3 flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-hover transition-colors"
+                      className="mt-3 flex items-center gap-1.5 text-xs font-medium text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
                     >
                       <RotateCcw size={12} />
                       Retry from start

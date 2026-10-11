@@ -89,7 +89,7 @@ export default function CollectionsPage() {
           {customCollections.map((collection) => (
             <article
               key={collection.id}
-              className="flex flex-col border border-zinc-200 bg-white p-3.5 transition-colors hover:border-accent/40 dark:border-border dark:bg-surface-card"
+              className="flex flex-col border border-zinc-200 bg-white p-3.5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 dark:border-border dark:bg-surface-card"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
@@ -98,7 +98,7 @@ export default function CollectionsPage() {
                   </h2>
                   <span className="eyebrow mt-0.5 block">{collection.agentIds.length} agents</span>
                 </div>
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-accent/10 text-accent">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center bg-zinc-500/10 text-zinc-600 dark:text-zinc-300">
                   <FolderPlus size={13} aria-hidden="true" />
                 </span>
               </div>
@@ -125,7 +125,7 @@ export default function CollectionsPage() {
                 </button>
                 <button
                   onClick={() => deleteCollection(collection.id)}
-                  className="btn-ghost h-7 px-2 hover:text-error"
+                  className="btn-ghost h-7 px-2 hover:text-black dark:hover:text-white"
                   aria-label={`Delete ${collection.name}`}
                   title="Delete"
                 >

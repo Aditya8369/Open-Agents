@@ -90,7 +90,7 @@ export default function SuitesPage() {
       {/* Custom Suite Generator */}
       <div className="panel mb-6 p-4">
         <div className="mb-1 flex items-center gap-2">
-          <Wand2 size={14} className="text-accent" aria-hidden="true" />
+          <Wand2 size={14} className="text-zinc-900 dark:text-white" aria-hidden="true" />
           <h2 className="text-[13px] font-semibold text-zinc-900 dark:text-text-primary">
             Build your own suite
           </h2>
@@ -146,7 +146,7 @@ export default function SuitesPage() {
         {customSuite && (
           <div className="mt-5 animate-fade-in">
             <div className="flex items-center gap-2 mb-1">
-              <Sparkles size={13} className="text-accent" />
+              <Sparkles size={13} className="text-zinc-600 dark:text-zinc-300" />
               <h3 className="text-sm font-bold dark:text-text-primary text-gray-900">
                 {customSuite.title}
               </h3>
@@ -160,7 +160,7 @@ export default function SuitesPage() {
                   key={agent.id}
                   className="flex items-center gap-3 border border-zinc-200 bg-zinc-50/60 p-2.5 dark:border-border dark:bg-surface-input/60"
                 >
-                  <span className="text-[11px] font-bold text-accent w-5 flex-shrink-0">
+                  <span className="text-[11px] font-bold text-zinc-900 dark:text-white w-5 flex-shrink-0">
                     {index + 1}
                   </span>
                   <div className="flex-1 min-w-0">
@@ -173,7 +173,7 @@ export default function SuitesPage() {
                   </div>
                   <button
                     onClick={() => navigate(`/agent/${agent.id}`)}
-                    className="flex items-center gap-1 text-[11px] font-semibold text-accent hover:opacity-80 transition-opacity flex-shrink-0"
+                    className="flex items-center gap-1 text-[11px] font-semibold text-zinc-900 hover:text-black dark:text-white dark:hover:text-zinc-200 transition-colors flex-shrink-0"
                   >
                     Open
                     <ArrowRight size={11} />
@@ -193,7 +193,7 @@ export default function SuitesPage() {
               </button>
               <button
                 onClick={() => { setCustomSuite(null); setGoal('') }}
-                className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+                className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
               >
                 Reset
               </button>
@@ -217,7 +217,7 @@ export default function SuitesPage() {
       <div>
         <button
           onClick={() => navigate('/')}
-          className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+          className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
         >
           Prefer to browse? View all agents →
         </button>
@@ -233,7 +233,7 @@ function SuiteCard({ suite, onSelect }) {
     <button
       type="button"
       onClick={onSelect}
-      className="group flex flex-col border border-zinc-200 bg-white p-3.5 text-left transition-colors hover:border-accent/40 dark:border-border dark:bg-surface-card"
+      className="group flex flex-col border border-zinc-200 bg-white p-3.5 text-left transition-colors hover:border-zinc-400 dark:border-border dark:bg-surface-card dark:hover:border-zinc-400"
     >
       <div className="flex items-center gap-2.5">
         <span
@@ -253,7 +253,7 @@ function SuiteCard({ suite, onSelect }) {
 
       <div className="mt-3 flex items-center justify-between border-t border-zinc-100 pt-2.5 dark:border-border/60">
         <span className="eyebrow">{suite.agents.length} agents</span>
-        <span className="flex items-center gap-1 text-[11px] font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+        <span className="flex items-center gap-1 text-[11px] font-medium text-zinc-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100">
           Start
           <ArrowRight size={11} aria-hidden="true" />
         </span>

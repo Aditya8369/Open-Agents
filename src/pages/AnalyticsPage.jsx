@@ -80,8 +80,8 @@ export default function AnalyticsPage() {
       <div className="animate-fade-in max-w-4xl mx-auto">
         <PageHeader onClear={clearAnalytics} hasData={false} timeRange={timeRange} setTimeRange={setTimeRange} />
         <div className=" border p-12 text-center flex flex-col items-center gap-4 dark:bg-surface-card dark:border-border bg-white border-gray-200">
-          <div className="w-16 h-16 bg-accent/10 flex items-center justify-center">
-            <BarChart3 size={32} className="text-accent" />
+          <div className="w-16 h-16 bg-zinc-500/10 flex items-center justify-center">
+            <BarChart3 size={32} className="text-zinc-900 dark:text-white" />
           </div>
           <h2 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">
             No analytics yet
@@ -92,7 +92,7 @@ export default function AnalyticsPage() {
           </p>
           <button
             onClick={() => navigate('/')}
-            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover transition-all duration-200 active:scale-[0.97] mt-2"
+            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all duration-200 active:scale-[0.97] mt-2"
           >
             <Zap size={16} />
             Run an Agent
@@ -128,7 +128,7 @@ export default function AnalyticsPage() {
           </p>
           <button
             onClick={() => setTimeRange('all')}
-            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-semibold text-accent border border-accent/30 hover:bg-accent/10 transition-all duration-200 active:scale-[0.97] mt-2"
+            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-semibold text-zinc-900 border border-zinc-500/40 hover:bg-zinc-500/10 dark:text-white dark:border-white/40 transition-all duration-200 active:scale-[0.97] mt-2"
           >
             Show All Time
           </button>
@@ -155,7 +155,7 @@ export default function AnalyticsPage() {
           icon={<Activity size={18} />}
           label="Total Runs"
           value={stats.totalRuns}
-          color="text-accent"
+          color="text-zinc-900 dark:text-white"
           delay={0}
         />
         <StatCard
@@ -268,8 +268,8 @@ function PageHeader({ onClear, hasData, timeRange, setTimeRange }) {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
-          <BarChart3 size={20} className="text-accent" />
+        <div className="w-10 h-10 bg-zinc-500/10 flex items-center justify-center">
+          <BarChart3 size={20} className="text-zinc-900 dark:text-white" />
         </div>
         <div>
           <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">Dashboard</h1>
@@ -285,7 +285,7 @@ function PageHeader({ onClear, hasData, timeRange, setTimeRange }) {
               onClick={() => setTimeRange(range.value)}
               className={`px-2.5 py-1 text-[10px] font-semibold transition-colors duration-200
                 ${timeRange === range.value
-                  ? 'bg-accent text-black'
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
                   : 'text-gray-500 dark:text-text-muted hover:text-gray-700 dark:hover:text-text-primary'
                 }`}
             >
@@ -310,7 +310,7 @@ function PageHeader({ onClear, hasData, timeRange, setTimeRange }) {
 function StatCard({ icon, label, value, color, delay }) {
   return (
     <div
-      className="relative p-4 border border-zinc-200 dark:border-border bg-white dark:bg-surface-card transition-colors duration-200 hover:border-accent/40 animate-fade-in"
+      className="relative p-4 border border-zinc-200 dark:border-border bg-white dark:bg-surface-card transition-colors duration-200 hover:border-zinc-400 dark:hover:border-zinc-400 animate-fade-in"
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className={`mb-2 ${color}`}>{icon}</div>
@@ -352,7 +352,7 @@ function SectionCard({ title, icon, delay, children }) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-accent">{icon}</span>
+        <span className="text-zinc-600 dark:text-zinc-300">{icon}</span>
         <h2 className="eyebrow">
           {title}
         </h2>
@@ -441,7 +441,7 @@ function TopAgentsChart({ agents, navigate }) {
             onClick={() => navigate(`/agent/${agent.agentId}`)}
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs font-medium dark:text-text-primary text-gray-700 truncate max-w-[200px] group-hover:text-accent transition-colors">
+              <span className="text-xs font-medium dark:text-text-primary text-gray-700 truncate max-w-[200px] group-hover:text-black dark:group-hover:text-white transition-colors">
                 {agent.agentName}
               </span>
               <span className="text-[11px] font-bold tabular-nums dark:text-text-muted text-gray-400">
@@ -662,7 +662,7 @@ function RecentTimeline({ runs, navigate }) {
             {/* Content */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold dark:text-text-primary text-gray-800 truncate group-hover:text-accent transition-colors">
+                <span className="text-xs font-semibold dark:text-text-primary text-gray-800 truncate group-hover:text-black dark:group-hover:text-white transition-colors">
                   {run.agentName || 'Unknown Agent'}
                 </span>
                 {run.category && (
@@ -801,7 +801,7 @@ function ExportBar({ stats }) {
     <div className="flex justify-center mb-8 animate-fade-in" style={{ animationDelay: '760ms' }}>
       <button
         onClick={handleExport}
-        className="flex items-center gap-2 h-8 px-3 text-xs font-semibold dark:text-text-secondary text-gray-500 border dark:border-border border-gray-200 hover:border-accent/30 dark:hover:border-accent/30 hover:text-accent dark:hover:text-accent transition-all duration-200 active:scale-[0.97]"
+        className="flex items-center gap-2 h-8 px-3 text-xs font-semibold dark:text-text-secondary text-gray-500 border dark:border-border border-gray-200 hover:border-zinc-400 dark:hover:border-zinc-400 hover:text-black dark:hover:text-white transition-all duration-200 active:scale-[0.97]"
       >
         <Download size={14} />
         Export Dashboard Data

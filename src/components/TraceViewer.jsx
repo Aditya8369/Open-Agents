@@ -24,7 +24,7 @@ function TraceStep({ step, index, defaultOpen }) {
         aria-expanded={open}
         className="w-full flex items-center gap-3 p-3 text-left transition-colors dark:hover:bg-surface-hover hover:bg-gray-50"
       >
-        <div className="flex items-center justify-center w-5 h-5 bg-accent/10 text-[10px] font-bold text-accent flex-shrink-0">
+        <div className="flex items-center justify-center w-5 h-5 bg-zinc-500/10 text-[10px] font-bold text-zinc-600 dark:text-zinc-300 flex-shrink-0">
           {index + 1}
         </div>
         <div className="flex-1 min-w-0">

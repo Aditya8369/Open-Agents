@@ -35,7 +35,7 @@ export default function NotFoundPage() {
             navigate('/')
             window.setTimeout(() => document.getElementById('agent-search')?.focus(), 120)
           }}
-          className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+          className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"
         >
           <Search size={11} aria-hidden="true" />
           Or search the agent library

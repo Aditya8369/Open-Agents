@@ -4,7 +4,7 @@ export default function AboutCommunity() {
   return (
     <section aria-labelledby="about-community-title" className="mb-12">
       <div className="flex items-center gap-2 mb-3">
-        <Users className="text-accent" size={22} />
+        <Users className="text-zinc-600 dark:text-zinc-300" size={22} />
         <h2 id="about-community-title" className="text-2xl sm:text-3xl font-bold dark:text-text-primary text-gray-900 tracking-tight">
           Community & Contributor Appreciation
         </h2>
@@ -15,8 +15,8 @@ export default function AboutCommunity() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="panel p-5 transition-colors hover:border-accent/40">
-          <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
+        <div className="panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400">
+          <div className="p-3 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 w-fit mb-4">
             <Handshake size={22} />
           </div>
           <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-2">
@@ -27,8 +27,8 @@ export default function AboutCommunity() {
           </p>
         </div>
 
-        <div className="panel p-5 transition-colors hover:border-accent/40">
-          <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
+        <div className="panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400">
+          <div className="p-3 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 w-fit mb-4">
             <Trophy size={22} />
           </div>
           <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-2">
@@ -39,8 +39,8 @@ export default function AboutCommunity() {
           </p>
         </div>
 
-        <div className="panel p-5 transition-colors hover:border-accent/40">
-          <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
+        <div className="panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400">
+          <div className="p-3 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 w-fit mb-4">
             <MessageSquare size={22} />
           </div>
           <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-2">

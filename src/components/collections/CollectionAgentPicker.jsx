@@ -62,7 +62,7 @@ export default function CollectionAgentPicker({
             Check agents to include them in this collection. Uncheck agents to remove them.
           </p>
         </div>
-        <div className=" border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-semibold text-zinc-700 dark:border-accent/30 dark:bg-accent/10 dark:text-accent">
+        <div className=" border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-semibold text-zinc-700 dark:border-zinc-500/30 dark:bg-zinc-500/10 dark:text-zinc-300">
           {selectedCount} / {maxAgents} agents
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function AboutFeatures() {
           return (
             <div
               key={idx}
-              className="panel p-5 transition-colors hover:border-accent/40 duration-300 flex flex-col justify-between"
+              className="panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className={`w-12 h-12 bg-zinc-100 dark:bg-surface-input ${feature.color} flex items-center justify-center mb-4`}>

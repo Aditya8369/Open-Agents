@@ -93,11 +93,11 @@ export default function CustomSelect({
   const isZincAccent = accentColor === 'zinc' || accentColor === 'yellow'
   const accentRing = isZincAccent
     ? 'focus:ring-zinc-400/30 focus:border-zinc-400/50'
-    : 'focus:ring-accent/40 focus:border-accent'
+    : 'focus:ring-zinc-500/40 focus:border-zinc-500'
 
   const accentItem = isZincAccent
     ? 'bg-zinc-400/10 text-zinc-300 font-semibold'
-    : 'bg-accent/15 text-accent font-semibold'
+    : 'bg-black text-white dark:bg-white dark:text-black font-semibold'
 
   return (
     <div ref={containerRef} className={`relative inline-block w-full ${className || ''}`}>
@@ -114,7 +114,7 @@ export default function CustomSelect({
         className={`w-full flex items-center justify-between gap-2 h-8 px-3 border text-sm transition-all duration-200
           dark:bg-surface-input dark:border-border dark:text-text-primary
           bg-white border-gray-200 text-gray-900
-          hover:border-accent/30 dark:hover:border-accent/40
+          hover:border-zinc-400 dark:hover:border-zinc-400
           focus:outline-none focus:ring-2 ${accentRing}
           disabled:opacity-50 disabled:cursor-not-allowed text-left ${triggerClassName || ''}`}
       >
@@ -156,7 +156,7 @@ export default function CustomSelect({
                 onKeyDown={(e) => handleOptionKeyDown(e, val)}
                 className={`w-full flex items-center gap-2 px-3 py-2 text-sm transition-colors duration-150 text-left
                   text-gray-700 dark:text-text-secondary
-                  focus:outline-none focus:ring-2 focus:ring-accent/40
+                  focus:outline-none focus:ring-2 focus:ring-zinc-500/40
                   ${isSelected
                     ? accentItem
                     : 'dark:hover:bg-surface-hover dark:hover:text-text-primary hover:bg-gray-50 hover:text-gray-900'

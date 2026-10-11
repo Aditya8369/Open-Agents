@@ -59,18 +59,18 @@ export default function AboutResources() {
               href={res.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative panel p-5 transition-colors hover:border-accent/40 duration-300 flex flex-col justify-between"
+              className="group relative panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <div className="p-2.5 bg-accent/10 text-accent transition-transform">
+                  <div className="p-2.5 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 transition-transform">
                     <Icon size={20} />
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 dark:bg-white/10 bg-gray-100 dark:text-text-secondary text-gray-600">
                     {res.tag}
                   </span>
                 </div>
-                <h3 className="text-sm font-bold dark:text-text-primary text-gray-900 mb-1 group-hover:text-accent transition-colors flex items-center gap-1.5">
+                <h3 className="text-sm font-bold dark:text-text-primary text-gray-900 mb-1 group-hover:text-black dark:group-hover:text-white transition-colors flex items-center gap-1.5">
                   <span>{res.title}</span>
                   <ExternalLink size={13} className="opacity-60 group-hover:opacity-100 transition-opacity" />
                 </h3>

@@ -3,7 +3,7 @@ import { Sparkles, Github, GitPullRequest, ArrowRight, PlusCircle } from 'lucide
 
 export default function AboutCta() {
   return (
-    <section aria-labelledby="about-cta-title" className="relative overflow-hidden panel border-accent/25 p-8 sm:p-12 text-center shadow-pop">
+    <section aria-labelledby="about-cta-title" className="relative overflow-hidden panel border-zinc-500/25 p-8 sm:p-12 text-center shadow-pop">
       {/* Glow overlays */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-zinc-500/30" />
 

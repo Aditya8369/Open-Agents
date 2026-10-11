@@ -61,7 +61,7 @@ export default function AboutOpenSource() {
           <div key={i} className="panel p-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-extrabold text-accent bg-accent/10 px-2.5 py-1 ">
+                <span className="text-xs font-extrabold text-zinc-700 bg-zinc-500/10 dark:text-zinc-300 px-2.5 py-1 ">
                   Step {item.step}
                 </span>
                 <Terminal size={14} className="dark:text-text-muted text-gray-400" />

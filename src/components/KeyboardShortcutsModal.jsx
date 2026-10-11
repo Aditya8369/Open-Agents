@@ -16,7 +16,7 @@ export default function KeyboardShortcutsModal({ isOpen, onClose }) {
       <div className="w-full max-w-md bg-white dark:bg-surface-card border border-gray-200 dark:border-border shadow-pop overflow-hidden">
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-border">
           <h2 className="text-lg font-bold text-gray-900 dark:text-text-primary flex items-center gap-2">
-            <Command size={20} className="text-accent" />
+            <Command size={20} className="text-zinc-900 dark:text-white" />
             Keyboard Shortcuts
           </h2>
           <button
@@ -31,7 +31,7 @@ export default function KeyboardShortcutsModal({ isOpen, onClose }) {
           {shortcuts.map((s, idx) => (
             <div key={idx} className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-accent/10 flex items-center justify-center text-accent">
+                <div className="w-8 h-8 bg-zinc-500/10 flex items-center justify-center text-zinc-600 dark:text-zinc-300">
                   {s.icon}
                 </div>
                 <span className="text-sm font-medium text-gray-700 dark:text-text-secondary">

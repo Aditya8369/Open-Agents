@@ -130,8 +130,8 @@ export default function SettingsPage() {
     <div className="max-w-2xl mx-auto animate-fade-in">
       {/* Page header */}
       <div className="flex items-center gap-3 mb-8">
-        <div className="w-10 h-10 bg-accent/10 flex items-center justify-center flex-shrink-0">
-          <Settings size={20} className="text-accent" />
+        <div className="w-10 h-10 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+          <Settings size={20} className="text-zinc-600 dark:text-zinc-300" />
         </div>
         <div>
           <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">Settings</h1>
@@ -147,7 +147,7 @@ export default function SettingsPage() {
       <section className="mb-8 border dark:bg-surface-card dark:border-border bg-white border-gray-200 overflow-hidden">
         <div className="px-5 py-4 border-b dark:border-border border-gray-100">
           <div className="flex items-center gap-2">
-            <KeyRound size={16} className="text-accent" />
+            <KeyRound size={16} className="text-zinc-600 dark:text-zinc-300" />
             <h2 className="text-sm font-bold dark:text-text-primary text-gray-900">API Keys</h2>
           </div>
           <p className="text-xs dark:text-text-secondary text-gray-500 mt-0.5">
@@ -190,11 +190,11 @@ export default function SettingsPage() {
                   value={keys[p.id]}
                   onChange={(e) => setKeys((prev) => ({ ...prev, [p.id]: e.target.value }))}
                   placeholder={savedStatus[p.id] ? '••••••••••••••••••••••••' : p.placeholder}
-                  className="w-full h-9 pl-3 pr-10 text-xs font-mono transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full h-9 pl-3 pr-10 text-xs font-mono transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                 />
                 <button
                   onClick={() => toggleShow(p.id)}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-400 hover:text-accent transition-colors"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                   aria-label={showKey[p.id] ? 'Hide key' : 'Show key'}
                 >
                   {showKey[p.id] ? <EyeOff size={14} /> : <Eye size={14} />}
@@ -208,7 +208,7 @@ export default function SettingsPage() {
                   href={p.keyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[11px] font-medium text-accent hover:underline transition-colors"
+                  className="flex items-center gap-1 text-[11px] font-medium text-zinc-900 dark:text-white hover:underline transition-colors"
                 >
                   {p.keyLabel}
                   <ExternalLink size={10} />
@@ -230,7 +230,7 @@ export default function SettingsPage() {
           )}
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-black bg-accent hover:bg-accent-hover transition-all duration-150 active:scale-[0.97]"
+            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all duration-150 active:scale-[0.97]"
           >
             Save Keys
           </button>
@@ -261,7 +261,7 @@ export default function SettingsPage() {
                 setDefaultProvider(val)
                 saveGlobalKeys({ defaultProvider: val })
               }}
-              className="w-full sm:w-64 h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+              className="w-full sm:w-64 h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
             >
               <option value="">Select a default provider...</option>
               {availableForDefault.map((p) => (

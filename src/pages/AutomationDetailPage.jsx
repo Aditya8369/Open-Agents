@@ -55,7 +55,7 @@ export default function AutomationDetailPage() {
         <p className="text-xs text-gray-500 mb-6">The requested automation may have been deleted or does not exist.</p>
         <Link
           to="/automations"
-          className="h-8 px-3 text-xs font-semibold bg-accent text-black hover:bg-accent-hover"
+          className="h-8 px-3 text-xs font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
         >
           Return to Automations
         </Link>
@@ -145,7 +145,7 @@ export default function AutomationDetailPage() {
       <div>
         <Link
           to="/automations"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-accent transition-colors"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-black dark:hover:text-white transition-colors"
         >
           <ArrowLeft size={14} />
           <span>Back to All Automations</span>
@@ -156,7 +156,7 @@ export default function AutomationDetailPage() {
       <div className="p-6 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-start gap-3.5">
-            <div className="w-12 h-12 bg-zinc-500/20 flex items-center justify-center text-accent shrink-0 ">
+            <div className="w-12 h-12 bg-zinc-500/10 flex items-center justify-center text-zinc-600 dark:text-zinc-300 shrink-0">
               <Clock size={24} />
             </div>
             <div>
@@ -169,12 +169,12 @@ export default function AutomationDetailPage() {
                 }`}>
                   {automation.enabled ? 'Active' : 'Paused'}
                 </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 bg-accent/10 text-accent">
+                <span className="text-[10px] font-semibold px-2 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white">
                   {automation.schedule} ({automation.cron})
                 </span>
               </div>
               <div className="flex items-center gap-2 mt-1 text-xs text-gray-500 dark:text-gray-400 flex-wrap">
-                <Link to={`/agent/${automation.agentId}`} className="font-semibold text-accent hover:underline">
+                <Link to={`/agent/${automation.agentId}`} className="font-semibold text-zinc-900 dark:text-white hover:underline">
                   {automation.agentName}
                 </Link>
                 <span>•</span>
@@ -201,7 +201,7 @@ export default function AutomationDetailPage() {
               className="p-2 border dark:border-border border-gray-200 hover:bg-gray-50 dark:hover:bg-surface-hover text-gray-600 dark:text-gray-300 transition-colors"
               title={automation.enabled ? 'Pause Autopilot' : 'Resume Autopilot'}
             >
-              {automation.enabled ? <ToggleRight size={20} className="text-accent" /> : <ToggleLeft size={20} />}
+              {automation.enabled ? <ToggleRight size={20} className="text-zinc-900 dark:text-white" /> : <ToggleLeft size={20} />}
             </button>
 
             <button
@@ -258,7 +258,7 @@ export default function AutomationDetailPage() {
           onClick={() => setActiveTab('history')}
           className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'history'
-              ? 'border-accent text-accent'
+              ? 'border-zinc-900 text-zinc-900 dark:border-white dark:text-white'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
           }`}
         >
@@ -270,7 +270,7 @@ export default function AutomationDetailPage() {
           onClick={() => setActiveTab('config')}
           className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'config'
-              ? 'border-accent text-accent'
+              ? 'border-zinc-900 text-zinc-900 dark:border-white dark:text-white'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
           }`}
         >
@@ -282,7 +282,7 @@ export default function AutomationDetailPage() {
           onClick={() => setActiveTab('emails')}
           className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'emails'
-              ? 'border-accent text-accent'
+              ? 'border-zinc-900 text-zinc-900 dark:border-white dark:text-white'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
           }`}
         >
@@ -302,7 +302,7 @@ export default function AutomationDetailPage() {
               <button
                 onClick={handleRunNow}
                 disabled={isRunning}
-                className="h-8 px-3 text-xs font-bold text-black bg-accent hover:bg-accent-hover "
+                className="h-8 px-3 text-xs font-bold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
               >
                 Run Autopilot Now
               </button>
@@ -365,7 +365,7 @@ export default function AutomationDetailPage() {
                                 e.stopPropagation()
                                 setSelectedRun(run)
                               }}
-                              className="px-2.5 py-1 text-xs font-semibold bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                              className="px-2.5 py-1 text-xs font-semibold bg-zinc-500/10 text-zinc-900 hover:bg-zinc-500/20 dark:text-white transition-colors"
                             >
                               Inspect Output
                             </button>

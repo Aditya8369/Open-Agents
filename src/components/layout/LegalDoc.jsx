@@ -15,7 +15,7 @@ export default function LegalDoc({ eyebrow, title, updated, intro, sections, foo
     <div className="animate-fade-in mx-auto max-w-3xl">
       <button
         onClick={handleBack}
-        className="mb-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+        className="mb-4 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
       >
         <ArrowLeft size={12} aria-hidden="true" />
         Back
@@ -29,7 +29,7 @@ export default function LegalDoc({ eyebrow, title, updated, intro, sections, foo
         {sections.map(({ icon: Icon, title: sectionTitle, content }) => (
           <section key={sectionTitle} className="py-5">
             <h2 className="flex items-center gap-2 font-display text-[15px] font-semibold tracking-[-0.01em] text-zinc-900 dark:text-text-primary">
-              <Icon size={14} className="shrink-0 text-accent" aria-hidden="true" />
+              <Icon size={14} className="shrink-0 text-zinc-600 dark:text-zinc-300" aria-hidden="true" />
               {sectionTitle}
             </h2>
             <p className="mt-2 text-[13px] leading-7 text-zinc-600 dark:text-text-secondary">{content}</p>

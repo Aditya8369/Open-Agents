@@ -186,7 +186,7 @@ if (isInteractive && !isSelectedOptionButton) {
         {matched.length > 0 && (
           <>
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles size={14} className="text-accent" />
+              <Sparkles size={14} className="text-zinc-600 dark:text-zinc-300" />
               <span className="eyebrow">
                 Best matches for you
               </span>
@@ -284,7 +284,7 @@ if (isInteractive && !isSelectedOptionButton) {
   aria-valuenow={Math.round(progress)}
 >
         <div
-          className="h-full bg-accent transition-all duration-300"
+          className="h-full bg-zinc-900 dark:bg-white transition-all duration-300"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -312,8 +312,8 @@ onClick={() => {
 }}
             className={`text-left px-4 py-3.5 border text-sm font-medium transition-all duration-150
               ${answers[step] === idx
-                ? 'border-accent bg-accent/10 dark:bg-accent/10 dark:border-accent text-accent'
-                : 'dark:bg-surface-card dark:border-border dark:text-text-primary dark:hover:border-accent/40 bg-white border-gray-200 text-gray-700 hover:border-zinc-400/60'
+                ? 'border-zinc-900 bg-zinc-900/5 dark:bg-white/10 dark:border-white text-zinc-900 dark:text-white'
+                : 'dark:bg-surface-card dark:border-border dark:text-text-primary dark:hover:border-zinc-400 bg-white border-gray-200 text-gray-700 hover:border-zinc-400/60'
               }`}
           >
             {opt.label}
@@ -325,7 +325,7 @@ onClick={() => {
       <div className="flex items-center justify-between">
         <button
           onClick={handleSkip}
-          className="flex items-center gap-1.5 text-xs dark:text-text-muted text-gray-400 hover:text-accent transition-colors"
+          className="flex items-center gap-1.5 text-xs dark:text-text-muted text-gray-400 hover:text-black dark:hover:text-white transition-colors"
         >
           <SkipForward size={13} />
           Skip this question
@@ -341,14 +341,14 @@ onClick={() => {
       </button>
           <button
             onClick={handleViewAll}
-            className="text-xs dark:text-text-muted text-gray-400 hover:text-accent transition-colors px-2 py-1.5"
+            className="text-xs dark:text-text-muted text-gray-400 hover:text-black dark:hover:text-white transition-colors px-2 py-1.5"
           >
             View all agents
           </button>
           <button
             onClick={handleNext}
             disabled={answers[step] === null}
-            className="flex items-center gap-1.5 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-150 active:scale-[0.97]"
+            className="flex items-center gap-1.5 h-8 px-3 text-sm font-semibold text-white bg-black hover:bg-zinc-800 dark:text-black dark:bg-white dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-150 active:scale-[0.97]"
           >
             Next
             <ArrowRight size={14} />
@@ -365,10 +365,10 @@ function AgentResultCard({ id, agent, pct, answeredCount, badgeClass, onClick })
     <button
       onClick={onClick}
       disabled={!agent}
-      className="text-left p-4 border transition-all duration-150 group dark:bg-surface-card dark:border-border dark:hover:border-accent/40 bg-white border-gray-200 hover:border-zinc-400/60 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]"
+      className="text-left p-4 border transition-all duration-150 group dark:bg-surface-card dark:border-border dark:hover:border-zinc-400 bg-white border-gray-200 hover:border-zinc-400/60 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]"
     >
       <div className="flex items-start justify-between gap-2 mb-1.5">
-        <span className="text-sm font-semibold dark:text-text-primary text-gray-900 leading-tight group-hover:text-accent transition-colors">
+        <span className="text-sm font-semibold dark:text-text-primary text-gray-900 leading-tight group-hover:text-black dark:group-hover:text-white transition-colors">
           {agent?.name ?? id}
         </span>
         {answeredCount > 0 && (

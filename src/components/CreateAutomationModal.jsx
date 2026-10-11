@@ -161,7 +161,7 @@ export default function CreateAutomationModal({
         <div className="relative px-6 py-5 border-b dark:border-border/60 border-gray-100 bg-zinc-500/10">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-accent/20 flex items-center justify-center text-accent ">
+              <div className="w-10 h-10 bg-zinc-500/20 flex items-center justify-center text-zinc-600 dark:text-zinc-300 ">
                 <Clock size={20} className="animate-pulse" />
               </div>
               <div>
@@ -202,7 +202,7 @@ export default function CreateAutomationModal({
                 value={name}
                 onChange={e => setName(e.target.value)}
                 placeholder="e.g. Daily Tech SEO Audit & Content Recommendations"
-                className="w-full h-10 px-3.5 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-2 focus:ring-accent/40 focus:border-accent outline-none"
+                className="w-full h-10 px-3.5 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
               />
             </div>
 
@@ -227,7 +227,7 @@ export default function CreateAutomationModal({
                         onClick={() => setSelectedAgentId(a.id)}
                         className={`p-2.5 text-left text-xs transition-colors border flex items-start justify-between gap-2
                           ${selectedAgentId === a.id
-                            ? 'border-accent bg-accent/15 text-accent font-semibold '
+                            ? 'border-zinc-900 dark:border-white bg-zinc-500/15 text-zinc-900 dark:text-white font-semibold '
                             : 'border-transparent dark:hover:bg-surface-hover hover:bg-gray-100 text-gray-700 dark:text-gray-300'
                           }`}
                       >
@@ -235,7 +235,7 @@ export default function CreateAutomationModal({
                           <p className="font-medium truncate">{a.name}</p>
                           <span className="text-[10px] opacity-70">{a.category}</span>
                         </div>
-                        {selectedAgentId === a.id && <CheckCircle2 size={14} className="shrink-0 text-accent mt-0.5" />}
+                        {selectedAgentId === a.id && <CheckCircle2 size={14} className="shrink-0 text-zinc-600 dark:text-zinc-300 mt-0.5" />}
                       </button>
                     ))}
                   </div>
@@ -246,7 +246,7 @@ export default function CreateAutomationModal({
             {selectedAgent && (
               <div className="p-3.5 border dark:border-border/60 border-gray-200 dark:bg-surface-card/60 bg-gray-50 flex items-center justify-between">
                 <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 bg-accent/20 flex items-center justify-center text-accent shrink-0">
+                  <div className="w-8 h-8 bg-zinc-500/20 flex items-center justify-center text-zinc-600 dark:text-zinc-300 shrink-0">
                     <Zap size={16} />
                   </div>
                   <div className="min-w-0">
@@ -254,7 +254,7 @@ export default function CreateAutomationModal({
                     <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">{selectedAgent.description}</p>
                   </div>
                 </div>
-                <span className="px-2 py-0.5 text-[10px] font-semibold bg-accent/15 text-accent shrink-0 ml-2">
+                <span className="px-2 py-0.5 text-[10px] font-semibold bg-zinc-500/15 text-zinc-900 dark:text-white shrink-0 ml-2">
                   {selectedAgent.category}
                 </span>
               </div>
@@ -285,7 +285,7 @@ export default function CreateAutomationModal({
                         value={inputs[inp.id] || ''}
                         onChange={e => handleInputChange(inp.id, e.target.value)}
                         placeholder={inp.placeholder || `Enter ${inp.label.toLowerCase()}...`}
-                        className="w-full p-2.5 text-xs font-mono dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+                        className="w-full p-2.5 text-xs font-mono dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-zinc-500/40"
                       />
                     ) : inp.type === 'multiselect' ? (
                       <div className="flex flex-wrap gap-1.5 pt-1">
@@ -298,7 +298,7 @@ export default function CreateAutomationModal({
                               onClick={() => handleToggleMultiselect(inp.id, opt)}
                               className={`px-2.5 py-1 text-xs font-medium border transition-colors ${
                                 isSel
-                                  ? 'bg-accent/15 text-accent border-accent/40 font-semibold'
+                                  ? 'bg-zinc-500/15 text-zinc-900 dark:text-white border-zinc-500/40 font-semibold'
                                   : 'dark:bg-surface-input dark:border-border border-gray-200 text-gray-600 dark:text-gray-400 hover:border-gray-400'
                               }`}
                             >
@@ -313,7 +313,7 @@ export default function CreateAutomationModal({
                         value={inputs[inp.id] || ''}
                         onChange={e => handleInputChange(inp.id, e.target.value)}
                         placeholder={inp.placeholder || `Enter ${inp.label.toLowerCase()}...`}
-                        className="w-full h-9 px-3 text-xs dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+                        className="w-full h-9 px-3 text-xs dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-zinc-500/40"
                       />
                     )}
                   </div>
@@ -335,8 +335,8 @@ export default function CreateAutomationModal({
                   onClick={() => setSchedule(preset.value)}
                   className={`p-3 border text-left transition-colors relative
                     ${schedule === preset.value
-                      ? 'border-accent bg-accent/10 dark:bg-accent/15 text-accent font-semibold'
-                      : 'border-gray-200 dark:border-border/80 dark:bg-surface-card bg-white text-gray-700 dark:text-gray-300 hover:border-accent/40'
+                      ? 'border-zinc-900 dark:border-white bg-zinc-500/10 dark:bg-zinc-500/15 text-zinc-900 dark:text-white font-semibold'
+                      : 'border-gray-200 dark:border-border/80 dark:bg-surface-card bg-white text-gray-700 dark:text-gray-300 hover:border-zinc-400 dark:hover:border-zinc-400'
                     }`}
                 >
                   <p className="text-xs font-bold">{preset.label}</p>
@@ -405,7 +405,7 @@ export default function CreateAutomationModal({
                 value={apiKey}
                 onChange={e => setApiKey(e.target.value)}
                 placeholder={initialData?.hasKey ? '•••••••••••••••• (Key saved and encrypted)' : `Enter ${provider} API Key...`}
-                className="w-full h-10 pl-9 pr-3 text-xs font-mono dark:bg-[#0A0A0A] dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+                className="w-full h-10 pl-9 pr-3 text-xs font-mono dark:bg-[#0A0A0A] dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-zinc-500/40"
               />
               <Lock size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             </div>
@@ -415,7 +415,7 @@ export default function CreateAutomationModal({
                 type="checkbox"
                 checked={optInEncryptedConsent}
                 onChange={e => setOptInEncryptedConsent(e.target.checked)}
-                className="mt-0.5 border-gray-300 text-accent focus:ring-accent"
+                className="mt-0.5 border-gray-300 accent-zinc-500 focus:ring-zinc-500/40"
               />
               <span className="text-[11px] text-gray-600 dark:text-gray-400 leading-tight">
                 <strong>Explicit Opt-in Consent:</strong> I authorize encrypting and storing this key server-side using Supabase pgsodium encryption exclusively to execute scheduled background runs for this automation.
@@ -437,7 +437,7 @@ export default function CreateAutomationModal({
                   onChange={e => setEmailNotification(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-accent"></div>
+                <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-zinc-900 dark:peer-checked:bg-white"></div>
               </label>
             </div>
 
@@ -451,7 +451,7 @@ export default function CreateAutomationModal({
                   value={notificationEmail}
                   onChange={e => setNotificationEmail(e.target.value)}
                   placeholder="name@company.com"
-                  className="w-full h-9 px-3 text-xs dark:bg-surface-input dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+                  className="w-full h-9 px-3 text-xs dark:bg-surface-input dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-zinc-500/40"
                 />
                 <p className="text-[10px] text-gray-400">
                   Formatted execution markdown reports and run diagnostics will be sent directly to your inbox upon execution.

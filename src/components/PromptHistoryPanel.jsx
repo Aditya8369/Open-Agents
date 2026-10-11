@@ -20,7 +20,7 @@ function timeAgo(timestamp) {
 
 function PromptItem({ entry, onUse, onToggleFavorite, onDelete, onCopy }) {
   return (
-    <div className="group border p-3 dark:bg-surface-input dark:border-border bg-gray-50 border-gray-200 transition-colors hover:border-accent/40">
+    <div className="group border p-3 dark:bg-surface-input dark:border-border bg-gray-50 border-gray-200 transition-colors hover:border-zinc-400">
       <p className="text-xs dark:text-text-primary text-gray-800 leading-relaxed mb-2 whitespace-pre-wrap">
         {truncate(entry.text)}
       </p>
@@ -37,14 +37,14 @@ function PromptItem({ entry, onUse, onToggleFavorite, onDelete, onCopy }) {
           <button
             onClick={() => onUse(entry)}
             title="Use this prompt"
-            className="p-1 dark:text-text-muted text-gray-500 hover:text-accent hover:bg-accent/10 transition-colors"
+            className="p-1 dark:text-text-muted text-gray-500 hover:text-black hover:bg-zinc-500/10 dark:hover:text-white transition-colors"
           >
             <RotateCcw size={13} />
           </button>
           <button
             onClick={() => onCopy(entry)}
             title="Copy to clipboard"
-            className="p-1 dark:text-text-muted text-gray-500 hover:text-accent hover:bg-accent/10 transition-colors"
+            className="p-1 dark:text-text-muted text-gray-500 hover:text-black hover:bg-zinc-500/10 dark:hover:text-white transition-colors"
           >
             <Copy size={13} />
           </button>
@@ -119,7 +119,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-3 border-b dark:border-border border-gray-200">
           <div className="flex items-center gap-2">
-            <History size={16} className="text-accent" />
+            <History size={16} className="text-zinc-900 dark:text-white" />
             <h2 className="text-sm font-semibold dark:text-text-primary text-gray-900">
               Prompt History
             </h2>
@@ -144,7 +144,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search prompts..."
-              className="w-full h-8 pl-8 pr-3 text-xs transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+              className="w-full h-8 pl-8 pr-3 text-xs transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
             />
           </div>
         </div>
@@ -198,7 +198,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
                       </button>
                       <button
                         onClick={() => setConfirmClear(false)}
-                        className="text-[10px] text-accent hover:underline"
+                        className="text-[10px] text-zinc-900 hover:underline dark:text-white"
                       >
                         Cancel
                       </button>
@@ -206,7 +206,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
                   ) : (
                     <button
                       onClick={() => setConfirmClear(true)}
-                      className="text-[10px] text-accent hover:underline"
+                      className="text-[10px] text-zinc-900 hover:underline dark:text-white"
                     >
                       Clear all
                     </button>

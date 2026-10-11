@@ -95,7 +95,7 @@ export default function CollectionDetailPage() {
     <div className="animate-fade-in">
       <Link
         to="/collections"
-        className="mb-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+        className="mb-2 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"
       >
         <ArrowLeft size={12} aria-hidden="true" />
         Collections
@@ -111,7 +111,7 @@ export default function CollectionDetailPage() {
             : 'runnable agents'
         }
         actions={
-          <button onClick={handleDelete} className="btn-ghost hover:text-error">
+          <button onClick={handleDelete} className="btn-ghost hover:text-black dark:hover:text-white">
             <Trash2 size={14} aria-hidden="true" />
             Delete
           </button>
@@ -140,7 +140,7 @@ export default function CollectionDetailPage() {
                   onClick={() => handleRemoveAgent(agent.id)}
                   aria-label={`Remove ${agent.name} from collection`}
                   title="Remove from collection"
-                  className="absolute -right-1 -top-1 z-10 inline-flex h-5 w-5 items-center justify-center border border-zinc-200 bg-white text-zinc-400 transition-colors hover:border-error/50 hover:text-error dark:border-border dark:bg-surface-card"
+                  className="absolute -right-1 -top-1 z-10 inline-flex h-5 w-5 items-center justify-center border border-zinc-200 bg-white text-zinc-400 transition-colors hover:border-zinc-400 hover:text-black dark:hover:text-white dark:border-border dark:bg-surface-card"
                 >
                   <X size={11} aria-hidden="true" />
                 </button>

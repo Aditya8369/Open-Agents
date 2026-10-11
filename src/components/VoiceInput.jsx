@@ -172,7 +172,7 @@ export default function VoiceInput({
         ${
           isRecording
             ? "text-zinc-500 bg-zinc-500/10 hover:bg-zinc-500/20"
-            : "text-gray-400 hover:text-accent hover:bg-accent/10 dark:text-text-muted"
+            : "text-gray-400 hover:text-black dark:hover:text-white hover:bg-zinc-500/10 dark:text-text-muted"
         }
         disabled:opacity-40 disabled:cursor-not-allowed
         ${className}`}

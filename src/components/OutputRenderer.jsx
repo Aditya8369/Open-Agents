@@ -3,9 +3,71 @@ import { Copy, Check, FileText, Download } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import ScorecardOutput from './ScorecardOutput'
 import VoiceOutput from './VoiceOutput'
+
+// Monochrome prism theme. The default `oneDark` theme ships purple keywords,
+// blue functions and green strings — replaced here with luminance-only tokens
+// so code output matches the app's black-and-white system.
+const monoPrism = {
+  'code[class*="language-"]': {
+    color: '#E5E5E5',
+    background: 'none',
+    fontFamily: "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
+    textAlign: 'left',
+    whiteSpace: 'pre',
+    wordSpacing: 'normal',
+    wordBreak: 'normal',
+    lineHeight: '1.5',
+    tabSize: '4',
+    hyphens: 'none',
+  },
+  'pre[class*="language-"]': {
+    color: '#E5E5E5',
+    background: 'none',
+    fontFamily: "'JetBrains Mono', 'Fira Code', ui-monospace, monospace",
+    textAlign: 'left',
+    whiteSpace: 'pre',
+    wordSpacing: 'normal',
+    wordBreak: 'normal',
+    lineHeight: '1.5',
+    tabSize: '4',
+    hyphens: 'none',
+    overflow: 'auto',
+  },
+  comment: { color: '#737373', fontStyle: 'italic' },
+  prolog: { color: '#737373' },
+  doctype: { color: '#737373' },
+  cdata: { color: '#737373' },
+  punctuation: { color: '#A3A3A3' },
+  '.namespace': { opacity: '0.7' },
+  property: { color: '#FFFFFF', fontWeight: '600' },
+  tag: { color: '#FFFFFF' },
+  boolean: { color: '#FFFFFF' },
+  number: { color: '#D4D4D4' },
+  constant: { color: '#D4D4D4' },
+  symbol: { color: '#D4D4D4' },
+  deleted: { color: '#FFFFFF' },
+  selector: { color: '#D4D4D4' },
+  'attr-name': { color: '#D4D4D4' },
+  string: { color: '#D4D4D4' },
+  char: { color: '#D4D4D4' },
+  builtin: { color: '#FFFFFF' },
+  inserted: { color: '#D4D4D4' },
+  operator: { color: '#A3A3A3', background: 'none' },
+  entity: { color: '#D4D4D4' },
+  url: { color: '#D4D4D4' },
+  atrule: { color: '#FFFFFF' },
+  'attr-value': { color: '#D4D4D4' },
+  keyword: { color: '#FFFFFF', fontWeight: '600' },
+  function: { color: '#FAFAFA' },
+  'class-name': { color: '#FAFAFA' },
+  regex: { color: '#D4D4D4' },
+  important: { color: '#FFFFFF', fontWeight: 'bold' },
+  variable: { color: '#FFFFFF' },
+  bold: { fontWeight: 'bold' },
+  italic: { fontStyle: 'italic' },
+}
 
 /**
  * XSS Protection:
@@ -258,12 +320,12 @@ ${stringContent}
                   const isInline = !match && ((children?.length ?? 0) < 80);
                   return !isInline && match ? (
                     <SyntaxHighlighter
-                      style={oneDark}
+                      style={monoPrism}
                       language={match[1]}
                       PreTag="div"
                       customStyle={{
                         margin: '0.5rem 0',
-                        borderRadius: '0.5rem',
+                        borderRadius: '0px',
                         fontSize: '0.75rem',
                       }}
                       {...props}

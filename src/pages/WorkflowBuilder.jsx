@@ -130,8 +130,8 @@ export default function WorkflowBuilder() {
           <ArrowLeft size={16} />
         </button>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-accent/10 flex items-center justify-center">
-            <GitBranch size={16} className="text-accent" />
+          <div className="w-8 h-8 bg-zinc-500/10 flex items-center justify-center">
+            <GitBranch size={16} className="text-zinc-600 dark:text-zinc-300" />
           </div>
           <div>
             <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">
@@ -146,7 +146,7 @@ export default function WorkflowBuilder() {
 
       {/* Custom Suite Banner — shows when workflow was generated from suite */}
       {location.state?.preselectedAgents && (
-        <div className="mb-4 flex items-center gap-3 border px-4 py-3 animate-fade-in dark:bg-accent/5 dark:border-accent/20 bg-zinc-50 border-zinc-200">
+        <div className="mb-4 flex items-center gap-3 border px-4 py-3 animate-fade-in dark:bg-zinc-500/5 dark:border-zinc-500/20 bg-zinc-50 border-zinc-200">
           <p className="text-sm dark:text-text-secondary text-gray-700 leading-snug">
             <strong className="dark:text-text-primary text-gray-900">Suite imported!</strong>{' '}
             We've pre-loaded your custom suite agents. Add, remove or reorder them before saving.
@@ -165,7 +165,7 @@ export default function WorkflowBuilder() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="e.g. Research → Summary → LinkedIn Post"
-          className="w-full px-3 py-2.5 border text-sm transition-all dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/50"
+          className="w-full px-3 py-2.5 border text-sm transition-colors dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500"
         />
       </div>
 
@@ -182,7 +182,7 @@ export default function WorkflowBuilder() {
             onChange={(e) => setDescription(e.target.value)}
             placeholder="What does this workflow do?"
             rows={2}
-            className="w-full px-3 pr-10 py-2.5 border text-sm transition-all resize-none dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/50"
+            className="w-full px-3 pr-10 py-2.5 border text-sm transition-colors resize-none dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500"
           />
           {description.trim() && (
             <button
@@ -222,11 +222,11 @@ export default function WorkflowBuilder() {
               return (
                 <div key={`${agent.id}-${index}`} className="animate-fade-in">
                   <div className="flex items-center gap-3 p-3 border dark:bg-surface-card dark:border-border bg-white border-gray-200">
-                    <div className="w-6 h-6 bg-accent/10 flex items-center justify-center text-[11px] font-bold text-accent flex-shrink-0">
+                    <div className="w-6 h-6 bg-zinc-500/10 flex items-center justify-center text-[11px] font-bold text-zinc-600 dark:text-zinc-300 flex-shrink-0">
                       {index + 1}
                     </div>
-                    <div className="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <IconComponent size={15} className="text-accent" />
+                    <div className="w-8 h-8 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+                      <IconComponent size={15} className="text-zinc-600 dark:text-zinc-300" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-medium dark:text-text-primary text-gray-900 truncate">
@@ -268,10 +268,10 @@ export default function WorkflowBuilder() {
             <button
               id="add-agent-btn"
               onClick={() => setDropdownOpen((o) => !o)}
-              className="w-full flex items-center justify-between gap-2 px-4 py-2.5 border text-sm font-semibold transition-all duration-200 dark:bg-surface-card dark:border-border dark:text-text-secondary dark:hover:border-accent/40 dark:hover:text-text-primary bg-white border-gray-200 text-gray-600 hover:border-accent/30 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
+              className="w-full flex items-center justify-between gap-2 px-4 py-2.5 border text-sm font-semibold transition-colors duration-200 dark:bg-surface-card dark:border-border dark:text-text-secondary dark:hover:border-zinc-400 dark:hover:text-text-primary bg-white border-gray-200 text-gray-600 hover:border-zinc-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500"
             >
               <span className="flex items-center gap-2">
-                <Plus size={14} className="text-accent" />
+                <Plus size={14} className="text-zinc-500 dark:text-zinc-400" />
                 Add {selectedAgents.length === 0 ? 'first' : 'next'} agent
               </span>
               <ChevronDown
@@ -288,7 +288,7 @@ export default function WorkflowBuilder() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search agents by name or category..."
-                    className="w-full px-3 py-2 border text-xs transition-all duration-200 dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+                    className="w-full px-3 py-2 border text-xs transition-colors duration-200 dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500"
                   />
                 </div>
 
@@ -306,8 +306,8 @@ export default function WorkflowBuilder() {
                           onClick={() => addAgent(agent)}
                           className="w-full flex items-center gap-3 px-3 py-2 text-left transition-colors duration-150 dark:hover:bg-surface-hover dark:hover:text-text-primary hover:bg-gray-50 hover:text-gray-900"
                         >
-                          <div className="w-7 h-7 bg-accent/10 flex items-center justify-center flex-shrink-0">
-                            <IconComponent size={13} className="text-accent" />
+                          <div className="w-7 h-7 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+                            <IconComponent size={13} className="text-zinc-600 dark:text-zinc-300" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="text-sm font-medium dark:text-text-primary text-gray-900 truncate">
@@ -393,7 +393,7 @@ export default function WorkflowBuilder() {
             </div>
             <div className="flex justify-between">
               <span className="dark:text-text-muted text-gray-500">Estimated Runtime</span>
-              <span className="font-medium text-accent">~{estimatedRuntime} sec</span>
+              <span className="font-medium text-zinc-900 dark:text-white">~{estimatedRuntime} sec</span>
             </div>
           </div>
         </div>
@@ -412,7 +412,7 @@ export default function WorkflowBuilder() {
           id="save-workflow-btn"
           onClick={handleSave}
           disabled={!canSave || saving}
-          className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
+          className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-white bg-black hover:bg-zinc-800 dark:text-black dark:bg-white dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
         >
           {saving ? (
             <>
@@ -431,9 +431,9 @@ export default function WorkflowBuilder() {
           id="run-without-saving-btn"
           onClick={handleRunWithoutSaving}
           disabled={!canSave}
-          className="flex items-center gap-2 h-8 px-3 text-sm font-semibold dark:bg-surface-card dark:border-border dark:text-text-primary dark:hover:border-accent/40 bg-white border border-gray-200 text-gray-700 hover:border-zinc-400/60 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
+          className="flex items-center gap-2 h-8 px-3 text-sm font-semibold dark:bg-surface-card dark:border-border dark:text-text-primary dark:hover:border-zinc-400 bg-white border border-gray-200 text-gray-700 hover:border-zinc-400/60 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
         >
-          <Zap size={15} className="text-accent" />
+          <Zap size={15} className="text-zinc-600 dark:text-zinc-300" />
           Run Without Saving
         </button>
       </div>

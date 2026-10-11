@@ -17,12 +17,12 @@ export default function RecommendationResultCard({ rank, agent, result, onOpenAg
   return (
     <article className=" border bg-white border-gray-200 dark:bg-surface-card dark:border-border p-4 space-y-3">
       <div className="flex items-start gap-3">
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-accent text-xs font-bold text-black" aria-label={`Rank ${rank}`}>{rank}</span>
-        <div className="h-10 w-10 shrink-0 bg-accent/10 flex items-center justify-center"><Icon size={20} className="text-accent" aria-hidden="true" /></div>
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-black text-xs font-bold text-white dark:bg-white dark:text-black" aria-label={`Rank ${rank}`}>{rank}</span>
+        <div className="h-10 w-10 shrink-0 bg-zinc-500/10 flex items-center justify-center"><Icon size={20} className="text-zinc-600 dark:text-zinc-300" aria-hidden="true" /></div>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-text-primary">{agent?.name || 'Unnamed Agent'}</h3>
-            <span className="text-[10px] font-semibold px-2 py-0.5 bg-accent/10 text-accent border border-accent/20">{result.matchPercentage}% match</span>
+            <span className="text-[10px] font-semibold px-2 py-0.5 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 border border-zinc-500/20">{result.matchPercentage}% match</span>
           </div>
           <div className="mt-1 flex flex-wrap gap-1.5">
             <span className="text-[10px] font-medium px-2 py-0.5 bg-gray-100 text-gray-500 border border-gray-200 dark:bg-surface-input dark:text-text-muted dark:border-border">{agent?.category || 'Uncategorized'}</span>
@@ -38,7 +38,7 @@ export default function RecommendationResultCard({ rank, agent, result, onOpenAg
         </ul>
       </div>
       <div className="flex justify-end">
-        <Link to={`/agent/${agent.id}`} onClick={onOpenAgent} className="inline-flex items-center gap-1.5 bg-accent px-3 py-2 text-xs font-semibold text-black hover:bg-accent-hover transition-colors">
+        <Link to={`/agent/${agent.id}`} onClick={onOpenAgent} className="inline-flex items-center gap-1.5 bg-black px-3 py-2 text-xs font-semibold text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-colors">
           Open agent <ArrowRight size={13} aria-hidden="true" />
         </Link>
       </div>

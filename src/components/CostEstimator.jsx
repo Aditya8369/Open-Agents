@@ -84,7 +84,7 @@ export default function CostEstimator({ inputText = '', systemPrompt = '', model
       <div className="mt-2">
         <div className="flex justify-between text-[10px] mb-1">
           <span className="dark:text-text-muted text-gray-400">Context window</span>
-          <span className={`font-medium ${isOverLimit ? 'text-error' : isNearLimit ? 'text-warning' : 'dark:text-text-muted text-gray-400'}`}>
+          <span className={`font-medium ${isOverLimit ? 'text-zinc-900 dark:text-white' : isNearLimit ? 'text-zinc-600 dark:text-zinc-300' : 'dark:text-text-muted text-gray-400'}`}>
             {Math.round(ratio * 100)}%
           </span>
         </div>
@@ -92,10 +92,10 @@ export default function CostEstimator({ inputText = '', systemPrompt = '', model
           <div
             className={`h-full transition-all duration-300 ${
               isOverLimit
-                ? 'bg-error'
+                ? 'bg-zinc-900 dark:bg-white'
                 : isNearLimit
-                  ? 'bg-warning'
-                  : 'bg-accent'
+                  ? 'bg-zinc-500'
+                  : 'bg-black dark:bg-white'
             }`}
             style={{ width: `${Math.min(ratio * 100, 100)}%` }}
           />

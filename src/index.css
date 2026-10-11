@@ -34,7 +34,7 @@
   .btn {
     @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
       text-[13px] font-medium transition-colors duration-150
-      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500
       disabled:pointer-events-none disabled:opacity-40;
   }
 
@@ -42,7 +42,7 @@
   .btn-primary {
     @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
       text-[13px] font-medium transition-colors duration-150
-      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500
       disabled:pointer-events-none disabled:opacity-40
       bg-white text-black hover:bg-accent-hover
       dark:bg-white dark:text-black;
@@ -52,7 +52,7 @@
   .btn-secondary {
     @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
       text-[13px] font-medium transition-colors duration-150
-      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500
       disabled:pointer-events-none disabled:opacity-40
       border border-zinc-300 bg-transparent text-black hover:bg-black hover:text-white
       dark:border-border-light dark:text-text-secondary
@@ -62,7 +62,7 @@
   .btn-ghost {
     @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
       text-[13px] font-medium transition-colors duration-150
-      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500
       disabled:pointer-events-none disabled:opacity-40
       text-zinc-600 hover:bg-zinc-100 hover:text-black
       dark:text-text-secondary dark:hover:bg-white/[0.06] dark:hover:text-text-primary;
@@ -70,7 +70,7 @@
 
   .btn-icon {
     @apply inline-flex h-8 w-8 shrink-0 items-center justify-center transition-colors duration-150
-      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500
       text-zinc-500 hover:bg-zinc-100 hover:text-black
       dark:text-text-secondary dark:hover:bg-white/[0.06] dark:hover:text-text-primary;
   }
@@ -465,7 +465,7 @@ html:not(.dark) .markdown-output code {
 }
 
 .markdown-output blockquote {
-  @apply border-l-2 border-accent pl-4 italic my-3;
+  @apply border-l-2 border-zinc-400 pl-4 italic my-3;
 }
 
 .dark .markdown-output blockquote {

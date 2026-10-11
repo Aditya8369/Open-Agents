@@ -26,7 +26,7 @@ function AgentRow({ agentId, index, total, agents }) {
       {/* Connector line */}
       <div className="flex flex-col items-center self-stretch w-6">
         <div className={`w-px flex-1 dark:bg-border bg-gray-200 ${index === 0 ? 'opacity-0' : ''}`} />
-        <div className="w-6 h-6 bg-accent/10 flex items-center justify-center text-[10px] font-bold text-accent flex-shrink-0">
+        <div className="w-6 h-6 bg-zinc-500/10 flex items-center justify-center text-[10px] font-bold text-zinc-600 dark:text-zinc-300 flex-shrink-0">
           {index + 1}
         </div>
         <div className={`w-px flex-1 dark:bg-border bg-gray-200 ${index === total - 1 ? 'opacity-0' : ''}`} />
@@ -36,8 +36,8 @@ function AgentRow({ agentId, index, total, agents }) {
       <div
         className="flex items-center gap-3 flex-1 p-3 border my-1 dark:bg-surface-card dark:border-border bg-white border-gray-200"
       >
-        <div className="w-8 h-8 bg-accent/10 flex items-center justify-center flex-shrink-0">
-          <IconComponent size={15} className="text-accent" />
+        <div className="w-8 h-8 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+          <IconComponent size={15} className="text-zinc-600 dark:text-zinc-300" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-sm font-medium dark:text-text-primary text-gray-900 truncate">
@@ -116,7 +116,7 @@ export default function WorkflowDetail() {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-20 gap-3 animate-fade-in">
-        <Loader2 size={24} className="animate-spin text-accent" />
+        <Loader2 size={24} className="animate-spin text-zinc-900 dark:text-white" />
         <p className="text-sm dark:text-text-secondary text-gray-500">Loading workflow...</p>
       </div>
     )
@@ -131,7 +131,7 @@ export default function WorkflowDetail() {
         </p>
         <button
           onClick={() => navigate('/workflows')}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-200"
         >
           <ArrowLeft size={14} /> Back to Library
         </button>
@@ -155,8 +155,8 @@ export default function WorkflowDetail() {
         className=" border p-5 mb-5 dark:bg-surface-card dark:border-border bg-white border-gray-200"
       >
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
-            <GitBranch size={22} className="text-accent" />
+          <div className="w-12 h-12 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+            <GitBranch size={22} className="text-zinc-600 dark:text-zinc-300" />
           </div>
           <div className="flex-1 min-w-0">
             <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-1">
@@ -178,7 +178,7 @@ export default function WorkflowDetail() {
               {usageCount}
             </span>
             <span className="text-xs dark:text-text-muted text-gray-400">runs</span>
-            <span className="text-[10px] font-medium px-1.5 py-0.5 bg-accent/10 text-accent border border-accent/20 ml-1">
+            <span className="text-[10px] font-medium px-1.5 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white border border-zinc-500/20 ml-1">
               live
             </span>
           </div>
@@ -194,7 +194,7 @@ export default function WorkflowDetail() {
           <button
             id="run-workflow-btn"
             onClick={handleRun}
-            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover transition-all duration-200 active:scale-[0.97] "
+            className="flex items-center gap-2 h-8 px-3 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all duration-200 active:scale-[0.97] "
           >
             <Zap size={15} />
             Run Workflow

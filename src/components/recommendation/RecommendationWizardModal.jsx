@@ -87,7 +87,7 @@ export default function RecommendationWizardModal({ agents = [], isOpen, onClose
         <header className="shrink-0 border-b border-gray-200 p-5 dark:border-border">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-accent">Smart matching</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Smart matching</p>
               <h1 id="recommendation-wizard-title" ref={headingRef} tabIndex={-1} className="mt-1 text-xl font-bold text-gray-900 outline-none dark:text-text-primary">{wizard.hasCompleted ? 'Recommended agents for you' : 'Find the right agent'}</h1>
               <p id="recommendation-wizard-description" className="mt-1 text-xs text-gray-500 dark:text-text-secondary">Answer a few questions for deterministic, rule-based recommendations.</p>
             </div>
@@ -95,7 +95,7 @@ export default function RecommendationWizardModal({ agents = [], isOpen, onClose
           </div>
           <div className="mt-4" aria-label={wizard.hasCompleted ? 'Results ready' : `Step ${wizard.currentStepIndex + 1} of ${TOTAL_STEPS}`}>
             <div className="mb-1 flex justify-between text-[11px] font-medium text-gray-500 dark:text-text-muted"><span>{wizard.hasCompleted ? 'Results' : `Step ${wizard.currentStepIndex + 1} of ${TOTAL_STEPS}`}</span><span>{Math.round(progress)}%</span></div>
-            <div className="h-2 bg-gray-100 dark:bg-surface-input"><div className="h-full bg-accent transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${progress}%` }} /></div>
+            <div className="h-2 bg-gray-100 dark:bg-surface-input"><div className="h-full bg-zinc-900 dark:bg-white transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${progress}%` }} /></div>
           </div>
         </header>
         <main className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6">
@@ -104,10 +104,10 @@ export default function RecommendationWizardModal({ agents = [], isOpen, onClose
         {!wizard.hasCompleted && (
           <footer className="shrink-0 border-t border-gray-200 bg-white p-4 dark:border-border dark:bg-surface-card">
             <div className="flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <button type="button" onClick={wizard.previousStep} disabled={!canGoBack} className=" border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:border-accent/40 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-surface-input dark:border-border dark:text-text-primary">Back</button>
+              <button type="button" onClick={wizard.previousStep} disabled={!canGoBack} className=" border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:border-zinc-400 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-surface-input dark:border-border dark:text-text-primary dark:hover:border-zinc-400">Back</button>
               <div className="flex flex-col-reverse gap-2 sm:flex-row">
-                {wizard.currentStepIndex > 1 && <button type="button" onClick={isLastStep ? wizard.completeWizard : wizard.nextStep} className=" px-4 py-2.5 text-sm font-semibold text-gray-500 transition-colors hover:text-accent dark:text-text-secondary">Skip</button>}
-                <button type="button" onClick={isLastStep ? wizard.completeWizard : wizard.nextStep} className=" bg-accent px-4 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-accent-hover">{isLastStep ? 'Show results' : 'Next'}</button>
+                {wizard.currentStepIndex > 1 && <button type="button" onClick={isLastStep ? wizard.completeWizard : wizard.nextStep} className=" px-4 py-2.5 text-sm font-semibold text-gray-500 transition-colors hover:text-black dark:text-text-secondary dark:hover:text-white">Skip</button>}
+                <button type="button" onClick={isLastStep ? wizard.completeWizard : wizard.nextStep} className=" bg-black px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">{isLastStep ? 'Show results' : 'Next'}</button>
               </div>
             </div>
           </footer>

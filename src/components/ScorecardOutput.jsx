@@ -164,7 +164,7 @@ export default function ScorecardOutput({ data }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {Array.isArray(parsed?.strengths) && parsed.strengths.length > 0 && (
           <div className="p-4 dark:bg-surface-card bg-white border dark:border-border border-gray-200">
-            <h3 className="text-sm font-semibold text-success mb-2">
+            <h3 className="text-sm font-semibold text-zinc-600 dark:text-zinc-300 mb-2">
               Top Strengths
             </h3>
             <div className="flex flex-wrap gap-1.5">
@@ -182,7 +182,7 @@ export default function ScorecardOutput({ data }) {
 
         {Array.isArray(parsed?.gaps) && parsed.gaps.length > 0 && (
           <div className="p-4 dark:bg-surface-card bg-white border dark:border-border border-gray-200">
-            <h3 className="text-sm font-semibold text-error mb-2">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white mb-2">
               Top Gaps
             </h3>
             <div className="flex flex-wrap gap-1.5">

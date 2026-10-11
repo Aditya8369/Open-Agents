@@ -94,7 +94,7 @@ function PublishModal({ agents, onClose, onPublished }) {
   const inputClass = `w-full h-8 px-3 border text-sm transition-all
     dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted
     bg-white border-gray-200 text-gray-900 placeholder-gray-400
-    focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/50`
+    focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500`
 
   return (
     <div
@@ -183,7 +183,7 @@ function PublishModal({ agents, onClose, onPublished }) {
           <button
             onClick={handlePublish}
             disabled={!canPublish}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
           >
             <UploadCloud size={15} />
             Publish
@@ -197,14 +197,14 @@ function PublishModal({ agents, onClose, onPublished }) {
 function ListingCard({ listing, onImport, onRate, imported }) {
   return (
     <div
-      className=" border p-4 flex flex-col gap-2.5 transition-colors dark:bg-surface-card dark:border-border dark:hover:border-accent/40 bg-white border-gray-200 hover:border-accent/40"
+      className=" border p-4 flex flex-col gap-2.5 transition-colors dark:bg-surface-card dark:border-border dark:hover:border-zinc-400 bg-white border-gray-200 hover:border-zinc-400"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <h3 className="text-sm font-semibold dark:text-text-primary text-gray-900 truncate">{listing.name}</h3>
           <p className="text-[11px] dark:text-text-muted text-gray-400">by {listing.author}</p>
         </div>
-        <span className="flex-shrink-0 px-2 py-0.5 text-[10px] font-medium bg-accent/10 text-accent">
+        <span className="flex-shrink-0 px-2 py-0.5 text-[10px] font-medium bg-zinc-500/10 text-zinc-900 dark:text-white">
           {listing.category}
         </span>
       </div>
@@ -233,7 +233,7 @@ function ListingCard({ listing, onImport, onRate, imported }) {
           </span>
           <button
             onClick={() => onImport(listing.id)}
-            className="flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold transition-colors bg-accent/10 text-accent hover:bg-accent hover:text-black"
+            className="flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold transition-colors bg-zinc-500/10 text-zinc-900 hover:bg-zinc-900 hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black"
           >
             {imported ? <Check size={11} /> : <Download size={11} />}
             {imported ? 'Imported' : 'Import'}
@@ -295,15 +295,15 @@ export default function MarketplacePage() {
   const inputClass = `h-8 px-3 border text-sm transition-all
     dark:bg-surface-card dark:border-border dark:text-text-primary dark:placeholder-text-muted
     bg-white border-gray-200 text-gray-900 placeholder-gray-400
-    focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/50`
+    focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500`
 
   return (
     <div className="max-w-5xl mx-auto animate-fade-in">
       {/* Header */}
       <div className="flex items-center justify-between gap-3 mb-5 flex-wrap">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-accent/10 flex items-center justify-center">
-            <Store size={16} className="text-accent" />
+          <div className="w-8 h-8 bg-zinc-500/10 flex items-center justify-center">
+            <Store size={16} className="text-zinc-600 dark:text-zinc-300" />
           </div>
           <div>
             <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">Agent Marketplace</h1>
@@ -314,7 +314,7 @@ export default function MarketplacePage() {
         </div>
         <button
           onClick={() => setShowPublish(true)}
-          className="flex items-center gap-1.5 h-8 px-3 text-sm font-semibold text-black bg-accent hover:bg-accent-hover transition-all active:scale-[0.98]"
+          className="flex items-center gap-1.5 h-8 px-3 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all active:scale-[0.98]"
         >
           <UploadCloud size={14} />
           Publish to Marketplace

@@ -15,7 +15,7 @@ export default function AboutHero() {
 
         {/* Project Title */}
         <h1 id="about-hero-title" className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight dark:text-white text-gray-900 leading-tight">
-          Welcome to <span className="text-accent">OpenAgents</span>
+          Welcome to <span className="text-zinc-900 dark:text-white">OpenAgents</span>
         </h1>
 
         {/* Short Project Overview & Mission Statement */}
@@ -26,7 +26,7 @@ export default function AboutHero() {
         {/* Mission Card */}
         <div className="p-4 sm:p-6 panel p-4 text-left max-w-2xl mx-auto">
           <div className="flex items-start gap-3">
-            <div className="p-2 bg-zinc-500/10 text-accent shrink-0 mt-0.5">
+            <div className="p-2 bg-zinc-500/10 text-zinc-600 dark:text-zinc-300 shrink-0 mt-0.5">
               <Sparkles size={20} />
             </div>
             <div>
@@ -72,15 +72,15 @@ export default function AboutHero() {
         {/* Quick Highlights / Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t dark:border-white/10 border-gray-200/80">
           <div className="p-3 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-accent">162+</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">162+</div>
             <div className="text-xs dark:text-text-secondary text-gray-500 font-medium">Ready-to-use Agents</div>
           </div>
           <div className="p-3 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-accent">4</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">4</div>
             <div className="text-xs dark:text-text-secondary text-gray-500 font-medium">AI Providers</div>
           </div>
           <div className="p-3 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-accent">100%</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">100%</div>
             <div className="text-xs dark:text-text-secondary text-gray-500 font-medium">Browser Privacy</div>
           </div>
         </div>

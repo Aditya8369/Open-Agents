@@ -469,7 +469,7 @@ const handleRun = async () => {
       </Link>
 
       <div className="mt-2 mb-6 p-4 border bg-gray-50 dark:bg-zinc-900 dark:border-zinc-800 text-gray-900 dark:text-gray-100">
-        <h3 className="text-xl font-bold tracking-tight mb-3 text-accent">
+        <h3 className="text-xl font-bold tracking-tight mb-3 text-zinc-900 dark:text-white">
           Version History
           </h3>
         {versionHistory.length === 0 ? (
@@ -496,8 +496,8 @@ const handleRun = async () => {
 
       {/* Agent Header */}
       <div className="flex items-start gap-4 mb-5">
-        <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
-          <IconComponent size={24} className="text-accent" />
+        <div className="w-12 h-12 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+          <IconComponent size={24} className="text-zinc-900 dark:text-white" />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -509,7 +509,7 @@ const handleRun = async () => {
             >
               {agent.category}
             </span>
-            <span className="text-[10px] font-medium px-2 py-0.5 bg-accent/10 text-accent border border-accent/20">
+            <span className="text-[10px] font-medium px-2 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white border border-zinc-500/20">
               {providerLabels[agent.provider] || agent.provider}
             </span>
           </div>
@@ -520,7 +520,7 @@ const handleRun = async () => {
         <button
           onClick={() => setHistoryPanelOpen(true)}
           title="Prompt History & Favorites"
-          className="p-2 dark:text-text-muted text-gray-500 hover:text-accent hover:bg-accent/10 transition-colors"
+          className="p-2 dark:text-text-muted text-gray-500 hover:text-black dark:hover:text-white hover:bg-zinc-500/10 transition-colors"
         >
           <History size={18} />
         </button>
@@ -540,7 +540,7 @@ const handleRun = async () => {
           onClick={() => setViewMode("code")}
           className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             viewMode === "code"
-              ? "bg-accent text-black "
+              ? "bg-black dark:bg-white text-white dark:text-black "
               : "dark:text-text-secondary text-gray-500 hover:dark:text-text-primary hover:text-gray-900"
           }`}
         >
@@ -550,7 +550,7 @@ const handleRun = async () => {
           onClick={() => setViewMode("preview")}
           className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             viewMode === "preview"
-              ? "bg-accent text-black "
+              ? "bg-black dark:bg-white text-white dark:text-black "
               : "dark:text-text-secondary text-gray-500 hover:dark:text-text-primary hover:text-gray-900"
           }`}
         >
@@ -612,7 +612,7 @@ const handleRun = async () => {
           <div key={input.id}>
             <label className="block text-xs font-medium dark:text-text-secondary text-gray-600 mb-1.5">
               {input.label}
-              {input.required && <span className="text-error ml-0.5">*</span>}
+              {input.required && <span className="text-zinc-900 dark:text-white ml-0.5">*</span>}
             </label>
 
             {input.type === "text" && (
@@ -622,7 +622,7 @@ const handleRun = async () => {
                   value={inputs[input.id] || ""}
                   onChange={(e) => updateInput(input.id, e.target.value)}
                   placeholder={input.placeholder}
-                  className="w-full h-9 pl-3 pr-10 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:dark:text-text-muted text-gray-500 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full h-9 pl-3 pr-10 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:dark:text-text-muted text-gray-500 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                 />
                 <VoiceInput
                   value={inputs[input.id] || ""}
@@ -649,7 +649,7 @@ const handleRun = async () => {
 }}
                   placeholder={input.placeholder}
                   rows={4}
-                  className="w-full pl-3 pr-10 py-2 text-sm transition-colors resize-none overflow-hidden dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full pl-3 pr-10 py-2 text-sm transition-colors resize-none overflow-hidden dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                 />
                 <VoiceInput
                   value={inputs[input.id] || ""}
@@ -684,7 +684,7 @@ const handleRun = async () => {
                   onChange={(e) => updateInput(input.id, e.target.value)}
                   placeholder={input.placeholder}
                   rows={8}
-                  className="w-full pl-3 pr-10 py-2 text-xs font-mono transition-colors resize-y leading-relaxed dark:bg-[#0A0A0A] dark:border-border dark:text-zinc-300 dark:placeholder:text-text-muted bg-gray-900 border border-gray-700 text-zinc-400 placeholder:text-gray-500 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full pl-3 pr-10 py-2 text-xs font-mono transition-colors resize-y leading-relaxed dark:bg-[#0A0A0A] dark:border-border dark:text-zinc-300 dark:placeholder:text-text-muted bg-gray-900 border border-gray-700 text-zinc-400 placeholder:text-gray-500 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                   spellCheck={false}
                 />
                 <VoiceInput
@@ -726,8 +726,8 @@ const handleRun = async () => {
                       className={`px-3 py-1.5 text-xs font-medium transition-colors border
                         ${
                           selected
-                            ? "bg-accent/15 text-accent border-accent/30"
-                            : "dark:bg-surface-input dark:text-text-secondary dark:border-border dark:hover:border-accent/30 bg-gray-50 text-gray-500 border-gray-200 hover:border-zinc-400/60"
+                            ? "bg-zinc-900/10 text-zinc-900 border-zinc-900 dark:bg-white/10 dark:text-white dark:border-white"
+                            : "dark:bg-surface-input dark:text-text-secondary dark:border-border dark:hover:border-zinc-400 bg-gray-50 text-gray-500 border-gray-200 hover:border-zinc-400/60"
                         }`}
                     >
                       {selected && "✓ "}
@@ -747,7 +747,7 @@ const handleRun = async () => {
 <div className="mb-4 flex items-center gap-2 flex-wrap">
   <button
     onClick={handleFillExample}
-    className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent font-semibold border border-accent/20 hover:bg-accent/20 hover:border-accent/30 hover:gap-3 transition-all duration-200"
+    className="inline-flex items-center gap-2 px-3 py-1.5 bg-zinc-500/10 text-zinc-900 dark:text-white font-semibold border border-zinc-500/20 hover:bg-zinc-500/20 hover:border-zinc-400 dark:hover:border-zinc-400 hover:gap-3 transition-all duration-200"
   >
     Try an example
   </button>
@@ -755,7 +755,7 @@ const handleRun = async () => {
     onClick={handleSavePrompt}
     disabled={!getPrimaryPromptInput()}
     title="Save this prompt to your Prompt History"
-    className="inline-flex items-center gap-2 px-3 py-1.5 dark:bg-surface-input bg-gray-100 dark:text-text-secondary text-gray-600 font-semibold border dark:border-border border-gray-200 hover:border-accent/30 hover:text-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-200"
+    className="inline-flex items-center gap-2 px-3 py-1.5 dark:bg-surface-input bg-gray-100 dark:text-text-secondary text-gray-600 font-semibold border dark:border-border border-gray-200 hover:border-zinc-400 dark:hover:border-zinc-400 hover:text-black dark:hover:text-white disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-200"
   >
     <History size={14} />
     Save Prompt
@@ -771,7 +771,7 @@ const handleRun = async () => {
           className="w-full flex items-center justify-between px-4 py-3 text-left group"
         >
           <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-accent" />
+            <Sparkles size={14} className="text-zinc-500 dark:text-zinc-400" />
             <span className="text-xs font-semibold dark:text-text-primary text-gray-700">
               Prompt Playground
             </span>
@@ -819,7 +819,7 @@ const handleRun = async () => {
                 {isPromptModified && (
                   <button
                     onClick={() => setCustomPrompt(agent.systemPrompt)}
-                    className="flex items-center gap-1 text-[10px] font-medium text-accent hover:text-accent-hover transition-colors"
+                    className="flex items-center gap-1 text-[10px] font-medium text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
                     title="Reset to default prompt"
                   >
                     <RotateCw size={10} />
@@ -834,7 +834,7 @@ const handleRun = async () => {
                 onChange={(e) => setCustomPrompt(e.target.value)}
                 rows={10}
                 spellCheck={false}
-                className="w-full pl-3 pr-10 py-2.5 text-xs font-mono leading-relaxed transition-colors resize-y dark:bg-[#0A0A0A] dark:border-border dark:text-text-secondary text-gray-600 dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-700 placeholder:text-gray-400 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                className="w-full pl-3 pr-10 py-2.5 text-xs font-mono leading-relaxed transition-colors resize-y dark:bg-[#0A0A0A] dark:border-border dark:text-text-secondary text-gray-600 dark:placeholder:text-text-muted bg-gray-50 border border-gray-200 text-gray-700 placeholder:text-gray-400 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                 placeholder="Enter your custom system prompt..."
               />
               <VoiceInput
@@ -860,11 +860,11 @@ const handleRun = async () => {
           className="w-full flex items-center justify-between px-4 py-3 text-left group"
         >
           <div className="flex items-center gap-2">
-            <Zap size={14} className="text-accent" />
+            <Zap size={14} className="text-zinc-900 dark:text-white" />
             <span className="text-xs font-semibold dark:text-text-primary text-gray-700">
               Model Analyser
             </span>
-            <span className="text-[10px] font-medium px-1.5 py-0.5 bg-accent/10 text-accent border border-accent/20">
+            <span className="text-[10px] font-medium px-1.5 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white border border-zinc-500/20">
               Beta
             </span>
           </div>
@@ -897,7 +897,7 @@ const handleRun = async () => {
               </button>
             )}
             {analyserLoading && (
-              <div className="flex items-center gap-2 text-xs text-accent">
+              <div className="flex items-center gap-2 text-xs text-zinc-900 dark:text-white">
                 <Loader2 size={14} className="animate-spin" />
                 Analysing best models for this agent...
               </div>
@@ -912,7 +912,7 @@ const handleRun = async () => {
                 />
                 <button
                   onClick={() => setModelRecommendation(null)}
-                  className="mt-2 text-[10px] text-accent hover:underline"
+                  className="mt-2 text-[10px] text-zinc-900 dark:text-white hover:underline"
                 >
                   ↺ Re-analyse
                 </button>
@@ -936,7 +936,7 @@ const handleRun = async () => {
           <button
             onClick={handleRun}
             disabled={!canRun()}
-            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
+            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 active:scale-[0.98]"
           >
             <Zap size={16} />
             Run Agent
@@ -995,14 +995,14 @@ const handleRun = async () => {
             <br />
             Please check and update your API key.<br />
             <button
-              className="underline text-accent"
+              className="underline text-zinc-900 dark:text-white"
               onClick={() => window.dispatchEvent(new CustomEvent("open-api-key-bar"))}
             >
               Update API Key
             </button>
             <span> or </span>
             <button
-              className="underline text-accent"
+              className="underline text-zinc-900 dark:text-white"
               onClick={() => window.location.reload()}
             >
               Reloads page after an invalid API key error
@@ -1022,8 +1022,8 @@ const handleRun = async () => {
       {loading && !isStreaming && (
         <div className=" border p-6 dark:bg-surface-card dark:border-border bg-white border-gray-200 text-center animate-fade-in">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Loader2 size={16} className="animate-spin text-accent" />
-            <span className="text-xs font-medium text-accent">
+            <Loader2 size={16} className="animate-spin text-zinc-900 dark:text-white" />
+            <span className="text-xs font-medium text-zinc-900 dark:text-white">
               Connecting to API...
             </span>
           </div>
@@ -1039,10 +1039,10 @@ const handleRun = async () => {
             <span className="eyebrow">
               Output
             </span>
-            <span className="flex items-center gap-1.5 text-[11px] font-medium text-accent">
+            <span className="flex items-center gap-1.5 text-[11px] font-medium text-zinc-900 dark:text-white">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 bg-accent"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full bg-zinc-400 dark:bg-white opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 bg-zinc-600 dark:bg-white"></span>
               </span>
               Streaming....
             </span>
@@ -1051,7 +1051,7 @@ const handleRun = async () => {
             <div className="markdown-output text-sm dark:text-text-primary text-gray-900">
               <pre className="whitespace-pre-wrap font-sans leading-relaxed">
                 {streamingOutput}
-                <span className="inline-block w-[2px] h-[1em] bg-accent animate-blink ml-0.5 align-middle" />
+                <span className="inline-block w-[2px] h-[1em] bg-zinc-900 dark:bg-white animate-blink ml-0.5 align-middle" />
               </pre>
             </div>
           </div>
@@ -1071,7 +1071,7 @@ const handleRun = async () => {
             <div className="flex items-center gap-2 mt-3">
   <button
     onClick={() => setShowModelSwitcher(!showModelSwitcher)}
-    className="flex items-center gap-2 h-8 px-3 text-sm bg-accent/10 hover:bg-accent/20 text-accent"
+    className="flex items-center gap-2 h-8 px-3 text-sm bg-zinc-500/10 hover:bg-zinc-500/20 text-zinc-900 dark:text-white"
   >
     <RotateCw size={14} />
     Try Different Model
@@ -1105,7 +1105,7 @@ const handleRun = async () => {
         setShowModelSwitcher(false);
         await handleRun();
       }}
-      className="h-8 px-3 bg-accent text-black"
+      className="h-8 px-3 bg-black dark:bg-white text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-zinc-200"
     >
       Run Again
     </button>
@@ -1117,7 +1117,7 @@ const handleRun = async () => {
             <RunRating agentId={agent.id} />
             <button
               onClick={handleSendToWorkflow}
-              className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-accent bg-accent/10 hover:bg-accent/20 transition-colors border border-accent/20"
+              className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-zinc-900 dark:text-white bg-zinc-500/10 hover:bg-zinc-500/20 transition-colors border border-zinc-500/20"
             >
               <GitBranch size={16} />
               Send output to Workflow Builder →

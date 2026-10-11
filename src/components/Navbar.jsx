@@ -84,7 +84,7 @@ export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
           <button
             type="button"
             onClick={focusGlobalSearch}
-            className="group hidden h-8 min-w-0 flex-1 max-w-xs items-center gap-2 border px-2.5 text-left transition-colors sm:flex border-zinc-200 bg-zinc-50/60 hover:border-zinc-300 hover:bg-white dark:border-border dark:bg-surface-card/60 dark:hover:border-border-light dark:hover:bg-surface-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="group hidden h-8 min-w-0 flex-1 max-w-xs items-center gap-2 border px-2.5 text-left transition-colors sm:flex border-zinc-200 bg-zinc-50/60 hover:border-zinc-300 hover:bg-white dark:border-border dark:bg-surface-card/60 dark:hover:border-border-light dark:hover:bg-surface-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
             aria-label="Search agents"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5 shrink-0 text-zinc-400 dark:text-text-muted" aria-hidden="true">
@@ -159,7 +159,7 @@ export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
                         clearSession()
                         setShowSpendPopup(false)
                       }}
-                      className="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-400 transition-colors hover:text-error dark:text-text-muted"
+                      className="inline-flex items-center gap-1 font-mono text-[10px] text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"
                     >
                       <RotateCcw size={10} />
                       Reset

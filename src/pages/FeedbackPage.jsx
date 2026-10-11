@@ -43,15 +43,15 @@ export default function FeedbackPage() {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col border border-zinc-200 bg-white p-4 transition-colors hover:border-accent/40 dark:border-border dark:bg-surface-card"
+            className="group flex flex-col border border-zinc-200 bg-white p-4 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 dark:border-border dark:bg-surface-card"
           >
             <div className="mb-4 flex items-center justify-between">
-              <span className="flex h-8 w-8 items-center justify-center bg-accent/10 text-accent">
+              <span className="flex h-8 w-8 items-center justify-center bg-zinc-500/10 text-zinc-600 dark:text-zinc-300">
                 <Icon size={16} aria-hidden="true" />
               </span>
               <ArrowUpRight
                 size={15}
-                className="text-zinc-300 transition-colors group-hover:text-accent dark:text-text-muted"
+                className="text-zinc-300 transition-colors group-hover:text-black dark:group-hover:text-white dark:text-text-muted"
                 aria-hidden="true"
               />
             </div>

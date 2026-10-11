@@ -60,7 +60,7 @@ export default function SchedulerPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Clock size={20} className="text-accent" />
+            <Clock size={20} className="text-zinc-600 dark:text-zinc-300" />
             <h1 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">
               Scheduled Agents
             </h1>
@@ -74,7 +74,7 @@ export default function SchedulerPage() {
         {notifStatus === 'default' && (
           <button
             onClick={handleRequestNotification}
-            className="flex items-center gap-1.5 h-8 px-3 text-xs font-medium bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+            className="flex items-center gap-1.5 h-8 px-3 text-xs font-medium text-zinc-900 bg-zinc-500/10 border border-zinc-500/20 hover:bg-zinc-500/20 dark:text-white dark:border-white/20 transition-colors"
           >
             <Zap size={13} />
             Enable notifications
@@ -91,8 +91,8 @@ export default function SchedulerPage() {
       {/* Empty state */}
       {jobs.length === 0 && (
         <div className="text-center py-16 border dark:bg-surface-card dark:border-border bg-white border-gray-200">
-          <div className="w-14 h-14 bg-accent/10 flex items-center justify-center mx-auto mb-4">
-            <Calendar size={24} className="text-accent" />
+          <div className="w-14 h-14 bg-zinc-500/10 flex items-center justify-center mx-auto mb-4">
+            <Calendar size={24} className="text-zinc-600 dark:text-zinc-300" />
           </div>
           <h3 className="text-sm font-semibold dark:text-text-primary text-gray-900 mb-2">
             No scheduled agents yet
@@ -122,7 +122,7 @@ export default function SchedulerPage() {
                   {/* Toggle */}
                   <button
                     onClick={() => toggleJob(job.id)}
-                    className={`flex-shrink-0 transition-colors ${job.enabled ? 'text-accent' : 'dark:text-text-muted text-gray-300'}`}
+                    className={`flex-shrink-0 transition-colors ${job.enabled ? 'text-zinc-900 dark:text-white' : 'dark:text-text-muted text-gray-300'}`}
                     title={job.enabled ? 'Disable' : 'Enable'}
                   >
                     {job.enabled ? <ToggleRight size={22} /> : <ToggleLeft size={22} />}
@@ -151,7 +151,7 @@ export default function SchedulerPage() {
                         Last run: {formatDate(job.lastRunAt)}
                       </span>
                       {job.enabled && (
-                        <span className="text-[11px] text-accent">
+                        <span className="text-[11px] text-zinc-900 dark:text-white">
                           Next: {formatNextRun(job.nextRunAt)}
                         </span>
                       )}
@@ -165,10 +165,10 @@ export default function SchedulerPage() {
                       onClick={() => runJob(job)}
                       disabled={isRunning}
                       title="Run now"
-                      className="p-1.5 dark:hover:bg-surface-hover hover:bg-gray-100 transition-colors dark:text-text-secondary text-gray-500 hover:text-accent disabled:opacity-40 disabled:cursor-not-allowed"
+                      className="p-1.5 dark:hover:bg-surface-hover hover:bg-gray-100 transition-colors dark:text-text-secondary text-gray-500 hover:text-black dark:hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       {isRunning
-                        ? <Loader2 size={15} className="animate-spin text-accent" />
+                        ? <Loader2 size={15} className="animate-spin text-zinc-900 dark:text-white" />
                         : <Play size={15} />
                       }
                     </button>
@@ -269,7 +269,7 @@ function ResultCard({ result, expanded, onToggle, onDelete }) {
         </span>
         <button
           onClick={onToggle}
-          className="text-[10px] text-accent hover:underline"
+          className="text-[10px] text-zinc-900 dark:text-white hover:underline"
         >
           {expanded ? 'Hide' : 'View'}
         </button>

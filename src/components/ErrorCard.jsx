@@ -19,20 +19,20 @@ if (typeof message === 'string' && message.includes('Rate limit')) {
   return (
     <div className={` border p-4 animate-fade-in
       ${color === 'error'
-        ? 'bg-error/5 border-error/20'
-        : 'bg-warning/5 border-warning/20'
+        ? 'bg-zinc-500/5 border-zinc-500/20'
+        : 'bg-zinc-500/5 border-zinc-500/20'
       }`}
     >
       <div className="flex items-start gap-3">
         <Icon
           size={18}
           className={`flex-shrink-0 mt-0.5 ${
-            color === 'error' ? 'text-error' : 'text-warning'
+            color === 'error' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'
           }`}
         />
         <div>
           <h4 className={`text-sm font-semibold mb-1 ${
-            color === 'error' ? 'text-error' : 'text-warning'
+            color === 'error' ? 'text-zinc-900 dark:text-white' : 'text-zinc-600 dark:text-zinc-300'
           }`}>
             {color === 'error' ? 'Error' : 'Warning'}
           </h4>

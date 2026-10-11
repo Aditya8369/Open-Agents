@@ -37,7 +37,7 @@ export default function SuggestedChainPills({ agent }) {
       className="mb-4 p-3 border dark:bg-surface-card dark:border-border bg-white border-gray-200"
     >
       <div className="flex items-center gap-1.5 mb-2">
-        <GitBranch size={12} className="text-accent" />
+        <GitBranch size={12} className="text-zinc-600 dark:text-zinc-300" />
         <span
           className="text-[11px] font-semibold uppercase tracking-wider dark:text-text-muted text-gray-400"
         >
@@ -52,7 +52,7 @@ export default function SuggestedChainPills({ agent }) {
               key={pred.id}
               onClick={() => handlePillClick(pred)}
               title={`Start a workflow: ${pred.name} → ${agent.name}`}
-              className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium border transition-all duration-150 active:scale-[0.97] dark:bg-surface-input dark:border-border dark:text-text-secondary dark:hover:border-accent/50 dark:hover:text-accent bg-gray-50 border-gray-200 text-gray-600 hover:border-zinc-400/60 hover:text-zinc-600 hover:bg-zinc-50"
+              className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium border transition-all duration-150 active:scale-[0.97] dark:bg-surface-input dark:border-border dark:text-text-secondary dark:hover:border-zinc-400 dark:hover:text-white bg-gray-50 border-gray-200 text-gray-600 hover:border-zinc-400/60 hover:text-zinc-600 hover:bg-zinc-50"
             >
               <IconComponent size={11} />
               {pred.name}

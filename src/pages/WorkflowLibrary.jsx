@@ -31,13 +31,13 @@ function WorkflowCard({ workflow, onRun, onView, onFork }) {
 
   return (
     <div
-      className="flex flex-col border border-zinc-200 bg-white p-3.5 transition-colors hover:border-accent/40 dark:border-border dark:bg-surface-card"
+      className="flex flex-col border border-zinc-200 bg-white p-3.5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 dark:border-border dark:bg-surface-card"
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center bg-accent/10">
-            <GitBranch size={13} className="text-accent" aria-hidden="true" />
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center bg-zinc-500/10">
+            <GitBranch size={13} className="text-zinc-600 dark:text-zinc-300" aria-hidden="true" />
           </div>
           <div>
             <h3 className="truncate text-[13px] font-semibold text-zinc-900 dark:text-text-primary">
@@ -202,7 +202,7 @@ export default function WorkflowLibrary() {
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
-            className="absolute inset-y-0 right-2 flex items-center px-1 text-zinc-400 transition-colors hover:text-accent dark:text-text-muted"
+            className="absolute inset-y-0 right-2 flex items-center px-1 text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"
             aria-label="Clear search"
           >
             <X size={14} />
@@ -213,14 +213,14 @@ export default function WorkflowLibrary() {
       {/* States */}
       {loading && (
         <div className="flex flex-col items-center justify-center gap-3 py-20">
-          <Loader2 size={20} className="animate-spin text-accent" aria-hidden="true" />
+          <Loader2 size={20} className="animate-spin text-zinc-900 dark:text-white" aria-hidden="true" />
           <p className="text-[13px] text-zinc-500 dark:text-text-secondary">Loading workflows…</p>
         </div>
       )}
 
       {error && !loading && (
-        <div className="animate-fade-in border border-error/25 bg-error/5 p-6 text-center">
-          <p className="mb-2 text-[13px] text-error">{error}</p>
+        <div className="animate-fade-in border border-zinc-500/25 bg-zinc-500/5 p-6 text-center">
+          <p className="mb-2 text-[13px] text-zinc-900 dark:text-white">{error}</p>
           <p className="font-mono text-[11px] text-zinc-400 dark:text-text-muted">
             Check that your Supabase credentials are configured in .env.local
           </p>

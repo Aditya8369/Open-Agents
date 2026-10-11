@@ -35,7 +35,7 @@ export default function AboutVision() {
   return (
     <section aria-labelledby="about-vision-title" className="mb-12">
       <div className="flex items-center gap-2 mb-3">
-        <Compass className="text-accent" size={22} />
+        <Compass className="text-zinc-600 dark:text-zinc-300" size={22} />
         <h2 id="about-vision-title" className="text-2xl sm:text-3xl font-bold dark:text-text-primary text-gray-900 tracking-tight">
           Project Vision & Future Roadmap
         </h2>
@@ -52,15 +52,15 @@ export default function AboutVision() {
           return (
             <div
               key={index}
-              className="group relative panel p-5 transition-colors hover:border-accent/40 duration-300 flex flex-col justify-between"
+              className="group relative panel p-5 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="p-2 bg-accent/15 text-accent transition-transform">
+                    <div className="p-2 bg-zinc-500/15 text-zinc-600 dark:text-zinc-300 transition-transform">
                       <Icon size={18} />
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-accent">
+                    <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
                       {item.phase}
                     </span>
                   </div>
@@ -75,7 +75,7 @@ export default function AboutVision() {
                   </span>
                 </div>
 
-                <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-2 group-hover:text-accent transition-colors">
+                <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary mb-2 group-hover:text-black dark:group-hover:text-white transition-colors">
                   {item.title}
                 </h3>
 

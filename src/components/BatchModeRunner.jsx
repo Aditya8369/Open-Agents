@@ -18,14 +18,14 @@ const MAX_BATCH_SIZE = 25
 
 const STATUS_COLORS = {
   waiting: 'dark:text-text-muted text-gray-400',
-  running: 'text-accent',
+  running: 'text-zinc-900 dark:text-white',
   done: 'text-zinc-400',
   failed: 'text-zinc-400',
 }
 
 function StatusIcon({ status }) {
   if (status === 'waiting') return <Clock size={13} className={STATUS_COLORS.waiting} />
-  if (status === 'running') return <Loader2 size={13} className="text-accent animate-spin" />
+  if (status === 'running') return <Loader2 size={13} className="text-zinc-900 dark:text-white animate-spin" />
   if (status === 'done') return <CheckCircle2 size={13} className={STATUS_COLORS.done} />
   if (status === 'failed') return <XCircle size={13} className={STATUS_COLORS.failed} />
   return null
@@ -210,7 +210,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
             <div key={input.id}>
               <label className="block text-xs font-medium dark:text-text-secondary text-gray-600 mb-1">
                 {input.label}
-                {input.required && <span className="text-error ml-0.5">*</span>}
+                {input.required && <span className="text-zinc-900 dark:text-white ml-0.5">*</span>}
               </label>
               {input.type === 'select' ? (
                 <CustomSelect
@@ -240,7 +240,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                         className={`px-3 py-1.5 text-xs font-medium transition-colors border
                           ${
                             selected
-                              ? 'bg-accent/15 text-accent border-accent/30'
+                              ? 'bg-zinc-900/10 text-zinc-900 border-zinc-900 dark:bg-white/10 dark:text-white dark:border-white'
                               : 'dark:bg-surface-input dark:text-text-secondary dark:border-border bg-white text-gray-500 border-gray-200'
                           }`}
                       >
@@ -260,7 +260,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                   className={`w-full px-3 py-2 text-sm transition-colors resize-y
                     dark:bg-surface-input dark:border-border dark:text-text-primary
                     bg-white border border-gray-200 text-gray-900
-                    focus:ring-1 focus:ring-accent focus:border-accent outline-none
+                    focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none
                     ${input.type === 'code' ? 'font-mono' : ''}`}
                 />
               ) : (
@@ -269,7 +269,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                   value={fixedInputs[input.id] ?? input.defaultValue ?? ''}
                   onChange={(e) => updateFixedInput(input.id, e.target.value)}
                   placeholder={input.placeholder}
-                  className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-white border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-white border border-gray-200 text-gray-900 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
                 />
               )}
             </div>
@@ -288,7 +288,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
           placeholder={'Item 1\nItem 2\nItem 3...'}
           rows={6}
           disabled={running}
-          className="w-full px-3 py-2.5 text-sm transition-colors resize-y dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none disabled:opacity-60"
+          className="w-full px-3 py-2.5 text-sm transition-colors resize-y dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none disabled:opacity-60"
         />
         <div className="flex items-center gap-3 mt-2">
           <button
@@ -322,7 +322,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                 type="checkbox"
                 checked={csvHasHeader}
                 onChange={handleToggleCsvHeader}
-                className="accent-accent"
+                className="accent-zinc-500"
               />
               First row is a header (not a data item)
             </label>
@@ -362,7 +362,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
           <button
             onClick={handleRun}
             disabled={!canRun()}
-            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold text-black bg-accent hover:bg-accent-hover disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-[0.98]"
+            className="flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 disabled:opacity-40 disabled:cursor-not-allowed transition-all active:scale-[0.98]"
           >
             <Zap size={16} />
             Run Batch ({items.length})
@@ -404,7 +404,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
               className=" border dark:bg-surface-card dark:border-border bg-white border-gray-200 overflow-hidden"
             >
               <div className="flex items-center gap-2 px-3 py-2 border-b dark:border-border border-gray-100">
-                <span className="flex items-center justify-center w-5 h-5 bg-accent/10 text-[10px] font-bold text-accent flex-shrink-0">
+                <span className="flex items-center justify-center w-5 h-5 bg-zinc-500/10 text-[10px] font-bold text-zinc-600 dark:text-zinc-300 flex-shrink-0">
                   {i + 1}
                 </span>
                 <span className="text-xs dark:text-text-primary text-gray-900 truncate flex-1">

@@ -10,9 +10,9 @@ export default function TokenCounter({ value = '', modelId = '' }) {
   const isOverLimit = ratio > 0.95
 
   const colorClass = isOverLimit
-    ? 'text-error'
+    ? 'text-zinc-900 dark:text-white'
     : isNearLimit
-      ? 'text-warning'
+      ? 'text-zinc-600 dark:text-zinc-300'
       : 'dark:text-text-muted text-gray-400'
 
   return (

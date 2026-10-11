@@ -44,7 +44,7 @@ export default function RecentRuns({ history, onRerun, onCopy, onDelete, onClear
         </div>
         <button
           onClick={onClearAll}
-          className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-400 transition-colors hover:text-error dark:text-text-muted"
+          className="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"
           aria-label="Clear all history"
         >
           Clear
@@ -55,7 +55,7 @@ export default function RecentRuns({ history, onRerun, onCopy, onDelete, onClear
         {history.map((run) => (
           <article
             key={run.id}
-            className="group border border-zinc-200 bg-white p-3 transition-colors hover:border-accent/40 dark:border-border dark:bg-surface-card"
+            className="group border border-zinc-200 bg-white p-3 transition-colors hover:border-zinc-400 dark:hover:border-zinc-400 dark:border-border dark:bg-surface-card"
           >
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">

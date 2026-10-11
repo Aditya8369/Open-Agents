@@ -125,13 +125,13 @@ export default function AutomationsPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2.5 mb-1.5">
-            <div className="w-9 h-9 bg-accent/15 flex items-center justify-center text-accent">
+            <div className="w-9 h-9 bg-zinc-500/15 flex items-center justify-center text-zinc-600 dark:text-zinc-300">
               <Clock size={20} className="animate-spin-slow" />
             </div>
             <h1 className="font-display text-[26px] font-semibold tracking-[-0.025em] text-zinc-900 dark:text-text-primary">
               Scheduled Automations
             </h1>
-            <span className="text-[11px] font-bold px-2.5 py-0.5 bg-zinc-500/20 text-accent border border-accent/30">
+            <span className="text-[11px] font-bold px-2.5 py-0.5 bg-zinc-500/20 text-zinc-700 border border-zinc-500/30 dark:text-zinc-300">
               Autopilot
             </span>
           </div>
@@ -144,7 +144,7 @@ export default function AutomationsPage() {
           {notificationBanner === 'default' && (
             <button
               onClick={requestNotificationPermission}
-              className="px-3.5 py-2 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 text-xs font-semibold text-zinc-900 border border-zinc-500/30 hover:bg-zinc-500/10 dark:text-white dark:border-white/30 transition-colors flex items-center gap-1.5"
             >
               <Zap size={14} />
               Enable Alerts
@@ -199,10 +199,10 @@ export default function AutomationsPage() {
 
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-accent/30 transition-colors">
+        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-400 dark:hover:border-zinc-400 transition-colors">
           <div className="flex items-center justify-between text-gray-400 mb-2">
             <span className="text-xs font-bold uppercase tracking-wider">Total Automations</span>
-            <Calendar size={16} className="text-accent" />
+            <Calendar size={16} className="text-zinc-900 dark:text-white" />
           </div>
           <div className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white tabular-nums">
             {totalCount}
@@ -253,7 +253,7 @@ export default function AutomationsPage() {
             placeholder="Search automations or agents..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full h-9 pl-9 pr-4 text-xs dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+            className="w-full h-9 pl-9 pr-4 text-xs dark:bg-surface-input dark:border-border bg-gray-50 border border-gray-200 outline-none focus:ring-1 focus:ring-zinc-500/40"
           />
         </div>
 
@@ -294,7 +294,7 @@ export default function AutomationsPage() {
       {/* Empty State */}
       {filtered.length === 0 && (
         <div className="text-center py-20 border dark:border-border border-gray-200 bg-white dark:bg-surface-card p-8">
-          <div className="w-16 h-16 bg-accent/10 flex items-center justify-center mx-auto mb-4 text-accent">
+          <div className="w-16 h-16 bg-zinc-500/10 flex items-center justify-center mx-auto mb-4 text-zinc-600 dark:text-zinc-300">
             <Clock size={28} />
           </div>
           <h3 className="text-base font-bold dark:text-white text-gray-900 mb-1">
@@ -310,7 +310,7 @@ export default function AutomationsPage() {
               setEditingAutomation(null)
               setIsCreateModalOpen(true)
             }}
-            className="px-5 py-2.5 text-xs font-bold text-black bg-accent hover:bg-accent-hover transition-colors"
+            className="px-5 py-2.5 text-xs font-bold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-colors"
           >
             Schedule Your First Agent
           </button>
@@ -341,7 +341,7 @@ export default function AutomationsPage() {
                       }`}>
                         {auto.enabled ? 'Active' : 'Paused'}
                       </span>
-                      <span className="text-[10px] font-semibold px-2 py-0.5 bg-accent/10 text-accent">
+                      <span className="text-[10px] font-semibold px-2 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white">
                         {auto.schedule} ({auto.cron})
                       </span>
                       {auto.emailNotification && (
@@ -353,7 +353,7 @@ export default function AutomationsPage() {
 
                     <button
                       onClick={() => handleToggle(auto.id)}
-                      className={`transition-colors ${auto.enabled ? 'text-accent' : 'text-gray-300 dark:text-gray-600'}`}
+                      className={`transition-colors ${auto.enabled ? 'text-zinc-900 dark:text-white' : 'text-gray-300 dark:text-gray-600'}`}
                       title={auto.enabled ? 'Pause Autopilot' : 'Resume Autopilot'}
                     >
                       {auto.enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
@@ -363,7 +363,7 @@ export default function AutomationsPage() {
                   {/* Title & Agent Info */}
                   <Link
                     to={`/automations/${auto.id}`}
-                    className="block group-hover:text-accent transition-colors"
+                    className="block group-hover:text-black dark:group-hover:text-white transition-colors"
                   >
                     <h3 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary line-clamp-1">
                       {auto.name}
@@ -386,7 +386,7 @@ export default function AutomationsPage() {
                     </div>
                     <div>
                       <span className="text-[10px] font-medium text-gray-400 block">Next Autopilot Trigger</span>
-                      <span className="font-medium text-accent">
+                      <span className="font-medium text-zinc-900 dark:text-white">
                         {auto.enabled ? formatCountdown(auto.nextRunAt) : 'Paused'}
                       </span>
                     </div>
@@ -399,7 +399,7 @@ export default function AutomationsPage() {
                     <button
                       onClick={() => handleRunNow(auto.id)}
                       disabled={isRunning}
-                      className="px-3 py-1.5 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent transition-colors flex items-center gap-1.5 disabled:opacity-50"
+                      className="px-3 py-1.5 text-xs font-semibold text-zinc-900 bg-zinc-500/10 hover:bg-zinc-500/20 border border-zinc-500/20 dark:text-white transition-colors flex items-center gap-1.5 disabled:opacity-50"
                       title="Execute Autopilot Run Now"
                     >
                       {isRunning ? <Loader2 size={13} className="animate-spin" /> : <Play size={13} />}

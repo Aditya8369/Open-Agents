@@ -26,8 +26,8 @@ export default function AgentPreviewPanel({ agent }) {
     <div className="space-y-4 animate-fade-in">
       {/* Agent identity */}
       <div className="flex items-start gap-4 p-4 border dark:bg-surface-card dark:border-border bg-white border-gray-200">
-        <div className="w-12 h-12 bg-accent/10 flex items-center justify-center flex-shrink-0">
-          <IconComponent size={24} className="text-accent" />
+        <div className="w-12 h-12 bg-zinc-500/10 flex items-center justify-center flex-shrink-0">
+          <IconComponent size={24} className="text-zinc-900 dark:text-white" />
         </div>
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -37,7 +37,7 @@ export default function AgentPreviewPanel({ agent }) {
             <span className="text-[10px] font-medium px-2 py-0.5 dark:bg-surface-input dark:text-text-muted dark:border-border bg-gray-100 text-gray-500 border border-gray-200">
               {agent.category}
             </span>
-            <span className="text-[10px] font-medium px-2 py-0.5 bg-accent/10 text-accent border border-accent/20">
+            <span className="text-[10px] font-medium px-2 py-0.5 bg-zinc-500/10 text-zinc-900 dark:text-white border border-zinc-500/20">
               {providerLabels[agent.provider] || agent.provider}
             </span>
             <span className="text-[10px] font-medium px-2 py-0.5 dark:bg-surface-input dark:text-text-muted dark:border-border bg-gray-100 text-gray-500 border border-gray-200">
@@ -67,7 +67,7 @@ export default function AgentPreviewPanel({ agent }) {
                     {input.label}
                   </span>
                   {input.required && (
-                    <span className="text-error text-xs">*</span>
+                    <span className="text-zinc-900 dark:text-white text-xs">*</span>
                   )}
                 </div>
                 {input.placeholder && (
@@ -96,7 +96,7 @@ export default function AgentPreviewPanel({ agent }) {
           className="w-full flex items-center justify-between px-4 py-3 text-left"
         >
           <div className="flex items-center gap-2">
-            <FileCode2 size={14} className="text-accent" />
+            <FileCode2 size={14} className="text-zinc-500 dark:text-zinc-400" />
             <span className="text-xs font-semibold dark:text-text-primary text-gray-700">
               System Prompt
             </span>

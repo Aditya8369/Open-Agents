@@ -36,7 +36,7 @@ const FeedbackPage = lazy(() => import('./pages/FeedbackPage'))
 function PageLoader() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
-      <Loader2 size={32} className="animate-spin text-accent" />
+      <Loader2 size={32} className="animate-spin text-zinc-900 dark:text-white" />
       <p className="text-sm dark:text-text-secondary text-gray-500">Loading...</p>
     </div>
   )

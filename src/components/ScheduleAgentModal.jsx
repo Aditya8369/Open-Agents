@@ -89,7 +89,7 @@ export default function ScheduleAgentModal({
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b dark:border-border border-gray-100 bg-zinc-500/10">
           <div className="flex items-center gap-2">
-            <Clock size={18} className="text-accent" />
+            <Clock size={18} className="text-zinc-900 dark:text-white" />
             <h2 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">
               Schedule Agent Autopilot
             </h2>
@@ -106,7 +106,7 @@ export default function ScheduleAgentModal({
         <div className="px-5 py-4 space-y-4 max-h-[70vh] overflow-y-auto custom-scrollbar">
           {/* Agent info */}
           <div className="flex items-center gap-3 p-3 dark:bg-surface-hover bg-gray-50">
-            <div className="w-8 h-8 bg-accent/15 flex items-center justify-center text-accent flex-shrink-0">
+            <div className="w-8 h-8 bg-zinc-500/15 flex items-center justify-center text-zinc-600 dark:text-zinc-300 flex-shrink-0">
               <Zap size={15} />
             </div>
             <div className="min-w-0">
@@ -127,7 +127,7 @@ export default function ScheduleAgentModal({
               value={label}
               onChange={e => setLabel(e.target.value)}
               placeholder="e.g. Daily SEO Analysis"
-              className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+              className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
             />
           </div>
 
@@ -144,8 +144,8 @@ export default function ScheduleAgentModal({
                   onClick={() => setSchedule(opt.value)}
                   className={`py-2 text-xs font-medium border transition-colors
                     ${schedule === opt.value
-                      ? 'border-accent bg-accent/10 text-accent font-semibold'
-                      : 'dark:border-border dark:text-text-secondary dark:hover:border-accent/40 border-gray-200 text-gray-600'
+                      ? 'border-zinc-900 bg-zinc-500/10 text-zinc-900 dark:border-white dark:text-white font-semibold'
+                      : 'dark:border-border dark:text-text-secondary dark:hover:border-zinc-400 border-gray-200 text-gray-600'
                     }`}
                 >
                   {opt.label}
@@ -162,7 +162,7 @@ export default function ScheduleAgentModal({
             <select
               value={selectedModel}
               onChange={e => setSelectedModel(e.target.value)}
-              className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+              className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-gray-50 border border-gray-200 text-gray-900 focus:ring-1 focus:ring-zinc-500/40 focus:border-zinc-500 outline-none"
             >
               {modelsForProvider.map(m => (
                 <option key={m.value} value={m.value}>{m.label}</option>
@@ -193,7 +193,7 @@ export default function ScheduleAgentModal({
                 type="checkbox"
                 checked={optInConsent}
                 onChange={e => setOptInConsent(e.target.checked)}
-                className="mt-0.5 text-accent"
+                className="mt-0.5 accent-zinc-500"
               />
               <span>Opt-in consent for encrypted key storage for automated autopilot runs.</span>
             </label>
@@ -207,7 +207,7 @@ export default function ScheduleAgentModal({
                 type="checkbox"
                 checked={emailNotification}
                 onChange={e => setEmailNotification(e.target.checked)}
-                className=" text-accent"
+                className="accent-zinc-500"
               />
             </label>
             {emailNotification && (
@@ -243,7 +243,7 @@ export default function ScheduleAgentModal({
             type="button"
             onClick={handleConfirm}
             disabled={saving}
-            className="flex items-center gap-2 h-8 px-3 text-xs font-bold text-black bg-accent hover:bg-accent-hover transition-all active:scale-[0.97]"
+            className="flex items-center gap-2 h-8 px-3 text-xs font-bold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all active:scale-[0.97]"
           >
             <Clock size={14} />
             {saving ? 'Activating...' : 'Activate Autopilot'}

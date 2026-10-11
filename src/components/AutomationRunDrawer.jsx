@@ -82,14 +82,14 @@ export default function AutomationRunDrawer({ run, isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopy}
-              className="p-2 text-gray-500 hover:text-accent hover:bg-gray-100 dark:hover:bg-surface-hover transition-colors"
+              className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 dark:hover:bg-surface-hover dark:hover:text-white transition-colors"
               title="Copy Output"
             >
               {copied ? <Check size={16} className="text-zinc-500" /> : <Copy size={16} />}
             </button>
             <button
               onClick={handleDownload}
-              className="p-2 text-gray-500 hover:text-accent hover:bg-gray-100 dark:hover:bg-surface-hover transition-colors"
+              className="p-2 text-gray-500 hover:text-black hover:bg-gray-100 dark:hover:bg-surface-hover dark:hover:text-white transition-colors"
               title="Download Markdown"
             >
               <Download size={16} />
