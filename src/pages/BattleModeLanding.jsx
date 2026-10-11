@@ -111,7 +111,7 @@ export default function BattleModeLanding() {
           >
             <Bot size={28} className={providers[2].color} />
             <span className={`text-sm font-bold ${providers[2].color}`}>{providers[2].name}</span>
-            <span className="text-[10px] dark:text-text-muted text-gray-700 dark:text-text-secondary dark:text-text-secondary uppercase tracking-widest">{providers[2].label}</span>
+            <span className="text-[10px] text-gray-700 dark:text-text-secondary uppercase tracking-widest">{providers[2].label}</span>
           </div>
 
           {/* VS */}
@@ -131,7 +131,7 @@ export default function BattleModeLanding() {
           >
             <Bot size={28} className={providers[3].color} />
             <span className={`text-sm font-bold ${providers[3].color}`}>{providers[3].name}</span>
-            <span className="text-[10px] dark:text-text-muted text-gray-700 dark:text-text-secondary dark:text-text-secondary uppercase tracking-widest">{providers[3].label}</span>
+            <span className="text-[10px] text-gray-700 dark:text-text-secondary uppercase tracking-widest">{providers[3].label}</span>
           </div>
         </div>
 
@@ -149,14 +149,14 @@ export default function BattleModeLanding() {
                   <span className="text-base sm:text-lg font-bold text-zinc-600 dark:text-zinc-400">{step.number}</span>
                 </div>
                 <div className="flex-1">
-                  <span className="text-[10px] font-bold uppercase tracking-widest dark:text-text-muted text-gray-700 dark:text-text-secondary">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-700 dark:text-text-secondary">
                     Step {idx + 1}
                   </span>
-                  <p className="text-base sm:text-lg font-semibold dark:text-text-muted text-gray-700 dark:text-text-secondary mt-0.5">
+                  <p className="text-base sm:text-lg font-semibold text-gray-700 dark:text-text-secondary mt-0.5">
                     {step.text}
                   </p>
                 </div>
-                <Icon size={18} className="dark:text-text-muted text-gray-700 dark:text-text-secondary flex-shrink-0" />
+                <Icon size={18} className="text-gray-700 dark:text-text-secondary flex-shrink-0" />
               </div>
             )
           })}
@@ -165,7 +165,7 @@ export default function BattleModeLanding() {
        {/* Start Button */}
         <button
           onClick={() => navigate('/battle/setup')}
-          className="flex items-center gap-2.5 px-8 py-4 text-base font-bold bg-gradient-to-r from-zinc-500 to-zinc-500 text-gray-950 hover:from-zinc-400 hover:to-zinc-400 hover: transition-all duration-200 battle-fade-in border border-zinc-400/20 hover:border-zinc-300/40 shadow-panel "
+          className="flex items-center gap-2.5 px-8 py-4 text-base font-bold bg-zinc-500 text-white hover:bg-zinc-400 transition-colors duration-200 battle-fade-in border border-zinc-400/20 hover:border-zinc-300/40 shadow-panel "
           style={{ animationDelay: '600ms' }}
         >
           <Swords size={18} className="text-zinc-600 dark:text-zinc-400" />

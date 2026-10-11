@@ -199,13 +199,13 @@ export function useScheduler({ autoRun = true } = {}) {
         duration: result.duration,
       })
       notify(
-        `✅ ${job.label} — Agent run complete`,
+        `Completed: ${job.label} — Agent run complete`,
         `${job.agentName} finished. Open OpenAgents to see the output.`
       )
     } catch (err) {
       errorMsg = err.message || 'Unknown error'
       notify(
-        `❌ ${job.label} — Agent run failed`,
+        `Failed: ${job.label} — Agent run failed`,
         `${job.agentName}: ${errorMsg}`
       )
     } finally {

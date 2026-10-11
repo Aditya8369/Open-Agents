@@ -398,7 +398,7 @@ function ActivityHeatmap({ data }) {
             {week.map((day) => (
               <div
                 key={day.date}
-                className={`h-[14px] w-[14px] -[3px] transition-all duration-300 ${getHeatmapIntensity(day.count)}`}
+                className={`h-[14px] w-[14px] transition-all duration-300 ${getHeatmapIntensity(day.count)}`}
                 title={`${day.date}: ${day.count} run${day.count !== 1 ? 's' : ''}`}
               />
             ))}
@@ -450,7 +450,7 @@ function TopAgentsChart({ agents, navigate }) {
             </div>
             <div className="h-2 bg-gray-100 dark:bg-white/5 overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-accent to-zinc-400 transition-all duration-700 ease-out group-hover:from-accent group-hover:to-zinc-400"
+                className="h-full bg-zinc-400 group-hover:bg-zinc-300 transition-[width,background-color] duration-700 ease-out"
                 style={{
                   width: `${pct}%`,
                   animationDelay: `${i * 80}ms`,

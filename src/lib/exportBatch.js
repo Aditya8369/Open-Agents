@@ -68,7 +68,7 @@ export function exportBatchAsMarkdown(agentName, results) {
 
   const sections = results
     .map((r, i) => {
-      const heading = `## Item ${i + 1} — ${r.status === 'done' ? '✅ Success' : r.status === 'failed' ? '❌ Failed' : '⏳ ' + r.status}`
+      const heading = `## Item ${i + 1} — ${r.status === 'done' ? 'Success' : r.status === 'failed' ? 'Failed' : 'Pending'}`
       const inputBlock = `**Input:**\n\n${r.input}`
       const bodyBlock =
         r.status === 'failed'

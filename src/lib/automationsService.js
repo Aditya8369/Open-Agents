@@ -163,7 +163,7 @@ export async function sendResendNotification({ to, automationName, agentName, ou
     agentName,
     status: status === 'failed' ? 'Failed' : 'Delivered',
     sentAt: Date.now(),
-    subject: `[Open Agents Hub] ${status === 'failed' ? '❌ Failed' : '✅ Completed'}: ${automationName}`,
+    subject: `[Open Agents Hub] ${status === 'failed' ? 'Failed' : 'Completed'}: ${automationName}`,
     preview: output ? output.slice(0, 180) + '...' : error || 'Run finished',
   }
 
@@ -190,7 +190,7 @@ export async function sendResendNotification({ to, automationName, agentName, ou
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #000000;">
               <div style="border-bottom: 2px solid #E5E5E5; padding-bottom: 12px; margin-bottom: 20px;">
-                <h2 style="margin: 0; color: #000000;">⏰ Open Agents Hub Autopilot Report</h2>
+                <h2 style="margin: 0; color: #000000;">Open Agents Hub Autopilot Report</h2>
                 <p style="margin: 4px 0 0 0; color: #9E9E9E; font-size: 14px;">Automation: <strong>${automationName}</strong> (${agentName})</p>
               </div>
               <div style="background: #FAFAFA; border: 1px solid #E4E4E4; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
@@ -295,7 +295,7 @@ const INITIAL_SEED_RUNS = [
 
 ## Meta Title & Description
 - **Title**: 10 Best AI Agents & Autopilot Workflows for Developers in 2026
-- **Meta Description**: Supercharge your dev stack. Learn how recurring AI agent automations and pgsodium encrypted keys let you automate code reviews, SEO, and study schedules.
+- **Meta Description**: Recurring AI agent automations and encrypted keys for automating code reviews, SEO, and study schedules.
 
 ## Header Hierarchy
 1. \`# 10 Best AI Agents for 2026\`
@@ -638,7 +638,7 @@ export async function runAutomationNow(automationId, options = {}) {
   // Trigger browser notification if supported
   if ('Notification' in window && Notification.permission === 'granted') {
     new Notification(
-      status === 'success' ? `✅ ${automation.name} Finished` : `❌ ${automation.name} Failed`,
+      status === 'success' ? `${automation.name} Finished` : `${automation.name} Failed`,
       {
         body: status === 'success' ? `Output generated in ${(duration / 1000).toFixed(1)}s` : errorMsg,
         icon: '/favicon.ico',
