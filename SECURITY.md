@@ -1,0 +1,52 @@
+# Security
+
+## How Open-Agents Keeps Your API Key Safe
+
+Open-Agents works on a simple principle — your API key never leaves your browser for core runs.
+
+Here is exactly what happens:
+
+- You paste your API key into the app
+- The app sends your request directly to OpenAI, Anthropic, or Google — no middleman
+- Your key is never saved anywhere — not in a database, not in cookies, not in localStorage
+- There is no backend server that sees your key for standard runs
+- There is no analytics or tracking of any kind
+
+To verify this yourself, check the files that handle your key:
+
+- `src/lib/llmAdapter.js`
+- `src/lib/useApiKey.js`
+
+Both are short and easy to read.
+
+> Note: optional backend features (workflows, scheduled automations) require explicit
+> opt-in before any key is stored server-side, encrypted at rest with row-level security.
+
+## Note for Contributors
+
+If you are contributing code, please do not add anything that:
+
+- Sends data to a third-party service
+- Logs or stores the API key anywhere
+- Adds analytics or tracking scripts
+
+Any PR that does this will be closed, even if it was not intentional.
+
+## Supported Versions
+
+| Version | Supported |
+|---------|-----------|
+| main branch | ✅ |
+| Older releases / forks | ❌ Best-effort only |
+
+## Found a Problem?
+
+If you find something that looks like a security issue, please **do not open a public GitHub issue**.
+
+Instead, use **GitHub > Security > Report a vulnerability** (private security advisory)
+for this repository. If that is unavailable, contact the maintainer privately —
+see [MAINTAINERS.md](./MAINTAINERS.md).
+
+Tell us what you found and how to reproduce it. We aim to respond within 48 hours.
+
+Thank you for keeping Open-Agents and its users safe. 🙏

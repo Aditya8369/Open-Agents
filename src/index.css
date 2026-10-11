@@ -1,0 +1,804 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Design system vocabulary
+   Small, opinionated set of primitives. Every surface in the app composes
+   these instead of re-inventing Tailwind strings, which is what keeps the
+   product feeling consistent rather than assembled.
+   ========================================================================== */
+@layer components {
+
+  /* ── Micro-labels ─────────────────────────────────────────────────────── */
+  .eyebrow {
+    @apply font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-400 dark:text-text-muted;
+  }
+
+  .kbd {
+    @apply inline-flex h-[18px] min-w-[18px] items-center justify-center border px-1 font-mono text-[10px]
+      border-zinc-300 text-zinc-500
+      dark:border-border-light dark:text-text-secondary;
+  }
+
+  /* ── Surfaces ─────────────────────────────────────────────────────────── */
+  .panel {
+    @apply border border-zinc-200 dark:border-border;
+  }
+
+  .panel-flush {
+    @apply border border-zinc-200 dark:border-border;
+  }
+
+  /* ── Buttons ──────────────────────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
+      text-[13px] font-medium transition-colors duration-150
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  /* Primary = solid white with black ink (inverted). */
+  .btn-primary {
+    @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
+      text-[13px] font-medium transition-colors duration-150
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      disabled:pointer-events-none disabled:opacity-40
+      bg-white text-black hover:bg-accent-hover
+      dark:bg-white dark:text-black;
+  }
+
+  /* Secondary = hairline outline that inverts to white on hover. */
+  .btn-secondary {
+    @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
+      text-[13px] font-medium transition-colors duration-150
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      disabled:pointer-events-none disabled:opacity-40
+      border border-zinc-300 bg-transparent text-black hover:bg-black hover:text-white
+      dark:border-border-light dark:text-text-secondary
+      dark:hover:bg-white dark:hover:text-black;
+  }
+
+  .btn-ghost {
+    @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
+      text-[13px] font-medium transition-colors duration-150
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      disabled:pointer-events-none disabled:opacity-40
+      text-zinc-600 hover:bg-zinc-100 hover:text-black
+      dark:text-text-secondary dark:hover:bg-white/[0.06] dark:hover:text-text-primary;
+  }
+
+  .btn-icon {
+    @apply inline-flex h-8 w-8 shrink-0 items-center justify-center transition-colors duration-150
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent
+      text-zinc-500 hover:bg-zinc-100 hover:text-black
+      dark:text-text-secondary dark:hover:bg-white/[0.06] dark:hover:text-text-primary;
+  }
+
+  /* ── Inputs ───────────────────────────────────────────────────────────── */
+  .field {
+    @apply h-8 w-full border px-2.5 text-[13px] transition-colors
+      border-zinc-300 bg-white text-black placeholder:text-zinc-400
+      focus:border-black focus:outline-none
+      dark:border-border dark:bg-surface-card dark:text-text-primary dark:placeholder:text-text-muted
+      dark:focus:border-white;
+  }
+
+  /* ── Filter chip ──────────────────────────────────────────────────────── */
+  .chip {
+    @apply inline-flex h-7 shrink-0 items-center gap-1.5 border px-2 font-mono text-[11px]
+      border-zinc-300 text-zinc-600 transition-colors
+      hover:border-black hover:text-black
+      dark:border-border dark:text-text-secondary
+      dark:hover:border-white dark:hover:text-white;
+  }
+
+  /* Active filter inverts: white block, black ink. */
+  .chip-active {
+    @apply border-white bg-white text-black hover:bg-white hover:text-black
+      dark:border-white dark:bg-white dark:text-black;
+  }
+
+  /* ── Badges ───────────────────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center border border-zinc-300 px-1.5 py-0.5 font-mono text-[10px] font-medium leading-none
+      text-zinc-600 dark:border-border dark:text-text-secondary;
+  }
+
+  /* ── Nav rows ─────────────────────────────────────────────────────────── */
+  .nav-row {
+    @apply relative flex h-8 items-center gap-2.5 px-2 text-[13px] transition-colors duration-150
+      text-zinc-600 hover:text-black
+      dark:text-text-secondary dark:hover:text-text-primary;
+  }
+
+  /* Active state is inverted rather than tinted. */
+  .nav-row-active {
+    @apply bg-black font-medium text-white dark:bg-white dark:text-black;
+  }
+
+  /* ── Section rule ─────────────────────────────────────────────────────── */
+  .section-rule {
+    @apply border-t border-zinc-200 dark:border-border;
+  }
+
+  /* ── Editorial vocabulary ─────────────────────────────────────────────────
+     The app is laid out like a printed index: hairlines do the work that
+     boxes used to, and every list is numbered so a row has a stable address. */
+
+  /* A label followed by a hairline that fills the rest of the row. */
+  .rule-head {
+    @apply flex items-center gap-3 font-mono text-[10px] font-medium uppercase tracking-[0.14em]
+      text-zinc-400 dark:text-text-muted;
+  }
+
+  .rule-head::after {
+    content: '';
+    @apply h-px flex-1 bg-zinc-200 dark:bg-border;
+  }
+
+  /* Chapter marker: the leading number in a section head. */
+  .chap {
+    @apply font-mono text-[10px] tabular-nums text-zinc-300 dark:text-text-muted;
+  }
+
+  /* The numeric address in front of every catalogue row. */
+  .idx {
+    @apply w-7 shrink-0 font-mono text-[10px] tabular-nums text-zinc-300 transition-colors
+      group-hover:text-zinc-500 dark:text-text-muted dark:group-hover:text-text-secondary;
+  }
+
+  /* A numbered line in the catalogue. */
+  .index-row {
+    @apply flex items-center gap-3 border-b border-zinc-200 px-1 py-2.5 transition-colors
+      hover:bg-zinc-50 dark:border-border dark:hover:bg-white/[0.04];
+  }
+
+  /* Rail entry used by the sidebar's table of contents. */
+  .rail-link {
+    @apply flex items-center gap-2.5 border-b border-zinc-200/70 py-1.5 pl-0.5 pr-2 text-[13px] transition-colors
+      text-zinc-600 hover:text-black
+      dark:border-border/70 dark:text-text-secondary dark:hover:text-text-primary;
+  }
+
+  /* Active row inverts to a solid block — position is never colour-coded. */
+  .rail-link-active {
+    @apply border-black bg-black font-medium text-white dark:border-white dark:bg-white dark:text-black;
+  }
+}
+
+/* Hide the scrollbar on horizontal filter rails while keeping them scrollable. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Base Resets ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode defaults — pure black canvas, pure white ink */
+.dark body {
+  background-color: #000000;
+  color: #FAFAFA;
+}
+
+/* Light mode — the inverse of the above, no hue either way */
+html:not(.dark) body {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2E2E2E;
+  border: 2px solid #000000;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #454545;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #D4D4D4;
+  border: 2px solid #FAFAFA;
+  border-radius: 6px;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* ===== Focus Ring ===== */
+*:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+/* ===== Transitions ===== */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 150ms ease,
+    color 120ms ease,
+    border-color 150ms ease,
+    fill 120ms ease;
+}
+
+.animate-fade-in,
+.animate-slide-in,
+.animate-spin,
+.animate-blink,
+.battle-fade-in,
+.battle-step-in,
+.battle-slide-left,
+.battle-slide-right,
+.battle-slide-center,
+.battle-glow-pulse,
+.battle-card-yellow,
+.battle-card-violet,
+.battle-card-blue,
+.battle-btn-primary,
+.battle-btn-secondary {
+  transition: unset;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.2s ease-out forwards;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Streaming cursor */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+/* ===== Utility: blueprint grid backdrop ===== */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+html:not(.dark) .grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+}
+
+.grid-bg-fade {
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+/* ===== Section reveal (kept for existing callers) ===== */
+.premium-section {
+  opacity: 0;
+  animation: premiumSectionIn 420ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes premiumSectionIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Card hover (kept for existing callers) =====
+   A crisp border brighten instead of the old gradient glow. */
+.premium-hover-card {
+  position: relative;
+}
+
+.premium-hover-card::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  border: 1px solid #FFFFFF;
+  transition: opacity 180ms ease;
+  z-index: 1;
+}
+
+.premium-hover-card:hover::after,
+.premium-hover-card:focus-visible::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-section {
+    opacity: 1;
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ===== Markdown Output Styling ===== */
+.markdown-output h1 {
+  @apply text-xl font-bold mb-3 mt-4;
+}
+
+.markdown-output h2 {
+  @apply text-lg font-semibold mb-2 mt-4;
+}
+
+.markdown-output h3 {
+  @apply text-base font-semibold mb-2 mt-3;
+}
+
+.markdown-output p {
+  @apply mb-3 leading-relaxed;
+}
+
+.markdown-output ul {
+  @apply list-disc pl-5 mb-3 space-y-1;
+}
+
+.markdown-output ol {
+  @apply list-decimal pl-5 mb-3 space-y-1;
+}
+
+.markdown-output li {
+  @apply leading-relaxed;
+}
+
+.markdown-output code {
+  @apply text-sm px-1.5 py-0.5 rounded font-mono;
+}
+
+.dark .markdown-output code {
+  @apply bg-[#1A1A21] text-indigo-200;
+}
+
+html:not(.dark) .markdown-output code {
+  @apply bg-zinc-100 text-indigo-700;
+}
+
+.markdown-output pre {
+  @apply mb-4 rounded-lg overflow-x-auto;
+}
+
+.markdown-output pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-output blockquote {
+  @apply border-l-2 border-accent pl-4 italic my-3;
+}
+
+.dark .markdown-output blockquote {
+  @apply text-text-secondary;
+}
+
+.markdown-output strong {
+  @apply font-semibold;
+}
+
+.markdown-output hr {
+  @apply my-4 border-border;
+}
+
+.markdown-output table {
+  @apply w-full mb-4 border-collapse;
+}
+
+.markdown-output th,
+.markdown-output td {
+  @apply px-3 py-2 text-left text-sm;
+}
+
+.dark .markdown-output th {
+  @apply border-b border-border font-semibold text-text-primary;
+}
+
+.dark .markdown-output td {
+  @apply border-b border-border/50 text-text-secondary;
+}
+
+/* ===== Circular Score ===== */
+.score-circle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-circle svg {
+  transform: rotate(-90deg);
+}
+
+.score-circle .score-value {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ===== Light mode overrides ===== */
+html:not(.dark) .light-surface {
+  background-color: #ffffff;
+}
+
+html:not(.dark) .light-surface-page {
+  background-color: #fafafa;
+}
+
+html:not(.dark) .light-border {
+  border-color: #E4E4E4;
+}
+
+html:not(.dark) .light-text-primary {
+  color: #18181b;
+}
+
+html:not(.dark) .light-text-secondary {
+  color: #52525b;
+}
+
+/* ===== Battle Mode Animations ===== */
+@keyframes battleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes battleStepIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes buttonPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pageTransitionFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.battle-fade-in {
+  opacity: 0;
+  animation: battleFadeIn 0.5s ease-out forwards;
+}
+
+.battle-step-in {
+  opacity: 0;
+  animation: battleStepIn 0.4s ease-out forwards;
+}
+
+.battle-page-transition {
+  animation: pageTransitionFade 0.3s ease-out forwards;
+}
+
+.battle-glow-gold {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.battle-slide-left {
+  opacity: 0;
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.battle-slide-right {
+  opacity: 0;
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.battle-slide-center {
+  opacity: 0;
+  animation: battleFadeIn 0.6s ease-out forwards;
+}
+
+.battle-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.battle-glow-violet {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+.battle-glow-blue {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+.battle-card-yellow {
+  border-color: rgb(250, 204, 21, 0.3);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.battle-card-yellow:hover {
+  border-color: rgb(250, 204, 21, 0.6);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25), 0 0 60px rgba(255, 255, 255, 0.1), 0 15px 35px rgba(255, 255, 255, 0.1);
+}
+
+.battle-card-violet {
+  border-color: rgb(167, 139, 250, 0.3);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.battle-card-violet:hover {
+  border-color: rgb(167, 139, 250, 0.6);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25), 0 0 60px rgba(255, 255, 255, 0.1), 0 15px 35px rgba(255, 255, 255, 0.1);
+}
+
+.battle-card-blue {
+  border-color: rgb(96, 165, 250, 0.3);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.battle-card-blue:hover {
+  border-color: rgb(96, 165, 250, 0.6);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.25), 0 0 60px rgba(255, 255, 255, 0.1), 0 15px 35px rgba(255, 255, 255, 0.1);
+}
+
+.battle-btn-primary {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.battle-btn-primary:hover {
+  animation: buttonPulse 0.6s ease-out infinite;
+}
+
+.battle-btn-primary:active {
+  animation: buttonPress 0.15s ease-out forwards;
+}
+
+.battle-btn-secondary {
+  transition: all 0.2s ease-out;
+  border-width: 2px;
+}
+
+.battle-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.battle-btn-secondary:active {
+}
+
+.battle-select-highlight {
+  transition: all 0.2s ease-out;
+}
+
+.battle-select-highlight:focus {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== Navigation Responsive Helpers ===== */
+
+@media (max-width: 768px) {
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* ===== Onboarding Tour ===== */
+
+@keyframes onboarding-spotlight-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.30),
+      0 0 20px 4px rgba(255, 255, 255, 0.14);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.20),
+      0 0 30px 8px rgba(255, 255, 255, 0.10);
+  }
+}
+
+@keyframes onboarding-tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.onboarding-spotlight-ring {
+  animation: onboarding-spotlight-pulse 2s ease-in-out infinite;
+  border: 2px solid #FFFFFF;
+}
+
+.onboarding-tooltip-entering {
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+}
+
+.onboarding-tooltip-visible {
+  animation: onboarding-tooltip-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Prevent body scroll while tour is active */
+body:has(.onboarding-overlay-wrapper) {
+  overflow: hidden;
+}

@@ -1,0 +1,27 @@
+name: Welcome New Issue Author
+
+# Trigger: fires whenever a new issue is opened
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Post welcome comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const author = context.payload.issue.user.login;
+            const issueNumber = context.payload.issue.number;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: `👋 Hey @${author}! Thanks for opening this issue.\n\nA maintainer will review it shortly and get back to you.\n\nWhile you wait:\n- 📖 Check our [Contributing Guide](https://github.com/DivyashreeR008/Open-Agents/blob/main/CONTRIBUTING.md)\n- 💬 Feel free to add more details to help us understand better\n\nAlso — this project is completely free and community-driven. If Open-Agents has been useful to you, the best way to support it is to [⭐ star the repo](https://github.com/DivyashreeR008/Open-Agents). Every star helps others discover the project. 🙏`
+            });

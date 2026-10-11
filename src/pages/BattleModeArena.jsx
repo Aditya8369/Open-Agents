@@ -1,0 +1,738 @@
+import { useState, useEffect, useCallback, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import {
+  Cpu,
+  Loader2,
+  Trophy,
+  AlertCircle,
+  ArrowLeft,
+  ChevronDown,
+  ChevronRight,
+  Copy,
+  Check,
+  Zap,
+  RefreshCw,
+} from "lucide-react";
+import { runAgent } from "../lib/llmAdapter";
+import { recordAnalyticsRun } from "../lib/useAnalytics";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { useDocumentTitle } from "../lib/useDocumentTitle";
+
+// Timeout configuration for LLM requests (in milliseconds)
+// Prevents runaway API calls from indefinitely blocking the UI
+const LLM_REQUEST_TIMEOUT_MS = 60000; // 60 seconds - reasonable for most LLM calls
+const TIMEOUT_ERROR_MESSAGE = "Request timed out - the LLM took too long to respond. Please try again.";
+
+export const PROVIDERS = [
+  {
+    id: "openai",
+    label: "GPT-4o",
+    model: "gpt-4o",
+    color: "yellow",
+    borderClass: "border-zinc-400/40 battle-card-yellow",
+    glowClass: "hover:",
+    headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
+    textColor: "text-zinc-400",
+    btnBg:
+      "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
+    loaderColor: "text-zinc-400",
+    glowHex: "#FFFFFF",
+  },
+  {
+    id: "anthropic",
+    label: "Claude Sonnet",
+    model: "claude-3-5-sonnet-20241022",
+    color: "violet",
+    borderClass: "border-zinc-400/40 battle-card-violet",
+    glowClass: "hover:",
+    headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
+    textColor: "text-zinc-400",
+    btnBg:
+      "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
+    loaderColor: "text-zinc-400",
+    glowHex: "#C7C7C7",
+  },
+  {
+    id: "gemini",
+    label: "Gemini Flash",
+    model: "gemini-2.5-flash",
+    color: "blue",
+    borderClass: "border-zinc-400/40 battle-card-blue",
+    glowClass: "hover:",
+    headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
+    textColor: "text-zinc-400",
+    btnBg:
+      "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
+    loaderColor: "text-zinc-400",
+    glowHex: "#60a5fa",
+  },
+  {
+    id: "openrouter",
+    label: "OpenRouter",
+    model: "openai/gpt-4o-mini",
+    color: "teal",
+    borderClass: "border-zinc-400/40 battle-card-teal",
+    glowClass: "hover:",
+    headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
+    textColor: "text-zinc-400",
+    btnBg:
+      "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
+    loaderColor: "text-zinc-400",
+    glowHex: "#2dd4bf",
+  },
+];
+
+function buildUserMessage(agent, inputs) {
+  const parts = [];
+  agent.inputs.forEach((input) => {
+    const val = inputs[input.id];
+    if (!val || (Array.isArray(val) && val.length === 0)) return;
+    parts.push(
+      Array.isArray(val)
+        ? `${input.label}: ${val.join(", ")}`
+        : `${input.label}: ${val}`,
+    );
+  });
+  return parts.join("\n\n");
+}
+
+export default function BattleModeArena() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { agent, inputs, apiKeys } = location.state || {};
+  useDocumentTitle(agent?.name ? `${agent.name} Battle` : "Battle Arena");
+
+  const [results, setResults] = useState({
+    openai: { loading: true, content: null, error: null, duration: null },
+    anthropic: { loading: true, content: null, error: null, duration: null },
+    gemini: { loading: true, content: null, error: null, duration: null },
+    openrouter: { loading: true, content: null, error: null, duration: null },
+  });
+
+  const [promptViewerOpen, setPromptViewerOpen] = useState(false);
+  const [prompts, setPrompts] = useState({
+    openai: null,
+    anthropic: null,
+    gemini: null,
+    openrouter: null,
+  });
+
+  const [copiedProvider, setCopiedProvider] = useState(null);
+  const [copyAnnouncement, setCopyAnnouncement] = useState("");
+
+  // Store AbortControllers for each provider so we can cancel requests if needed
+  const abortControllersRef = useRef({
+    openai: new AbortController(),
+    anthropic: new AbortController(),
+    gemini: new AbortController(),
+    openrouter: new AbortController(),
+  });
+
+  // Tracks which provider finished (success or error) first
+  const [firstFinisher, setFirstFinisher] = useState(null);
+  // Flips to true once all four are done, triggers the reveal animation
+  const [revealTriggered, setRevealTriggered] = useState(false);
+
+  const allDone = PROVIDERS.every((p) => !results[p.id].loading);
+
+  useEffect(() => {
+    if (allDone) setRevealTriggered(true);
+  }, [allDone]);
+
+  // Redirect if no state
+  useEffect(() => {
+    if (!agent || !inputs || !apiKeys) {
+      navigate("/battle/setup", { replace: true });
+    }
+  }, [agent, inputs, apiKeys, navigate]);
+
+  // Runs (or re-runs) a single provider's request. Shared by the initial
+  // fire-all-providers effect and by the per-panel retry button, so a retry
+  // only touches the one panel and leaves the others untouched. Providers
+  // without a configured key resolve immediately to a key missing state.
+  const runProvider = useCallback(
+    (prov) => {
+      const configuredKey = (apiKeys?.[prov.id] || '').trim()
+      if (!configuredKey) {
+        setResults((prev) => ({
+          ...prev,
+          [prov.id]: {
+            loading: false,
+            content: null,
+            error: `API key for ${prov.label} is not configured. Add it on the setup page to include this provider.`,
+            duration: null,
+          },
+        }));
+        return
+      }
+
+      const userMessage = buildUserMessage(agent, inputs);
+
+      setPrompts((prev) => ({
+        ...prev,
+        [prov.id]: {
+          systemPrompt: agent.systemPrompt,
+          userMessage,
+        },
+      }));
+
+      // Reset AbortController for this request
+      abortControllersRef.current[prov.id] = new AbortController();
+      const controller = abortControllersRef.current[prov.id];
+
+      // Create a timeout that aborts the request after LLM_REQUEST_TIMEOUT_MS
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+      }, LLM_REQUEST_TIMEOUT_MS);
+
+      runAgent({
+        provider: prov.id,
+        model: prov.model,
+        apiKey: configuredKey,
+        systemPrompt: agent.systemPrompt,
+        userMessage,
+      }, {
+        signal: controller.signal, // Pass the abort signal to runAgent
+      })
+        .then((result) => {
+          clearTimeout(timeoutId);
+          recordAnalyticsRun({
+            agentId: agent.id,
+            agentName: agent.name,
+            category: agent.category,
+            provider: prov.id,
+            model: prov.model,
+            duration: result.duration,
+          });
+          setResults((prev) => ({
+            ...prev,
+            [prov.id]: {
+              loading: false,
+              content: result.content,
+              error: null,
+              duration: result.duration,
+            },
+          }));
+          setFirstFinisher((prev) => prev ?? prov.id);
+        })
+        .catch((err) => {
+          clearTimeout(timeoutId);
+          // Handle timeout errors specifically
+          let errorMessage = err.message || "An unknown error occurred";
+          if (err.name === "AbortError" || err.code === "ABORT_ERR") {
+            errorMessage = TIMEOUT_ERROR_MESSAGE;
+          }
+          setResults((prev) => ({
+            ...prev,
+            [prov.id]: {
+              loading: false,
+              content: null,
+              error: errorMessage,
+              duration: null,
+            },
+          }));
+        });
+    },
+    [agent, inputs, apiKeys],
+  );
+
+  // Fire all provider API calls simultaneously
+  useEffect(() => {
+    if (!agent || !inputs || !apiKeys) return;
+
+    PROVIDERS.forEach((prov) => runProvider(prov));
+
+    // Cleanup: abort all pending requests when component unmounts
+    return () => {
+      Object.values(abortControllersRef.current).forEach(controller => {
+        controller.abort();
+      });
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Retry just one provider's panel: clears only that panel's output/error
+  // state and re-fires runAgent for that provider alone.
+  const handleRetryProvider = (providerId) => {
+    const prov = PROVIDERS.find((p) => p.id === providerId);
+    if (!prov) return;
+
+    setResults((prev) => ({
+      ...prev,
+      [providerId]: { loading: true, content: null, error: null, duration: null },
+    }));
+
+    runProvider(prov);
+  };
+
+  const handlePickWinner = (providerId) => {
+    const prov = PROVIDERS.find((p) => p.id === providerId);
+    navigate("/battle/winner", {
+      state: {
+        provider: prov,
+        content: results[providerId].content,
+        duration: results[providerId].duration,
+        agentName: agent?.name,
+      },
+    });
+  };
+
+  const handleCopyPrompt = async (providerId, providerLabel, promptData) => {
+    const copyText = `System Prompt: ${promptData?.systemPrompt || "Not available"}\n\nUser Prompt: ${promptData?.userMessage || "Not available"}`;
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard API is unavailable");
+      }
+
+      await navigator.clipboard.writeText(copyText);
+      setCopiedProvider(providerId);
+      setCopyAnnouncement(`${providerLabel} prompt copied to clipboard.`);
+      setTimeout(() => {
+        setCopiedProvider(null);
+      }, 2000);
+    } catch {
+      setCopiedProvider(null);
+      setCopyAnnouncement(
+        `Unable to copy the ${providerLabel} prompt. Please try again.`,
+      );
+    }
+  };
+
+  if (!agent) return null;
+
+  return (
+  <div className="min-h-screen transition-colors duration-300 dark:bg-surface bg-gray-50 dark:text-text-primary text-gray-900 battle-page-transition">
+      <style>{`
+        @keyframes battleCardPulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 0 0px 0px var(--glow-color, transparent); }
+          50% { transform: scale(1.015); box-shadow: 0 0 22px 2px var(--glow-color, transparent); }
+        }
+        @keyframes battleProgressSlide {
+          0% { left: -40%; }
+          100% { left: 110%; }
+        }
+        @keyframes battleBadgePop {
+          0% { transform: scale(0.4); opacity: 0; }
+          60% { transform: scale(1.15); opacity: 1; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes battleReveal {
+          0% { opacity: 0.55; transform: scale(0.96) translateY(6px); filter: brightness(1.5) saturate(1.3); }
+          55% { opacity: 1; transform: scale(1.015) translateY(-2px); filter: brightness(1.25) saturate(1.15); }
+          100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1) saturate(1); }
+        }
+        @keyframes battleButtonRise {
+          0% { opacity: 0; transform: translateY(18px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes battleButtonGlow {
+          0%, 100% { box-shadow: 0 0 0px 0px var(--glow-color, transparent); }
+          50% { box-shadow: 0 0 16px 2px var(--glow-color, transparent); }
+        }
+        .battle-card-loading {
+          animation: battleCardPulse 2.2s ease-in-out infinite;
+        }
+        .battle-progress-fill {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 40%;
+          border-radius: 9999px;
+          animation: battleProgressSlide 1.3s ease-in-out infinite;
+        }
+        .battle-badge-pop {
+          animation: battleBadgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+        .battle-card-reveal {
+          animation: battleReveal 0.7s ease-out both;
+        }
+        .battle-button-enter {
+          animation: battleButtonRise 0.45s ease-out both,
+            battleButtonGlow 2.4s ease-in-out 0.45s infinite;
+        }
+      `}</style>
+
+      <main className="pt-14 px-4 py-8">
+        {/* Back */}
+        <button
+          onClick={() => navigate("/battle/setup")}
+          className="flex items-center gap-1.5 text-xs font-medium dark:text-text-secondary text-gray-700 hover:dark:text-text-primary hover:text-gray-900 transition-all duration-200 hover:gap-2 mb-8"
+        >
+          <ArrowLeft size={14} />
+          Back to Setup
+        </button>
+
+        {/* Header */}
+        <div className="text-center mb-10 battle-fade-in">
+          <h1 className="text-3xl font-extrabold tracking-wider mb-2 dark:text-text-primary text-gray-900">
+            Battle Arena
+          </h1>
+          <p className="text-base dark:text-text-primary text-gray-900">
+            Running{" "}
+            <span className="dark:text-text-primary text-gray-900 font-semibold">{agent.name}</span>{" "}
+            across your configured providers
+          </p>
+        </div>
+
+        {/* Prompt Comparison Viewer */}
+        <div className="max-w-7xl mx-auto mb-6">
+          <div className="sr-only" role="status" aria-live="polite">
+            {copyAnnouncement}
+          </div>
+          <button
+            onClick={() => setPromptViewerOpen(!promptViewerOpen)}
+            className="w-full flex items-center justify-between px-5 py-3 dark:bg-surface-card dark:bg-gray-900/60 backdrop-blur-md backdrop-blur-sm dark:border-border border-gray-200 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200"
+          >
+            <span className="text-base font-semibold dark:text-text-primary text-gray-900">
+              Prompt Comparison Viewer
+            </span>
+            {promptViewerOpen ? (
+              <ChevronDown size={18} className="dark:text-text-muted text-gray-700" />
+            ) : (
+              <ChevronRight size={18} className="dark:text-text-muted text-gray-700" />
+            )}
+          </button>
+
+          {promptViewerOpen && (
+            <div className="mt-4 battle-fade-in">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                {/* OpenAI Column */}
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                  <div className="dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
+                    <span className="text-base font-bold text-zinc-400">
+                      OpenAI
+                    </span>
+                    <button
+                      onClick={() =>
+                        handleCopyPrompt("openai", "OpenAI", prompts.openai)
+                      }
+                      className="flex items-center gap-1.5 px-2 py-1 dark:hover:bg-surface hover:bg-gray-100 transition-all duration-200"
+                      aria-label="Copy OpenAI prompt"
+                    >
+                      {copiedProvider === "openai" ? (
+                        <>
+                          <Check size={14} className="text-zinc-400" />
+                          <span className="text-xs text-zinc-400">Copied</span>
+                        </>
+                      ) : (
+                        <Copy
+                          size={14}
+                          className="dark:text-text-muted text-gray-700 hover:text-gray-800"
+                        />
+                      )}
+                    </button>
+                  </div>
+                  <div className="p-4 space-y-4">
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        System Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.openai?.systemPrompt ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        User Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.openai?.userMessage ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Claude Column */}
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                  <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
+                    <span className="text-base font-bold text-zinc-400">
+                      Claude
+                    </span>
+                    <button
+                      onClick={() =>
+                        handleCopyPrompt(
+                          "anthropic",
+                          "Claude",
+                          prompts.anthropic,
+                        )
+                      }
+                      className="flex items-center gap-1.5 px-2 py-1 dark:hover:bg-surface hover:bg-gray-100 transition-all duration-200"
+                      aria-label="Copy Claude prompt"
+                    >
+                      {copiedProvider === "anthropic" ? (
+                        <>
+                          <Check size={14} className="text-zinc-400" />
+                          <span className="text-xs text-zinc-400">Copied</span>
+                        </>
+                      ) : (
+                        <Copy
+                          size={14}
+                          className="dark:text-text-muted text-gray-700 hover:text-gray-800"
+                        />
+                      )}
+                    </button>
+                  </div>
+                  <div className="p-4 space-y-4">
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        System Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.anthropic?.systemPrompt ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        User Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.anthropic?.userMessage ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Gemini Column */}
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                  <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
+                    <span className="text-base font-bold text-zinc-400">
+                      Gemini
+                    </span>
+                    <button
+                      onClick={() =>
+                        handleCopyPrompt("gemini", "Gemini", prompts.gemini)
+                      }
+                      className="flex items-center gap-1.5 px-2 py-1 dark:hover:bg-surface hover:bg-gray-100 transition-all duration-200"
+                      aria-label="Copy Gemini prompt"
+                    >
+                      {copiedProvider === "gemini" ? (
+                        <>
+                          <Check size={14} className="text-zinc-400" />
+                          <span className="text-xs text-zinc-400">Copied</span>
+                        </>
+                      ) : (
+                        <Copy
+                          size={14}
+                          className="dark:text-text-primary text-gray-800 hover:text-gray-800"
+                        />
+                      )}
+                    </button>
+                  </div>
+                  <div className="p-4 space-y-4">
+                    <div>
+                      <span className="text-base font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        System Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.gemini?.systemPrompt ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                    <div>
+                      <span className="text-base font-semibold dark:text-text-secondary dark:text-text-muted dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        User Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.gemini?.userMessage ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+
+                {/* OpenRouter Column */}
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                  <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
+                    <span className="text-base font-bold text-zinc-400">
+                      OpenRouter
+                    </span>
+                    <button
+                      onClick={() =>
+                        handleCopyPrompt(
+                          "openrouter",
+                          "OpenRouter",
+                          prompts.openrouter,
+                        )
+                      }
+                      className="flex items-center gap-1.5 px-2 py-1 dark:hover:bg-surface hover:bg-gray-100 transition-all duration-200"
+                      aria-label="Copy OpenRouter prompt"
+                    >
+                      {copiedProvider === "openrouter" ? (
+                        <>
+                          <Check size={14} className="text-zinc-400" />
+                          <span className="text-xs text-zinc-400">Copied</span>
+                        </>
+                      ) : (
+                        <Copy
+                          size={14}
+                          className="dark:text-text-muted text-gray-700 hover:text-gray-800"
+                        />
+                      )}
+                    </button>
+                  </div>
+                  <div className="p-4 space-y-4">
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        System Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.openrouter?.systemPrompt ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                        User Prompt
+                      </span>
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                        {prompts.openrouter?.userMessage ||
+                          "Prompt not available yet."}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Four Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {PROVIDERS.map((prov, idx) => {
+            const r = results[prov.id];
+            const isFirstFinisher = firstFinisher === prov.id;
+            const isStillFighting =
+              r.loading && firstFinisher && firstFinisher !== prov.id;
+
+            return (
+              <div
+                key={prov.id}
+                className={`min-w-0 border ${prov.borderClass}
+                    dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md
+                    backdrop-blur-sm shadow-panel flex flex-col battle-fade-in
+                    transition-all duration-300 overflow-hidden`}
+                style={{
+                  animationDelay: `${idx * 100}ms`,
+                  "--glow-color": prov.glowHex,
+                }}
+              >
+                <div
+                  className={`flex flex-col flex-1 ${
+                    r.loading ? "battle-card-loading" : ""
+                  } ${revealTriggered && !r.loading ? "battle-card-reveal" : ""}`}
+                >
+                  {/* Column Header */}
+                  <div
+                    className={`flex items-center gap-2.5 px-5 py-4 -xl ${prov.headerBg}`}
+                  >
+                    <Cpu size={16} className={prov.textColor} />
+                    <span
+                      className={`text-base font-bold ${prov.textColor} tracking-wide`}
+                    >
+                      {prov.label}
+                    </span>
+
+                    {isFirstFinisher && (
+                      <span className="flex items-center gap-1 text-[10px] font-bold text-zinc-300 bg-zinc-400/10 border border-zinc-400/30 px-2 py-0.5 battle-badge-pop">
+                        <Zap size={10} />
+                        First to finish!
+                      </span>
+                    )}
+
+                    {(r.duration || r.error) && !r.loading && (
+                      <div className="ml-auto flex items-center gap-2">
+                        {r.duration && (
+                          <span className="text-[11px] dark:text-text-muted text-gray-700 font-medium">
+                            {(r.duration / 1000).toFixed(1)}s
+                          </span>
+                        )}
+                        <button
+                          onClick={() => handleRetryProvider(prov.id)}
+                          className={`p-1 ${prov.textColor} hover:bg-white/10 transition-colors`}
+                          aria-label={`Retry ${prov.label}`}
+                          title={`Retry ${prov.label}`}
+                        >
+                          <RefreshCw size={14} />
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 p-5 overflow-y-auto max-h-[60vh]">
+                    {r.loading && (
+                      <div className="flex flex-col items-center justify-center py-16 gap-3">
+                        <Loader2
+                          size={28}
+                          className={`animate-spin ${prov.loaderColor}`}
+                        />
+                        <span className="text-xs dark:text-text-muted dark:text-text-muted text-gray-700 font-medium">
+                          {isStillFighting
+                            ? "Still fighting..."
+                            : `${prov.label} is generating...`}
+                        </span>
+                        <div className="relative w-full max-w-[200px] h-1.5 bg-gray-800/60 overflow-hidden mt-1">
+                          <div
+                            className="battle-progress-fill"
+                            style={{
+                              background: `linear-gradient(90deg, transparent, ${prov.glowHex}, transparent)`,
+                            }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {r.error && (
+                      <div className="flex flex-col items-center justify-center py-16 gap-3 text-center">
+                        <div className="w-12 h-12 bg-zinc-500/10 flex items-center justify-center border border-zinc-500/20">
+                          <AlertCircle size={24} className="text-zinc-400" />
+                        </div>
+                        <p className="text-xs dark:text-text-muted text-gray-700 max-w-xs font-medium">
+                          {r.error}
+                        </p>
+                      </div>
+                    )}
+
+                    {r.content && (
+                      <div className="markdown-output min-w-0 overflow-x-auto text-base dark:text-text-primary text-gray-900 leading-relaxed">
+                        {agent.outputType === "markdown" ? (
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {r.content}
+                          </ReactMarkdown>
+                        ) : (
+                          <pre className="whitespace-pre-wrap font-sans">
+                            {r.content}
+                          </pre>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Pick Winner Button */}
+                  {r.content && !r.loading && (
+                    <div className="p-5 border-t dark:border-border border-gray-200/50">
+                      <button
+                        onClick={() => handlePickWinner(prov.id)}
+                        className={`w-full flex items-center justify-center gap-2 px-4 py-3 
+                          text-xs font-bold border-2 transition-all duration-200
+                          battle-button-enter ${prov.btnBg}`}
+                      >
+                        <Trophy size={14} />
+                        Pick Winner
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </main>
+    </div>
+  );
+}

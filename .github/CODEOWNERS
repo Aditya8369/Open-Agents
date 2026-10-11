@@ -1,0 +1,9 @@
+# Everything goes to @DivyashreeR008 by default
+* @DivyashreeR008
+
+# Agent registry — reviewed personally
+src/agents/ @DivyashreeR008
+
+# These files handle API keys — extra care needed
+src/lib/llmAdapter.js @DivyashreeR008
+src/lib/useApiKey.js @DivyashreeR008

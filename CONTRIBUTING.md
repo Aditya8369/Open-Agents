@@ -1,0 +1,36 @@
+# Contributing to Open-Agents
+
+Thank you for your interest in contributing to Open-Agents! This document guidelines the process for contributing.
+
+## Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
+
+## Development Process
+
+1. **Fork the repository** - Click the "Fork" button on the top right of the GitHub page
+2. **Create a branch** - `git checkout -b feature/your-feature-name`
+3. **Make changes** - Implement your feature or fix
+4. **Test your changes** - Ensure existing tests pass and add new tests if applicable
+5. **Commit your changes** - Use clear, descriptive commit messages
+6. **Push to your fork** - `git push origin feature/your-feature-name`
+7. **Submit a Pull Request** - Describe what you changed and why
+
+## Pull Request Guidelines
+
+- Fill out the PR template completely
+- Link to any related issues
+- Ensure code follows the project's style guidelines
+- Add or update documentation as needed
+- Ensure all tests pass
+
+## Report Bugs / Feature Requests
+
+- Search for existing issues before creating new ones
+- Use clear, descriptive titles
+- Include steps to reproduce for bugs
+- Describe the expected behavior for feature requests
+
+## Thank You!
+
+Your contributions help make Open-Agents better for everyone.

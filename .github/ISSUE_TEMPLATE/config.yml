@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask for help / Discussions
+    url: https://github.com/DivyashreeR008/Open-Agents/discussions
+    about: Ask questions, share ideas, or get help with a contribution.
+  - name: Security report (private)
+    url: https://github.com/DivyashreeR008/Open-Agents/security/advisories/new
+    about: Do not open public issues for security vulnerabilities. Report privately here.
