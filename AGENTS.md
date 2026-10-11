@@ -1,7 +1,7 @@
 # Agents Directory
 
 This file is the human-readable index of all agents in Open-Agents.
-Keep it in sync with `src/agents/definitions/` — every new agent needs a row here.
+Keep it in sync with `src/agents/definitions/` ï¿½ every new agent needs a row here.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minutes.
 
@@ -169,6 +169,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 160 | Web Scraping Agent | Describe a page | Developer Tools |
 | 161 | Win/Loss Analysis Report Generator | Enter details about a closed deal to get a structured win/loss analysis with key factors, alternative approaches, and actionable lessons for your sales team. | Sales |
 | 162 | YouTube Script Writer | Turn any topic into a ready-to-record YouTube script with intro hook, sections, and outro. | Marketing |
+| 163 | Dockerfile Generator | Describe your app's stack and get a production-ready multi-stage Dockerfile with a non-root user, layer caching, and a .dockerignore. | Engineering |
+| 164 | CI Failure Triage | Paste a failing CI log and get a triage verdict: what failed, the most likely cause, and the smallest fix to try first. | Engineering |
+| 165 | Standup Notes Generator | Turn rough bullets into a crisp yesterday / today / blockers standup update for Slack, email, or your daily call. | Productivity |
+| 166 | Weekly Review Generator | Paste your week's notes and get a structured GTD-style weekly review: wins, misses, open loops, and next week's top 3 priorities. | Productivity |
+| 167 | Landing Page Copy Generator | Describe your product and get a full landing page draft: hero, subhead, benefits, social-proof block, and CTA â€” in your tone. | Marketing |
+| 168 | Cold Call Script Generator | Get a complete cold-call script: permission opener, discovery questions, objection responses, and a low-pressure close. | Sales |
+| 169 | Subscription Audit Assistant | List your subscriptions with costs and usage to get a keep / cancel / downgrade verdict per service plus total monthly savings. | Finance |
+| 170 | Job Description Writer | Enter a role, responsibilities, and requirements to get a complete, bias-free job description with interview focus areas. | HR |
+| 171 | NDA Generator | Enter the parties, purpose, and term to get a plain-English mutual NDA draft with a review checklist. Not legal advice. | Legal |
+| 172 | Essay Outline Generator | Give your essay topic, thesis, and level to get a structured outline with a hook, arguments, counterargument, and sources to chase. | Education |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
