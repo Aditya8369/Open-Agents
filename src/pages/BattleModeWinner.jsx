@@ -86,7 +86,7 @@ export default function BattleModeWinner() {
           style={{ animationDelay: '250ms' }}>
           <button
             onClick={handleCopy}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 hover: transition-all duration-200 battle-btn-secondary"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 transition-colors duration-200 battle-btn-secondary"
           >
             {copied ? <Check size={16} className="text-zinc-400" /> : <Copy size={16} />}
             {copied ? 'Copied!' : 'Copy Winner Output'}
@@ -94,7 +94,7 @@ export default function BattleModeWinner() {
 
           <button
             onClick={() => navigate('/battle/setup')}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 hover: transition-all duration-200 battle-btn-secondary"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 transition-colors duration-200 battle-btn-secondary"
           >
             <RotateCcw size={16} />
             Run Battle Again
@@ -102,7 +102,7 @@ export default function BattleModeWinner() {
 
           <button
             onClick={() => navigate('/')}
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 hover: transition-all duration-200 battle-btn-secondary"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 transition-colors duration-200 battle-btn-secondary"
           >
             <ArrowLeft size={16} />
             Back to Agents

@@ -723,7 +723,7 @@ const handleRun = async () => {
                     <button
                       key={opt}
                       onClick={() => toggleMultiselect(input.id, opt)}
-                      className={`px-3 py-1.5 text-xs font-medium transition-all border
+                      className={`px-3 py-1.5 text-xs font-medium transition-colors border
                         ${
                           selected
                             ? "bg-accent/15 text-accent border-accent/30"
@@ -749,13 +749,13 @@ const handleRun = async () => {
     onClick={handleFillExample}
     className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 text-accent font-semibold border border-accent/20 hover:bg-accent/20 hover:border-accent/30 hover:gap-3 transition-all duration-200"
   >
-    ✨ Try an example
+    Try an example
   </button>
   <button
     onClick={handleSavePrompt}
     disabled={!getPrimaryPromptInput()}
     title="Save this prompt to your Prompt History"
-    className="inline-flex items-center gap-2 px-3 py-1.5 dark:bg-surface-input bg-gray-100 dark:text-text-secondary text-gray-600 font-semibold border dark:border-border border-gray-200 hover:border-accent/30 hover:text-accent disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200"
+    className="inline-flex items-center gap-2 px-3 py-1.5 dark:bg-surface-input bg-gray-100 dark:text-text-secondary text-gray-600 font-semibold border dark:border-border border-gray-200 hover:border-accent/30 hover:text-accent disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-200"
   >
     <History size={14} />
     Save Prompt
