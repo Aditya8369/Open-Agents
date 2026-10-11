@@ -188,9 +188,9 @@ export async function sendResendNotification({ to, automationName, agentName, ou
           to: [to],
           subject: logEntry.subject,
           html: `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #1e293b;">
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #000000;">
               <div style="border-bottom: 2px solid #E5E5E5; padding-bottom: 12px; margin-bottom: 20px;">
-                <h2 style="margin: 0; color: #4338ca;">⏰ Open Agents Hub Autopilot Report</h2>
+                <h2 style="margin: 0; color: #000000;">⏰ Open Agents Hub Autopilot Report</h2>
                 <p style="margin: 4px 0 0 0; color: #9E9E9E; font-size: 14px;">Automation: <strong>${automationName}</strong> (${agentName})</p>
               </div>
               <div style="background: #FAFAFA; border: 1px solid #E4E4E4; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
@@ -199,12 +199,12 @@ export async function sendResendNotification({ to, automationName, agentName, ou
                 <p style="margin: 0; font-size: 13px;"><strong>Duration:</strong> ${(duration / 1000).toFixed(2)}s</p>
               </div>
               <div style="margin-bottom: 20px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #0f172a;">Agent Output</h3>
+                <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #000000;">Agent Output</h3>
                 <div style="background: #ffffff; border: 1px solid #D4D4D4; border-radius: 8px; padding: 16px; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">
                   ${output || error || 'No output generated.'}
                 </div>
               </div>
-              <p style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 30px;">
+              <p style="font-size: 12px; color: #737373; text-align: center; margin-top: 30px;">
                 Sent automatically by Open Agents Hub Scheduled Automations. Encrypted with pgsodium.
               </p>
             </div>

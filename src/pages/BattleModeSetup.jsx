@@ -104,10 +104,10 @@ function InputField({ input, value, onChange }) {
             value={value ?? input.defaultValue ?? ""}
             onChange={(e) => onChange(input.id, e.target.value)}
             className={`${baseClass} ${borderClass} appearance-none cursor-pointer`}
-            style={{ background: "rgb(17 24 39 / 0.6)" }}
+            style={{ background: "rgb(0 0 0 / 0.6)" }}
           >
             {input.options.map((opt) => (
-              <option key={opt} value={opt} style={{ background: "#111827" }}>
+              <option key={opt} value={opt} style={{ background: "#000000" }}>
                 {opt}
               </option>
             ))}

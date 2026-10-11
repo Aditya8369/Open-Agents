@@ -589,24 +589,24 @@ function Sparkline({ data }) {
 
   return (
     <div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-28" preserveAspectRatio="none">
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-28 text-black dark:text-white" preserveAspectRatio="none">
         {/* Gradient fill */}
         <defs>
           <linearGradient id="sparkline-gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="rgb(99, 102, 241)" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="rgb(99, 102, 241)" stopOpacity="0" />
+            <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
           </linearGradient>
         </defs>
         {/* Area */}
         <path d={areaPath} fill="url(#sparkline-gradient)" />
         {/* Line */}
-        <path d={linePath} fill="none" stroke="rgb(99, 102, 241)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d={linePath} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         {/* Dots for days with runs */}
         {points.filter((p) => p.count > 0).map((p, i) => (
           <circle
             key={i}
             cx={p.x} cy={p.y} r="3"
-            fill="rgb(99, 102, 241)"
+            fill="currentColor"
             className="transition-all duration-300"
           >
             <title>{`${p.date}: ${p.count} run${p.count !== 1 ? 's' : ''}`}</title>

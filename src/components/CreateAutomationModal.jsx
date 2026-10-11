@@ -405,7 +405,7 @@ export default function CreateAutomationModal({
                 value={apiKey}
                 onChange={e => setApiKey(e.target.value)}
                 placeholder={initialData?.hasKey ? '•••••••••••••••• (Key saved and encrypted)' : `Enter ${provider} API Key...`}
-                className="w-full h-10 pl-9 pr-3 text-xs font-mono dark:bg-[#0c0d12] dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
+                className="w-full h-10 pl-9 pr-3 text-xs font-mono dark:bg-[#0A0A0A] dark:border-border bg-white border border-gray-200 outline-none focus:ring-1 focus:ring-accent"
               />
               <Lock size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
             </div>

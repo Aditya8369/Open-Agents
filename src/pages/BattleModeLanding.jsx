@@ -50,10 +50,10 @@ export default function BattleModeLanding() {
       <main className="pt-12 pb-12 flex min-h-screen flex-col items-center px-4">
         {/* Hero */}
         <div className="text-center mb-14 battle-fade-in">
-          <div className="w-16 h-16 bg-zinc-400/10 border border-zinc-400/30 flex items-center justify-center mx-auto mb-4 battle-glow-gold hover:border-zinc-400/60 hover: transition-all duration-300 cursor-default">
+          <div className="w-16 h-16 bg-zinc-400/10 border border-zinc-400/30 flex items-center justify-center mx-auto mb-4 battle-glow-white hover:border-zinc-400/60 hover: transition-all duration-300 cursor-default">
             <Swords size={32} className="text-zinc-600 dark:text-zinc-400" />
           </div>
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-zinc-600 via-zinc-600 to-zinc-500 dark:from-zinc-300 dark:via-white dark:to-zinc-400 dark:from-zinc-300 dark:via-white dark:to-zinc-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(250,204,21,0.3)]">
+          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-zinc-600 via-zinc-600 to-zinc-500 dark:from-zinc-300 dark:via-white dark:to-zinc-400 dark:from-zinc-300 dark:via-white dark:to-zinc-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
             Battle Mode
           </h1>
           <p className="text-base dark:text-text-secondary text-gray-700 dark:text-text-secondary dark:text-text-secondary max-w-md mx-auto leading-relaxed font-medium">

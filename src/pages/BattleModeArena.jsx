@@ -29,8 +29,8 @@ export const PROVIDERS = [
     id: "openai",
     label: "GPT-4o",
     model: "gpt-4o",
-    color: "yellow",
-    borderClass: "border-zinc-400/40 battle-card-yellow",
+    color: "white",
+    borderClass: "border-zinc-400/40 battle-card-white",
     glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
@@ -43,43 +43,43 @@ export const PROVIDERS = [
     id: "anthropic",
     label: "Claude Sonnet",
     model: "claude-3-5-sonnet-20241022",
-    color: "violet",
-    borderClass: "border-zinc-400/40 battle-card-violet",
+    color: "white",
+    borderClass: "border-zinc-400/40 battle-card-white",
     glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
       "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
     loaderColor: "text-zinc-400",
-    glowHex: "#C7C7C7",
+    glowHex: "#FFFFFF",
   },
   {
     id: "gemini",
     label: "Gemini Flash",
     model: "gemini-2.5-flash",
-    color: "blue",
-    borderClass: "border-zinc-400/40 battle-card-blue",
+    color: "white",
+    borderClass: "border-zinc-400/40 battle-card-white",
     glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
       "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
     loaderColor: "text-zinc-400",
-    glowHex: "#60a5fa",
+    glowHex: "#FFFFFF",
   },
   {
     id: "openrouter",
     label: "OpenRouter",
     model: "openai/gpt-4o-mini",
-    color: "teal",
-    borderClass: "border-zinc-400/40 battle-card-teal",
+    color: "white",
+    borderClass: "border-zinc-400/40 battle-card-white",
     glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
       "bg-zinc-400/10 hover:bg-zinc-400/20 text-zinc-400 border-zinc-400/40 border-2 hover:border-zinc-300/60 battle-btn-secondary",
     loaderColor: "text-zinc-400",
-    glowHex: "#2dd4bf",
+    glowHex: "#FFFFFF",
   },
 ];
 
@@ -318,9 +318,9 @@ export default function BattleModeArena() {
           100% { transform: scale(1); opacity: 1; }
         }
         @keyframes battleReveal {
-          0% { opacity: 0.55; transform: scale(0.96) translateY(6px); filter: brightness(1.5) saturate(1.3); }
-          55% { opacity: 1; transform: scale(1.015) translateY(-2px); filter: brightness(1.25) saturate(1.15); }
-          100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1) saturate(1); }
+          0% { opacity: 0.55; transform: scale(0.96) translateY(6px); filter: brightness(1.5); }
+          55% { opacity: 1; transform: scale(1.015) translateY(-2px); filter: brightness(1.25); }
+          100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1); }
         }
         @keyframes battleButtonRise {
           0% { opacity: 0; transform: translateY(18px); }

@@ -26,15 +26,14 @@ function setup(provider) {
 }
 
 describe('BattleModeWinner theme', () => {
-  it('themes the openrouter winner teal instead of yellow', () => {
-    const { container } = setup({ color: 'teal', label: 'OpenRouter' })
+  it('renders every winner with the same monochrome zinc theme', () => {
+    const { container } = setup({ color: 'white', label: 'OpenRouter' })
     expect(screen.getByText('OpenRouter')).toBeInTheDocument()
     expect(container.querySelector('.text-zinc-400')).not.toBeNull()
-    expect(container.querySelector('.text-zinc-400')).toBeNull()
   })
 
-  it('keeps the openai winner yellow', () => {
-    const { container } = setup({ color: 'yellow', label: 'GPT-4o' })
+  it('keeps the openai winner monochrome', () => {
+    const { container } = setup({ color: 'white', label: 'GPT-4o' })
     expect(container.querySelector('.text-zinc-400')).not.toBeNull()
   })
 })

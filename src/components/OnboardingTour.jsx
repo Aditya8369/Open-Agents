@@ -398,7 +398,7 @@ export default function OnboardingTour({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="relative border border-white/40 dark:border-white/10 bg-white/90 dark:bg-surface/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(15,23,42,0.25),0_0_40px_rgba(99,102,241,0.15)] overflow-hidden"
+          className="relative border border-white/40 dark:border-white/10 bg-white/90 dark:bg-surface/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.25),0_0_40px_rgba(255,255,255,0.15)] overflow-hidden"
         >
           {/* Gradient border effect */}
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-zinc-400/40 via-zinc-500/25 to-zinc-500/30 p-px pointer-events-none" />

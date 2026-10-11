@@ -6,12 +6,8 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
-const colorMap = {
-  yellow: { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' },
-  violet: { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' },
-  blue: { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' },
-  teal: { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' },
-}
+// Single monochrome theme — winner is never color-coded by provider.
+const winnerTheme = { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' };
 
 export default function BattleModeWinner() {
   const navigate = useNavigate()
@@ -25,7 +21,7 @@ export default function BattleModeWinner() {
     return null
   }
 
-  const colors = colorMap[provider.color] || colorMap.yellow
+  const colors = winnerTheme;
 
   const handleCopy = async () => {
     try {

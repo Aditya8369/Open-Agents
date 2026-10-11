@@ -42,7 +42,9 @@ function ProviderIcon({ provider, label }) {
       <img
         src={logo}
         alt={`${label} logo`}
-        className="w-4 h-4 flex-shrink-0"
+        className={provider === 'openrouter'
+          ? "w-4 h-4 flex-shrink-0 invert dark:invert-0"
+          : "w-4 h-4 flex-shrink-0"}
       />
     )
   }

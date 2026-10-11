@@ -90,11 +90,12 @@ export default function CustomSelect({
   }, [isOpen, highlightedIndex])
 
   // accent styling rules based on component context
-  const accentRing = accentColor === 'yellow'
+  const isZincAccent = accentColor === 'zinc' || accentColor === 'yellow'
+  const accentRing = isZincAccent
     ? 'focus:ring-zinc-400/30 focus:border-zinc-400/50'
     : 'focus:ring-accent/40 focus:border-accent'
 
-  const accentItem = accentColor === 'yellow'
+  const accentItem = isZincAccent
     ? 'bg-zinc-400/10 text-zinc-300 font-semibold'
     : 'bg-accent/15 text-accent font-semibold'
 

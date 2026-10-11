@@ -161,7 +161,7 @@ export default function SettingsPage() {
               {/* Provider name row */}
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <img src={p.logo} alt={p.label} className="w-5 h-5 flex-shrink-0" />
+                  <img src={p.logo} alt={p.label} className={p.id === 'openrouter' ? "w-5 h-5 flex-shrink-0 invert dark:invert-0" : "w-5 h-5 flex-shrink-0"} />
                   <span className="text-sm font-semibold dark:text-text-primary text-gray-800">
                     {p.label} API Key
                   </span>
