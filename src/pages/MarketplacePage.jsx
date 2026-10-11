@@ -197,7 +197,7 @@ function PublishModal({ agents, onClose, onPublished }) {
 function ListingCard({ listing, onImport, onRate, imported }) {
   return (
     <div
-      className=" border p-4 flex flex-col gap-2.5 transition-all dark:bg-surface-card dark:border-border dark:hover:border-accent/40 bg-white border-gray-200 hover:border-accent/40 hover:"
+      className=" border p-4 flex flex-col gap-2.5 transition-colors dark:bg-surface-card dark:border-border dark:hover:border-accent/40 bg-white border-gray-200 hover:border-accent/40"
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">

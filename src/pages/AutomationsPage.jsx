@@ -232,7 +232,7 @@ export default function AutomationsPage() {
           <p className="text-[11px] text-gray-400 mt-1">Captured in run history</p>
         </div>
 
-        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-all">
+        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-colors">
           <div className="flex items-center justify-between text-gray-400 mb-2">
             <span className="text-xs font-bold uppercase tracking-wider">Success Rate</span>
             <CheckCircle2 size={16} className="text-zinc-500" />
@@ -310,7 +310,7 @@ export default function AutomationsPage() {
               setEditingAutomation(null)
               setIsCreateModalOpen(true)
             }}
-            className="px-5 py-2.5 text-xs font-bold text-black bg-accent hover:bg-accent-hover transition-all"
+            className="px-5 py-2.5 text-xs font-bold text-black bg-accent hover:bg-accent-hover transition-colors"
           >
             Schedule Your First Agent
           </button>
@@ -399,7 +399,7 @@ export default function AutomationsPage() {
                     <button
                       onClick={() => handleRunNow(auto.id)}
                       disabled={isRunning}
-                      className="px-3 py-1.5 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent transition-all flex items-center gap-1.5 disabled:opacity-50"
+                      className="px-3 py-1.5 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent transition-colors flex items-center gap-1.5 disabled:opacity-50"
                       title="Execute Autopilot Run Now"
                     >
                       {isRunning ? <Loader2 size={13} className="animate-spin" /> : <Play size={13} />}
@@ -408,7 +408,7 @@ export default function AutomationsPage() {
 
                     <Link
                       to={`/automations/${auto.id}`}
-                      className="px-3 py-1.5 text-xs font-semibold dark:hover:bg-surface-hover hover:bg-gray-100 text-gray-600 dark:text-gray-300 transition-all flex items-center gap-1"
+                      className="px-3 py-1.5 text-xs font-semibold dark:hover:bg-surface-hover hover:bg-gray-100 text-gray-600 dark:text-gray-300 transition-colors flex items-center gap-1"
                     >
                       <span>Logs ({autoRuns.length})</span>
                       <ChevronRight size={13} />

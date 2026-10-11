@@ -87,7 +87,7 @@ export default function ScheduleAgentModal({
       <div className="relative w-full max-w-md shadow-pop animate-fade-in dark:bg-[#111111] dark:border dark:border-border bg-white border border-gray-200 overflow-hidden">
 
         {/* Header */}
-        <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b dark:border-border border-gray-100 bg-gradient-to-r from-zinc-500/10 to-zinc-500/10">
+        <div className="flex items-center justify-between px-5 pt-5 pb-3 border-b dark:border-border border-gray-100 bg-zinc-500/10">
           <div className="flex items-center gap-2">
             <Clock size={18} className="text-accent" />
             <h2 className="font-display text-[17px] font-semibold tracking-[-0.02em] text-zinc-900 dark:text-text-primary">
@@ -142,7 +142,7 @@ export default function ScheduleAgentModal({
                   type="button"
                   key={opt.value}
                   onClick={() => setSchedule(opt.value)}
-                  className={`py-2 text-xs font-medium border transition-all
+                  className={`py-2 text-xs font-medium border transition-colors
                     ${schedule === opt.value
                       ? 'border-accent bg-accent/10 text-accent font-semibold'
                       : 'dark:border-border dark:text-text-secondary dark:hover:border-accent/40 border-gray-200 text-gray-600'

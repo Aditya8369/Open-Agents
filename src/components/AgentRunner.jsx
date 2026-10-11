@@ -764,7 +764,7 @@ const handleRun = async () => {
 
       {/* Prompt Playground */}
       <div
-        className="mb-4 border transition-all duration-200 dark:bg-surface-card dark:border-border bg-white border-gray-200"
+        className="mb-4 border transition-colors duration-200 dark:bg-surface-card dark:border-border bg-white border-gray-200"
       >
         <button
           onClick={() => setPlaygroundOpen(!playgroundOpen)}
@@ -854,7 +854,7 @@ const handleRun = async () => {
       </div>
 
       {/* Model Analyser Panel */}
-      <div className="mb-4 border transition-all duration-200 dark:bg-surface-card dark:border-border bg-white border-gray-200">
+      <div className="mb-4 border transition-colors duration-200 dark:bg-surface-card dark:border-border bg-white border-gray-200">
         <button
           onClick={() => setAnalyserOpen(!analyserOpen)}
           className="w-full flex items-center justify-between px-4 py-3 text-left group"
@@ -890,7 +890,7 @@ const handleRun = async () => {
             {apiKey && !modelRecommendation && !analyserLoading && (
               <button
                 onClick={handleAnalyseModels}
-                className="flex items-center gap-2 h-8 px-3 font-semibold text-white bg-gradient-to-r from-zinc-600 to-zinc-600 hover:from-zinc-500 hover:to-zinc-500 transition-all duration-200"
+                className="flex items-center gap-2 h-8 px-3 font-semibold text-white bg-zinc-600 hover:bg-zinc-500 transition-colors duration-200"
               >
                 <Zap size={12} />
                 Analyse Models
@@ -1027,7 +1027,7 @@ const handleRun = async () => {
               Connecting to API...
             </span>
           </div>
-          <p className="text-sm dark:text-text-secondary text-gray-500 transition-all duration-500">
+          <p className="text-sm dark:text-text-secondary text-gray-500 transition-colors duration-500">
             {LOADING_MESSAGES[msgIndex]}
           </p>
         </div>
@@ -1117,7 +1117,7 @@ const handleRun = async () => {
             <RunRating agentId={agent.id} />
             <button
               onClick={handleSendToWorkflow}
-              className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-accent bg-accent/10 hover:bg-accent/20 transition-all border border-accent/20"
+              className="flex items-center gap-2 h-8 px-3 text-sm font-semibold text-accent bg-accent/10 hover:bg-accent/20 transition-colors border border-accent/20"
             >
               <GitBranch size={16} />
               Send output to Workflow Builder →

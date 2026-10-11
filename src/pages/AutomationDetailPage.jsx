@@ -156,7 +156,7 @@ export default function AutomationDetailPage() {
       <div className="p-6 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white space-y-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-start gap-3.5">
-            <div className="w-12 h-12 bg-gradient-to-br from-zinc-500/20 to-zinc-500/20 flex items-center justify-center text-accent shrink-0 ">
+            <div className="w-12 h-12 bg-zinc-500/20 flex items-center justify-center text-accent shrink-0 ">
               <Clock size={24} />
             </div>
             <div>
@@ -190,7 +190,7 @@ export default function AutomationDetailPage() {
             <button
               onClick={handleRunNow}
               disabled={isRunning}
-              className="h-8 px-3 text-xs font-bold text-white bg-gradient-to-r from-zinc-300 via-zinc-400 to-zinc-500 hover:opacity-95 shadow-panel transition-all flex items-center gap-1.5 disabled:opacity-50"
+              className="h-8 px-3 text-xs font-bold text-white bg-zinc-500 hover:bg-zinc-400 shadow-panel transition-colors flex items-center gap-1.5 disabled:opacity-50"
             >
               {isRunning ? <Loader2 size={14} className="animate-spin" /> : <Play size={14} />}
               <span>{isRunning ? 'Running Agent...' : 'Run Autopilot Now'}</span>
@@ -256,7 +256,7 @@ export default function AutomationDetailPage() {
       <div className="flex items-center gap-2 border-b dark:border-border border-gray-200">
         <button
           onClick={() => setActiveTab('history')}
-          className={`px-4 py-3 text-xs font-bold border-b-2 transition-all flex items-center gap-2 ${
+          className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'history'
               ? 'border-accent text-accent'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -268,7 +268,7 @@ export default function AutomationDetailPage() {
 
         <button
           onClick={() => setActiveTab('config')}
-          className={`px-4 py-3 text-xs font-bold border-b-2 transition-all flex items-center gap-2 ${
+          className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'config'
               ? 'border-accent text-accent'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -280,7 +280,7 @@ export default function AutomationDetailPage() {
 
         <button
           onClick={() => setActiveTab('emails')}
-          className={`px-4 py-3 text-xs font-bold border-b-2 transition-all flex items-center gap-2 ${
+          className={`px-4 py-3 text-xs font-bold border-b-2 transition-colors flex items-center gap-2 ${
             activeTab === 'emails'
               ? 'border-accent text-accent'
               : 'border-transparent text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
@@ -443,7 +443,7 @@ export default function AutomationDetailPage() {
               <button
                 onClick={handleSendTestEmail}
                 disabled={testEmailSending || !automation.notificationEmail}
-                className="px-3.5 py-2 text-xs font-semibold bg-zinc-500/10 text-zinc-500 hover:bg-zinc-500/20 border border-zinc-500/30 transition-all flex items-center gap-1.5 disabled:opacity-40"
+                className="px-3.5 py-2 text-xs font-semibold bg-zinc-500/10 text-zinc-500 hover:bg-zinc-500/20 border border-zinc-500/30 transition-colors flex items-center gap-1.5 disabled:opacity-40"
               >
                 {testEmailSending ? <Loader2 size={13} className="animate-spin" /> : <Send size={13} />}
                 <span>Send Test Email</span>

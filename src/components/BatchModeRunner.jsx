@@ -237,7 +237,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                               : [...current, opt]
                           )
                         }}
-                        className={`px-3 py-1.5 text-xs font-medium transition-all border
+                        className={`px-3 py-1.5 text-xs font-medium transition-colors border
                           ${
                             selected
                               ? 'bg-accent/15 text-accent border-accent/30'
@@ -259,7 +259,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                   spellCheck={input.type !== 'code'}
                   className={`w-full px-3 py-2 text-sm transition-colors resize-y
                     dark:bg-surface-input dark:border-border dark:text-text-primary
-                    dark:bg-gray-900/60 bg-white/80 backdrop-blur-md border border-gray-200 text-gray-900
+                    bg-white border border-gray-200 text-gray-900
                     focus:ring-1 focus:ring-accent focus:border-accent outline-none
                     ${input.type === 'code' ? 'font-mono' : ''}`}
                 />
@@ -269,7 +269,7 @@ export default function BatchModeRunner({ agent, provider, apiKey, selectedModel
                   value={fixedInputs[input.id] ?? input.defaultValue ?? ''}
                   onChange={(e) => updateFixedInput(input.id, e.target.value)}
                   placeholder={input.placeholder}
-                  className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary dark:bg-gray-900/60 bg-white/80 backdrop-blur-md border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
+                  className="w-full h-9 px-3 text-sm transition-colors dark:bg-surface-input dark:border-border dark:text-text-primary bg-white border border-gray-200 text-gray-900 focus:ring-1 focus:ring-accent focus:border-accent outline-none"
                 />
               )}
             </div>

@@ -31,7 +31,6 @@ export const PROVIDERS = [
     model: "gpt-4o",
     color: "white",
     borderClass: "border-zinc-400/40 battle-card-white",
-    glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
@@ -45,7 +44,6 @@ export const PROVIDERS = [
     model: "claude-3-5-sonnet-20241022",
     color: "white",
     borderClass: "border-zinc-400/40 battle-card-white",
-    glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
@@ -59,7 +57,6 @@ export const PROVIDERS = [
     model: "gemini-2.5-flash",
     color: "white",
     borderClass: "border-zinc-400/40 battle-card-white",
-    glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
@@ -73,7 +70,6 @@ export const PROVIDERS = [
     model: "openai/gpt-4o-mini",
     color: "white",
     borderClass: "border-zinc-400/40 battle-card-white",
-    glowClass: "hover:",
     headerBg: "bg-zinc-400/10 border-b border-zinc-400/30",
     textColor: "text-zinc-400",
     btnBg:
@@ -382,7 +378,7 @@ export default function BattleModeArena() {
           </div>
           <button
             onClick={() => setPromptViewerOpen(!promptViewerOpen)}
-            className="w-full flex items-center justify-between px-5 py-3 dark:bg-surface-card dark:bg-gray-900/60 backdrop-blur-md backdrop-blur-sm dark:border-border border-gray-200 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200"
+            className="w-full flex items-center justify-between px-5 py-3 dark:bg-surface-card bg-white dark:border-border border-gray-200 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200"
           >
             <span className="text-base font-semibold dark:text-text-primary text-gray-900">
               Prompt Comparison Viewer
@@ -398,8 +394,8 @@ export default function BattleModeArena() {
             <div className="mt-4 battle-fade-in">
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 {/* OpenAI Column */}
-                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
-                  <div className="dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card bg-white flex flex-col overflow-hidden">
+                  <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
                     <span className="text-base font-bold text-zinc-400">
                       OpenAI
                     </span>
@@ -428,7 +424,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         System Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.openai?.systemPrompt ||
                           "Prompt not available yet."}
                       </pre>
@@ -437,7 +433,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         User Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.openai?.userMessage ||
                           "Prompt not available yet."}
                       </pre>
@@ -446,7 +442,7 @@ export default function BattleModeArena() {
                 </div>
 
                 {/* Claude Column */}
-                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card bg-white flex flex-col overflow-hidden">
                   <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
                     <span className="text-base font-bold text-zinc-400">
                       Claude
@@ -480,7 +476,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         System Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.anthropic?.systemPrompt ||
                           "Prompt not available yet."}
                       </pre>
@@ -489,7 +485,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         User Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.anthropic?.userMessage ||
                           "Prompt not available yet."}
                       </pre>
@@ -498,7 +494,7 @@ export default function BattleModeArena() {
                 </div>
 
                 {/* Gemini Column */}
-                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card bg-white flex flex-col overflow-hidden">
                   <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
                     <span className="text-base font-bold text-zinc-400">
                       Gemini
@@ -528,16 +524,16 @@ export default function BattleModeArena() {
                       <span className="text-base font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         System Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.gemini?.systemPrompt ||
                           "Prompt not available yet."}
                       </pre>
                     </div>
                     <div>
-                      <span className="text-base font-semibold dark:text-text-secondary dark:text-text-muted dark:text-text-muted text-gray-700 uppercase tracking-wide">
+                      <span className="text-base font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         User Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-base dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.gemini?.userMessage ||
                           "Prompt not available yet."}
                       </pre>
@@ -546,7 +542,7 @@ export default function BattleModeArena() {
                 </div>
 
                 {/* OpenRouter Column */}
-                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card/60 bg-white/80 backdrop-blur-sm flex flex-col overflow-hidden">
+                <div className="min-w-0 border dark:border-border border-gray-200 dark:bg-surface-card bg-white flex flex-col overflow-hidden">
                   <div className="dark:bg-surface-card bg-white border-b dark:border-border border-gray-200 px-4 py-3 flex items-center justify-between">
                     <span className="text-base font-bold text-zinc-400">
                       OpenRouter
@@ -580,7 +576,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         System Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.openrouter?.systemPrompt ||
                           "Prompt not available yet."}
                       </pre>
@@ -589,7 +585,7 @@ export default function BattleModeArena() {
                       <span className="text-xs font-semibold dark:text-text-muted text-gray-700 uppercase tracking-wide">
                         User Prompt
                       </span>
-                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md p-3 border dark:border-border border-gray-200">
+                      <pre className="whitespace-pre-wrap break-words overflow-x-auto mt-2 text-xs dark:text-text-secondary text-gray-800 dark:bg-surface-input bg-gray-50 p-3 border dark:border-border border-gray-200">
                         {prompts.openrouter?.userMessage ||
                           "Prompt not available yet."}
                       </pre>
@@ -613,9 +609,9 @@ export default function BattleModeArena() {
               <div
                 key={prov.id}
                 className={`min-w-0 border ${prov.borderClass}
-                    dark:bg-surface-card dark:bg-gray-900/60 bg-white/80 backdrop-blur-md
-                    backdrop-blur-sm shadow-panel flex flex-col battle-fade-in
-                    transition-all duration-300 overflow-hidden`}
+                    dark:bg-surface-card bg-white
+                    shadow-panel flex flex-col battle-fade-in
+                    transition-colors duration-300 overflow-hidden`}
                 style={{
                   animationDelay: `${idx * 100}ms`,
                   "--glow-color": prov.glowHex,
@@ -628,7 +624,7 @@ export default function BattleModeArena() {
                 >
                   {/* Column Header */}
                   <div
-                    className={`flex items-center gap-2.5 px-5 py-4 -xl ${prov.headerBg}`}
+                    className={`flex items-center gap-2.5 px-5 py-4 ${prov.headerBg}`}
                   >
                     <Cpu size={16} className={prov.textColor} />
                     <span
@@ -671,7 +667,7 @@ export default function BattleModeArena() {
                           size={28}
                           className={`animate-spin ${prov.loaderColor}`}
                         />
-                        <span className="text-xs dark:text-text-muted dark:text-text-muted text-gray-700 font-medium">
+                        <span className="text-xs dark:text-text-muted text-gray-700 font-medium">
                           {isStillFighting
                             ? "Still fighting..."
                             : `${prov.label} is generating...`}

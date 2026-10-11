@@ -147,7 +147,7 @@ function InputField({ input, value, onChange }) {
                 key={opt}
                 type="button"
                 onClick={() => toggle(opt)}
-                className={`px-3 py-1 text-xs font-medium border transition-all duration-150
+                className={`px-3 py-1 text-xs font-medium border transition-colors duration-150
                   ${active
                     ? "bg-zinc-400/20 border-zinc-400/60 text-zinc-300"
                     : "bg-gray-800/60 border-gray-700 dark:text-text-muted text-gray-500 hover:border-gray-500 hover:text-gray-300"
@@ -295,7 +295,7 @@ export default function BattleModeSetup() {
           onClick={() =>
             step === 2 ? setStep(1) : navigate("/battle")
           }
-          className="flex items-center gap-1.5 text-xs font-medium dark:text-text-secondary dark:text-text-muted dark:text-text-muted text-gray-500 hover:text-white transition-all duration-200 hover:gap-2 mb-8"
+          className="flex items-center gap-1.5 text-xs font-medium dark:text-text-muted text-gray-500 hover:text-white transition-all duration-200 hover:gap-2 mb-8"
         >
           <ArrowLeft size={14} />
           {step === 2 ? "Back to Agent Selection" : "Back to Battle Mode"}
@@ -306,7 +306,7 @@ export default function BattleModeSetup() {
           <h1 className="text-3xl font-extrabold tracking-wider mb-1 text-white">
             {step === 1 ? "Pick Your Agent" : "Configure Battle"}
           </h1>
-          <p className="text-sm dark:text-text-muted dark:text-text-muted text-gray-500">
+          <p className="text-sm dark:text-text-muted text-gray-500">
             {step === 1
               ? "Choose an agent to battle across GPT-4o, Claude Sonnet, Gemini Flash and OpenRouter"
               : `Setting up ${selectedAgent?.name}`}
@@ -318,17 +318,17 @@ export default function BattleModeSetup() {
           {[1, 2].map((s) => (
             <div key={s} className="flex items-center gap-3">
               <div
-                className={`w-7 h-7 flex items-center justify-center text-xs font-bold border transition-all duration-200
+                className={`w-7 h-7 flex items-center justify-center text-xs font-bold border transition-colors duration-200
                   ${step >= s
                     ? "bg-zinc-400/20 border-zinc-400/60 text-zinc-300"
-                    : "bg-gray-800 border-gray-700 dark:text-text-muted dark:text-text-muted text-gray-500"
+                    : "bg-gray-800 border-gray-700 dark:text-text-muted text-gray-500"
                   }`}
               >
                 {s}
               </div>
               {s < 2 && (
                 <div
-                  className={`h-px w-12 transition-all duration-300 ${
+                  className={`h-px w-12 transition-colors duration-300 ${
                     step > s ? "bg-zinc-400/40" : "bg-gray-700"
                   }`}
                 />
@@ -344,7 +344,7 @@ export default function BattleModeSetup() {
             <div className="relative mb-6">
               <Search
                 size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 dark:text-text-muted dark:text-text-muted text-gray-500"
+                className="absolute left-3 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-500"
               />
               <input
                 type="text"
@@ -356,7 +356,7 @@ export default function BattleModeSetup() {
             </div>
 
             {agentsLoading ? (
-              <div className="text-center py-16 dark:text-text-muted dark:text-text-muted text-gray-500 text-sm">
+              <div className="text-center py-16 dark:text-text-muted text-gray-500 text-sm">
                 Loading agents...
               </div>
             ) : (
@@ -372,17 +372,17 @@ export default function BattleModeSetup() {
                       <span className="text-sm font-semibold dark:text-text-primary text-gray-900 group-hover:text-white transition-colors">
                         {agent.name}
                       </span>
-                      <span className="text-[10px] px-2 py-0.5 bg-gray-800 dark:text-text-muted dark:text-text-muted text-gray-500 border border-gray-700 shrink-0">
+                      <span className="text-[10px] px-2 py-0.5 bg-gray-800 dark:text-text-muted text-gray-500 border border-gray-700 shrink-0">
                         {agent.category}
                       </span>
                     </div>
-                    <p className="text-xs dark:text-text-muted dark:text-text-muted text-gray-500 line-clamp-2 leading-relaxed">
+                    <p className="text-xs dark:text-text-muted text-gray-500 line-clamp-2 leading-relaxed">
                       {agent.description}
                     </p>
                   </button>
                 ))}
                 {filteredAgents.length === 0 && (
-                  <div className="col-span-2 text-center py-12 dark:text-text-muted dark:text-text-muted text-gray-500 text-sm">
+                  <div className="col-span-2 text-center py-12 dark:text-text-muted text-gray-500 text-sm">
                     No agents found for "{searchQuery}"
                   </div>
                 )}
@@ -421,12 +421,12 @@ export default function BattleModeSetup() {
             {/* API Keys */}
             <div className=" border dark:border-border border-gray-200 bg-gray-900/40 p-6">
               <div className="flex items-center gap-2 mb-5">
-                <Key size={14} className="dark:text-text-secondary dark:text-text-muted dark:text-text-muted text-gray-500" />
-                <h2 className="text-sm font-bold dark:text-text-primary dark:text-text-primary text-gray-900 uppercase tracking-wider">
+                <Key size={14} className="dark:text-text-muted text-gray-500" />
+                <h2 className="text-sm font-bold dark:text-text-primary text-gray-900 uppercase tracking-wider">
                   API Keys
                 </h2>
               </div>
-              <p className="text-xs dark:text-text-muted dark:text-text-muted text-gray-500 mb-5 leading-relaxed">
+              <p className="text-xs dark:text-text-muted text-gray-500 mb-5 leading-relaxed">
                 Your keys are used directly in the browser and never sent to our
                 servers. Add at least one key. Providers without a key are
                 skipped in the arena.
@@ -463,7 +463,7 @@ export default function BattleModeSetup() {
                             [field.id]: !prev[field.id],
                           }))
                         }
-                        className="absolute right-3 top-1/2 -translate-y-1/2 dark:text-text-muted dark:text-text-muted text-gray-500 hover:text-gray-300 transition-colors"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 dark:text-text-muted text-gray-500 hover:text-gray-300 transition-colors"
                         aria-label={
                           showKeys[field.id] ? "Hide key" : "Show key"
                         }
@@ -485,10 +485,10 @@ export default function BattleModeSetup() {
               onClick={handleStartBattle}
               disabled={!canSubmit}
               className={`w-full flex items-center justify-center gap-2.5 px-8 py-4 
-                text-sm font-bold transition-all duration-200 border
+                text-sm font-bold transition-colors duration-200 border
                 ${canSubmit
-                  ? "bg-gradient-to-r from-zinc-500 to-zinc-500 text-gray-950 hover:from-zinc-400 hover:to-zinc-400 hover: border-zinc-400/20 shadow-panel "
-                  : "bg-gray-800 dark:text-text-muted dark:text-text-muted text-gray-500 border-gray-700 cursor-not-allowed"
+                  ? "bg-zinc-500 text-white hover:bg-zinc-400 border-zinc-400/20 shadow-panel "
+                  : "bg-gray-800 text-gray-500 dark:text-text-muted border-gray-700 cursor-not-allowed"
                 }`}
             >
               <Swords size={18} />
