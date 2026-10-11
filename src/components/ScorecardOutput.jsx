@@ -85,7 +85,7 @@ export default function ScorecardOutput({ data }) {
               fill="none"
               stroke="currentColor"
               strokeWidth={6}
-              className="dark:text-border dark:text-text-primary text-gray-900"
+              className="dark:text-text-primary text-gray-900"
             />
             <circle
               cx={65}

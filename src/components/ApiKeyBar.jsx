@@ -256,7 +256,7 @@ export default function ApiKeyBar({
       {!apiKey && (
         <div className="mt-2 px-2.5 py-1.5 bg-warning/10 border border-warning/20">
           <span className="text-[11px] text-warning font-medium">
-            ⚠ Enter an API key to run this agent.
+            Enter an API key to run this agent.
           </span>
         </div>
       )}
@@ -265,7 +265,7 @@ export default function ApiKeyBar({
       {geminiError && (
         <div className="mt-2 px-2.5 py-1.5 bg-warning/10 border border-warning/20">
           <span className="text-[11px] text-warning font-medium">
-            ⚠ {geminiError}
+            {geminiError}
           </span>
         </div>
       )}

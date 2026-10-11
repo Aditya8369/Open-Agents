@@ -44,7 +44,7 @@ export default function AboutHero() {
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white bg-gradient-to-r from-zinc-300 via-zinc-400 to-zinc-500 shadow-panel transition-all duration-300 hover: focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white bg-zinc-400 hover:bg-zinc-300 transition-colors shadow-panel focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
           >
             <span>Explore 162+ Agents</span>
             <ArrowRight size={16} />

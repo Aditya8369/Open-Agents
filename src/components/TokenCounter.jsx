@@ -34,7 +34,7 @@ export default function TokenCounter({ value = '', modelId = '' }) {
       <span>
         ~{tokens.toLocaleString()} tokens
         {isEstimating && (
-          <span className="ml-0.5 inline-block w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin align-middle" />
+          <span className="ml-0.5 inline-block w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin align-middle" style={{ borderRadius: '50%' }} />
         )}
       </span>
       {contextWindow > 0 && (

@@ -147,7 +147,6 @@ export default function WorkflowBuilder() {
       {/* Custom Suite Banner — shows when workflow was generated from suite */}
       {location.state?.preselectedAgents && (
         <div className="mb-4 flex items-center gap-3 border px-4 py-3 animate-fade-in dark:bg-accent/5 dark:border-accent/20 bg-zinc-50 border-zinc-200">
-          <span className="text-lg flex-shrink-0">✨</span>
           <p className="text-sm dark:text-text-secondary text-gray-700 leading-snug">
             <strong className="dark:text-text-primary text-gray-900">Suite imported!</strong>{' '}
             We've pre-loaded your custom suite agents. Add, remove or reorder them before saving.
@@ -417,7 +416,7 @@ export default function WorkflowBuilder() {
         >
           {saving ? (
             <>
-              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" style={{ borderRadius: '50%' }} />
               Saving...
             </>
           ) : (

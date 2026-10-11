@@ -18,30 +18,30 @@ const PROVIDER_COLORS = {
   unknown: { color: '#737373', label: 'Unknown' },
 }
 
-// ── Category gradient mapping (matches HomePage categoryMeta) ───────────────
+// ── Category color mapping (matches HomePage categoryMeta) ───────────────────
 const CATEGORY_COLORS = {
-  Productivity: 'from-zinc-500 to-zinc-400',
-  Research: 'from-zinc-500 to-zinc-400',
-  Marketing: 'from-zinc-500 to-zinc-400',
-  Engineering: 'from-zinc-500 to-zinc-400',
-  HR: 'from-zinc-500 to-zinc-400',
-  Business: 'from-zinc-500 to-zinc-400',
-  Education: 'from-zinc-500 to-zinc-400',
-  Legal: 'from-zinc-500 to-zinc-400',
-  Design: 'from-zinc-500 to-zinc-400',
-  Product: 'from-zinc-500 to-zinc-400',
-  'Developer Tools': 'from-zinc-600 to-zinc-400',
-  DevOps: 'from-zinc-500 to-zinc-400',
-  Finance: 'from-zinc-500 to-zinc-400',
-  Healthcare: 'from-zinc-500 to-zinc-400',
-  Sales: 'from-zinc-500 to-zinc-400',
-  Cybersecurity: 'from-zinc-600 to-zinc-500',
-  'Data Science': 'from-zinc-500 to-zinc-400',
-  Gaming: 'from-zinc-500 to-zinc-400',
-  'Real Estate': 'from-zinc-500 to-zinc-400',
-  Web3: 'from-zinc-600 to-zinc-500',
+  Productivity: 'bg-zinc-400',
+  Research: 'bg-zinc-400',
+  Marketing: 'bg-zinc-400',
+  Engineering: 'bg-zinc-400',
+  HR: 'bg-zinc-400',
+  Business: 'bg-zinc-400',
+  Education: 'bg-zinc-400',
+  Legal: 'bg-zinc-400',
+  Design: 'bg-zinc-400',
+  Product: 'bg-zinc-400',
+  'Developer Tools': 'bg-zinc-400',
+  DevOps: 'bg-zinc-400',
+  Finance: 'bg-zinc-400',
+  Healthcare: 'bg-zinc-400',
+  Sales: 'bg-zinc-400',
+  Cybersecurity: 'bg-zinc-400',
+  'Data Science': 'bg-zinc-400',
+  Gaming: 'bg-zinc-400',
+  'Real Estate': 'bg-zinc-400',
+  Web3: 'bg-zinc-400',
 }
-const DEFAULT_CATEGORY_COLOR = 'from-gray-500 to-gray-400'
+const DEFAULT_CATEGORY_COLOR = 'bg-zinc-500'
 
 // ── Time range options ──────────────────────────────────────────────────────
 const TIME_RANGES = [
@@ -175,7 +175,7 @@ export default function AnalyticsPage() {
         <StatCard
           icon={<Flame size={18} />}
           label="Day Streak"
-          value={`${stats.currentStreak}🔥`}
+          value={stats.currentStreak}
           color="text-zinc-500"
           delay={180}
         />
@@ -283,7 +283,7 @@ function PageHeader({ onClear, hasData, timeRange, setTimeRange }) {
             <button
               key={range.value}
               onClick={() => setTimeRange(range.value)}
-              className={`px-2.5 py-1 text-[10px] font-semibold transition-all duration-200
+              className={`px-2.5 py-1 text-[10px] font-semibold transition-colors duration-200
                 ${timeRange === range.value
                   ? 'bg-accent text-black'
                   : 'text-gray-500 dark:text-text-muted hover:text-gray-700 dark:hover:text-text-primary'
@@ -327,10 +327,10 @@ function StatCard({ icon, label, value, color, delay }) {
 function MiniStatCard({ icon, label, value, color, delay }) {
   return (
     <div
-      className="flex items-center gap-3 p-3 border dark:bg-surface-card dark:border-border bg-white border-gray-200 animate-fade-in transition-all duration-200"
+      className="flex items-center gap-3 p-3 border dark:bg-surface-card dark:border-border bg-white border-gray-200 animate-fade-in transition-colors duration-200"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className={`p-2 bg-current/10 ${color}`}>
+      <div className={`p-2 bg-zinc-500/10 ${color}`}>
         {icon}
       </div>
       <div className="min-w-0">

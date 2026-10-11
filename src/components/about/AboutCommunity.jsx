@@ -15,7 +15,7 @@ export default function AboutCommunity() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="panel p-5 transition-colors hover:border-accent/40-all">
+        <div className="panel p-5 transition-colors hover:border-accent/40">
           <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
             <Handshake size={22} />
           </div>
@@ -27,7 +27,7 @@ export default function AboutCommunity() {
           </p>
         </div>
 
-        <div className="panel p-5 transition-colors hover:border-accent/40-all">
+        <div className="panel p-5 transition-colors hover:border-accent/40">
           <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
             <Trophy size={22} />
           </div>
@@ -39,7 +39,7 @@ export default function AboutCommunity() {
           </p>
         </div>
 
-        <div className="panel p-5 transition-colors hover:border-accent/40-all">
+        <div className="panel p-5 transition-colors hover:border-accent/40">
           <div className="p-3 bg-accent/10 text-accent w-fit mb-4">
             <MessageSquare size={22} />
           </div>

@@ -50,13 +50,13 @@ export default function BattleModeLanding() {
       <main className="pt-12 pb-12 flex min-h-screen flex-col items-center px-4">
         {/* Hero */}
         <div className="text-center mb-14 battle-fade-in">
-          <div className="w-16 h-16 bg-zinc-400/10 border border-zinc-400/30 flex items-center justify-center mx-auto mb-4 battle-glow-white hover:border-zinc-400/60 hover: transition-all duration-300 cursor-default">
+          <div className="w-16 h-16 bg-zinc-400/10 border border-zinc-400/30 flex items-center justify-center mx-auto mb-4 battle-glow-white hover:border-zinc-400/60 transition-all duration-300 cursor-default">
             <Swords size={32} className="text-zinc-600 dark:text-zinc-400" />
           </div>
-          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-zinc-600 via-zinc-600 to-zinc-500 dark:from-zinc-300 dark:via-white dark:to-zinc-400 dark:from-zinc-300 dark:via-white dark:to-zinc-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <h1 className="text-5xl sm:text-6xl font-extrabold tracking-tight mb-3 text-zinc-900 dark:text-white">
             Battle Mode
           </h1>
-          <p className="text-base dark:text-text-secondary text-gray-700 dark:text-text-secondary dark:text-text-secondary max-w-md mx-auto leading-relaxed font-medium">
+          <p className="text-base text-gray-700 dark:text-text-secondary max-w-md mx-auto leading-relaxed font-medium">
             Pit four AI providers against each other. Same prompt, four outputs, you decide who wins.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function BattleModeLanding() {
           >
             <Bot size={28} className={providers[0].color} />
             <span className={`text-base font-bold ${providers[0].color}`}>{providers[0].name}</span>
-            <span className="text-[10px] dark:text-text-muted text-gray-700 dark:text-text-secondary dark:text-text-secondary uppercase tracking-widest">{providers[0].label}</span>
+            <span className="text-[10px] text-gray-700 dark:text-text-secondary uppercase tracking-widest">{providers[0].label}</span>
           </div>
 
           {/* VS */}
@@ -91,7 +91,7 @@ export default function BattleModeLanding() {
           >
             <Bot size={28} className={providers[1].color} />
             <span className={`text-sm font-bold ${providers[1].color}`}>{providers[1].name}</span>
-            <span className="text-[10px] dark:text-text-muted text-gray-700 dark:text-text-secondary dark:text-text-secondary uppercase tracking-widest">{providers[1].label}</span>
+            <span className="text-[10px] text-gray-700 dark:text-text-secondary uppercase tracking-widest">{providers[1].label}</span>
           </div>
 
           {/* VS */}
@@ -142,10 +142,10 @@ export default function BattleModeLanding() {
             return (
               <div
                 key={idx}
-                className="flex items-center gap-4 p-5 border dark:border-border border-gray-200 bg-white dark:bg-surface backdrop-blur-sm battle-step-in hover:border-gray-700/80 hover:dark:bg-surface-input bg-gray-50 dark: transition-all duration-200 hover:translate-x-1 cursor-default"
+                className="flex items-center gap-4 p-5 border dark:border-border border-gray-200 bg-white dark:bg-surface battle-step-in hover:border-zinc-400/60 dark:hover:border-zinc-400/60 transition-all duration-200 hover:translate-x-1 cursor-default"
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-zinc-400/20 to-zinc-400/10 flex items-center justify-center flex-shrink-0 border border-zinc-400/20">
+                <div className="w-14 h-14 bg-zinc-400/10 flex items-center justify-center flex-shrink-0 border border-zinc-400/20">
                   <span className="text-base sm:text-lg font-bold text-zinc-600 dark:text-zinc-400">{step.number}</span>
                 </div>
                 <div className="flex-1">

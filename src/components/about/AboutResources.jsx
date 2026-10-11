@@ -59,7 +59,7 @@ export default function AboutResources() {
               href={res.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative panel p-5 transition-colors hover:border-accent/40-all duration-300 flex flex-col justify-between"
+              className="group relative panel p-5 transition-colors hover:border-accent/40 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">

@@ -5,10 +5,10 @@ export default function AboutCta() {
   return (
     <section aria-labelledby="about-cta-title" className="relative overflow-hidden panel border-accent/25 p-8 sm:p-12 text-center shadow-pop">
       {/* Glow overlays */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-400/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-zinc-500/30" />
 
       <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-400/10 text-zinc-300 text-xs font-semibold backdrop-blur-md border border-zinc-400/25">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-400/10 text-zinc-300 text-xs font-semibold border border-zinc-400/25">
           <Sparkles size={14} className="text-zinc-300" />
           <span>Join 100+ Community Contributors</span>
         </div>
@@ -26,7 +26,7 @@ export default function AboutCta() {
             href="https://github.com/DivyashreeR008/Open-Agents/issues"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-white bg-zinc-400 hover:bg-zinc-300 shadow-panel transition-all duration-300"
+            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-white bg-zinc-400 hover:bg-zinc-300 shadow-panel transition-colors duration-300"
           >
             <GitPullRequest size={16} />
             <span>Explore Open Issues</span>
@@ -36,7 +36,7 @@ export default function AboutCta() {
             href="https://github.com/DivyashreeR008/Open-Agents"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-zinc-200 bg-white/5 hover:bg-white/10 border border-zinc-400/25 backdrop-blur-md transition-all duration-300"
+            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-zinc-200 bg-white/5 hover:bg-white/10 border border-zinc-400/25 transition-colors duration-300"
           >
             <Github size={16} />
             <span>Star on GitHub</span>
@@ -44,7 +44,7 @@ export default function AboutCta() {
 
           <Link
             to="/"
-            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-zinc-200 bg-transparent hover:bg-white/5 border border-white/15 transition-all duration-300"
+            className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-zinc-200 bg-transparent hover:bg-white/5 border border-white/15 transition-colors duration-300"
           >
             <PlusCircle size={16} />
             <span>Use AI Agents Now</span>

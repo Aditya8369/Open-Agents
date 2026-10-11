@@ -457,7 +457,7 @@ html:not(.dark) .markdown-output code {
 }
 
 .markdown-output pre {
-  @apply mb-4 rounded-lg overflow-x-auto;
+  @apply mb-4 overflow-x-auto;
 }
 
 .markdown-output pre code {

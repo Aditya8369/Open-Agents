@@ -31,7 +31,7 @@ import {
 const TOUR_STEPS = [
   {
     target: null, // Welcome step — no target, centered modal
-    title: 'Welcome to OpenAgents! 🎉',
+    title: 'Welcome to OpenAgents',
     description:
       "Let's take a quick tour to help you get the most out of the platform. It only takes 30 seconds!",
     icon: Compass,
@@ -55,7 +55,7 @@ const TOUR_STEPS = [
   },
   {
     target: '#nav-battle-link',
-    title: 'Battle Mode ⚔️',
+    title: 'Battle Mode',
     description:
       'Pit two agents against each other on the same prompt and vote for the best result. A fun way to compare!',
     icon: Swords,
@@ -398,15 +398,12 @@ export default function OnboardingTour({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="relative border border-white/40 dark:border-white/10 bg-white/90 dark:bg-surface/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.25),0_0_40px_rgba(255,255,255,0.15)] overflow-hidden"
+          className="relative border border-white/40 dark:border-white/10 bg-white dark:bg-surface-card shadow-pop overflow-hidden"
         >
-          {/* Gradient border effect */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-zinc-400/40 via-zinc-500/25 to-zinc-500/30 p-px pointer-events-none" />
-
           {/* Header */}
           <div className="px-5 pt-5 pb-3 flex items-start justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-zinc-400 to-zinc-500 flex items-center justify-center shadow-panel ">
+              <div className="flex-shrink-0 w-10 h-10 bg-zinc-400 flex items-center justify-center shadow-panel ">
                 <StepIcon size={20} className="text-white" />
               </div>
               <div>
@@ -444,7 +441,7 @@ export default function OnboardingTour({
                   key={idx}
                   className={`h-1.5 transition-all duration-300 ${
                     idx === currentStep
-                      ? 'w-6 bg-gradient-to-r from-zinc-400 to-zinc-500'
+                      ? 'w-6 bg-zinc-400'
                       : idx < currentStep
                         ? 'w-1.5 bg-zinc-400/50'
                         : 'w-1.5 bg-gray-300 dark:bg-white/15'
@@ -476,10 +473,10 @@ export default function OnboardingTour({
 
               <button
                 onClick={goNext}
-                className="flex items-center gap-1 px-4 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-zinc-400 to-zinc-500 hover:from-zinc-300 hover:to-zinc-400 hover: transition-all duration-200 active:scale-[0.97]"
+                className="flex items-center gap-1 px-4 py-1.5 text-xs font-bold text-white bg-zinc-400 hover:bg-zinc-300 transition-all duration-200 active:scale-[0.97]"
               >
                 {isLastStep ? (
-                  "Let's Go! 🚀"
+                  "Let's go"
                 ) : (
                   <>
                     Next

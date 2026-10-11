@@ -13,7 +13,7 @@ export default function AboutVision() {
       phase: 'Phase 2 • Agent Orchestration',
       status: 'Active',
       title: 'Workflows & Battle Arena',
-      description: 'Chain multiple agents into automated pipelines where outputs flow seamlessly. Compare models side-by-side in real-time in Battle Mode.',
+      description: 'Chain multiple agents into automated pipelines where outputs flow directly. Compare models side-by-side in real-time in Battle Mode.',
       icon: Layers,
     },
     {
@@ -52,7 +52,7 @@ export default function AboutVision() {
           return (
             <div
               key={index}
-              className="group relative panel p-5 transition-colors hover:border-accent/40-all duration-300 flex flex-col justify-between"
+              className="group relative panel p-5 transition-colors hover:border-accent/40 duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">

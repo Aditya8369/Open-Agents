@@ -131,7 +131,7 @@ export default function AutomationsPage() {
             <h1 className="font-display text-[26px] font-semibold tracking-[-0.025em] text-zinc-900 dark:text-text-primary">
               Scheduled Automations
             </h1>
-            <span className="text-[11px] font-bold px-2.5 py-0.5 bg-gradient-to-r from-zinc-500/20 to-zinc-500/20 text-accent border border-accent/30">
+            <span className="text-[11px] font-bold px-2.5 py-0.5 bg-zinc-500/20 text-accent border border-accent/30">
               Autopilot
             </span>
           </div>
@@ -144,7 +144,7 @@ export default function AutomationsPage() {
           {notificationBanner === 'default' && (
             <button
               onClick={requestNotificationPermission}
-              className="px-3.5 py-2 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 transition-all flex items-center gap-1.5"
+              className="px-3.5 py-2 text-xs font-semibold bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 transition-colors flex items-center gap-1.5"
             >
               <Zap size={14} />
               Enable Alerts
@@ -156,7 +156,7 @@ export default function AutomationsPage() {
               setEditingAutomation(null)
               setIsCreateModalOpen(true)
             }}
-            className="h-8 px-3 text-xs font-bold text-white bg-gradient-to-r from-zinc-300 via-zinc-400 to-zinc-500 hover:opacity-95 shadow-panel transition-all flex items-center gap-2"
+            className="h-8 px-3 text-xs font-bold text-white bg-zinc-500 hover:bg-zinc-400 shadow-panel transition-colors flex items-center gap-2"
           >
             <Plus size={16} />
             Schedule New Agent
@@ -165,7 +165,7 @@ export default function AutomationsPage() {
       </div>
 
       {/* Security & Architecture Highlight Banner */}
-      <div className="p-4 sm:p-5 border dark:border-zinc-500/25 border-zinc-200 bg-gradient-to-r from-zinc-500/10 via-zinc-500/5 to-transparent flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-4 sm:p-5 border dark:border-zinc-500/25 border-zinc-200 bg-zinc-500/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-start sm:items-center gap-3.5">
           <div className="w-10 h-10 bg-zinc-500/20 flex items-center justify-center text-zinc-500 shrink-0">
             <ShieldCheck size={22} />
@@ -199,7 +199,7 @@ export default function AutomationsPage() {
 
       {/* KPI Cards Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-accent/30 transition-all">
+        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-accent/30 transition-colors">
           <div className="flex items-center justify-between text-gray-400 mb-2">
             <span className="text-xs font-bold uppercase tracking-wider">Total Automations</span>
             <Calendar size={16} className="text-accent" />
@@ -210,7 +210,7 @@ export default function AutomationsPage() {
           <p className="text-[11px] text-gray-400 mt-1">Configured agents</p>
         </div>
 
-        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-all">
+        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-colors">
           <div className="flex items-center justify-between text-gray-400 mb-2">
             <span className="text-xs font-bold uppercase tracking-wider">Active Autopilots</span>
             <Activity size={16} className="text-zinc-500" />
@@ -221,7 +221,7 @@ export default function AutomationsPage() {
           <p className="text-[11px] text-gray-400 mt-1">Running on schedule</p>
         </div>
 
-        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-all">
+        <div className="p-4 sm:p-5 border dark:border-border/80 border-gray-200 dark:bg-surface-card bg-white hover:border-zinc-500/30 transition-colors">
           <div className="flex items-center justify-between text-gray-400 mb-2">
             <span className="text-xs font-bold uppercase tracking-wider">Recorded Runs</span>
             <Zap size={16} className="text-zinc-500" />

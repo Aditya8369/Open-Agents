@@ -97,7 +97,7 @@ export default function SettingsPage() {
       gemini:     !!stored.gemini,
       openrouter: !!stored.openrouter,
     })
-    setSaveMessage('Keys saved successfully ✅')
+    setSaveMessage('Keys saved successfully')
     setTimeout(() => setSaveMessage(''), 3000)
   }
 
