@@ -463,7 +463,7 @@ const handleRun = async () => {
       {/* Breadcrumb */}
       <Link
         to="/"
-        className="inline-flex items-center gap-2 mb-5 h-8 px-3 bg-zinc-50 dark:bg-zinc-500/10 border border-zinc-200 dark:border-zinc-500/25 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-500/20 transition-all duration-200"
+        className="inline-flex items-center gap-2 mb-5 h-8 px-3 bg-zinc-50 dark:bg-zinc-500/10 border border-zinc-200 dark:border-zinc-500/25 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-500/20 transition-colors duration-200"
       >
         ← All Agents
       </Link>
@@ -538,7 +538,7 @@ const handleRun = async () => {
       <div className="flex items-center gap-1 mb-4 p-1 w-fit dark:bg-surface-input bg-gray-100 border dark:border-border border-gray-200">
         <button
           onClick={() => setViewMode("code")}
-          className={`px-3 py-1.5 text-xs font-semibold transition-all ${
+          className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             viewMode === "code"
               ? "bg-accent text-black "
               : "dark:text-text-secondary text-gray-500 hover:dark:text-text-primary hover:text-gray-900"
@@ -548,7 +548,7 @@ const handleRun = async () => {
         </button>
         <button
           onClick={() => setViewMode("preview")}
-          className={`px-3 py-1.5 text-xs font-semibold transition-all ${
+          className={`px-3 py-1.5 text-xs font-semibold transition-colors ${
             viewMode === "preview"
               ? "bg-accent text-black "
               : "dark:text-text-secondary text-gray-500 hover:dark:text-text-primary hover:text-gray-900"
@@ -581,10 +581,10 @@ const handleRun = async () => {
             onClick={() => setBatchMode((prev) => !prev)}
             title="Run this agent across multiple inputs at once"
             className={`flex items-center gap-2 h-8 px-3 text-sm font-semibold
-              transition-all duration-200
+              transition-colors duration-200
               ${
                 batchMode
-                  ? "bg-gradient-to-r from-zinc-400 to-zinc-500 text-black shadow-panel border border-zinc-500/30"
+                  ? "bg-zinc-400 text-black hover:bg-zinc-300 shadow-panel border border-zinc-500/30"
                   : "bg-white dark:bg-surface-card border border-gray-200 dark:border-border text-gray-700 dark:text-text-primary hover:border-zinc-400 dark:hover:border-zinc-500"
               }`}
           >

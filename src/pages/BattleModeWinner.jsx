@@ -53,13 +53,13 @@ export default function BattleModeWinner() {
             <Trophy size={52} className={`${colors.text}`} />
           </div>
           <h1 className={`text-5xl font-extrabold tracking-wider mb-3
-            bg-gradient-to-r from-zinc-300 to-zinc-400 bg-clip-text text-transparent`}>
+            text-zinc-900 dark:text-white`}>
             Winner
           </h1>
           <p className={`text-lg font-bold mb-1 ${colors.text}`}>
             {provider.label}
           </p>
-          <p className="text-xs dark:text-text-muted dark:text-text-muted text-gray-500 font-medium">
+          <p className="text-xs dark:text-text-muted text-gray-500 font-medium">
             {agentName && `Agent: ${agentName}`}
             {duration && ` \u00B7 ${(duration / 1000).toFixed(1)}s`}
           </p>
@@ -67,7 +67,7 @@ export default function BattleModeWinner() {
 
         {/* Winning Output */}
         <div className={` border ${colors.border} ${colors.lightBg} p-6 mb-10 battle-fade-in
-          hover:border-opacity-60 transition-all duration-300`}
+          hover:border-opacity-60 transition-colors duration-300`}
           style={{ animationDelay: '150ms' }}>
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-bold uppercase tracking-widest dark:text-text-muted text-gray-500">
