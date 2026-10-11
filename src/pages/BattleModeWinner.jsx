@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 // Single monochrome theme — winner is never color-coded by provider.
-const winnerTheme = { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: 'hover:', lightBg: 'bg-zinc-400/5' };
+const winnerTheme = { bg: 'bg-zinc-400/10', border: 'border-zinc-400/30', text: 'text-zinc-400', hoverBorder: 'hover:border-zinc-400/60', shadow: '', lightBg: 'bg-zinc-400/5' };
 
 export default function BattleModeWinner() {
   const navigate = useNavigate()
@@ -49,8 +49,8 @@ export default function BattleModeWinner() {
           <div className={`w-24 h-24 ${colors.bg} border ${colors.border}
             flex items-center justify-center mx-auto mb-8
             ${colors.hoverBorder} ${colors.shadow}
-            transition-all duration-300 cursor-default`}>
-            <Trophy size={52} className={`${colors.text} drop-shadow-[0_0_20px_rgba(0,0,0,0.3)]`} />
+            transition-colors duration-300 cursor-default`}>
+            <Trophy size={52} className={`${colors.text}`} />
           </div>
           <h1 className={`text-5xl font-extrabold tracking-wider mb-3
             bg-gradient-to-r from-zinc-300 to-zinc-400 bg-clip-text text-transparent`}>

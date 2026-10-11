@@ -54,14 +54,14 @@ const providerLabels = {
 
 
 const LOADING_MESSAGES = [
-  "⚙️ Agent is grinding for you...",
-  "🧠 Big brain moment loading...",
-  "✨ Cooking something fire...",
-  "🤖 Agent is in its era...",
-  "💀 This might actually go crazy...",
-  "🔥 Almost done, hold tight...",
-  "🚀 Sending it...",
-  "👀 Your agent is locked in...",
+  "Working on your request...",
+  "Consulting the model...",
+  "Processing your inputs...",
+  "Generating output...",
+  "Refining the response...",
+  "Almost done, hold tight...",
+  "Finalizing output...",
+  "Wrapping up...",
 ];
 
 const MAX_CHAR_LIMIT = 4000; // Character cap configuration

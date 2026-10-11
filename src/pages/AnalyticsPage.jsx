@@ -557,7 +557,7 @@ function CategoryBars({ data }) {
             </div>
             <div className="h-2 bg-gray-100 dark:bg-white/5 overflow-hidden">
               <div
-                className={`h-full bg-gradient-to-r ${gradient} transition-all duration-700 ease-out`}
+                className={`h-full ${gradient} transition-[width,background-color] duration-700 ease-out`}
                 style={{ width: `${pct}%`, animationDelay: `${i * 60}ms` }}
               />
             </div>
