@@ -289,6 +289,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 280 | Vocabulary Builder | Turn a word list into etymology, mnemonics, usage sentences, and a mini-quiz. | Education |
 | 281 | Ghostwriting Style Matcher | Paste writing samples to get a style profile plus a rewrite of your draft in that voice. | Content Writing |
 | 282 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts — handled with care. | Content Writing |
+| 283 | Grant Report Writer | Turn project outcomes into a funder-ready impact report with metrics and stories. | Content Writing |
+| 284 | Audio Transcript Cleaner | Paste a raw transcript to get filler removed, speakers labeled, and timestamps kept. | Content Writing |
+| 285 | Lab Results Explainer | Paste CBC/metabolic panel values for a plain-English walkthrough — education, not diagnosis. | Healthcare |
+| 286 | Vaccine Schedule Helper | Get a routine vaccination checklist by age and country — verify with your clinician. | Healthcare |
+| 287 | Allergy Action Plan Organizer | Organize triggers, meds, and emergency steps into a one-page action plan for your doctor to review. | Healthcare |
+| 288 | Hospital Bag Checklist | Get a packing checklist for a hospital stay: essentials, documents, comfort, and leave-at-home. | Healthcare |
+| 289 | Values Clarification Exercise | Rank your life values through forced choices and get a one-page values statement. | Personal Development |
+| 290 | Journaling Prompt Generator | Get 7 tailored journaling prompts for your goal plus a 10-minute routine. | Personal Development |
+| 291 | Confidence Ladder Builder | Break a fear into a graded exposure ladder with rules that keep it safe and steady. | Personal Development |
+| 292 | Digital Detox Planner | Audit screen time to get a 7-day detox plan with replacement activities and relapse rules. | Personal Development |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
