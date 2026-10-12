@@ -389,6 +389,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 380 | Caregiver Shift Planner | Organize family caregiving: shifts, meds log, handoffs, and respite planning. | Healthcare |
 | 381 | Refill Tracker Setup | Set up a refill system: med list, refill dates, pharmacy sync, and interaction flags to discuss. | Healthcare |
 | 382 | Symptom Journal Setup | Build a symptom journal for doctor visits: onset, triggers, severity scales, and print format. | Healthcare |
+| 383 | Morning Routine Designer | Design a realistic morning routine from your constraints: anchors, order, and ramp-up week. | Personal Development |
+| 384 | Fear-Setting Exercise | Run the fear-setting protocol: define, prevent, repair — then price inaction. | Personal Development |
+| 385 | Energy Audit Worksheet | Audit a week for drainers vs gainers and get a rebalanced schedule. | Personal Development |
+| 386 | Literature Review Outliner | Structure a lit review: themes, synthesis matrix, gaps, and chapter order. | Research |
+| 387 | Transcript Coder | Code interview transcripts: codebook, themes with quotes, and saturation check. | Research |
+| 388 | Citation Trail Mapper | Snowball from seed papers: backward/forward trails, must-reads, and stop rules. | Research |
+| 389 | Board Game Night Picker | Pick tonight's board game by group size, time, and taste — plus teach order. | Gaming |
+| 390 | Bracket Balancer | Seed tournament brackets fairly: formats, byes, tiebreaks, and schedule. | Gaming |
+| 391 | Rent vs Buy Analyzer | Compare renting vs buying with total-cost math, assumptions shown, break-even year. | Real Estate |
+| 392 | Open House Checklist | Walk every open house with the right questions: structure, costs, neighbors, paperwork. | Real Estate |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
