@@ -259,6 +259,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 250 | Referral Program Designer | Design a referral program: incentives, mechanics, anti-gaming rules, and launch copy. | Marketing |
 | 251 | Content Repurposing Planner | Turn one piece of content into a thread, newsletter section, and video outline. | Marketing |
 | 252 | Demo Script Writer | Get a product demo script: hook, three wow moments, landmine handling, and close. | Sales |
+| 253 | RFP Response Outliner | Turn RFP requirements into a winning response outline: mapping, differentiators, and proof points. | Sales |
+| 254 | Churn Save Playbook | Build a save play for at-risk accounts: warning signals, outreach sequences, and win-back offers. | Sales |
+| 255 | Sales Handoff Writer | Write an AE-to-CSM handoff: context, promises made, risks, and first-30-day plan. | Sales |
+| 256 | Quota Plan Builder | Break a quota into territory math: activity targets, pipeline coverage, and weekly pacing. | Sales |
+| 257 | SWOT Analyzer | Paste a business or project sketch to get a SWOT plus TOWS actions that turn insight into moves. | Business |
+| 258 | OKR Generator | Turn a company goal into quarterly OKRs: 3-5 objectives with measurable, graded key results. | Business |
+| 259 | Business Model Canvas Builder | Describe a business to get all 9 canvas blocks filled plus the riskiest assumption flagged. | Business |
+| 260 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask — with speaker notes. | Business |
+| 261 | SOP Writer | Describe a recurring process to get a standard operating procedure with roles, steps, and checks. | Business |
+| 262 | Risk Register Builder | List project risks with likelihood, impact, owners, and mitigations in a ranked register. | Business |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
