@@ -349,6 +349,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 340 | Influencer Brief Writer | Brief creators clearly: deliverables, talking points, FTC disclosure, and pay terms. | Marketing |
 | 341 | SEO Content Brief Writer | Write writer-ready SEO briefs: intent, outline, entities, links, and word targets. | Marketing |
 | 342 | Podcast Guest Pitcher | Pitch yourself as a podcast guest: angle, talking points, and a short bio. | Marketing |
+| 343 | UGC Brief Writer | Brief everyday customers to film usable content: shot list, talking points, rights, and pay terms. | Marketing |
+| 344 | Social Media Audit Checklist | Audit your social profiles with a scored checklist: bios, links, cadence, visuals, and quick fixes. | Marketing |
+| 345 | Content Calendar Builder | Turn content pillars into a 30-day calendar: topics, formats, channels, and repurposing links. | Marketing |
+| 346 | Brand Voice Guide Writer | Define a brand voice: principles, do/don't examples, and vocabulary lists. | Marketing |
+| 347 | Gatekeeper Navigator | Get past assistants to decision-makers respectfully: openers, value drops, and callbacks. | Sales |
+| 348 | Negotiation Prep Sheet | Prep B2B negotiations: BATNA, walk-away, tradeables, and concession ladder. | Sales |
+| 349 | Account Plan Builder | Build key-account plans: org maps, whitespace, plays per quarter. | Sales |
+| 350 | Sales Forecast Narrator | Turn pipeline data into a forecast story: commit, best case, risks, and asks. | Sales |
+| 351 | Pilot Success Planner | Design paid pilots that convert: success criteria, milestones, and expansion triggers. | Sales |
+| 352 | Seller Profile Optimizer | Turn a LinkedIn profile into a buyer magnet: headline, about, featured, and CTA. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
