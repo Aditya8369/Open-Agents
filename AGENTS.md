@@ -299,6 +299,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 290 | Journaling Prompt Generator | Get 7 tailored journaling prompts for your goal plus a 10-minute routine. | Personal Development |
 | 291 | Confidence Ladder Builder | Break a fear into a graded exposure ladder with rules that keep it safe and steady. | Personal Development |
 | 292 | Digital Detox Planner | Audit screen time to get a 7-day detox plan with replacement activities and relapse rules. | Personal Development |
+| 293 | GraphQL Query Optimizer | Fix N+1s, over-fetching, and pagination in your GraphQL queries with before/after rewrites. | Engineering |
+| 294 | Contract Testing Guide | Set up consumer-driven contract tests: pacts, provider verification, and CI gating. | Engineering |
+| 295 | SDK Design Guide | Design a client SDK: resource modeling, retries, pagination, errors, and versioning. | Engineering |
+| 296 | CLI Design Guide | Design a CLI developers love: commands, flags, help output, errors, and config files. | Engineering |
+| 297 | Config Format Picker | Pick YAML, TOML, JSON, or env files for your app with schema and validation rules. | Engineering |
+| 298 | Git Workflow Advisor | Choose trunk-based, GitFlow, or stacked diffs for your team with branch rules. | Engineering |
+| 299 | Flaky Test Hunter | Tame flaky tests: detection queries, quarantine policy, and fix patterns per root cause. | Engineering |
+| 300 | Search Relevance Tuner | Tune Elasticsearch/OpenSearch relevance: analyzers, BM25 boosts, and eval queries. | Engineering |
+| 301 | gRPC Service Designer | Design gRPC services: proto layout, streaming choices, error details, and deadlines. | Engineering |
+| 302 | CI Matrix Builder | Build a CI test matrix across versions and OSes without exploding build minutes. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
