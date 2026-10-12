@@ -269,6 +269,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 260 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask — with speaker notes. | Business |
 | 261 | SOP Writer | Describe a recurring process to get a standard operating procedure with roles, steps, and checks. | Business |
 | 262 | Risk Register Builder | List project risks with likelihood, impact, owners, and mitigations in a ranked register. | Business |
+| 263 | Freelance Rate Calculator | Derive your hourly rate from salary target, expenses, and billable hours — math shown. | Finance |
+| 264 | Loan Comparison Analyzer | Compare loan offers side by side: APR, total cost, monthly payment, and traps. | Finance |
+| 265 | Grant Budget Builder | Build a grant budget table: line items, justifications, and match-funding notes. | Finance |
+| 266 | Exit Interview Kit | Get exit-interview questions plus a themes-analysis guide that protects anonymity. | HR |
+| 267 | Reference Check Guide | Get legal-safe reference-check questions with scoring guidance and red-flag handling. | HR |
+| 268 | Team Norms Workshop Kit | Run a working-agreements session: agenda, exercises, and a norms doc template. | HR |
+| 269 | Freelancer Contract Checklist | Review a client contract before signing: payment, IP, kill-fee, and red-flag clauses. | Legal |
+| 270 | DMCA Takedown Drafter | Draft a DMCA takedown notice with all required elements plus counter-notice guidance. | Legal |
+| 271 | Trademark Search Guide | Learn how to run a knockout trademark search: classes, databases, and conflict reading. | Legal |
+| 272 | SMART Goal Generator | Turn vague ambitions into SMART goals with milestones, metrics, and weekly check-ins. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
