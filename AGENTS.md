@@ -279,6 +279,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 270 | DMCA Takedown Drafter | Draft a DMCA takedown notice with all required elements plus counter-notice guidance. | Legal |
 | 271 | Trademark Search Guide | Learn how to run a knockout trademark search: classes, databases, and conflict reading. | Legal |
 | 272 | SMART Goal Generator | Turn vague ambitions into SMART goals with milestones, metrics, and weekly check-ins. | Productivity |
+| 273 | Daily Priorities Picker | Dump your task list to get today's top 3 MITs with timeboxes and a drop list. | Productivity |
+| 274 | Inbox Triage Assistant | Paste email summaries to get reply/archive/delegate/file buckets with draft openers. | Productivity |
+| 275 | Procrastination Unblocker | Name the task you're avoiding to get a 5-minute starter plus a friction audit. | Productivity |
+| 276 | Thank You Note Writer | Get sincere thank-you notes that name the specific thing and avoid generic phrasing. | Productivity |
+| 277 | Apology Message Writer | Write sincere apologies: acknowledge impact, no excuses, concrete amends. | Productivity |
+| 278 | Public Speaking Coach | Paste your talk outline to get structure fixes, opener/closer options, and delivery drills. | Education |
+| 279 | Citation Formatter | Give source details to get perfectly formatted APA, MLA, and Chicago citations. | Education |
+| 280 | Vocabulary Builder | Turn a word list into etymology, mnemonics, usage sentences, and a mini-quiz. | Education |
+| 281 | Ghostwriting Style Matcher | Paste writing samples to get a style profile plus a rewrite of your draft in that voice. | Content Writing |
+| 282 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts — handled with care. | Content Writing |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
