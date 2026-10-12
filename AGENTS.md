@@ -319,6 +319,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 310 | Git Blame Detective | Trace who changed a line and why: blame walkthrough plus how to ask them about it. | Developer Tools |
 | 311 | Port Conflict Resolver | Something squatting on your port? Identify it and free, kill, or relocate it safely. | Developer Tools |
 | 312 | Env Drift Detector | Compare .env.example against your env to find missing, extra, and stale keys. | Developer Tools |
+| 313 | XSS Prevention Checklist | Audit rendering code for XSS sinks: findings by severity plus sanitizer fixes. | Cybersecurity |
+| 314 | JWT Security Reviewer | Review JWT usage: alg confusion, expiry, storage, rotation, and revocation gaps. | Cybersecurity |
+| 315 | Supply Chain Risk Reviewer | Triage dependency risks: typosquats, abandonment, CVEs, and pinning policy. | Cybersecurity |
+| 316 | Secret Scanner Guide | Find hardcoded secrets with gitleaks-style patterns plus safe remediation steps. | Cybersecurity |
+| 317 | Incident Comms Writer | Draft breach notifications that are honest and precise without creating liability. | Cybersecurity |
+| 318 | Multisig Setup Guide | Set up org custody with multisig: signer set, thresholds, and recovery drills. | Web3 |
+| 319 | NFT Rarity Designer | Design trait math for an NFT drop: rarity tiers, distribution curves, and reveal fairness. | Web3 |
+| 320 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework — no live data invented. | Web3 |
+| 321 | Token Launch Checklist | Launch a token fairly: LP locks, anti-snipe, distribution, and comms timeline. | Web3 |
+| 322 | Pandas Code Reviewer | Review pandas code for vectorization wins, chained-assignment bugs, and memory traps. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
