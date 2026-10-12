@@ -219,6 +219,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 210 | GitOps Workflow Designer | Design an ArgoCD/Flux repo layout: environments, promotion flow, and secrets handling. | DevOps |
 | 211 | jq Filter Builder | Describe the JSON extraction you need and get the jq filter plus a plain-English breakdown. | Developer Tools |
 | 212 | Shell Alias Pack Generator | Describe your daily workflow to get a curated aliases-and-functions pack for bash/zsh/fish. | Developer Tools |
+| 213 | JWT Claims Explainer | Paste a JWT to get its header and claims decoded and explained field by field. | Developer Tools |
+| 214 | API Status Code Guide | Describe your API scenarios to get the right status code per case with examples. | Developer Tools |
+| 215 | Character Encoding Fixer | Paste mojibake or encoding errors to get the diagnosis and the exact conversion fix. | Developer Tools |
+| 216 | License Picker Guide | Answer a few questions to get the right open-source license plus how to apply it. | Developer Tools |
+| 217 | Security Headers Auditor | Paste response headers to get a graded audit: CSP, HSTS, framing, and exact fixes. | Cybersecurity |
+| 218 | Password Policy Writer | Draft an org password policy: length, MFA, rotation, and breached-password screening. | Cybersecurity |
+| 219 | Social Engineering Drill Writer | Get tabletop phishing/vishing drill scenarios with injects and debrief questions. | Cybersecurity |
+| 220 | API Security Checklist | Review your API against OWASP API Top 10: findings, severity, and fixes. | Cybersecurity |
+| 221 | Privacy Threat Modeler | Threat-model a feature for privacy: data flows, STRIDE-lite risks, mitigations. | Cybersecurity |
+| 222 | Bug Bounty Brief Writer | Draft a bug-bounty brief: scope, rules, safe harbor, severity payouts, and triage SLA. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
