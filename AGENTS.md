@@ -369,6 +369,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 360 | Wedding Budget Planner | Split a wedding budget across categories with guardrails and cut levers. | Finance |
 | 361 | Buy vs Lease Analyzer | Compare buying vs leasing with total-cost math, mileage honesty, and break-even. | Finance |
 | 362 | Stay Interview Kit | Retain stars with stay interviews: questions, listening guide, and action tracking. | HR |
+| 363 | Peer Feedback Guide | Write constructive peer feedback: observations, impact, requests — plus receiving guide. | HR |
+| 364 | Offer Letter Checklist | Review a job offer before signing: comp, cliff, noncompete, and negotiation points. | HR |
+| 365 | Photo Release Drafter | Draft a plain-English photo/video release form with scope, usage, and minor-consent blocks. Not legal advice. | Legal |
+| 366 | Rental Lease Reviewer | Paste lease clauses to get red flags, money traps, and questions for the landlord — before you sign. Not legal advice. | Legal |
+| 367 | Will Checklist Planner | Get organized before seeing an estate lawyer: documents, decisions, and questions to bring. Information only, not legal advice. | Legal |
+| 368 | Packing List Generator | Get a trip packing list by destination, weather, and activities — nothing forgotten. | Productivity |
+| 369 | Bill Negotiation Script | Lower ISP, insurance, and medical bills with call scripts, anchor lines, and escalations. | Productivity |
+| 370 | Phone Cleanup Plan | Declutter your phone in a weekend: apps, photos, storage, and notification rules. | Productivity |
+| 371 | Recipe Scaler | Scale any recipe to servings with converted units, adjusted times, and pan swaps. | Productivity |
+| 372 | Password Manager Migration | Move to a password manager safely: audit, import, 2FA, and emergency access. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
