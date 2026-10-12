@@ -329,6 +329,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 320 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework — no live data invented. | Web3 |
 | 321 | Token Launch Checklist | Launch a token fairly: LP locks, anti-snipe, distribution, and comms timeline. | Web3 |
 | 322 | Pandas Code Reviewer | Review pandas code for vectorization wins, chained-assignment bugs, and memory traps. | Data Science |
+| 323 | Data Contract Writer | Write producer/consumer data contracts: schemas, SLAs, owners, and change rules. | Data Science |
+| 324 | Model Monitoring Planner | Plan production ML monitoring: drift metrics, PSI thresholds, and retrain triggers. | Data Science |
+| 325 | Labeling Guide Writer | Write annotation guidelines with edge cases and QA sampling for data labeling. | Data Science |
+| 326 | dbt Model Organizer | Organize dbt projects: staging/marts layers, tests, docs, and naming rules. | Data Science |
+| 327 | Sunset Announcement Writer | Announce a feature shutdown gracefully: timeline, migration path, and FAQ. | Product |
+| 328 | Onboarding Email Writer | Write a day 0/3/7/14 onboarding sequence that activates new users. | Product |
+| 329 | Push Notification Writer | Write push copy under the character limit: 3 variants per message plus quiet hours. | Product |
+| 330 | Offboarding Flow Writer | Design account-deletion flows that respect users: export, confirm, win-back. | Product |
+| 331 | Freemium Limits Designer | Draw free-vs-paid gates that convert: value metric, limits, and upgrade triggers. | Product |
+| 332 | Dark Mode Converter | Convert light theme tokens to dark equivalents with contrast checks per pair. | Design |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
