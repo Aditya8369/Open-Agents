@@ -189,6 +189,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 180 | Debate Argument Builder | Give a motion and your stance to get both sides steelmanned, your argument stress-tested for fallacies, and rebuttals ready. | Education |
 | 181 | Interview Scorecard Designer | Enter a role to get a structured interview scorecard: competencies, questions per area, a 1-5 rubric, and red flags. | HR |
 | 182 | Decision Matrix Analyzer | Lay out your options, criteria, and weights to get a scored decision matrix with a recommendation and a sensitivity check. | Business |
+| 183 | Pronunciation Coach | Paste English sentences you're unsure about and get stress marks, tricky sounds broken down, and a read-aloud drill plan. | Education |
+| 184 | Socratic Tutor | Bring a topic you want to understand deeply. This tutor only asks questions — never gives answers — until you derive it yourself. | Education |
+| 185 | Grammar Proofreader | Paste any text to get grammar, spelling, and punctuation fixed — with every change explained and the rule cited. | Productivity |
+| 186 | Startup Idea Brainstormer | Give your skills, interests, and constraints to get 10 concrete startup ideas with the problem, buyer, and why-you angle for each. | Business |
+| 187 | How-To Guide Writer | Describe a task and who it's for to get a complete how-to: prerequisites, numbered steps, expected results, and troubleshooting. | Engineering |
+| 188 | Financial Statement Reader | Paste P&L, cash-flow, or balance-sheet figures to get ratios, runway, and a plain-English read — computed only from your numbers. | Finance |
+| 189 | Freelancer Tax Organizer | Get a tailored tax-season document checklist plus quarterly estimated-payment planner. Organization help, not tax advice. | Finance |
+| 190 | Home Repair Troubleshooter | Describe what's broken at home to get a safety-first diagnosis: likely causes, DIY fixes in order, and when to call a pro. | Productivity |
+| 191 | Peer Review Assistant | Paste a paper or report draft to get a structured peer review: summary check, strengths, major/minor issues, and a verdict. | Research |
+| 192 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits — plus what to avoid. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
