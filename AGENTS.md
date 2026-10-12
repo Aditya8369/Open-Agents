@@ -179,6 +179,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 170 | Job Description Writer | Enter a role, responsibilities, and requirements to get a complete, bias-free job description with interview focus areas. | HR |
 | 171 | NDA Generator | Enter the parties, purpose, and term to get a plain-English mutual NDA draft with a review checklist. Not legal advice. | Legal |
 | 172 | Essay Outline Generator | Give your essay topic, thesis, and level to get a structured outline with a hook, arguments, counterargument, and sources to chase. | Education |
+| 173 | Math Problem Solver | Paste a math problem or concept and get a step-by-step solution with the method explained, common mistakes flagged, and practice pointers. | Education |
+| 174 | Travel Itinerary Planner | Give a destination, days, budget, and pace to get a day-by-day itinerary with must-sees, food picks, and practical tips. | Productivity |
+| 175 | SVG Icon Designer | Describe an icon or simple illustration and get clean, hand-written SVG code with accessibility tags and usage notes. | Design |
+| 176 | Ad Copy Generator | Describe your product and audience to get platform-ready ad units: headlines, descriptions, and CTAs within character limits. | Marketing |
+| 177 | Press Release Writer | Turn your announcement into a proper press release: headline, dateline, inverted-pyramid body, quote, and boilerplate. | Marketing |
+| 178 | Brand Name Generator | Describe your company or idea to get short, memorable name candidates with domain-style spellings, rationale, and checks to run. | Marketing |
+| 179 | Mermaid Diagram Generator | Describe a system, flow, or process and get a valid Mermaid diagram you can paste into GitHub, Notion, or docs. | Engineering |
+| 180 | Debate Argument Builder | Give a motion and your stance to get both sides steelmanned, your argument stress-tested for fallacies, and rebuttals ready. | Education |
+| 181 | Interview Scorecard Designer | Enter a role to get a structured interview scorecard: competencies, questions per area, a 1-5 rubric, and red flags. | HR |
+| 182 | Decision Matrix Analyzer | Lay out your options, criteria, and weights to get a scored decision matrix with a recommendation and a sensitivity check. | Business |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
