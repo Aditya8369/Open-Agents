@@ -239,6 +239,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 230 | Cohort Analysis Guide | Set up retention cohorts: definitions, SQL sketch, curve reading, and action triggers. | Data Science |
 | 231 | Forecast Model Picker | Match your time series to the right model plus evaluation and baseline rules. | Data Science |
 | 232 | Sampling Plan Designer | Design a sampling plan: size math, stratification, and bias guards for your study. | Data Science |
+| 233 | Data Storytelling Coach | Turn analysis output into an executive narrative: headline, so-what, and chart callouts. | Data Science |
+| 234 | User Interview Script Generator | Get a user-interview script: warmup, jobs-to-be-done questions, probes, and wrap-up. | Product |
+| 235 | Product Launch Checklist | Get a launch checklist: readiness gates, rollout, comms, monitoring, and rollback. | Product |
+| 236 | Roadmap Prioritizer | Score features with RICE/WSJF from your list to get a ranked roadmap with rationale. | Product |
+| 237 | Pricing Page Teardown | Paste your pricing tiers to get a teardown: anchor logic, decoys, confusion points, fixes. | Product |
+| 238 | Beta Feedback Synthesizer | Paste raw beta feedback to get themes, severity-ranked issues, and quote bank. | Product |
+| 239 | UX Microcopy Writer | Get button, error, and empty-state copy in your voice: 3 options per string plus don'ts. | Product |
+| 240 | Logo Brief Writer | Write a designer-ready logo brief: values, styles, must-avoids, deliverables, timeline. | Design |
+| 241 | Design System Naming Advisor | Get token and component naming conventions that scale: tiers, aliases, examples. | Design |
+| 242 | Landing Page Critiquer | Paste landing copy for a heuristic teardown: hierarchy, friction, clarity fixes in priority order. | Design |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
