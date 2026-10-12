@@ -209,6 +209,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 200 | Performance Budget Setter | Set web performance budgets: LCP, CLS, JS weight, image rules, and CI enforcement. | Engineering |
 | 201 | Email Template Builder | Get responsive transactional email HTML that survives Outlook, plus plain-text twin. | Engineering |
 | 202 | API Changelog Writer | Diff two API specs into a user-facing API changelog with migration notes. | Engineering |
+| 203 | Kubernetes HPA Tuner | Tune HorizontalPodAutoscaler settings from your workload metrics: targets, min/max, stabilization. | DevOps |
+| 204 | Ansible Playbook Generator | Describe server setup tasks and get an idempotent Ansible playbook with roles and handlers. | DevOps |
+| 205 | Nginx Config Generator | Get a hardened Nginx reverse-proxy config: TLS, gzip, caching headers, rate limits, upstreams. | DevOps |
+| 206 | Incident Severity Classifier | Define SEV1-SEV4 with examples, paging rules, and commander duties for your team. | DevOps |
+| 207 | Deployment Checklist Generator | Get a pre/post-deploy verification checklist tailored to your stack and risk. | DevOps |
+| 208 | Secret Rotation Planner | Rotate API keys, certs, and tokens with zero downtime: order of operations plus rollback. | DevOps |
+| 209 | Database Backup Strategy Designer | Design backup cadence, retention, storage, and restore drills for your database. | DevOps |
+| 210 | GitOps Workflow Designer | Design an ArgoCD/Flux repo layout: environments, promotion flow, and secrets handling. | DevOps |
+| 211 | jq Filter Builder | Describe the JSON extraction you need and get the jq filter plus a plain-English breakdown. | Developer Tools |
+| 212 | Shell Alias Pack Generator | Describe your daily workflow to get a curated aliases-and-functions pack for bash/zsh/fish. | Developer Tools |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
