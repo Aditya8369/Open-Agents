@@ -249,6 +249,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 240 | Logo Brief Writer | Write a designer-ready logo brief: values, styles, must-avoids, deliverables, timeline. | Design |
 | 241 | Design System Naming Advisor | Get token and component naming conventions that scale: tiers, aliases, examples. | Design |
 | 242 | Landing Page Critiquer | Paste landing copy for a heuristic teardown: hierarchy, friction, clarity fixes in priority order. | Design |
+| 243 | Design Handoff Checklist | Get a design-to-dev handoff checklist: specs, assets, tokens, redlines, and edge states. | Design |
+| 244 | Newsletter Writer | Turn a topic and raw notes into a newsletter issue: subject lines, sections, and CTA. | Marketing |
+| 245 | A/B Test Planner | Design an A/B test: hypothesis, variants, sample size guidance, success metrics, and stop rules. | Marketing |
+| 246 | Survey Question Designer | Get a bias-free survey: screening, core questions, scales, and an analysis plan. | Marketing |
+| 247 | Case Study Interview Guide | Get interview questions that extract a compelling customer story plus follow-up probes. | Marketing |
+| 248 | Podcast Show Notes Writer | Turn an episode outline into title, summary, timestamps, quotes, and links. | Marketing |
+| 249 | Testimonial Request Writer | Ask customers for reviews without being awkward: email templates plus timing and follow-up. | Marketing |
+| 250 | Referral Program Designer | Design a referral program: incentives, mechanics, anti-gaming rules, and launch copy. | Marketing |
+| 251 | Content Repurposing Planner | Turn one piece of content into a thread, newsletter section, and video outline. | Marketing |
+| 252 | Demo Script Writer | Get a product demo script: hook, three wow moments, landmine handling, and close. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
