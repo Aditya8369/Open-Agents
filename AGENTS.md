@@ -359,6 +359,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 350 | Sales Forecast Narrator | Turn pipeline data into a forecast story: commit, best case, risks, and asks. | Sales |
 | 351 | Pilot Success Planner | Design paid pilots that convert: success criteria, milestones, and expansion triggers. | Sales |
 | 352 | Seller Profile Optimizer | Turn a LinkedIn profile into a buyer magnet: headline, about, featured, and CTA. | Sales |
+| 353 | Cofounder Agreement Checklist | Cover vesting, IP, roles, and exits before incorporating: checklist plus talk tracks. | Business |
+| 354 | Board Deck Outliner | Outline an investor update deck: wins, metrics, asks, and appendix. | Business |
+| 355 | Hiring Plan Budgeter | Turn hiring goals into a budgeted headcount plan with bands and runway impact. | Business |
+| 356 | Vendor Security Review Kit | Assess vendors fast: SOC 2, DPA, sub-processors, and dealbreaker questions. | Business |
+| 357 | Insurance Needs Checker | Find business coverage gaps: liability, cyber, E&O, and what to ask brokers. | Business |
+| 358 | Crisis Comms Planner | Prepare for bad days: holding statements, spokespeople, channels, and hour-one checklist. | Business |
+| 359 | Crypto Tax Tracker Brief | Organize wallets and transactions for tax time: cost-basis methods and records to keep. | Finance |
+| 360 | Wedding Budget Planner | Split a wedding budget across categories with guardrails and cut levers. | Finance |
+| 361 | Buy vs Lease Analyzer | Compare buying vs leasing with total-cost math, mileage honesty, and break-even. | Finance |
+| 362 | Stay Interview Kit | Retain stars with stay interviews: questions, listening guide, and action tracking. | HR |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
