@@ -379,6 +379,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 370 | Phone Cleanup Plan | Declutter your phone in a weekend: apps, photos, storage, and notification rules. | Productivity |
 | 371 | Recipe Scaler | Scale any recipe to servings with converted units, adjusted times, and pan swaps. | Productivity |
 | 372 | Password Manager Migration | Move to a password manager safely: audit, import, 2FA, and emergency access. | Productivity |
+| 373 | Exam Day Game Planner | Plan exam day like game day: logistics, timing tactics, mindset resets, and packing list. | Education |
+| 374 | Study Group Agenda Builder | Run study groups that work: agenda, roles, teach-back slots, and accountability. | Education |
+| 375 | Online Course Comparer | Compare courses, books, and free resources for a learning goal with a study order. | Education |
+| 376 | Science Fair Planner | Plan a winning science fair project: question, hypothesis, method, and board layout. | Education |
+| 377 | Wedding Vow Writer | Turn your story into vows: structure, prompts, length control, and delivery tips. | Content Writing |
+| 378 | Recipe Blog Writer | Turn a recipe into a blog post: story intro, ingredients, steps, tips, and FAQ. | Content Writing |
+| 379 | FAQ Page Writer | Turn product info into an FAQ page: real questions, short answers, and escalation paths. | Content Writing |
+| 380 | Caregiver Shift Planner | Organize family caregiving: shifts, meds log, handoffs, and respite planning. | Healthcare |
+| 381 | Refill Tracker Setup | Set up a refill system: med list, refill dates, pharmacy sync, and interaction flags to discuss. | Healthcare |
+| 382 | Symptom Journal Setup | Build a symptom journal for doctor visits: onset, triggers, severity scales, and print format. | Healthcare |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
