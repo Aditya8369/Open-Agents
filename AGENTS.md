@@ -339,6 +339,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 330 | Offboarding Flow Writer | Design account-deletion flows that respect users: export, confirm, win-back. | Product |
 | 331 | Freemium Limits Designer | Draw free-vs-paid gates that convert: value metric, limits, and upgrade triggers. | Product |
 | 332 | Dark Mode Converter | Convert light theme tokens to dark equivalents with contrast checks per pair. | Design |
+| 333 | Spacing Scale Designer | Build 4/8pt spacing scales with density tiers and usage rules for your system. | Design |
+| 334 | Chart Chooser | Match data to the right chart type with labeling and accessibility rules per pick. | Design |
+| 335 | Motion Spec Writer | Spec UI motion: durations, easings, choreography, and reduced-motion fallbacks. | Design |
+| 336 | Form Design Reviewer | Review forms for labels, errors, validation timing, and keyboard flow. | Design |
+| 337 | Lead Magnet Outliner | Outline a lead magnet that converts: promise, contents, and landing hook. | Marketing |
+| 338 | Webinar Script Writer | Script a live webinar: hook, teaching arc, Q&A slots, and the pitch transition. | Marketing |
+| 339 | Review Response Writer | Reply to 1-star and 5-star reviews with templates that de-escalate and delight. | Marketing |
+| 340 | Influencer Brief Writer | Brief creators clearly: deliverables, talking points, FTC disclosure, and pay terms. | Marketing |
+| 341 | SEO Content Brief Writer | Write writer-ready SEO briefs: intent, outline, entities, links, and word targets. | Marketing |
+| 342 | Podcast Guest Pitcher | Pitch yourself as a podcast guest: angle, talking points, and a short bio. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
