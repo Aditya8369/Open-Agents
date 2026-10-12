@@ -229,6 +229,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 220 | API Security Checklist | Review your API against OWASP API Top 10: findings, severity, and fixes. | Cybersecurity |
 | 221 | Privacy Threat Modeler | Threat-model a feature for privacy: data flows, STRIDE-lite risks, mitigations. | Cybersecurity |
 | 222 | Bug Bounty Brief Writer | Draft a bug-bounty brief: scope, rules, safe harbor, severity payouts, and triage SLA. | Cybersecurity |
+| 223 | NFT Metadata Builder | Get ERC-721/1155 metadata JSON plus IPFS layout and reveal-plan notes. | Web3 |
+| 224 | DAO Proposal Writer | Turn an idea into a governance proposal: temp-check, spec, options, and voting params. | Web3 |
+| 225 | DeFi Risk Checklist | Evaluate a DeFi position with a risk framework: contracts, custody, oracle, and exit checks. | Web3 |
+| 226 | Wallet Security Guide | Lock down your wallet: seed hygiene, hardware setup, approvals, and scam patterns. | Web3 |
+| 227 | Tokenomics Designer | Design token supply, allocation, vesting, and emissions with sustainability checks. | Web3 |
+| 228 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict. | Data Science |
+| 229 | Dashboard KPI Picker | Describe the goal to get the right KPIs: definitions, formulas, targets, refresh cadence. | Data Science |
+| 230 | Cohort Analysis Guide | Set up retention cohorts: definitions, SQL sketch, curve reading, and action triggers. | Data Science |
+| 231 | Forecast Model Picker | Match your time series to the right model plus evaluation and baseline rules. | Data Science |
+| 232 | Sampling Plan Designer | Design a sampling plan: size math, stratification, and bias guards for your study. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
