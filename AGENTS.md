@@ -199,6 +199,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 190 | Home Repair Troubleshooter | Describe what's broken at home to get a safety-first diagnosis: likely causes, DIY fixes in order, and when to call a pro. | Productivity |
 | 191 | Peer Review Assistant | Paste a paper or report draft to get a structured peer review: summary check, strengths, major/minor issues, and a verdict. | Research |
 | 192 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits — plus what to avoid. | Productivity |
+| 193 | API Versioning Advisor | Design a REST API versioning strategy: scheme, deprecation policy, and migration path. | Engineering |
+| 194 | WebSocket Event Designer | Design a WebSocket event contract: naming, payload envelopes, reconnect and retry rules. | Engineering |
+| 195 | Monorepo Structure Planner | Get a Turborepo/Nx monorepo layout: apps, packages, shared config, and CI boundaries. | Engineering |
+| 196 | Logging Standards Advisor | Define what to log, levels, formats, and PII rules for your stack. | Engineering |
+| 197 | Caching Strategy Advisor | Decide what to cache, where, TTLs, and invalidation for your app. | Engineering |
+| 198 | Event Schema Designer | Design versioned event schemas for Kafka/queues: envelope, keys, idempotency, and evolution rules. | Engineering |
+| 199 | OAuth Integration Guide | Add Google/GitHub login step by step: app setup, code exchange, tokens, session handling. | Engineering |
+| 200 | Performance Budget Setter | Set web performance budgets: LCP, CLS, JS weight, image rules, and CI enforcement. | Engineering |
+| 201 | Email Template Builder | Get responsive transactional email HTML that survives Outlook, plus plain-text twin. | Engineering |
+| 202 | API Changelog Writer | Diff two API specs into a user-facing API changelog with migration notes. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
