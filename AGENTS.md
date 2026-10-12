@@ -309,6 +309,16 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 300 | Search Relevance Tuner | Tune Elasticsearch/OpenSearch relevance: analyzers, BM25 boosts, and eval queries. | Engineering |
 | 301 | gRPC Service Designer | Design gRPC services: proto layout, streaming choices, error details, and deadlines. | Engineering |
 | 302 | CI Matrix Builder | Build a CI test matrix across versions and OSes without exploding build minutes. | DevOps |
+| 303 | Terraform State Rescuer | Recover locked or corrupt Terraform state: diagnosis, surgical commands, and prevention. | DevOps |
+| 304 | K8s NetworkPolicy Writer | Write zero-trust NetworkPolicies: default-deny plus per-tier allow rules that actually work. | DevOps |
+| 305 | K8s Resource Rightsizer | Right-size requests/limits from your metrics: headroom rules, QoS classes, and rollout order. | DevOps |
+| 306 | DNS Migration Planner | Cut over DNS without downtime: TTL stepping, record inventory, and rollback plan. | DevOps |
+| 307 | Chaos Experiment Designer | Design game-day chaos experiments: hypothesis, blast radius, aborts, and learnings. | DevOps |
+| 308 | OpenTelemetry Guide | Add OpenTelemetry traces, metrics, and logs: SDK setup, sampling, and backend mapping. | DevOps |
+| 309 | JSON Diff Explainer | Diff two JSON documents into a semantic change list grouped by added, removed, changed. | Developer Tools |
+| 310 | Git Blame Detective | Trace who changed a line and why: blame walkthrough plus how to ask them about it. | Developer Tools |
+| 311 | Port Conflict Resolver | Something squatting on your port? Identify it and free, kill, or relocate it safely. | Developer Tools |
+| 312 | Env Drift Detector | Compare .env.example against your env to find missing, extra, and stale keys. | Developer Tools |
 
 <!-- Add new agents above this line, incrementing the number. -->
 
