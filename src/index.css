@@ -776,3 +776,27 @@ html:not(.dark) .light-text-secondary {
 body:has(.onboarding-overlay-wrapper) {
   overflow: hidden;
 }
+
+/* Accessibility: respect the user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .premium-section,
+  .battle-fade-in,
+  .battle-step-in,
+  .battle-slide-left,
+  .battle-slide-right,
+  .battle-slide-center,
+  .onboarding-tooltip-visible,
+  .onboarding-tooltip-entering {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
