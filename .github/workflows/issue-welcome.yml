@@ -7,6 +7,8 @@ on:
 
 jobs:
   welcome:
+    # Skip issues opened by owners / members / collaborators — only greet external contributors
+    if: ${{ !contains(fromJson('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.issue.author_association) }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
