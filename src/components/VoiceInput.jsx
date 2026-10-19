@@ -28,6 +28,9 @@ export default function VoiceInput({
     (window.SpeechRecognition || window.webkitSpeechRecognition);
 
   const [isRecording, setIsRecording] = useState(false);
+  // Text for the polite live region. Only state transitions are announced;
+  // interim transcript updates are not, so they don't interrupt screen readers.
+  const [announcement, setAnnouncement] = useState("");
   const recognitionRef = useRef(null);
   // Snapshot of `value` at the moment recording started. Each onresult event
   // appends the latest transcript to this baseline. We update it in two cases:
@@ -104,6 +107,8 @@ export default function VoiceInput({
             : "";
         baseValueRef.current =
           baseValueRef.current + sep + finalTranscript.trim();
+        // Announce only finalized speech; interim revisions would interrupt.
+        setAnnouncement(finalTranscript.trim());
       }
 
       // Trim interim too — Chrome's SpeechRecognition often returns
@@ -120,13 +125,20 @@ export default function VoiceInput({
       onChangeRef.current(next);
     };
 
+    // The Web Speech API fires `end` after `error`, so remember the failure
+    // here; otherwise onend would overwrite the failure message.
+    let failed = false;
+
     recognition.onerror = () => {
+      failed = true;
       setIsRecording(false);
+      setAnnouncement("Voice input failed");
       recognitionRef.current = null;
     };
 
     recognition.onend = () => {
       setIsRecording(false);
+      setAnnouncement(failed ? "Voice input failed" : "Listening stopped");
       recognitionRef.current = null;
     };
 
@@ -134,9 +146,11 @@ export default function VoiceInput({
       recognition.start();
       recognitionRef.current = recognition;
       setIsRecording(true);
+      setAnnouncement("Listening started");
     } catch {
       // start() throws if called while already running — safe to ignore.
       setIsRecording(false);
+      setAnnouncement("Voice input failed");
     }
   };
 
@@ -149,6 +163,7 @@ export default function VoiceInput({
       }
     }
     setIsRecording(false);
+    setAnnouncement("Listening stopped");
   };
 
   const handleClick = (e) => {
@@ -162,12 +177,14 @@ export default function VoiceInput({
   };
 
   return (
+    <>
     <button
       type="button"
       onClick={handleClick}
       disabled={disabled}
       title={isRecording ? "Stop recording" : "Start voice input"}
       aria-label={isRecording ? "Stop voice input" : "Start voice input"}
+      aria-pressed={isRecording}
       className={`absolute z-10 flex items-center justify-center w-7 h-7 transition-colors
         ${
           isRecording
@@ -186,5 +203,9 @@ export default function VoiceInput({
   <Mic size={14} className="relative" />
       )}
     </button>
+    <span role="status" aria-live="polite" className="sr-only">
+      {announcement}
+    </span>
+    </>
   );
 }
