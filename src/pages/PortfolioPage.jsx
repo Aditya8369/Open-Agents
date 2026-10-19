@@ -1,281 +1,189 @@
-import { useDocumentTitle } from '../lib/useDocumentTitle'
+﻿import { useDocumentTitle } from '../lib/useDocumentTitle'
 import { Link } from 'react-router-dom'
-import {
-  ArrowRight,
-  Github,
-  Mail,
-  Globe,
-  Code,
-  Laptop,
-  BarChart3,
-  ShieldCheck,
-  Zap,
-  Terminal,
-} from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Github, Mail } from 'lucide-react'
 
 export default function PortfolioPage() {
-  useDocumentTitle('Portfolio')
+  useDocumentTitle('OpenAgents')
 
-  const projects = [
-    {
-      title: 'OpenAgents Platform',
-      description:
-        'Open-source platform for building, deploying, and managing AI agent workflows. Modular architecture with Supabase backend, React frontend, and extensible plugin system.',
-      tags: ['React', 'Vite', 'Supabase', 'Tailwind'],
-      link: 'https://github.com/DivyashreeR008/Open-Agents',
-      icon: Code,
-    },
-    {
-      title: 'Battle Mode Arena',
-      description:
-        'Head-to-head AI agent comparison arena. Pit two agents against the same prompt, vote for the best output, and track win rates over time.',
-      tags: ['React', 'WebSockets', 'Real-time'],
-      link: '/battle',
-      icon: Zap,
-    },
-    {
-      title: 'Workflow Builder',
-      description:
-        'Visual pipeline designer for chaining multiple AI agents into automated workflows. Drag-and-drop canvas with execution trace viewer.',
-      tags: ['React Flow', 'State Machines'],
-      link: '/workflows/build',
-      icon: Laptop,
-    },
-    {
-      title: 'Analytics Dashboard',
-      description:
-        'Agent usage analytics and cost tracking. Real-time metrics, spend breakdowns, and performance insights across all agent runs.',
-      tags: ['Charts', 'Data Viz', 'Metrics'],
-      link: '/analytics',
-      icon: BarChart3,
-    },
-    {
-      title: 'Agent Marketplace',
-      description:
-        'Curated marketplace of 300+ AI agents organized by category. Search, filter, one-click install, and community ratings.',
-      tags: ['Discovery', 'Search', 'Community'],
-      link: '/marketplace',
-      icon: Globe,
-    },
-    {
-      title: 'Automations Suite',
-      description:
-        'Scheduled agent runs and batch automation. Cron-based triggers, retry policies, and failure alerts for production agent workflows.',
-      tags: ['Scheduling', 'Batching', 'DevOps'],
-      link: '/automations',
-      icon: Terminal,
-    },
+  const index = [
+    { n: '01', title: 'Agent Marketplace', note: '392 agents, 8 categories', to: '/marketplace' },
+    { n: '02', title: 'Battle Mode', note: 'Head-to-head model comparison', to: '/battle' },
+    { n: '03', title: 'Workflow Builder', note: 'Chain agents into pipelines', to: '/workflows/build' },
+    { n: '04', title: 'Automations', note: 'Schedules, retries, batch runs', to: '/automations' },
+    { n: '05', title: 'Analytics', note: 'Usage, cost, run history', to: '/analytics' },
   ]
 
-  const skills = [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Tailwind CSS', level: 92 },
-    { name: 'Vite', level: 88 },
-    { name: 'Supabase', level: 85 },
-    { name: 'Node.js', level: 80 },
+  const stack = [
+    ['Frontend', 'React 18, Vite 6, Tailwind CSS 3'],
+    ['Routing', 'React Router 6, lazy-loaded routes'],
+    ['Backend', 'Supabase — Postgres, auth, storage'],
+    ['Agents', '392 file-based definitions, zero-config registry'],
+    ['Testing', 'Vitest'],
   ]
+
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
-      <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded">
+    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black antialiased">
+      <a href="#index" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:text-sm">
         Skip to content
       </a>
 
-      <nav className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-2"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <span className="font-bold text-xl tracking-tight">OpenAgents</span>
-          </Link>
-
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link to="#work" className="hover:text-white transition-colors">Work</Link>
-            <Link to="#skills" className="hover:text-white transition-colors">Skills</Link>
-            <Link to="#about" className="hover:text-white transition-colors">About</Link>
-            <Link to="#contact" className="hover:text-white transition-colors">Contact</Link>
-            <Link
-              to="/"
-              className="px-4 py-1.5 rounded-md border border-white/30 hover:bg-white/10 hover:text-white transition-colors text-[12px] font-semibold tracking-wide uppercase"
+      <header className="border-b border-white/10">
+        <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+          <Link to="/" className="font-mono text-sm tracking-tight">openagents_</Link>
+          <nav className="flex items-center gap-6 font-mono text-xs text-neutral-400">
+            <a href="#index" className="hover:text-white transition-colors">Index</a>
+            <a href="#stack" className="hover:text-white transition-colors">Stack</a>
+            <a href="#license" className="hover:text-white transition-colors">License</a>
+            <a
+              href="https://github.com/DivyashreeR008/Open-Agents"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors inline-flex items-center gap-1"
             >
-              Back to App
-            </Link>
-          </div>
+              GitHub <ArrowUpRight size={12} />
+            </a>
+          </nav>
         </div>
-      </nav>
+      </header>
 
-      <main id="content" className="relative">
-        <section
-          id="hero"
-          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20"
-        >
-          <div className="absolute inset-0 z-0">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px] -top-[200px]" />
-            <div className="absolute bottom-0 right-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] -bottom-[150px]" />
-          </div>
-
-          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/30 bg-white/10 text-white text-[11px] font-mono uppercase tracking-widest mb-6">
-              <span className="relative flex h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-              Open Source · Production Ready
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              AI Agent<span className="text-white"> Workflows</span>
-              <br />
-              <span className="text-white">That Actually Ship</span>
+      <main>
+        <section className="border-b border-white/10">
+          <div className="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+            <p className="font-mono text-xs text-neutral-500 mb-6">OPEN-SOURCE AI AGENT WORKSPACE — MIT LICENSED</p>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-[0.95]">
+              OpenAgents
             </h1>
-
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              OpenAgents is an open-source platform for building, deploying,
-              and managing AI agent workflows. Modular, extensible, and
-              built for teams that ship AI features fast.
+            <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-neutral-400">
+              A self-hostable workspace for running AI agents. Pick from 392 definitions,
+              compare models side by side, chain steps into workflows, and schedule
+              recurring runs — without handing your data to a black-box SaaS.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
                 to="/agents"
-                className="px-8 py-3 bg-white text-black font-bold rounded-md hover:bg-white/80 transition-all duration-300 flex items-center gap-2"
+                className="inline-flex items-center gap-2 bg-white text-black px-5 py-2.5 text-sm font-medium hover:bg-neutral-200 transition-colors"
               >
-                <ArrowRight size={18} />
-                Enter Agent Workspace
+                Enter Agent Workspace <ArrowRight size={15} />
               </Link>
-              <Link
-                to="/workflows/build"
-                className="px-8 py-3 border border-white/20 text-white hover:bg-white/5 rounded-md transition-all duration-300 flex items-center gap-2"
+              <a
+                href="https://github.com/DivyashreeR008/Open-Agents"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-white/25 px-5 py-2.5 text-sm font-medium hover:border-white hover:bg-white/5 transition-colors"
               >
-                <ArrowRight size={18} />
-                Start Building
-              </Link>
-              <Link
-                to="#work"
-                className="px-8 py-3 border border-white/20 text-white hover:bg-white/5 rounded-md transition-all duration-300 flex items-center gap-2"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                View Work
-              </Link>
+                <Github size={15} /> Source code
+              </a>
             </div>
-
-            <div className="mt-16 flex flex-wrap justify-center gap-8 text-left">
+            <dl className="mt-14 grid grid-cols-3 max-w-lg gap-6 border-t border-white/10 pt-6">
               <div>
-                <span className="text-2xl font-bold text-white block">300+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Agents</span>
+                <dt className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest">Agents</dt>
+                <dd className="mt-1 text-2xl font-semibold tracking-tight">392</dd>
               </div>
               <div>
-                <span className="text-2xl font-bold text-white block">10k+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Monthly Runs</span>
+                <dt className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest">Routes</dt>
+                <dd className="mt-1 text-2xl font-semibold tracking-tight">20+</dd>
               </div>
               <div>
-                <span className="text-2xl font-bold text-white block">MIT</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Licensed</span>
+                <dt className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest">License</dt>
+                <dd className="mt-1 text-2xl font-semibold tracking-tight">MIT</dd>
               </div>
-            </div>
+            </dl>
           </div>
         </section>
 
-        <section id="work" className="relative py-24 bg-black">
-          <div className="relative z-10 max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-2">Selected Work</h2>
-                <p className="text-gray-400">Projects built with and for OpenAgents.</p>
-              </div>
+        <section id="index" className="border-b border-white/10 scroll-mt-14">
+          <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <div className="flex items-baseline justify-between mb-2">
+              <h2 className="font-mono text-xs text-neutral-500 uppercase tracking-widest">Index</h2>
+              <span className="font-mono text-xs text-neutral-600">05 sections</span>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {projects.map((project) => (
-                <article
-                  key={project.title}
-                  className="group relative p-6 rounded-xl border border-white/10 bg-white/5 hover:border-white/50 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-4 group-hover:bg-white transition-colors">
-                    <project.icon className="text-white w-6 h-6 group-hover:text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors">{project.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-3">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-0.5 rounded border border-white/10 text-[10px] font-mono text-gray-400 uppercase tracking-wider">{tag}</span>
-                    ))}
-                  </div>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-white transition-colors">Open Project <ArrowRight size={14} /></a>
-                </article>
+            <ul className="border-t border-white/10">
+              {index.map((item) => (
+                <li key={item.n} className="border-b border-white/10">
+                  <Link
+                    to={item.to}
+                    className="group flex items-baseline gap-5 md:gap-8 py-5 md:py-6 hover:bg-white/[0.03] transition-colors -mx-6 px-6"
+                  >
+                    <span className="font-mono text-xs text-neutral-600 w-6 shrink-0">{item.n}</span>
+                    <span className="flex-1 min-w-0">
+                      <span className="block text-xl md:text-2xl font-medium tracking-tight group-hover:underline underline-offset-4 decoration-white/40">
+                        {item.title}
+                      </span>
+                      <span className="block mt-1 text-sm text-neutral-500">{item.note}</span>
+                    </span>
+                    <ArrowUpRight size={18} className="shrink-0 text-neutral-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </Link>
+                </li>
               ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="border-b border-white/10">
+          <div className="max-w-5xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-10">
+            <div>
+              <h2 className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-5">Why open source</h2>
+              <p className="text-neutral-300 leading-relaxed">
+                Most agent platforms are closed: your prompts, outputs, and usage data
+                live on someone else's servers. OpenAgents keeps the whole loop —
+                definitions, runs, history — in a codebase you can read, fork, and
+                self-host.
+              </p>
+            </div>
+            <div>
+              <h2 className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-5">What it is not</h2>
+              <p className="text-neutral-300 leading-relaxed">
+                Not a model, not an API wrapper, not a demo. It is a workspace:
+                versioned agent definitions on disk, explicit run history, and pages
+                for the jobs teams actually do — compare, chain, schedule, measure.
+              </p>
             </div>
           </div>
         </section>
 
-        <section id="skills" className="py-24 bg-black">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex justify-between items-end mb-16">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-2">Technical Skills</h2>
-                <p className="text-gray-400">The tools that power OpenAgents.</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {skills.map((skill) => (
-                <div key={skill.name} className="p-6 rounded-xl border border-white/10 bg-white/5">
-                  <div className="flex justify-between items-start mb-3">
-                    <span className="font-bold text-white">{skill.name}</span>
-                    <span className="text-sm font-mono text-white">{skill.level}%</span>
-                  </div>
-                  <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-white rounded-full" style={{ width: `${skill.level}%` }} />
-                  </div>
+        <section id="stack" className="border-b border-white/10 scroll-mt-14">
+          <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <h2 className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-2">Stack</h2>
+            <dl className="border-t border-white/10">
+              {stack.map(([k, v]) => (
+                <div key={k} className="grid grid-cols-[140px_1fr] md:grid-cols-[200px_1fr] gap-4 py-4 border-b border-white/10">
+                  <dt className="font-mono text-xs text-neutral-500 pt-0.5">{k}</dt>
+                  <dd className="text-sm text-neutral-200">{v}</dd>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="py-24 bg-white/5 border-t border-white/10">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight mb-6">About OpenAgents</h2>
-            <p className="text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">
-              OpenAgents started as a mission to make AI agent development accessible to every team. Instead of black-box SaaS platforms, we believe in open-source, self-hostable, extensible agent infrastructure that teams truly own.
+            </dl>
+            <p className="mt-6 font-mono text-xs text-neutral-600">
+              No UI animation libraries. No component kits. Transitions are plain CSS.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mt-12">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-2">MIT</div>
-                <div className="text-sm text-gray-500">Open Source License</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-2">100+</div>
-                <div className="text-sm text-gray-500">Agent Templates</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white mb-2">Community</div>
-                <div className="text-sm text-gray-500">Driven Development</div>
-              </div>
-            </div>
           </div>
         </section>
 
-        <section id="contact" className="py-24 bg-black">
-          <div className="max-w-2xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight mb-6">Get in Touch</h2>
-            <p className="text-gray-400 mb-10">Questions, contributions, or just want to say hi?</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="mailto:hello@openagents.dev" className="px-8 py-3 border border-white/20 rounded-md text-white hover:bg-white/5 hover:border-white transition-colors text-sm font-medium">
-                <Mail size={16} className="mr-2" /> hello@openagents.dev
+        <section id="license" className="scroll-mt-14">
+          <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+            <h2 className="font-mono text-xs text-neutral-500 uppercase tracking-widest mb-5">License & contact</h2>
+            <p className="text-neutral-300 leading-relaxed max-w-2xl">
+              MIT licensed. Fork it, self-host it, ship client work on it — no
+              permission needed. Issues and pull requests are welcome on the repo.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 font-mono text-xs">
+              <a
+                href="https://github.com/DivyashreeR008/Open-Agents"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-white/25 px-4 py-2.5 hover:border-white hover:bg-white/5 transition-colors"
+              >
+                <Github size={14} /> DivyashreeR008/Open-Agents
               </a>
-              <a href="https://github.com/DivyashreeR008/Open-Agents" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-white/30 rounded-md bg-white/10 text-white hover:bg-white hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
-                <Github size={16} /> GitHub Repo
+              <a
+                href="mailto:hello@openagents.dev"
+                className="inline-flex items-center gap-2 border border-white/25 px-4 py-2.5 hover:border-white hover:bg-white/5 transition-colors"
+              >
+                <Mail size={14} /> hello@openagents.dev
               </a>
             </div>
-            <div className="mt-12 flex justify-center gap-6 text-gray-500">
-              <a href="https://github.com/DivyashreeR008/Open-Agents" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                <Github size={20} />
-              </a>
-            </div>
-            <p className="mt-8 text-xs text-gray-600 font-mono uppercase tracking-widest">© {new Date().getFullYear()} OpenAgents. MIT Licensed.</p>
+            <p className="mt-14 font-mono text-[11px] text-neutral-600 uppercase tracking-widest">
+              (c) {new Date().getFullYear()} OpenAgents — MIT
+            </p>
           </div>
         </section>
       </main>
