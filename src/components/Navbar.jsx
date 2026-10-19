@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Sun, Moon, Github, Menu, X, HelpCircle, DollarSign, RotateCcw, Settings, PanelLeft } from 'lucide-react'
+import { Sun, Moon, Github, Menu, X, HelpCircle, DollarSign, RotateCcw, Settings, PanelLeft, ExternalLink } from 'lucide-react'
 
 import Logo from './Logo'
 import KeyboardShortcutsModal from './KeyboardShortcutsModal'
@@ -105,6 +105,7 @@ export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
             >
               <Github size={14} aria-hidden="true" />
               <span className="hidden lg:inline">Star</span>
+              <ExternalLink size={12} aria-hidden="true" />
             </a>
 
             {onStartTour && (
@@ -214,8 +215,10 @@ export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
                 rel="noopener noreferrer"
                 className="btn-secondary"
               >
-                <Github size={14} />
+                <Github size={14} aria-hidden="true" />
                 Star
+                <ExternalLink size={12} aria-hidden="true" />
+                <span className="sr-only">(opens in new tab)</span>
               </a>
               <button
                 onClick={() => {

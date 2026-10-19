@@ -211,7 +211,8 @@ export default function SettingsPage() {
                   className="flex items-center gap-1 text-[11px] font-medium text-zinc-900 dark:text-white hover:underline transition-colors"
                 >
                   {p.keyLabel}
-                  <ExternalLink size={10} />
+                  <ExternalLink size={10} aria-hidden="true" />
+                  <span className="sr-only">(opens in new tab)</span>
                 </a>
               </div>
             </div>

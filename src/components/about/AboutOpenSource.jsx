@@ -1,4 +1,4 @@
-import { Code2, GitPullRequest, GitFork, CheckCircle2, Terminal, ShieldAlert } from 'lucide-react'
+import { Code2, GitPullRequest, GitFork, CheckCircle2, Terminal, ShieldAlert, ExternalLink } from 'lucide-react'
 
 export default function AboutOpenSource() {
   const steps = [
@@ -48,6 +48,8 @@ export default function AboutOpenSource() {
         >
           <GitPullRequest size={15} />
           <span>Read Full Contributing Guide</span>
+          <ExternalLink size={12} aria-hidden="true" />
+          <span className="sr-only">(opens in new tab)</span>
         </a>
       </div>
 

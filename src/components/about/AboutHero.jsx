@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Sparkles, Github, ArrowRight } from 'lucide-react'
+import { Sparkles, Github, ArrowRight, ExternalLink } from 'lucide-react'
 
 export default function AboutHero() {
   return (
@@ -59,6 +59,7 @@ export default function AboutHero() {
           >
             <Github size={16} />
             <span>Star on GitHub</span>
+            <ExternalLink size={12} aria-hidden="true" />
           </a>
 
           <Link

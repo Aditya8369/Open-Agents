@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowRight, Github, Search, X, Star, History, Swords, GitBranch, Lightbulb, LayoutGrid, Rows3 } from 'lucide-react'
+import { ArrowRight, Github, Search, X, Star, History, Swords, GitBranch, Lightbulb, LayoutGrid, Rows3, ExternalLink } from 'lucide-react'
 import AgentCardSkeleton from '../components/AgentCardSkeleton'
 import AgentCard from '../components/AgentCard'
 import { useFavorites } from '../lib/useFavorites'
@@ -589,17 +589,21 @@ export default function HomePage() {
               href="https://github.com/DivyashreeR008/Open-Agents#readme"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit text-[13px] text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-black hover:decoration-current dark:text-text-secondary dark:hover:text-white"
+              className="inline-flex w-fit items-center gap-1 text-[13px] text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-black hover:decoration-current dark:text-text-secondary dark:hover:text-white"
             >
               Documentation
+              <ExternalLink size={11} aria-hidden="true" />
+              <span className="sr-only">(opens in new tab)</span>
             </a>
             <a
               href="https://github.com/DivyashreeR008/Open-Agents/issues"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit text-[13px] text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-black hover:decoration-current dark:text-text-secondary dark:hover:text-white"
+              className="inline-flex w-fit items-center gap-1 text-[13px] text-zinc-500 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-black hover:decoration-current dark:text-text-secondary dark:hover:text-white"
             >
               Request an agent
+              <ExternalLink size={11} aria-hidden="true" />
+              <span className="sr-only">(opens in new tab)</span>
             </a>
           </div>
 
@@ -623,6 +627,8 @@ export default function HomePage() {
             >
               <Github size={14} aria-hidden="true" />
               GitHub
+              <ExternalLink size={12} aria-hidden="true" />
+              <span className="sr-only">(opens in new tab)</span>
             </a>
           </div>
         </div>

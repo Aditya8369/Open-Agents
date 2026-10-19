@@ -378,7 +378,8 @@ export default function Sidebar({ open, onClose }) {
               rel="noopener noreferrer"
               className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
             >
-              GitHub →
+              GitHub <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
             <a
               href="https://github.com/DivyashreeR008/Open-Agents/issues"
@@ -386,7 +387,8 @@ export default function Sidebar({ open, onClose }) {
               rel="noopener noreferrer"
               className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
             >
-              Contribute →
+              Contribute <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
             <Link
               to="/feedback"

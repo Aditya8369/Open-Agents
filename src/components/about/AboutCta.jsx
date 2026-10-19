@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Sparkles, Github, GitPullRequest, ArrowRight, PlusCircle } from 'lucide-react'
+import { Sparkles, Github, GitPullRequest, ArrowRight, PlusCircle, ExternalLink } from 'lucide-react'
 
 export default function AboutCta() {
   return (
@@ -30,6 +30,8 @@ export default function AboutCta() {
           >
             <GitPullRequest size={16} />
             <span>Explore Open Issues</span>
+            <ExternalLink size={12} aria-hidden="true" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
 
           <a
@@ -40,6 +42,8 @@ export default function AboutCta() {
           >
             <Github size={16} />
             <span>Star on GitHub</span>
+            <ExternalLink size={12} aria-hidden="true" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
 
           <Link

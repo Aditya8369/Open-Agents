@@ -56,7 +56,10 @@ export default function FeedbackPage() {
               />
             </div>
 
-            <h2 className="text-[13px] font-semibold text-zinc-900 dark:text-text-primary">{title}</h2>
+            <h2 className="text-[13px] font-semibold text-zinc-900 dark:text-text-primary">
+              {title}
+              <span className="sr-only"> (opens in new tab)</span>
+            </h2>
             <p className="mt-1.5 text-xs leading-relaxed text-zinc-500 dark:text-text-secondary">
               {description}
             </p>
