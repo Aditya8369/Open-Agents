@@ -16,7 +16,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const title = context.payload.issue.title || '';
+            const title = (context.payload.issue.title || '').trim();
             const labels = new Set();
 
             if (title.startsWith('[Bug]')) labels.add('bug');
@@ -25,8 +25,8 @@ jobs:
             if (title.startsWith('[Feedback]')) labels.add('feedback');
             if (title.startsWith('[Agent Proposal]')) labels.add('new-agent');
 
-            // Fallback for first-time contributors
-            labels.add('triage');
+            // Fallback: only issues with no recognised type prefix need initial review
+            if (labels.size === 0) labels.add('triage');
 
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
