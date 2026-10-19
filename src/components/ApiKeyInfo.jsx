@@ -1,4 +1,4 @@
-import { Info } from "lucide-react";
+import { Info, ExternalLink } from "lucide-react";
 
 export default function ApiKeyInfo({ provider, url }) {
   return (
@@ -10,9 +10,11 @@ export default function ApiKeyInfo({ provider, url }) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-400 underline"
+          className="inline-flex items-center gap-1 text-zinc-400 underline"
         >
           Open {provider} dashboard
+          <ExternalLink size={10} aria-hidden="true" />
+          <span className="sr-only">(opens in new tab)</span>
         </a>
       </div>
     </div>
