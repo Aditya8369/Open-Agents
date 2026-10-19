@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -10,7 +10,7 @@
    ========================================================================== */
 @layer components {
 
-  /* ── Micro-labels ─────────────────────────────────────────────────────── */
+  /* â”€â”€ Micro-labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .eyebrow {
     @apply font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-zinc-400 dark:text-text-muted;
   }
@@ -21,7 +21,7 @@
       dark:border-border-light dark:text-text-secondary;
   }
 
-  /* ── Surfaces ─────────────────────────────────────────────────────────── */
+  /* â”€â”€ Surfaces â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .panel {
     @apply border border-zinc-200 dark:border-border;
   }
@@ -30,7 +30,7 @@
     @apply border border-zinc-200 dark:border-border;
   }
 
-  /* ── Buttons ──────────────────────────────────────────────────────────── */
+  /* â”€â”€ Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .btn {
     @apply inline-flex h-8 shrink-0 items-center justify-center gap-1.5 px-3
       text-[13px] font-medium transition-colors duration-150
@@ -75,7 +75,7 @@
       dark:text-text-secondary dark:hover:bg-white/[0.06] dark:hover:text-text-primary;
   }
 
-  /* ── Inputs ───────────────────────────────────────────────────────────── */
+  /* â”€â”€ Inputs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .field {
     @apply h-8 w-full border px-2.5 text-[13px] transition-colors
       border-zinc-300 bg-white text-black placeholder:text-zinc-400
@@ -84,7 +84,7 @@
       dark:focus:border-white;
   }
 
-  /* ── Filter chip ──────────────────────────────────────────────────────── */
+  /* â”€â”€ Filter chip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .chip {
     @apply inline-flex h-7 shrink-0 items-center gap-1.5 border px-2 font-mono text-[11px]
       border-zinc-300 text-zinc-600 transition-colors
@@ -99,13 +99,13 @@
       dark:border-white dark:bg-white dark:text-black;
   }
 
-  /* ── Badges ───────────────────────────────────────────────────────────── */
+  /* â”€â”€ Badges â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .badge {
     @apply inline-flex items-center border border-zinc-300 px-1.5 py-0.5 font-mono text-[10px] font-medium leading-none
       text-zinc-600 dark:border-border dark:text-text-secondary;
   }
 
-  /* ── Nav rows ─────────────────────────────────────────────────────────── */
+  /* â”€â”€ Nav rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .nav-row {
     @apply relative flex h-8 items-center gap-2.5 px-2 text-[13px] transition-colors duration-150
       text-zinc-600 hover:text-black
@@ -117,12 +117,12 @@
     @apply bg-black font-medium text-white dark:bg-white dark:text-black;
   }
 
-  /* ── Section rule ─────────────────────────────────────────────────────── */
+  /* â”€â”€ Section rule â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .section-rule {
     @apply border-t border-zinc-200 dark:border-border;
   }
 
-  /* ── Editorial vocabulary ─────────────────────────────────────────────────
+  /* â”€â”€ Editorial vocabulary â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
      The app is laid out like a printed index: hairlines do the work that
      boxes used to, and every list is numbered so a row has a stable address. */
 
@@ -161,7 +161,7 @@
       dark:border-border/70 dark:text-text-secondary dark:hover:text-text-primary;
   }
 
-  /* Active row inverts to a solid block — position is never colour-coded. */
+  /* Active row inverts to a solid block â€” position is never colour-coded. */
   .rail-link-active {
     @apply border-black bg-black font-medium text-white dark:border-white dark:bg-white dark:text-black;
   }
@@ -194,13 +194,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dark mode defaults — pure black canvas, pure white ink */
+/* Dark mode defaults â€” pure black canvas, pure white ink */
 .dark body {
   background-color: #000000;
   color: #FAFAFA;
 }
 
-/* Light mode — the inverse of the above, no hue either way */
+/* Light mode â€” the inverse of the above, no hue either way */
 html:not(.dark) body {
   background-color: #FFFFFF;
   color: #000000;
@@ -730,51 +730,57 @@ html:not(.dark) .light-text-secondary {
   }
 }
 
-/* ===== Onboarding Tour ===== */
+/* ===== Page Transitions â€” Black & White Slanted Slide ===== */
 
-@keyframes onboarding-spotlight-pulse {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.30),
-      0 0 20px 4px rgba(255, 255, 255, 0.14);
+@keyframes slide-slant-next {
+  0% {
+    clip-path: polygon(-20% 0, 10% 0, 0% 100%, -30% 100%);
+    transform: translateX(-100%) skewX(-12deg);
   }
-
   50% {
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.20),
-      0 0 30px 8px rgba(255, 255, 255, 0.10);
+    clip-path: polygon(40% 0, 70% 0, 60% 100%, 30% 100%);
+    transform: translateX(0%) skewX(-12deg);
+  }
+  100% {
+    clip-path: polygon(110% 0, 140% 0, 130% 100%, 100% 100%);
+    transform: translateX(100%) skewX(-12deg);
   }
 }
 
-@keyframes onboarding-tooltip-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@keyframes slide-slant-prev {
+  0% {
+    clip-path: polygon(130% 0, 160% 0, 150% 100%, 120% 100%);
+    transform: translateX(100%) skewX(12deg);
   }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    clip-path: polygon(40% 0, 70% 0, 60% 100%, 30% 100%);
+    transform: translateX(0%) skewX(12deg);
+  }
+  100% {
+    clip-path: polygon(-30% 0, 0% 0, -10% 100%, -40% 100%);
+    transform: translateX(-100%) skewX(12deg);
   }
 }
 
-.onboarding-spotlight-ring {
-  animation: onboarding-spotlight-pulse 2s ease-in-out infinite;
-  border: 2px solid #FFFFFF;
+.scanline {
+  background: linear-gradient(rgba(18, 18, 18, 0.6) 50%, transparent 50%);
 }
 
-.onboarding-tooltip-entering {
-  opacity: 0;
-  transform: translateY(10px) scale(0.97);
+.page-transition-overlay-next,
+.page-transition-overlay-prev {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: black;
+  pointer-events: none;
 }
 
-.onboarding-tooltip-visible {
-  animation: onboarding-tooltip-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.page-transition-overlay-next {
+  animation: slide-slant-next 0.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-/* Prevent body scroll while tour is active */
-body:has(.onboarding-overlay-wrapper) {
-  overflow: hidden;
+.page-transition-overlay-prev {
+  animation: slide-slant-prev 0.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Accessibility: respect the user's reduced-motion preference */
@@ -799,4 +805,4 @@ body:has(.onboarding-overlay-wrapper) {
     opacity: 1 !important;
     transform: none !important;
   }
-}
+

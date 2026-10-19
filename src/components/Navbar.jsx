@@ -12,7 +12,7 @@ import { useSessionSpend } from '../lib/useSessionSpend'
  * global search affordance, and the account/utility actions. Primary
  * navigation lives in the Sidebar so this row never gets crowded.
  */
-export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
+export default function Navbar({ sidebarOpen, setSidebarOpen }) {
   const [darkMode, setDarkMode] = useState(true)
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -107,15 +107,6 @@ export default function Navbar({ sidebarOpen, setSidebarOpen, onStartTour }) {
               <span className="hidden lg:inline">Star</span>
               <ExternalLink size={12} aria-hidden="true" />
             </a>
-
-            {onStartTour && (
-              <button onClick={onStartTour} className="btn-icon hidden md:inline-flex" aria-label="Take a tour" title="Take a tour">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="m15.5 8.5-2 5-5 2 2-5z" />
-                </svg>
-              </button>
-            )}
 
             <button
               onClick={() => setShowShortcuts(true)}

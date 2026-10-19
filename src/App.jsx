@@ -6,8 +6,7 @@ import Sidebar from './components/Sidebar'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import ScrollToBottom from './components/ScrollToBottom'
 import ErrorBoundary from './components/ErrorBoundary'
-import OnboardingTour from './components/OnboardingTour'
-import { useOnboarding } from './lib/useOnboarding'
+import PageTransition from './components/PageTransition'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AgentPage = lazy(() => import('./pages/AgentPage'))
@@ -31,6 +30,7 @@ const TermsOfService = lazy(() => import('./pages/TermsOfService'))
 const SettingsPage = lazy(() => import('./pages/SettingsPage'))
 const AnalyticsPage = lazy(() => import('./pages/AnalyticsPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
+const PortfolioPage = lazy(() => import('./pages/PortfolioPage'))
 const FeedbackPage = lazy(() => import('./pages/FeedbackPage'))
 
 function PageLoader() {
@@ -42,10 +42,10 @@ function PageLoader() {
   )
 }
 
-function MainLayout({ sidebarOpen, setSidebarOpen, onStartTour, isTourActive, onTourEnd }) {
+function MainLayout({ sidebarOpen, setSidebarOpen }) {
   return (
     <>
-      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} onStartTour={onStartTour} />
+      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <Link
         to="/feedback"
@@ -69,18 +69,12 @@ function MainLayout({ sidebarOpen, setSidebarOpen, onStartTour, isTourActive, on
           <Outlet />
         </div>
       </main>
-      <OnboardingTour
-        isActive={isTourActive}
-        onEnd={onTourEnd}
-        setSidebarOpen={setSidebarOpen}
-      />
     </>
   )
 }
 
 export default function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const { isTourActive, startTour, endTour } = useOnboarding()
 
   return (
     <div className="min-h-screen transition-theme bg-white dark:bg-surface">
@@ -88,17 +82,16 @@ export default function App() {
       <ScrollToBottom />
       <ErrorBoundary>
         <Suspense fallback={<PageLoader />}>
-          <Routes>
+          <PageTransition>
+            <Routes>
             <Route element={
               <MainLayout
                 sidebarOpen={sidebarOpen}
                 setSidebarOpen={setSidebarOpen}
-                onStartTour={startTour}
-                isTourActive={isTourActive}
-                onTourEnd={endTour}
               />
             }>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<PortfolioPage />} />
+              <Route path="/agents" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/feedback" element={<FeedbackPage />} />
               <Route path="/privacy" element={<Privacy />} />
@@ -124,6 +117,7 @@ export default function App() {
               <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
+          </PageTransition>
         </Suspense>
       </ErrorBoundary>
     </div>
