@@ -1,14 +1,14 @@
-# Agents Directory
+﻿# Agents Directory
 
 This file is the human-readable index of all agents in Open-Agents.
-Keep it in sync with `src/agents/definitions/` � every new agent needs a row here.
+Keep it in sync with `src/agents/definitions/` ï¿½ every new agent needs a row here.
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minutes.
 
 | # | Agent Name | Description | Category |
 |---|------------|-------------|----------|
 | 1 | Accessibility Audit Generator | Paste your HTML or component code and get a detailed WCAG accessibility audit with issues, severity ratings, and corrected code snippets. | Engineering |
-| 2 | Architecture Decision Record Generator | Turn a rough technical decision into a structured document that captures what was decided, why, and what alternatives were considered — so your team understands the reasoning months later. | Engineering |
+| 2 | Architecture Decision Record Generator | Turn a rough technical decision into a structured document that captures what was decided, why, and what alternatives were considered â€” so your team understands the reasoning months later. | Engineering |
 | 3 | Agent Evaluation & Benchmark Assistant | Evaluate an AI agent | Productivity |
 | 4 | AI Agent Guardrail Policy Writer | Describe an AI agent and its available actions to get a complete guardrail policy: risk assessment per action, approval requirements, spending/usage limits, blocked actions, and human-in-the-loop escalation rules. | Engineering |
 | 5 | InterviewAI | Simulates real software engineering interviews and provides comprehensive performance feedback. | Engineering |
@@ -52,7 +52,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 43 | Docstring Generator | Paste a function, class, or module and get idiomatic docstrings/comments added in your language | Engineering |
 | 44 | DSA Problem Explainer | Explains DSA problems with intuition, optimized approaches, dry runs, interview insights, and complexity analysis. | Education |
 | 45 | DSA Progress Analyzer | Analyzes your DSA practice log to find weak topics and suggest what to practice next. | Education |
-| 46 | ELI5 Explainer | Explains complex topics in plain language at your chosen difficulty level — from 5-year-old to expert. | Education |
+| 46 | ELI5 Explainer | Explains complex topics in plain language at your chosen difficulty level â€” from 5-year-old to expert. | Education |
 | 47 | Email Reply Writer | Paste any email you received and describe how you want to respond. Get a polished reply in seconds. | Productivity |
 | 48 | Emergency Fund Planner | Plan an emergency fund based on essential expenses, current savings, monthly contributions, and a target coverage period. | Finance |
 | 49 | Employee Onboarding Planner | Generate structured onboarding plans and checklists for new hires based on role, department, seniority, and start date. | HR |
@@ -83,7 +83,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 74 | Master Image Prompt Generator | Turn a basic idea into a highly detailed, professional prompt for Midjourney, DALL-E 3 or other AI image generation tools. | Design |
 | 75 | Incident Post-Mortem Writer | Turn rough incident notes into a blameless post-mortem with timeline, root cause analysis, and action items. | Engineering |
 | 76 | Incident Runbook Generator | Enter a service name, common failure modes, and infrastructure details to generate a production-grade incident runbook with detection, diagnosis, resolution steps, escalation paths, and communication templates. | Engineering |
-| 77 | Interview Preparation Planner Agent | Creates a personalized interview preparation plan based on your target role, experience level, and available time — with a topic-wise study schedule, daily practice tasks, and a mock interview plan. | Education |
+| 77 | Interview Preparation Planner Agent | Creates a personalized interview preparation plan based on your target role, experience level, and available time â€” with a topic-wise study schedule, daily practice tasks, and a mock interview plan. | Education |
 | 78 | Invoice Description Generator | Turn rough notes about work you did into polished invoice line items and a professional project summary. | Business |
 | 79 | Jarvis PA | Your personal AI assistant for planning, task breakdown, scheduling, prioritization, and daily productivity support. | Productivity |
 | 80 | Java DSA Interview Prep | Generates Java DSA problems, provides hints, reviews attempts, and simulates coding interviews. | Education |
@@ -93,7 +93,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 84 | LinkedIn Outreach Message Writer | Paste a prospect | Sales |
 | 85 | LinkedIn Post Writer | Generate ready-to-post LinkedIn content with a strong hook and hashtags. | Marketing |
 | 86 | Load Testing Plan Generator | Describe your app or API and get a complete load testing plan with ready-to-run scripts for k6, JMeter, Locust, Artillery, or ab. | Engineering |
-| 87 | Log Analysis Summarizer | Paste raw log output and get a structured summary of errors, warnings, patterns, timeline of events, and likely root cause — so you find the 5 lines that matter in 500 lines of noise. | DevOps |
+| 87 | Log Analysis Summarizer | Paste raw log output and get a structured summary of errors, warnings, patterns, timeline of events, and likely root cause â€” so you find the 5 lines that matter in 500 lines of noise. | DevOps |
 | 88 | Meal Planner Agent | Creates personalized meal plans based on dietary preferences, health goals, budget, available ingredients, and nutritional requirements. | Productivity |
 | 89 | Medical Research Summarizer | Summarizes medical research papers and abstracts into plain English with key findings, methodology, limitations, and clinical implications. | Research |
 | 90 | Medication Interaction Explainer | Understand possible medication interactions, side effects, and safety concerns in plain English. | Healthcare |
@@ -104,10 +104,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 95 | Model Meltdown Detective | Diagnose failed or underperforming ML experiments using model details, dataset context, metrics, hyperparameters, and code snippets. | Engineering |
 | 96 | ML Experiment Report Generator | Enter your model type, hyperparameters, training metrics, and evaluation results to get a structured experiment report ready to share with your team or include in a paper. | Engineering |
 | 97 | Crammo: Mnemonic Generator | Paste study material and get revision friendly mnemonics. | Education |
-| 98 | Mock Data Generator | Describe a data schema and get realistic mock data in JSON format instantly — names, emails, addresses, dates, and more. | Engineering |
+| 98 | Mock Data Generator | Describe a data schema and get realistic mock data in JSON format instantly â€” names, emails, addresses, dates, and more. | Engineering |
 | 99 | n8n Workflow Planner | Describe an automation in plain English and get a step-by-step n8n workflow plan with nodes, settings, data mapping, and pitfalls to avoid. | Engineering |
 | 100 | NFT Project Description Writer | Writes engaging and compelling descriptions for NFT collections. | Marketing |
-| 101 | NPC Dialogue & Lore Generator | Describe a game character and scenario to get fully voiced NPC dialogue trees, personality-consistent responses, ambient lore snippets, and journal entries — ready to drop into any game engine. | Gaming |
+| 101 | NPC Dialogue & Lore Generator | Describe a game character and scenario to get fully voiced NPC dialogue trees, personality-consistent responses, ambient lore snippets, and journal entries â€” ready to drop into any game engine. | Gaming |
 | 102 | OpenAPI Spec Generator | Describe your API in plain English and get a complete, valid OpenAPI 3.0 YAML specification with paths, parameters, request bodies, and response schemas. | Engineering |
 | 103 | Password Strength Reviewer | The agent takes in the password and reviews whether it is strong enough. | Cybersecurity |
 | 104 | PathPilot | Takes your life choices and predicts all possibilities for each one, helping you make better decisions based on your personal priorities. | Productivity |
@@ -127,11 +127,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 118 | Privacy Policy Generator | Describe your app or website and get a comprehensive privacy policy draft covering data collection, usage, storage, and user rights. | Legal |
 | 119 | Project Architecture Planner | Analyzes a project idea and recommends a practical technology stack, architecture, authentication strategy, AI components, deployment approach, and development roadmap. | Engineering |
 | 120 | Prompt Engineering Coach | Reviews user prompts and provides actionable suggestions to improve clarity, specificity, structure, context, and overall effectiveness. | Productivity |
-| 121 | Property Description Writer | Enter your property specs and get a compelling, SEO-optimized listing description, a social media caption, and a set of headline options — tailored to your target buyer and tone. | Real Estate |
+| 121 | Property Description Writer | Enter your property specs and get a compelling, SEO-optimized listing description, a social media caption, and a set of headline options â€” tailored to your target buyer and tone. | Real Estate |
 | 122 | Proposal Document Generator | Generates professional client proposals with an executive summary, problem statement, solution overview, deliverables, pricing, timeline, expected outcomes, and next steps. | Sales |
 | 123 | PYQ Paper Analyser | Analyzes previous year question papers, identifies recurring concepts, ranks topic importance, and generates a model question paper. | Education |
 | 124 | Python Method Finder | Master python methods and improve your coding skills! | Engineering |
-| 125 | README Generator | Paste your repo URL and project details to get a clean, developer-friendly README.md — covering setup, usage, tech stack, and more. | Engineering |
+| 125 | README Generator | Paste your repo URL and project details to get a clean, developer-friendly README.md â€” covering setup, usage, tech stack, and more. | Engineering |
 | 126 | Real Estate Listing Generator | Generates compelling real estate listing descriptions for property portals and marketplaces. | Real Estate |
 | 127 | Regex Decoder | Decodes an existing regex pattern into a plain-English, token-by-token breakdown with examples and edge cases. | Productivity |
 | 128 | Regex Generator | Describe what you want to match in plain English and get a tested regex pattern with explanation. | Engineering |
@@ -142,7 +142,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 133 | Resume Screener | Evaluate candidates against job descriptions with scoring. | HR |
 | 134 | RTI Application Writer | Turns your information need into a ready-to-file RTI application under Section 6(1) of the RTI Act, 2005, with a filing checklist and appeal timelines. | Legal |
 | 135 | Salary Negotiation Script Generator | Generate personalized salary negotiation scripts with opening statements, pushback responses, and professional closing strategies. | Finance |
-| 136 | Sales Discovery Call Script Generator | Generates a complete discovery call script for sales reps with opening, qualification questions, pain point exploration, objection handling, and next steps — tailored to your product, industry, and ideal customer profile. | Sales |
+| 136 | Sales Discovery Call Script Generator | Generates a complete discovery call script for sales reps with opening, qualification questions, pain point exploration, objection handling, and next steps â€” tailored to your product, industry, and ideal customer profile. | Sales |
 | 137 | Sales Objection Handler | Generates empathetic, direct, and data-driven responses to customer objections. | Sales |
 | 138 | SEO Keyword Strategy Planner | Helps marketers generate a comprehensive SEO keyword strategy by identifying high-value keywords and content opportunities. | Marketing |
 | 139 | Skill Gap Roadmap Agent | Paste the job description for your future role and your current background. Get a week-by-week learning roadmap, project ideas, and milestone checks. | Education |
@@ -158,10 +158,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 149 | Technical Debt Report Generator | Generate structured technical debt reports with business impact,estimated effort to fix,risk if ignored and prioritized recommendations. | Engineering |
 | 150 | Terms and Conditions Simplifier | Paste a website URL (or its Terms & Conditions link directly) and get the terms explained in plain English, with red flags highlighted. | Legal |
 | 151 | Terraform Config Generator Agent | Turns a plain-English infrastructure description into ready-to-use Terraform configuration (main.tf, variables.tf, outputs.tf) for your chosen cloud provider. | Engineering |
-| 152 | Terraform Plan Diff Explainer | Paste raw `terraform plan` output and get a plain-English breakdown of every create, update, destroy, and replace action — with downtime and data-loss risks called out clearly before you apply. | DevOps |
+| 152 | Terraform Plan Diff Explainer | Paste raw `terraform plan` output and get a plain-English breakdown of every create, update, destroy, and replace action â€” with downtime and data-loss risks called out clearly before you apply. | DevOps |
 | 153 | Test Case Generator | Turn a feature description into QA-ready manual test cases with steps, expected results, priorities, and edge cases. | Engineering |
 | 154 | Threat Intelligence Summariser | The agent converts threat intelligence reports, CVEs, security advisories, malware analyses, and incident writeups into concise, structured summaries.  | Cybersecurity |
-| 155 | Tone Rewriter | Paste any text and select a target tone. Get your message rewritten to match — from formal to casual, harsh to diplomatic, or verbose to concise. | Productivity |
+| 155 | Tone Rewriter | Paste any text and select a target tone. Get your message rewritten to match â€” from formal to casual, harsh to diplomatic, or verbose to concise. | Productivity |
 | 156 | Typography Pairer | Describe your project mood, brand, or use case and get 3-5 font pairings with heading, body, and accent fonts, live CSS snippets, and Tailwind config. | Design |
 | 157 | Unit Test Generator | Paste any function or module and get complete unit tests with edge cases, happy paths, and failure scenarios. | Engineering |
 | 158 | User Story Writer | Describe a feature in plain language and get a well-structured user story with acceptance criteria, edge cases, and technical notes. | Product |
@@ -173,7 +173,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 164 | CI Failure Triage | Paste a failing CI log and get a triage verdict: what failed, the most likely cause, and the smallest fix to try first. | Engineering |
 | 165 | Standup Notes Generator | Turn rough bullets into a crisp yesterday / today / blockers standup update for Slack, email, or your daily call. | Productivity |
 | 166 | Weekly Review Generator | Paste your week's notes and get a structured GTD-style weekly review: wins, misses, open loops, and next week's top 3 priorities. | Productivity |
-| 167 | Landing Page Copy Generator | Describe your product and get a full landing page draft: hero, subhead, benefits, social-proof block, and CTA — in your tone. | Marketing |
+| 167 | Landing Page Copy Generator | Describe your product and get a full landing page draft: hero, subhead, benefits, social-proof block, and CTA â€” in your tone. | Marketing |
 | 168 | Cold Call Script Generator | Get a complete cold-call script: permission opener, discovery questions, objection responses, and a low-pressure close. | Sales |
 | 169 | Subscription Audit Assistant | List your subscriptions with costs and usage to get a keep / cancel / downgrade verdict per service plus total monthly savings. | Finance |
 | 170 | Job Description Writer | Enter a role, responsibilities, and requirements to get a complete, bias-free job description with interview focus areas. | HR |
@@ -190,15 +190,15 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 181 | Interview Scorecard Designer | Enter a role to get a structured interview scorecard: competencies, questions per area, a 1-5 rubric, and red flags. | HR |
 | 182 | Decision Matrix Analyzer | Lay out your options, criteria, and weights to get a scored decision matrix with a recommendation and a sensitivity check. | Business |
 | 183 | Pronunciation Coach | Paste English sentences you're unsure about and get stress marks, tricky sounds broken down, and a read-aloud drill plan. | Education |
-| 184 | Socratic Tutor | Bring a topic you want to understand deeply. This tutor only asks questions — never gives answers — until you derive it yourself. | Education |
-| 185 | Grammar Proofreader | Paste any text to get grammar, spelling, and punctuation fixed — with every change explained and the rule cited. | Productivity |
+| 184 | Socratic Tutor | Bring a topic you want to understand deeply. This tutor only asks questions â€” never gives answers â€” until you derive it yourself. | Education |
+| 185 | Grammar Proofreader | Paste any text to get grammar, spelling, and punctuation fixed â€” with every change explained and the rule cited. | Productivity |
 | 186 | Startup Idea Brainstormer | Give your skills, interests, and constraints to get 10 concrete startup ideas with the problem, buyer, and why-you angle for each. | Business |
 | 187 | How-To Guide Writer | Describe a task and who it's for to get a complete how-to: prerequisites, numbered steps, expected results, and troubleshooting. | Engineering |
-| 188 | Financial Statement Reader | Paste P&L, cash-flow, or balance-sheet figures to get ratios, runway, and a plain-English read — computed only from your numbers. | Finance |
+| 188 | Financial Statement Reader | Paste P&L, cash-flow, or balance-sheet figures to get ratios, runway, and a plain-English read â€” computed only from your numbers. | Finance |
 | 189 | Freelancer Tax Organizer | Get a tailored tax-season document checklist plus quarterly estimated-payment planner. Organization help, not tax advice. | Finance |
 | 190 | Home Repair Troubleshooter | Describe what's broken at home to get a safety-first diagnosis: likely causes, DIY fixes in order, and when to call a pro. | Productivity |
 | 191 | Peer Review Assistant | Paste a paper or report draft to get a structured peer review: summary check, strengths, major/minor issues, and a verdict. | Research |
-| 192 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits — plus what to avoid. | Productivity |
+| 192 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits â€” plus what to avoid. | Productivity |
 | 193 | API Versioning Advisor | Design a REST API versioning strategy: scheme, deprecation policy, and migration path. | Engineering |
 | 194 | WebSocket Event Designer | Design a WebSocket event contract: naming, payload envelopes, reconnect and retry rules. | Engineering |
 | 195 | Monorepo Structure Planner | Get a Turborepo/Nx monorepo layout: apps, packages, shared config, and CI boundaries. | Engineering |
@@ -266,10 +266,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 257 | SWOT Analyzer | Paste a business or project sketch to get a SWOT plus TOWS actions that turn insight into moves. | Business |
 | 258 | OKR Generator | Turn a company goal into quarterly OKRs: 3-5 objectives with measurable, graded key results. | Business |
 | 259 | Business Model Canvas Builder | Describe a business to get all 9 canvas blocks filled plus the riskiest assumption flagged. | Business |
-| 260 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask — with speaker notes. | Business |
+| 260 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask â€” with speaker notes. | Business |
 | 261 | SOP Writer | Describe a recurring process to get a standard operating procedure with roles, steps, and checks. | Business |
 | 262 | Risk Register Builder | List project risks with likelihood, impact, owners, and mitigations in a ranked register. | Business |
-| 263 | Freelance Rate Calculator | Derive your hourly rate from salary target, expenses, and billable hours — math shown. | Finance |
+| 263 | Freelance Rate Calculator | Derive your hourly rate from salary target, expenses, and billable hours â€” math shown. | Finance |
 | 264 | Loan Comparison Analyzer | Compare loan offers side by side: APR, total cost, monthly payment, and traps. | Finance |
 | 265 | Grant Budget Builder | Build a grant budget table: line items, justifications, and match-funding notes. | Finance |
 | 266 | Exit Interview Kit | Get exit-interview questions plus a themes-analysis guide that protects anonymity. | HR |
@@ -288,11 +288,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 279 | Citation Formatter | Give source details to get perfectly formatted APA, MLA, and Chicago citations. | Education |
 | 280 | Vocabulary Builder | Turn a word list into etymology, mnemonics, usage sentences, and a mini-quiz. | Education |
 | 281 | Ghostwriting Style Matcher | Paste writing samples to get a style profile plus a rewrite of your draft in that voice. | Content Writing |
-| 282 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts — handled with care. | Content Writing |
+| 282 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts â€” handled with care. | Content Writing |
 | 283 | Grant Report Writer | Turn project outcomes into a funder-ready impact report with metrics and stories. | Content Writing |
 | 284 | Audio Transcript Cleaner | Paste a raw transcript to get filler removed, speakers labeled, and timestamps kept. | Content Writing |
-| 285 | Lab Results Explainer | Paste CBC/metabolic panel values for a plain-English walkthrough — education, not diagnosis. | Healthcare |
-| 286 | Vaccine Schedule Helper | Get a routine vaccination checklist by age and country — verify with your clinician. | Healthcare |
+| 285 | Lab Results Explainer | Paste CBC/metabolic panel values for a plain-English walkthrough â€” education, not diagnosis. | Healthcare |
+| 286 | Vaccine Schedule Helper | Get a routine vaccination checklist by age and country â€” verify with your clinician. | Healthcare |
 | 287 | Allergy Action Plan Organizer | Organize triggers, meds, and emergency steps into a one-page action plan for your doctor to review. | Healthcare |
 | 288 | Hospital Bag Checklist | Get a packing checklist for a hospital stay: essentials, documents, comfort, and leave-at-home. | Healthcare |
 | 289 | Values Clarification Exercise | Rank your life values through forced choices and get a one-page values statement. | Personal Development |
@@ -326,7 +326,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 317 | Incident Comms Writer | Draft breach notifications that are honest and precise without creating liability. | Cybersecurity |
 | 318 | Multisig Setup Guide | Set up org custody with multisig: signer set, thresholds, and recovery drills. | Web3 |
 | 319 | NFT Rarity Designer | Design trait math for an NFT drop: rarity tiers, distribution curves, and reveal fairness. | Web3 |
-| 320 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework — no live data invented. | Web3 |
+| 320 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework â€” no live data invented. | Web3 |
 | 321 | Token Launch Checklist | Launch a token fairly: LP locks, anti-snipe, distribution, and comms timeline. | Web3 |
 | 322 | Pandas Code Reviewer | Review pandas code for vectorization wins, chained-assignment bugs, and memory traps. | Data Science |
 | 323 | Data Contract Writer | Write producer/consumer data contracts: schemas, SLAs, owners, and change rules. | Data Science |
@@ -369,12 +369,12 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 360 | Wedding Budget Planner | Split a wedding budget across categories with guardrails and cut levers. | Finance |
 | 361 | Buy vs Lease Analyzer | Compare buying vs leasing with total-cost math, mileage honesty, and break-even. | Finance |
 | 362 | Stay Interview Kit | Retain stars with stay interviews: questions, listening guide, and action tracking. | HR |
-| 363 | Peer Feedback Guide | Write constructive peer feedback: observations, impact, requests — plus receiving guide. | HR |
+| 363 | Peer Feedback Guide | Write constructive peer feedback: observations, impact, requests â€” plus receiving guide. | HR |
 | 364 | Offer Letter Checklist | Review a job offer before signing: comp, cliff, noncompete, and negotiation points. | HR |
 | 365 | Photo Release Drafter | Draft a plain-English photo/video release form with scope, usage, and minor-consent blocks. Not legal advice. | Legal |
-| 366 | Rental Lease Reviewer | Paste lease clauses to get red flags, money traps, and questions for the landlord — before you sign. Not legal advice. | Legal |
+| 366 | Rental Lease Reviewer | Paste lease clauses to get red flags, money traps, and questions for the landlord â€” before you sign. Not legal advice. | Legal |
 | 367 | Will Checklist Planner | Get organized before seeing an estate lawyer: documents, decisions, and questions to bring. Information only, not legal advice. | Legal |
-| 368 | Packing List Generator | Get a trip packing list by destination, weather, and activities — nothing forgotten. | Productivity |
+| 368 | Packing List Generator | Get a trip packing list by destination, weather, and activities â€” nothing forgotten. | Productivity |
 | 369 | Bill Negotiation Script | Lower ISP, insurance, and medical bills with call scripts, anchor lines, and escalations. | Productivity |
 | 370 | Phone Cleanup Plan | Declutter your phone in a weekend: apps, photos, storage, and notification rules. | Productivity |
 | 371 | Recipe Scaler | Scale any recipe to servings with converted units, adjusted times, and pan swaps. | Productivity |
@@ -390,15 +390,65 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 381 | Refill Tracker Setup | Set up a refill system: med list, refill dates, pharmacy sync, and interaction flags to discuss. | Healthcare |
 | 382 | Symptom Journal Setup | Build a symptom journal for doctor visits: onset, triggers, severity scales, and print format. | Healthcare |
 | 383 | Morning Routine Designer | Design a realistic morning routine from your constraints: anchors, order, and ramp-up week. | Personal Development |
-| 384 | Fear-Setting Exercise | Run the fear-setting protocol: define, prevent, repair — then price inaction. | Personal Development |
+| 384 | Fear-Setting Exercise | Run the fear-setting protocol: define, prevent, repair â€” then price inaction. | Personal Development |
 | 385 | Energy Audit Worksheet | Audit a week for drainers vs gainers and get a rebalanced schedule. | Personal Development |
 | 386 | Literature Review Outliner | Structure a lit review: themes, synthesis matrix, gaps, and chapter order. | Research |
 | 387 | Transcript Coder | Code interview transcripts: codebook, themes with quotes, and saturation check. | Research |
 | 388 | Citation Trail Mapper | Snowball from seed papers: backward/forward trails, must-reads, and stop rules. | Research |
-| 389 | Board Game Night Picker | Pick tonight's board game by group size, time, and taste — plus teach order. | Gaming |
+| 389 | Board Game Night Picker | Pick tonight's board game by group size, time, and taste â€” plus teach order. | Gaming |
 | 390 | Bracket Balancer | Seed tournament brackets fairly: formats, byes, tiebreaks, and schedule. | Gaming |
 | 391 | Rent vs Buy Analyzer | Compare renting vs buying with total-cost math, assumptions shown, break-even year. | Real Estate |
 | 392 | Open House Checklist | Walk every open house with the right questions: structure, costs, neighbors, paperwork. | Real Estate |
+| 393 | API Latency Analyzer | Analyze API latency data to identify slow endpoints, bottleneck causes, and optimization recommendations. | Engineering |
+| 394 | CI/CD Pipeline Reviewer | Review CI/CD pipelines for security gaps, inefficiencies, and reliability issues. | Engineering |
+| 395 | Documentation Readability Scorer | Score technical documentation for readability, clarity, and audience appropriateness. | Engineering |
+| 396 | Error Budget Tracker | Define and track error budgets with SLO alignment and burn-rate alerting. | Engineering |
+| 397 | Feature Request Prioritizer | Score and prioritize feature requests using RICE, WSJF, and value-versus-effort frameworks. | Engineering |
+| 398 | Git History Analyzer | Analyze git history for commit quality, hotspots, and contributor patterns. | Engineering |
+| 399 | IAM Policy Auditor | Audit IAM policies for privilege escalation risks, overly permissive roles, and least-privilege violations. | Cybersecurity |
+| 400 | Incident Response Runbook Generator | Generate incident response runbooks with detection, triage, and escalation procedures. | Engineering |
+| 401 | Legacy Code Modernizer | Plan incremental modernization of legacy codebases with risk assessment and migration steps. | Engineering |
+| 402 | Load Balancer Config Generator | Generate load balancer configurations with health checks, session affinity, and SSL termination. | Engineering |
+| 403 | Log Aggregation Designer | Design log aggregation pipelines with structured logging, retention, and query strategies. | Engineering |
+| 404 | Microservice Health Checker | Design health check endpoints and readiness probes for microservice architectures. | Engineering |
+| 405 | Network Traffic Analyzer | Analyze network traffic patterns, protocols, and anomalies to identify bottlenecks or security concerns. | Engineering |
+| 406 | REST API Design Reviewer | Review REST API designs for consistency, versioning, pagination, error handling, and HATEOAS compliance. | Engineering |
+| 407 | Schema Design Reviewer | Review database schema designs for normalization, indexing, referential integrity, and scalability. | Engineering |
+| 408 | Secret Exposure Response Planner | Create incident response plans for exposed secrets including rotation, revocation, and audit steps. | Cybersecurity |
+| 409 | SQL Injection Auditor | Audit code and queries for SQL injection vulnerabilities with parameterized query fixes. | Cybersecurity |
+| 410 | SSL/TLS Configuration Auditor | Audit SSL/TLS configurations for protocol versions, cipher suites, certificate issues, and best practices. | Cybersecurity |
+| 411 | XSS Vulnerability Auditor | Audit frontend code for cross-site scripting vulnerabilities with sanitization and CSP fixes. | Cybersecurity |
+| 412 | Anomaly Detection Designer | Design anomaly detection pipelines with feature engineering, model selection, and alerting thresholds. | Data Science |
+| 413 | Data Pipeline Auditor | Audit ETL/ELT pipelines for data quality, idempotency, error handling, and observability gaps. | Data Science |
+| 414 | ML Model Card Generator | Generate model cards documenting ML model purpose, training data, performance, biases, and usage caveats. | Data Science |
+| 415 | Survey Design Reviewer | Review survey designs for leading questions, response bias, question order effects, and statistical validity. | Data Science |
+| 416 | Terraform State Recovery Planner | Plan recovery for lost, corrupted, or locked Terraform state files with import strategies. | DevOps |
+| 417 | On-Call Schedule Optimizer | Design fair on-call rotation schedules with coverage, fatigue management, and compensation guidelines. | DevOps |
+| 418 | Container Image Optimizer | Optimize container images for size, build speed, and security with multi-stage build recommendations. | DevOps |
+| 419 | Design Critique Generator | Generate structured design critiques covering hierarchy, consistency, accessibility, and usability. | Design |
+| 420 | User Flow Optimizer | Analyze and optimize user flows to reduce friction, drop-off, and time-to-value in product journeys. | Design |
+| 421 | Accessibility Audit Checklist | Generate WCAG 2.2 compliance checklists tailored to specific page types and components. | Design |
+| 422 | Email Sequence Reviewer | Review email drip sequences for timing, messaging flow, CTA effectiveness, and conversion optimization. | Marketing |
+| 423 | Competitor Positioning Map | Create competitive positioning maps with feature comparison, differentiation, and messaging angles. | Marketing |
+| 424 | Customer Interview Guide | Design customer interview guides with unbiased questioning, probing techniques, and synthesis frameworks. | Marketing |
+| 425 | Pitch Deck Reviewer | Review investor pitch decks for narrative flow, financial projections, and investor objections. | Business |
+| 426 | Partnership Proposal Writer | Write partnership proposals with mutual value propositions, revenue sharing, and success metrics. | Business |
+| 427 | Job Posting Optimizer | Optimize job postings for inclusivity, clarity, and candidate conversion with bias-free language. | HR |
+| 428 | Learning Path Designer | Design structured learning paths with prerequisites, milestones, resources, and assessment checkpoints. | Education |
+| 429 | Coding Challenge Generator | Generate coding challenges with test cases, difficulty scaling, and solution explanations. | Education |
+| 430 | Medication Reminder Planner | Create medication reminder schedules with timing, interactions to watch, and adherence tracking tips. | Healthcare |
+| 431 | Wellness Goal Tracker | Design wellness goal tracking plans with habit stacking, measurement, and weekly review templates. | Healthcare |
+| 432 | Research Methodology Advisor | Advise on research methodology including study design, sampling, validity threats, and analysis plans. | Research |
+| 433 | Literature Review Planner | Plan literature reviews with search strategies, screening criteria, and synthesis frameworks. | Research |
+| 434 | Contract Risk Assessor | Assess contract clauses for risk with liability, indemnification, and termination analysis. | Legal |
+| 435 | Dispute Resolution Advisor | Advise on dispute resolution strategies including negotiation, mediation, arbitration, and litigation. | Legal |
+| 436 | Commission Plan Designer | Design sales commission plans with accelerators, quotas, territory alignment, and payout structures. | Sales |
+| 437 | Game Level Design Reviewer | Review game level designs for pacing, difficulty curves, player guidance, and engagement. | Gaming |
+| 438 | DAO Governance Designer | Design DAO governance structures with proposal thresholds, voting mechanisms, and treasury management. | Web3 |
+| 439 | Unit Test Coverage Analyzer | Analyze unit test coverage gaps, quality issues, and recommend tests for untested code paths. | Engineering |
+| 440 | Spreadsheet Formula Reviewer | Review spreadsheet formulas for correctness, errors, edge cases, and suggest cleaner alternatives. | Productivity |
+| 441 | Technical Brief Writer | Write technical briefs summarizing complex topics for decision-makers with clear recommendations. | Productivity |
+| 442 | Vendor Comparison Matrix | Build weighted vendor comparison matrices with evaluation criteria, scoring, and TCO analysis. | Business |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
@@ -406,7 +456,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 3 | Accessibility Audit Generator | Paste your HTML or component code and get a detailed WCAG accessibility audit with issues, severity ratings, and corrected code snippets | Engineering |
 | 4 | Account Plan Builder | Build key-account plans: org maps, whitespace, plays per quarter | Sales |
 | 5 | Ad Copy Generator | Describe your product and audience to get platform-ready ad units: headlines, descriptions, and CTAs within character limits | Marketing |
-| 6 | Architecture Decision Record Generator | Turn a rough technical decision into a structured document that captures what was decided, why, and what alternatives were considered — so your team understands the reasoning months later | Engineering |
+| 6 | Architecture Decision Record Generator | Turn a rough technical decision into a structured document that captures what was decided, why, and what alternatives were considered â€” so your team understands the reasoning months later | Engineering |
 | 7 | Agent Evaluation & Benchmark Assistant | Evaluate an AI agent's response against its prompt for accuracy, completeness, hallucination risk, and clarity, then get concrete suggestions and an improved response | Productivity |
 | 8 | AI Agent Guardrail Policy Writer | Describe an AI agent and its available actions to get a complete guardrail policy: risk assessment per action, approval requirements, spending/usage limits, blocked actions, and human-in-the-loop escalation rules | Engineering |
 | 9 | AI Quiz Generator | Generate customized quizzes from any topic, text, or subject area | Education |
@@ -424,7 +474,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 21 | Bill Negotiation Script | Lower ISP, insurance, and medical bills with call scripts, anchor lines, and escalations | Productivity |
 | 22 | Blog Post SEO Optimizer | Paste a blog draft and target keywords to get an optimized version with better titles, meta description, header structure, keyword placement, and internal linking suggestions | Marketing |
 | 23 | Board Deck Outliner | Outline an investor update deck: wins, metrics, asks, and appendix | Business |
-| 24 | Board Game Night Picker | Pick tonight's board game by group size, time, and taste — plus teach order | Gaming |
+| 24 | Board Game Night Picker | Pick tonight's board game by group size, time, and taste â€” plus teach order | Gaming |
 | 25 | Brand Name Generator | Describe your company or idea to get short, memorable name candidates with domain-style spellings, rationale, and checks to run | Marketing |
 | 26 | Brand Voice Guide Writer | Define a brand voice: principles, do/don't examples, and vocabulary lists | Marketing |
 | 27 | Bug Bounty Brief Writer | Draft a bug-bounty brief: scope, rules, safe harbor, severity payouts, and triage SLA | Cybersecurity |
@@ -489,8 +539,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 86 | DMCA Takedown Drafter | Draft a DMCA takedown notice with all required elements plus counter-notice guidance | Legal |
 | 87 | DNS Migration Planner | Cut over DNS without downtime: TTL stepping, record inventory, and rollback plan | DevOps |
 | 88 | Dockerfile Generator | Describe your app's stack and get a production-ready multi-stage Dockerfile with a non-root user, layer caching, and a  | Engineering |
-| 89 | Docstring Generator | Paste a function, class, or module and get idiomatic docstrings/comments added in your language's convention (Google, NumPy, JSDoc, TSDoc, and more) — logic untouched | Engineering |
-| 90 | ELI5 Explainer | Explains complex topics in plain language at your chosen difficulty level — from 5-year-old to expert | Education |
+| 89 | Docstring Generator | Paste a function, class, or module and get idiomatic docstrings/comments added in your language's convention (Google, NumPy, JSDoc, TSDoc, and more) â€” logic untouched | Engineering |
+| 90 | ELI5 Explainer | Explains complex topics in plain language at your chosen difficulty level â€” from 5-year-old to expert | Education |
 | 91 | Email Reply Writer | Paste any email you received and describe how you want to respond | Productivity |
 | 92 | Email Template Builder | Get responsive transactional email HTML that survives Outlook, plus plain-text twin | Engineering |
 | 93 | Employee Onboarding Planner | Generate structured onboarding plans and checklists for new hires based on role, department, seniority, and start date | HR |
@@ -499,19 +549,19 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 96 | Env Drift Detector | Compare  | Developer Tools |
 | 97 | Essay Outline Generator | Give your essay topic, thesis, and level to get a structured outline with a hook, arguments, counterargument, and sources to chase | Education |
 | 98 | ETL Pipeline Troubleshooter | Paste your ETL error message and get instant root cause analysis, step-by-step fix, and prevention tips | Engineering |
-| 99 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts — handled with care | Content Writing |
+| 99 | Eulogy Writing Helper | Share memories to get a gentle eulogy structure with prompts â€” handled with care | Content Writing |
 | 100 | Event Schema Designer | Design versioned event schemas for Kafka/queues: envelope, keys, idempotency, and evolution rules | Engineering |
 | 101 | Exam Day Game Planner | Plan exam day like game day: logistics, timing tactics, mindset resets, and packing list | Education |
 | 102 | Exit Interview Kit | Get exit-interview questions plus a themes-analysis guide that protects anonymity | HR |
 | 103 | FAQ Page Writer | Turn product info into an FAQ page: real questions, short answers, and escalation paths | Content Writing |
-| 104 | Fear-Setting Exercise | Run the fear-setting protocol: define, prevent, repair — then price inaction | Personal Development |
-| 105 | Financial Statement Reader | Paste P&L, cash-flow, or balance-sheet figures to get ratios, runway, and a plain-English read — computed only from your numbers | Finance |
+| 104 | Fear-Setting Exercise | Run the fear-setting protocol: define, prevent, repair â€” then price inaction | Personal Development |
+| 105 | Financial Statement Reader | Paste P&L, cash-flow, or balance-sheet figures to get ratios, runway, and a plain-English read â€” computed only from your numbers | Finance |
 | 106 | Flaky Test Hunter | Tame flaky tests: detection queries, quarantine policy, and fix patterns per root cause | Engineering |
 | 107 | Flashcard Generator | Paste any study material, notes, or topic and get ready-to-use flashcards in Q&A format | Education |
 | 108 | Follow-Up Email Sequence Writer | Generate a strategic 5-email follow-up sequence spaced over 2 weeks with varied psychological angles based on your product and prospect context | Sales |
 | 109 | Forecast Model Picker | Match your time series to the right model plus evaluation and baseline rules | Data Science |
 | 110 | Form Design Reviewer | Review forms for labels, errors, validation timing, and keyboard flow | Design |
-| 111 | Freelance Rate Calculator | Derive your hourly rate from salary target, expenses, and billable hours — math shown | Finance |
+| 111 | Freelance Rate Calculator | Derive your hourly rate from salary target, expenses, and billable hours â€” math shown | Finance |
 | 112 | Freelancer Contract Checklist | Review a client contract before signing: payment, IP, kill-fee, and red-flag clauses | Legal |
 | 113 | Freelancer Tax Organizer | Get a tailored tax-season document checklist plus quarterly estimated-payment planner | Finance |
 | 114 | Freemium Limits Designer | Draw free-vs-paid gates that convert: value metric, limits, and upgrade triggers | Product |
@@ -519,12 +569,12 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 116 | Game World Lore Generator | Turn a world name, genre, and core conflict into a consistent lore document for game writing and quest design | Gaming |
 | 117 | Gatekeeper Navigator | Get past assistants to decision-makers respectfully: openers, value drops, and callbacks | Sales |
 | 118 | Ghostwriting Style Matcher | Paste writing samples to get a style profile plus a rewrite of your draft in that voice | Content Writing |
-| 119 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits — plus what to avoid | Productivity |
+| 119 | Gift Idea Finder | Describe the person, occasion, and budget to get tailored gift ideas with why each fits â€” plus what to avoid | Productivity |
 | 120 | Git Blame Detective | Trace who changed a line and why: blame walkthrough plus how to ask them about it | Developer Tools |
 | 121 | Git Workflow Advisor | Choose trunk-based, GitFlow, or stacked diffs for your team with branch rules | Engineering |
 | 122 | .gitignore Generator | Pick your languages, frameworks, OS, and editors and get a tailored, well-organized  | Developer Tools |
 | 123 | GitOps Workflow Designer | Design an ArgoCD/Flux repo layout: environments, promotion flow, and secrets handling | DevOps |
-| 124 | Grammar Proofreader | Paste any text to get grammar, spelling, and punctuation fixed — with every change explained and the rule cited | Productivity |
+| 124 | Grammar Proofreader | Paste any text to get grammar, spelling, and punctuation fixed â€” with every change explained and the rule cited | Productivity |
 | 125 | Grant Budget Builder | Build a grant budget table: line items, justifications, and match-funding notes | Finance |
 | 126 | Grant Proposal Writer | Describe your project or research and get a structured grant proposal with problem statement, objectives, methodology, and impact | Education |
 | 127 | Grant Report Writer | Turn project outcomes into a funder-ready impact report with metrics and stories | Content Writing |
@@ -556,9 +606,9 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 153 | Kubernetes HPA Tuner | Tune HorizontalPodAutoscaler settings from your workload metrics: targets, min/max, stabilization | DevOps |
 | 154 | K8s NetworkPolicy Writer | Write zero-trust NetworkPolicies: default-deny plus per-tier allow rules that actually work | DevOps |
 | 155 | K8s Resource Rightsizer | Right-size requests/limits from your metrics: headroom rules, QoS classes, and rollout order | DevOps |
-| 156 | Lab Results Explainer | Paste CBC/metabolic panel values for a plain-English walkthrough — education, not diagnosis | Healthcare |
+| 156 | Lab Results Explainer | Paste CBC/metabolic panel values for a plain-English walkthrough â€” education, not diagnosis | Healthcare |
 | 157 | Labeling Guide Writer | Write annotation guidelines with edge cases and QA sampling for data labeling | Data Science |
-| 158 | Landing Page Copy Generator | Describe your product and get a full landing page draft: hero, subhead, benefits, social-proof block, and CTA — in your tone | Marketing |
+| 158 | Landing Page Copy Generator | Describe your product and get a full landing page draft: hero, subhead, benefits, social-proof block, and CTA â€” in your tone | Marketing |
 | 159 | Landing Page Critiquer | Paste landing copy for a heuristic teardown: hierarchy, friction, clarity fixes in priority order | Design |
 | 160 | Lead Magnet Outliner | Outline a lead magnet that converts: promise, contents, and landing hook | Marketing |
 | 161 | License Picker Guide | Answer a few questions to get the right open-source license plus how to apply it | Developer Tools |
@@ -567,7 +617,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 164 | Seller Profile Optimizer | Turn a LinkedIn profile into a buyer magnet: headline, about, featured, and CTA | Sales |
 | 165 | Literature Review Outliner | Structure a lit review: themes, synthesis matrix, gaps, and chapter order | Research |
 | 166 | Loan Comparison Analyzer | Compare loan offers side by side: APR, total cost, monthly payment, and traps | Finance |
-| 167 | Log Analysis Summarizer | Paste raw log output and get a structured summary of errors, warnings, patterns, timeline of events, and likely root cause — so you find the 5 lines that matter in 500 lines of noise | DevOps |
+| 167 | Log Analysis Summarizer | Paste raw log output and get a structured summary of errors, warnings, patterns, timeline of events, and likely root cause â€” so you find the 5 lines that matter in 500 lines of noise | DevOps |
 | 168 | Logging Standards Advisor | Define what to log, levels, formats, and PII rules for your stack | Engineering |
 | 169 | Logo Brief Writer | Write a designer-ready logo brief: values, styles, must-avoids, deliverables, timeline | Design |
 | 170 | Math Problem Solver | Paste a math problem or concept and get a step-by-step solution with the method explained, common mistakes flagged, and practice pointers | Education |
@@ -591,7 +641,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 188 | NFT Metadata Builder | Get ERC-721/1155 metadata JSON plus IPFS layout and reveal-plan notes | Web3 |
 | 189 | NFT Rarity Designer | Design trait math for an NFT drop: rarity tiers, distribution curves, and reveal fairness | Web3 |
 | 190 | Nginx Config Generator | Get a hardened Nginx reverse-proxy config: TLS, gzip, caching headers, rate limits, upstreams | DevOps |
-| 191 | NPC Dialogue & Lore Generator | Describe a game character and scenario to get fully voiced NPC dialogue trees, personality-consistent responses, ambient lore snippets, and journal entries — ready to drop into any game engine | Gaming |
+| 191 | NPC Dialogue & Lore Generator | Describe a game character and scenario to get fully voiced NPC dialogue trees, personality-consistent responses, ambient lore snippets, and journal entries â€” ready to drop into any game engine | Gaming |
 | 192 | OAuth Integration Guide | Add Google/GitHub login step by step: app setup, code exchange, tokens, session handling | Engineering |
 | 193 | OKR Generator | Turn a company goal into quarterly OKRs: 3-5 objectives with measurable, graded key results | Business |
 | 194 | Onboarding Email Writer | Write a day 0/3/7/14 onboarding sequence that activates new users | Product |
@@ -605,7 +655,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 202 | Patient Discharge Summary Writer | Turn diagnosis, treatment, medications, and follow-up instructions into a clear patient-friendly discharge summary | Healthcare |
 | 203 | Patient Pre-Consultation Note | Turn symptom descriptions into a structured pre-consultation summary patients can share with doctors | Healthcare |
 | 204 | PDF Summarizer | Upload a PDF and get a structured summary with key points | Productivity |
-| 205 | Peer Feedback Guide | Write constructive peer feedback: observations, impact, requests — plus receiving guide | HR |
+| 205 | Peer Feedback Guide | Write constructive peer feedback: observations, impact, requests â€” plus receiving guide | HR |
 | 206 | Peer Review Assistant | Paste a paper or report draft to get a structured peer review: summary check, strengths, major/minor issues, and a verdict | Research |
 | 207 | Performance Budget Setter | Set web performance budgets: LCP, CLS, JS weight, image rules, and CI enforcement | Engineering |
 | 208 | Performance Review Writer | Turn bullet notes about an employee into a structured, fair, and specific performance review | HR |
@@ -614,7 +664,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 211 | Phone Cleanup Plan | Declutter your phone in a weekend: apps, photos, storage, and notification rules | Productivity |
 | 212 | Photo Release Drafter | Draft a plain-English photo/video release form with scope, usage, and minor-consent blocks | Legal |
 | 213 | Pilot Success Planner | Design paid pilots that convert: success criteria, milestones, and expansion triggers | Sales |
-| 214 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask — with speaker notes | Business |
+| 214 | Pitch Deck Outliner | Get a 10-slide pitch narrative: problem, solution, traction, market, ask â€” with speaker notes | Business |
 | 215 | Playlist Curator | Watch AI build playlists to serenade you | Design |
 | 216 | Podcast Guest Pitcher | Pitch yourself as a podcast guest: angle, talking points, and a short bio | Marketing |
 | 217 | Podcast Show Notes Writer | Turn an episode outline into title, summary, timestamps, quotes, and links | Marketing |
@@ -629,7 +679,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 226 | Procrastination Unblocker | Name the task you're avoiding to get a 5-minute starter plus a friction audit | Productivity |
 | 227 | Product Launch Checklist | Get a launch checklist: readiness gates, rollout, comms, monitoring, and rollback | Product |
 | 228 | Pronunciation Coach | Paste English sentences you're unsure about and get stress marks, tricky sounds broken down, and a read-aloud drill plan | Education |
-| 229 | Property Description Writer | Enter your property specs and get a compelling, SEO-optimized listing description, a social media caption, and a set of headline options — tailored to your target buyer and tone | Real Estate |
+| 229 | Property Description Writer | Enter your property specs and get a compelling, SEO-optimized listing description, a social media caption, and a set of headline options â€” tailored to your target buyer and tone | Real Estate |
 | 230 | Public Speaking Coach | Paste your talk outline to get structure fixes, opener/closer options, and delivery drills | Education |
 | 231 | PYQ Paper Analyser | Analyzes previous year question papers, identifies recurring concepts, ranks topic importance, and generates a model question paper | Education |
 | 232 | Python Method Finder | Master python methods and improve your coding skills! | Engineering |
@@ -641,7 +691,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 238 | Referral Program Designer | Design a referral program: incentives, mechanics, anti-gaming rules, and launch copy | Marketing |
 | 239 | Regex Generator | Describe what you want to match in plain English and get a tested regex pattern with explanation | Engineering |
 | 240 | Rent vs Buy Analyzer | Compare renting vs buying with total-cost math, assumptions shown, break-even year | Real Estate |
-| 241 | Rental Lease Reviewer | Paste lease clauses to get red flags, money traps, and questions for the landlord — before you sign | Legal |
+| 241 | Rental Lease Reviewer | Paste lease clauses to get red flags, money traps, and questions for the landlord â€” before you sign | Legal |
 | 242 | Research Agent | Get comprehensive research on any topic with configurable depth | Research |
 | 243 | Resume Bullet Point Improver | Rewrites rough resume bullet points into concise, professional statements without inventing details | HR |
 | 244 | Resume Bullet Point Rewriter | Paste a weak resume bullet point and get it rewritten to be metric-driven, impact-focused, and ATS-friendly | Education |
@@ -676,7 +726,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 273 | SQL Query Explainer | Explains SQL queries in simple language, clause by clause, for beginners | Engineering |
 | 274 | SQL Query Generator | Converts plain English questions into clean SQL queries | Engineering |
 | 275 | SQL Query Optimizer | Analyzes SQL queries and suggests performance optimizations, indexing strategies, and cleaner alternatives | Engineering |
-| 276 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework — no live data invented | Web3 |
+| 276 | Staking Rewards Estimator | Compare staking options with an APR-vs-APY, lockup, and slashing framework â€” no live data invented | Web3 |
 | 277 | Standup Notes Generator | Turn rough bullets into a crisp yesterday / today / blockers standup update for Slack, email, or your daily call | Productivity |
 | 278 | Startup Idea Brainstormer | Give your skills, interests, and constraints to get 10 concrete startup ideas with the problem, buyer, and why-you angle for each | Business |
 | 279 | Startup Idea Validator | Describe a startup idea and get a structured analysis with market potential, risks, competition, and a viability score | Business |
@@ -701,7 +751,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 298 | Bracket Balancer | Seed tournament brackets fairly: formats, byes, tiebreaks, and schedule | Gaming |
 | 299 | Trademark Search Guide | Learn how to run a knockout trademark search: classes, databases, and conflict reading | Legal |
 | 300 | Travel Itinerary Planner | Give a destination, days, budget, and pace to get a day-by-day itinerary with must-sees, food picks, and practical tips | Productivity |
-| 301 | Packing List Generator | Get a trip packing list by destination, weather, and activities — nothing forgotten | Productivity |
+| 301 | Packing List Generator | Get a trip packing list by destination, weather, and activities â€” nothing forgotten | Productivity |
 | 302 | Typography Pairer | Describe your project mood, brand, or use case and get 3-5 font pairings with heading, body, and accent fonts, live CSS snippets, and Tailwind config | Design |
 | 303 | UGC Brief Writer | Brief everyday customers to film usable content: shot list, talking points, rights, and pay terms | Marketing |
 | 304 | Unit Test Generator | Paste any function or module and get complete unit tests with edge cases, happy paths, and failure scenarios | Engineering |
@@ -709,7 +759,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 306 | Offboarding Flow Writer | Design account-deletion flows that respect users: export, confirm, win-back | Product |
 | 307 | User Story Writer | Describe a feature in plain language and get a well-structured user story with acceptance criteria, edge cases, and technical notes | Product |
 | 308 | UX Microcopy Writer | Get button, error, and empty-state copy in your voice: 3 options per string plus don'ts | Product |
-| 309 | Vaccine Schedule Helper | Get a routine vaccination checklist by age and country — verify with your clinician | Healthcare |
+| 309 | Vaccine Schedule Helper | Get a routine vaccination checklist by age and country â€” verify with your clinician | Healthcare |
 | 310 | Values Clarification Exercise | Rank your life values through forced choices and get a one-page values statement | Personal Development |
 | 311 | Vendor Security Review Kit | Assess vendors fast: SOC 2, DPA, sub-processors, and dealbreaker questions | Business |
 | 312 | Vocabulary Builder | Turn a word list into etymology, mnemonics, usage sentences, and a mini-quiz | Education |
