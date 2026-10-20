@@ -819,6 +819,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 810 | IEP Goal Writer | Draft measurable IEP goals with present levels, baselines, benchmarks, services, and progress monitoring. | Education |
 | 811 | Background Job Reliability Reviewer | Review background jobs for idempotency, retries, ordering, backpressure, dead letters, and observability. | Engineering |
 | 812 | Distributed Lock Designer | Design distributed locking with leases, fencing tokens, failure handling, and contention controls. | Engineering |
+| 813 | Mutation Testing Planner | Plan mutation testing with target scope, mutators, runtime budget, triage, and CI thresholds. | Engineering |
+| 814 | Test Impact Analysis Planner | Design test impact analysis that maps changes to tests without silently hiding regressions. | Engineering |
+| 815 | C4 Model Builder | Build C4 architecture models with context, container, component, and code views plus review notes. | Engineering |
+| 816 | Audit Log Design Reviewer | Review audit logging for event coverage, integrity, access, retention, privacy, and investigation usability. | Engineering |
+| 817 | Offline-First Sync Designer | Design offline-first sync with local storage, versioning, conflict resolution, queues, and recovery. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
