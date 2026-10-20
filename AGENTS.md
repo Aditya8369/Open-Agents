@@ -809,6 +809,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 800 | CDN Configuration Reviewer | Review CDN configuration for caching, compression, TLS, origin protection, purge behavior, and cost. | DevOps |
 | 801 | Cloud Network Segmentation Planner | Design cloud network segmentation with trust zones, subnets, routing, egress, inspection, and validation. | DevOps |
 | 802 | Repository Health Auditor | Audit a repository for hygiene, security, documentation, CI, ownership, and maintainability. | Developer Tools |
+| 803 | Package Manager Migration Planner | Plan a package manager migration with compatibility checks, lockfiles, CI updates, and rollback. | Developer Tools |
+| 804 | SSH Config Generator | Generate a secure SSH config with host aliases, keys, jump hosts, tunnels, and hardening options. | Developer Tools |
+| 805 | GitHub Actions Reusable Workflow Designer | Design reusable GitHub Actions workflows with inputs, permissions, caching, versioning, and adoption guidance. | Developer Tools |
+| 806 | Student Feedback Comment Generator | Turn observations into specific, constructive report-card comments with evidence and next steps. | Education |
+| 807 | Substitute Teacher Plan Writer | Create a complete substitute plan with routines, lesson steps, access details, contingencies, and safety notes. | Education |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
