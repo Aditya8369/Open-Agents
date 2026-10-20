@@ -614,6 +614,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 605 | GitHub Actions Security Hardener | Harden GitHub Actions workflows against injection, token abuse, and supply-chain attacks. | Developer Tools |
 | 606 | Renovate Config Generator | Generate a Renovate policy that batches updates by risk, respects support windows, and keeps CI green. | Developer Tools |
 | 607 | Makefile Generator | Generate a portable Makefile with discoverable targets, dependency tracking, and safe defaults. | Developer Tools |
+| 608 | Nix Flake Generator | Create a reproducible Nix flake for development shells, packages, and CI with pinned inputs. | Developer Tools |
+| 609 | Opportunity Solution Tree Builder | Turn a product outcome into an opportunity solution tree with evidence, assumptions, and testable bets. | Product |
+| 610 | Product Analytics Dashboard Spec Writer | Specify a product analytics dashboard with questions, metrics, event requirements, and interpretation guardrails. | Product |
+| 611 | Platform Strategy Planner | Design a platform strategy covering users, value exchange, APIs, governance, and adoption sequencing. | Product |
+| 612 | Activation Funnel Diagnoser | Diagnose activation drop-offs using funnel data, user segments, and qualitative evidence, then prioritize fixes. | Product |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
