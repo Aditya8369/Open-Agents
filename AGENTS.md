@@ -689,6 +689,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 680 | Documentary Treatment Writer | Develop a documentary treatment with story arc, characters, access, visuals, and a compelling logline. | Content Writing |
 | 681 | Incident Tabletop Scenario Writer | Create a role-based incident tabletop exercise with realistic injects, decisions, and debrief questions. | Cybersecurity |
 | 682 | Data Loss Prevention Policy Writer | Write a DLP policy covering data classification, allowed channels, monitoring, exceptions, and response. | Cybersecurity |
+| 683 | AI Red Team Plan Writer | Plan an AI red team exercise covering prompt injection, data exfiltration, tool misuse, and unsafe outputs. | Cybersecurity |
+| 684 | Ransomware Readiness Assessor | Assess ransomware readiness across prevention, detection, containment, backups, and recovery. | Cybersecurity |
+| 685 | Insider Threat Program Planner | Design an insider threat program with risk signals, privacy safeguards, investigation, and response. | Cybersecurity |
+| 686 | Vulnerability Disclosure Policy Writer | Draft a vulnerability disclosure policy with scope, safe harbor, response timelines, and researcher communication. | Cybersecurity |
+| 687 | Experiment Guardrail Metric Selector | Choose guardrail metrics for experiments that catch harm without blocking learning. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
