@@ -624,6 +624,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 615 | Mobile Design Reviewer | Review mobile designs against platform conventions, touch ergonomics, accessibility, and performance constraints. | Design |
 | 616 | Design Ops Workflow Designer | Design a design-ops workflow for intake, critique, handoff, versioning, and quality tracking. | Design |
 | 617 | Accessibility Design Review | Review designs for WCAG risks before implementation, with concrete fixes and testable acceptance criteria. | Design |
+| 618 | Customer Journey Map Builder | Build an evidence-based customer journey map with stages, moments of truth, friction, and owned improvements. | Marketing |
+| 619 | Marketing Budget Allocator | Allocate a marketing budget across channels and stages using marginal return, payback, and test capacity. | Marketing |
+| 620 | ABM Campaign Planner | Plan an account-based marketing campaign with tiered accounts, buying committees, plays, and measurement. | Marketing |
+| 621 | Lifecycle Campaign Auditor | Audit lifecycle email and in-product campaigns for segmentation, timing, overlap, and conversion. | Marketing |
+| 622 | SEO Technical Audit Planner | Plan a technical SEO audit covering crawlability, indexation, rendering, performance, and structured data. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
