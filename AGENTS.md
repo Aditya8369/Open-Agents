@@ -534,6 +534,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 525 | PRD Reviewer | Review a PRD for problem clarity, scope, requirements, risks, and missing decisions. | Product |
 | 526 | Contrast Fixer | Find failing contrast pairs and recommend accessible token changes without flattening the visual system. | Design |
 | 527 | Icon Set Auditor | Audit icon consistency, sizing, stroke, semantics, and accessibility across a product. | Design |
+| 528 | Component API Designer | Design component props, variants, slots, and states that stay consistent and accessible. | Design |
+| 529 | Responsive Breakpoint Planner | Define breakpoints and layout rules from content priorities rather than device names. | Design |
+| 530 | Typography Scale Auditor | Audit type sizes, line heights, and weights for hierarchy, consistency, and responsive behavior. | Design |
+| 531 | Interaction State Matrix Builder | Define every interaction state for a component, including visual, copy, and accessibility requirements. | Design |
+| 532 | Email Deliverability Auditor | Audit authentication, list hygiene, content, and sending practices that affect inbox placement. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
