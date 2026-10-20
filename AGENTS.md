@@ -574,6 +574,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 565 | Smart Contract Upgrade Safety Checklist | Review upgradeable contracts for storage layout, access control, and rollback safety. | Web3 |
 | 566 | Wallet Transaction Explainer | Explain a wallet transaction before signing, including permissions, asset changes, and risk flags. | Web3 |
 | 567 | Meeting Cost Calculator | Calculate the real cost of recurring meetings and compare alternatives. | Productivity |
+| 568 | Decision Journal Template Builder | Create a decision journal that records context, assumptions, and outcomes for later review. | Productivity |
+| 569 | Documentation Style Guide Writer | Define voice, terminology, formatting, and examples for consistent technical documentation. | Content Writing |
+| 570 | Podcast Episode Outline Writer | Outline a podcast episode with a strong arc, segment timing, questions, and show notes. | Content Writing |
+| 571 | Home Renovation Budget Planner | Plan a renovation budget with scope priorities, contingency, and a realistic timeline. | Real Estate |
+| 572 | Annual Review Workbook | Guide a year-in-review with evidence, patterns, lessons, and a focused plan for next year. | Personal Development |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
