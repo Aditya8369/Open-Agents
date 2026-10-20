@@ -754,6 +754,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 745 | Marketing Attribution Planner | Design a marketing attribution model with tracking, channel roles, and reporting caveats. | Marketing |
 | 746 | Partner Marketing Campaign Planner | Plan a co-marketing campaign with a partner, including audience, offer, responsibilities, and measurement. | Marketing |
 | 747 | Habit Relapse Recovery Planner | Recover from a habit relapse with a no-shame review, trigger analysis, and a smaller restart plan. | Personal Development |
+| 748 | Sleep Routine Designer | Design a realistic sleep routine from schedule, environment, and habits, with a gradual ramp. | Personal Development |
+| 749 | Imposter Syndrome Workbook | Work through imposter feelings with evidence, reframes, and concrete actions. | Personal Development |
+| 750 | API Product Manager | Define API strategy, developer personas, pricing, SLAs, and roadmap for an API product. | Product |
+| 751 | Pricing Packaging Experiment Designer | Design pricing and packaging experiments with hypotheses, variants, guardrails, and rollout plans. | Product |
+| 752 | Product Metrics Definition Auditor | Audit product metrics for clear definitions, ownership, and decision usefulness. | Product |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
