@@ -584,6 +584,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 575 | React Server Components Migration Planner | Plan a React Server Components migration by classifying components, data flows, and client boundaries. | Engineering |
 | 576 | Playwright Test Stabilizer | Diagnose flaky Playwright tests and produce deterministic selectors, waits, fixtures, and isolation fixes. | Engineering |
 | 577 | Distributed Transaction Pattern Selector | Choose between saga, outbox, and two-phase commit for a multi-service workflow, with failure handling and consistency guarantees. | Engineering |
+| 578 | Database Sharding Planner | Design a shard key, routing layer, and resharding plan for a growing database without hotspots. | Engineering |
+| 579 | GraphQL Federation Migration Planner | Plan a move from a monolithic GraphQL schema to federated subgraphs with entity ownership and gateway rollout. | Engineering |
+| 580 | Event-Driven Architecture Reviewer | Review event flows for ordering, idempotency, schema evolution, and failure recovery. | Engineering |
+| 581 | Test Data Strategy Planner | Design realistic, privacy-safe test data with seeding, masking, and environment-specific fixtures. | Engineering |
+| 582 | Architecture Fitness Function Designer | Turn architectural rules into automated fitness functions with thresholds, ownership, and CI enforcement. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
