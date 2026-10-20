@@ -599,6 +599,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 590 | Cloud IAM Permission Boundary Designer | Design permission boundaries and guardrails that cap cloud IAM privileges without blocking legitimate work. | Cybersecurity |
 | 591 | Zero Trust Maturity Assessor | Assess identity, device, network, data, and workload controls against a practical zero-trust maturity model. | Cybersecurity |
 | 592 | SaaS Tenant Isolation Reviewer | Review multi-tenant architecture for data leakage, noisy neighbors, and cross-tenant authorization gaps. | Cybersecurity |
+| 593 | AI Model Supply Chain Reviewer | Review model provenance, weights, licenses, dependencies, and update controls before production use. | Cybersecurity |
+| 594 | Cyber Insurance Readiness Assessor | Map security controls and evidence to common cyber-insurance requirements and close documentation gaps. | Cybersecurity |
+| 595 | Security Awareness Campaign Writer | Create a behavior-focused security awareness campaign with audiences, messages, channels, and measurement. | Cybersecurity |
+| 596 | Vendor Risk Tiering Planner | Tier vendors by data sensitivity and access, then define proportionate due diligence and review cadence. | Cybersecurity |
+| 597 | Causal Inference Study Planner | Design a credible causal study with treatment definition, identification strategy, power, and sensitivity checks. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
