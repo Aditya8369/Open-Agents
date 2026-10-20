@@ -509,6 +509,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 500 | SBOM Planner | Plan software bill of materials generation, fields, storage, and review across the dependency lifecycle. | Cybersecurity |
 | 501 | Cloud Storage Exposure Auditor | Find public buckets, overly broad ACLs, and risky sharing paths in cloud storage. | Cybersecurity |
 | 502 | Data Classification Policy Writer | Define data classification tiers with handling, access, retention, and enforcement rules. | Cybersecurity |
+| 503 | Threat Hunting Hypothesis Generator | Turn telemetry and threat context into testable hunting hypotheses with queries and validation steps. | Cybersecurity |
+| 504 | Git Bisect Planner | Plan a reliable git bisect from a known-good and known-bad commit, including test markers and flake handling. | Developer Tools |
+| 505 | Shell Safety Reviewer | Review shell scripts for quoting, error handling, destructive commands, and portability hazards. | Developer Tools |
+| 506 | Docker Compose Debugger | Diagnose Compose startup, networking, volume, and environment problems with an ordered fix path. | Developer Tools |
+| 507 | JSON to TypeScript Generator | Convert JSON samples into precise TypeScript types with optionality, unions, and runtime validation notes. | Developer Tools |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
