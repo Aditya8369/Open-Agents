@@ -649,6 +649,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 640 | Skills Taxonomy Builder | Build a skills taxonomy with proficiency levels, relationships, and usage for hiring and development. | HR |
 | 641 | Performance Calibration Facilitator | Design and facilitate a fair performance calibration session with evidence, rating distributions, and bias checks. | HR |
 | 642 | Employee Survey Action Planner | Turn employee survey results into prioritized actions with owners, communication, and follow-up measurement. | HR |
+| 643 | Data Processing Agreement Reviewer | Review a data processing agreement for scope, obligations, subprocessors, transfers, and liability gaps. | Legal |
+| 644 | Open Source Compliance Checklist | Audit open source usage for license obligations, attribution, copyleft, and distribution risk. | Legal |
+| 645 | AI Usage Policy Writer | Draft an internal AI usage policy covering approved tools, data handling, review, and accountability. | Legal |
+| 646 | Employment Termination Checklist | Build a compliant, humane termination checklist covering documentation, access, pay, and communication. | Legal |
+| 647 | Curriculum Map Builder | Build a curriculum map that aligns outcomes, assessments, activities, and prerequisites across a program. | Education |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
