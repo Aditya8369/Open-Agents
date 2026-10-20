@@ -779,6 +779,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 770 | DAO Treasury Diversification Planner | Plan DAO treasury diversification with risk limits, instruments, governance, and execution. | Web3 |
 | 771 | Token Unlock Communications Planner | Plan communications and market operations around a token unlock with transparency and coordination. | Web3 |
 | 772 | Smart Contract Monitoring Planner | Plan monitoring and alerting for deployed smart contracts, including threats, invariants, and response. | Web3 |
+| 773 | Board Minutes & Resolutions Writer | Turn rough board notes into formal minutes, resolutions, and an action register ready for review and approval. | Business |
+| 774 | Acquisition Target Screening Memo | Screen an acquisition target with strategic fit, financial signals, risks, and the diligence questions that matter next. | Business |
+| 775 | Joint Venture Term Sheet Planner | Structure a joint venture term sheet with scope, contributions, governance, economics, and exit mechanics. | Business |
+| 776 | Franchise Expansion Planner | Plan franchise expansion with market selection, unit economics, operating readiness, and franchisee support. | Business |
+| 777 | Government Contract Bid/No-Bid Planner | Evaluate a government contract opportunity with eligibility, compliance, capability, economics, and a clear bid decision. | Business |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |

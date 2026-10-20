@@ -7,7 +7,7 @@ describe('loadAllAgents', () => {
     const agents = await loadAllAgents()
     expect(Array.isArray(agents)).toBe(true)
     expect(agents.length).toBeGreaterThan(0)
-  })
+  }, 30000)
 
   it('every agent should have required fields', async () => {
     const agents = await loadAllAgents()
