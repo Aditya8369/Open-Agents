@@ -579,6 +579,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 570 | Podcast Episode Outline Writer | Outline a podcast episode with a strong arc, segment timing, questions, and show notes. | Content Writing |
 | 571 | Home Renovation Budget Planner | Plan a renovation budget with scope priorities, contingency, and a realistic timeline. | Real Estate |
 | 572 | Annual Review Workbook | Guide a year-in-review with evidence, patterns, lessons, and a focused plan for next year. | Personal Development |
+| 573 | API Breaking Change Detector | Compare two API specifications to find breaking changes, rank client impact, and produce a safe deprecation and migration plan. | Engineering |
+| 574 | TypeScript Strict Migration Planner | Plan an incremental TypeScript strict-mode migration with error triage, ownership, and safe compiler settings. | Engineering |
+| 575 | React Server Components Migration Planner | Plan a React Server Components migration by classifying components, data flows, and client boundaries. | Engineering |
+| 576 | Playwright Test Stabilizer | Diagnose flaky Playwright tests and produce deterministic selectors, waits, fixtures, and isolation fixes. | Engineering |
+| 577 | Distributed Transaction Pattern Selector | Choose between saga, outbox, and two-phase commit for a multi-service workflow, with failure handling and consistency guarantees. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
