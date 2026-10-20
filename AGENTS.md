@@ -559,6 +559,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 550 | Accounts Receivable Aging Analyzer | Analyze AR aging to prioritize collections, flag risky accounts, and forecast cash. | Finance |
 | 551 | Budget Variance Explainer | Explain actual versus budget variances by driver, with forecast impact and corrective actions. | Finance |
 | 552 | Fundraising Data Room Checklist | Build an investor data room checklist with document status, owners, and diligence risks. | Finance |
+| 553 | Vendor Invoice Auditor | Audit vendor invoices for duplicates, rate errors, unused services, and recoverable overcharges. | Finance |
+| 554 | Cookie Consent Auditor | Audit cookie usage and consent flows for tracking categories, prior consent, and preference controls. | Legal |
+| 555 | Employee IP Assignment Reviewer | Review employee and contractor IP assignment clauses for coverage gaps and ambiguous ownership. | Legal |
+| 556 | Grading Rubric Builder | Build analytic rubrics with learning outcomes, performance levels, and moderation guidance. | Education |
+| 557 | Parent-Teacher Conference Planner | Prepare a conference with student evidence, talking points, sensitive topics, and follow-up actions. | Education |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
