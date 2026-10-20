@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Sparkles, Github, ArrowRight, ExternalLink } from 'lucide-react'
+import { useAgents } from '../../lib/useAgents'
 
 export default function AboutHero() {
+  const { agents, catalogSize } = useAgents()
+  const agentCount = agents.length || catalogSize
+
   return (
     <section aria-labelledby="about-hero-title" className="relative overflow-hidden panel p-6 sm:p-10 md:p-12 mb-12">
       {/* Background glow accents */}
@@ -43,10 +47,10 @@ export default function AboutHero() {
         {/* Primary CTA Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Link
-            to="/"
+            to="/agents"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white bg-zinc-400 hover:bg-zinc-300 transition-colors shadow-panel focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
           >
-            <span>Explore 162+ Agents</span>
+            <span>Explore {agentCount} Agents</span>
             <ArrowRight size={16} />
           </Link>
 
@@ -73,7 +77,7 @@ export default function AboutHero() {
         {/* Quick Highlights / Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t dark:border-white/10 border-gray-200/80">
           <div className="p-3 text-center">
-            <div className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">162+</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white">{agentCount}</div>
             <div className="text-xs dark:text-text-secondary text-gray-500 font-medium">Ready-to-use Agents</div>
           </div>
           <div className="p-3 text-center">

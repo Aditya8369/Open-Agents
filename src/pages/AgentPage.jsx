@@ -34,7 +34,7 @@ export default function AgentPage() {
   }
 
   if (!agent) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/agents" replace />
   }
 
   // Use key to force remount when switching agents

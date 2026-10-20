@@ -91,7 +91,7 @@ export default function AnalyticsPage() {
             top agents, provider breakdown, activity streaks, and more.
           </p>
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/agents')}
             className="inline-flex items-center gap-2 h-8 px-3 text-sm font-semibold bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-all duration-200 active:scale-[0.97] mt-2"
           >
             <Zap size={16} />

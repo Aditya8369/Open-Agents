@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useDocumentTitle } from "../lib/useDocumentTitle";
 import { useAgents } from "../lib/useAgents";
+import { useProgressiveList } from "../lib/useProgressiveList";
 
 // Input validation constants - prevent LLM calls with excessively long inputs
 const INPUT_LIMITS = {
@@ -246,6 +247,17 @@ export default function BattleModeSetup() {
     );
   });
 
+  const {
+    visibleItems: visibleAgents,
+    hasMore: hasMoreAgents,
+    remaining: remainingAgents,
+    showMore: showMoreAgents,
+    total: matchingAgentCount,
+  } = useProgressiveList(filteredAgents, {
+    pageSize: 24,
+    resetKey: searchQuery,
+  });
+
   const handleInputChange = (id, val) => {
     setInputs((prev) => ({ ...prev, [id]: val }));
   };
@@ -351,6 +363,7 @@ export default function BattleModeSetup() {
                 placeholder="Search agents..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Search agents"
                 className="w-full dark:bg-surface-input bg-gray-50 border border-gray-700 pl-9 pr-4 py-2.5 text-sm dark:text-text-primary text-gray-900 placeholder-gray-500 outline-none focus:border-gray-500 transition-colors duration-200"
               />
             </div>
@@ -361,7 +374,7 @@ export default function BattleModeSetup() {
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto pr-1">
-                {filteredAgents.map((agent) => (
+                {visibleAgents.map((agent) => (
                   <button
                     key={agent.id}
                     type="button"
@@ -381,7 +394,16 @@ export default function BattleModeSetup() {
                     </p>
                   </button>
                 ))}
-                {filteredAgents.length === 0 && (
+                {hasMoreAgents && (
+                  <button
+                    type="button"
+                    onClick={showMoreAgents}
+                    className="sm:col-span-2 py-2.5 text-center text-xs font-medium dark:text-text-secondary text-gray-600 border border-dashed dark:border-border border-gray-300 hover:border-zinc-400 dark:hover:text-white hover:text-black transition-colors"
+                  >
+                    Show {Math.min(24, remainingAgents)} more of {matchingAgentCount}
+                  </button>
+                )}
+                {matchingAgentCount === 0 && (
                   <div className="col-span-2 text-center py-12 dark:text-text-muted text-gray-500 text-sm">
                     No agents found for "{searchQuery}"
                   </div>

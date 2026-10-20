@@ -101,7 +101,7 @@ export default function BattleModeWinner() {
           </button>
 
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/agents')}
             className="flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-semibold dark:bg-surface-input bg-gray-50 border border-gray-700/60 dark:text-text-primary text-gray-900 hover:bg-gray-900/80 hover:border-gray-600 transition-colors duration-200 battle-btn-secondary"
           >
             <ArrowLeft size={16} />

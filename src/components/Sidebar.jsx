@@ -5,6 +5,8 @@ import { DEFAULT_COLLECTION_ID, useCollections } from '../lib/useCollections'
 import { useAgents } from '../lib/useAgents'
 
 const SIDEBAR_CATEGORY_STORAGE_KEY = 'sidebar-category-collapsed-state'
+const SIDEBAR_CATEGORY_AGENT_LIMIT = 12
+const SIDEBAR_SEARCH_LIMIT = 15
 
 /** Zero-padded ordinal so every entry has a stable address in the index. */
 const pad = (n) => String(n).padStart(2, '0')
@@ -28,9 +30,9 @@ const WORKSPACE_ENTRIES = [
  */
 export default function Sidebar({ open, onClose }) {
   const [sidebarSearchQuery, setSidebarSearchQuery] = useState('')
-  // Stores COLLAPSED state per category (absent/false = expanded).
-  // Categories are expanded by default on first visit, since we only
-  // record an entry here when the user explicitly collapses one.
+  // Stores COLLAPSED state per category. Categories default to collapsed so
+  // the rail stays small even with hundreds of agents; the active category is
+  // expanded automatically.
   const [collapsedCategories, setCollapsedCategories] = useState(() => {
     try {
       const stored = localStorage.getItem(SIDEBAR_CATEGORY_STORAGE_KEY)
@@ -39,7 +41,6 @@ export default function Sidebar({ open, onClose }) {
       return {}
     }
   })
-  const [searchExpandedCategories, setSearchExpandedCategories] = useState({})
   const [feedback, setFeedback] = useState('')
   const { collections, moveAgentToCollection } = useCollections()
   const { agents } = useAgents()
@@ -67,19 +68,15 @@ export default function Sidebar({ open, onClose }) {
   const normalizedQuery = sidebarSearchQuery.trim().toLowerCase()
   const isSearching = normalizedQuery !== ''
 
-  useEffect(() => {
-    if (!isSearching) {
-      setSearchExpandedCategories({})
-    }
-  }, [isSearching])
-
   const { filteredAgents, categories, categoryOrder } = useMemo(() => {
     const filtered = !normalizedQuery
       ? agents
-      : agents.filter(
-          (agent) =>
-            agent.name.toLowerCase().includes(normalizedQuery) ||
-            agent.category.toLowerCase().includes(normalizedQuery)
+      : agents.filter((agent) =>
+          [agent.name, agent.description, agent.category, agent.id]
+            .filter(Boolean)
+            .join(' ')
+            .toLowerCase()
+            .includes(normalizedQuery)
         )
 
     const cats = filtered.reduce((acc, agent) => {
@@ -88,25 +85,28 @@ export default function Sidebar({ open, onClose }) {
       return acc
     }, {})
 
+    Object.values(cats).forEach((categoryAgents) => {
+      categoryAgents.sort((a, b) => a.name.localeCompare(b.name))
+    })
+
     return {
       filteredAgents: filtered,
       categories: cats,
-      categoryOrder: Object.keys(cats)
+      categoryOrder: Object.keys(cats).sort((a, b) => a.localeCompare(b))
     }
   }, [agents, normalizedQuery])
 
   const toggleCategory = (category) => {
-    if (isSearching) {
-      setSearchExpandedCategories((prev) => ({
+    const isActive = activeCategory === category
+    setCollapsedCategories((prev) => {
+      const isExpanded = isActive
+        ? prev[category] !== true
+        : prev[category] === false
+      return {
         ...prev,
-        [category]: !(prev[category] ?? true),
-      }))
-    } else {
-      setCollapsedCategories((prev) => ({
-        ...prev,
-        [category]: !prev[category],
-      }))
-    }
+        [category]: isExpanded,
+      }
+    })
   }
 
   const handleCollectionDrop = (event, collectionId) => {
@@ -135,21 +135,21 @@ export default function Sidebar({ open, onClose }) {
     { key: 'all', to: '/collections', icon: 'FolderPlus', label: 'All collections', count: null },
     {
       key: 'agents',
-      to: '/',
+      to: '/agents',
       icon: 'FolderInput',
       label: 'All agents',
       count: allAgentsCount,
       collectionId: DEFAULT_COLLECTION_ID,
-      active: location.pathname === '/' && !activeCollectionId,
+      active: location.pathname === '/agents' && !activeCollectionId,
     },
     ...customCollections.map((collection) => ({
       key: collection.id,
-      to: collection.id === DEFAULT_COLLECTION_ID ? '/' : `/?collection=${collection.id}`,
+      to: `/agents?collection=${collection.id}`,
       icon: 'Folder',
       label: collection.name,
       count: collection.agentIds.length,
       collectionId: collection.id,
-      active: location.pathname === '/' && activeCollectionId === collection.id,
+      active: location.pathname === '/agents' && activeCollectionId === collection.id,
     })),
   ]
 
@@ -271,57 +271,110 @@ export default function Sidebar({ open, onClose }) {
             )
           })}
 
-          {/* ── 03 Agents by category ────────────────────────────────── */}
+          {/* ── 03 Browse / search results ───────────────────────────── */}
           <div className="mb-1 mt-5 flex items-center gap-2">
             <span className="chap">03</span>
-            <span className="eyebrow">By category</span>
+            <span className="eyebrow">{isSearching ? 'Search results' : 'By category'}</span>
             <span className="ml-auto font-mono text-[10px] tabular-nums text-zinc-300 dark:text-text-muted">
-              {filteredAgents.length}
+              {isSearching ? filteredAgents.length : categoryOrder.length}
             </span>
           </div>
 
-          {categoryOrder.map((category, index) => {
-            const isActiveCategory = activeCategory === category
-            const isCategoryExpanded = isSearching
-              ? searchExpandedCategories[category] ?? true
-              : isActiveCategory
-                ? true
-                : !collapsedCategories[category]
+          {isSearching ? (
+            <>
+              {filteredAgents.slice(0, SIDEBAR_SEARCH_LIMIT).map((agent, index) => {
+                const IconComponent = Icons[agent.icon] || Icons.Bot
 
-            return (
-              <div key={category}>
-                <button
-                  type="button"
-                  onClick={() => toggleCategory(category)}
-                  aria-expanded={isCategoryExpanded}
-                  className={`rail-link w-full ${
-                    isActiveCategory ? 'text-black dark:text-white' : ''
-                  }`}
-                >
-                  <span className="w-5 shrink-0 font-mono text-[10px] tabular-nums opacity-45">
-                    {pad(index + 1)}
-                  </span>
-                  <span className="min-w-0 flex-1 truncate text-left font-medium">
-                    {category}
-                  </span>
-                  <span className="font-mono text-[10px] tabular-nums opacity-55">
-                    {categories[category].length}
-                  </span>
-                  {isCategoryExpanded ? (
-                    <Icons.Minus size={11} className="shrink-0 opacity-50" aria-hidden="true" />
-                  ) : (
-                    <Icons.Plus size={11} className="shrink-0 opacity-50" aria-hidden="true" />
-                  )}
-                </button>
+                return (
+                  <NavLink
+                    key={agent.id}
+                    to={`/agent/${agent.id}`}
+                    onClick={onClose}
+                    title={`${agent.name} · ${agent.category}`}
+                    className={({ isActive }) =>
+                      `group flex items-center gap-2 border-b border-zinc-200/70 py-1.5 pl-0.5 pr-2 text-[12.5px] transition-colors dark:border-border/70 ${
+                        isActive
+                          ? 'font-medium text-black dark:text-white'
+                          : 'text-zinc-500 hover:text-black dark:text-text-secondary dark:hover:text-text-primary'
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        <span className="w-5 shrink-0 font-mono text-[9px] tabular-nums opacity-45">
+                          {pad(index + 1)}
+                        </span>
+                        <IconComponent size={13} className="shrink-0" aria-hidden="true" />
+                        <span className="min-w-0 flex-1 truncate">{agent.name}</span>
+                        {isActive && (
+                          <span className="font-mono text-[10px] opacity-60" aria-hidden="true">
+                            ●
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </NavLink>
+                )
+              })}
 
-                <div
-                  className={`grid transition-all duration-200 ease-in-out ${
-                    isCategoryExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                  }`}
+              {filteredAgents.length > SIDEBAR_SEARCH_LIMIT && (
+                <Link
+                  to={`/agents?q=${encodeURIComponent(sidebarSearchQuery.trim())}`}
+                  onClick={onClose}
+                  className="mt-1.5 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-500 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
                 >
-                  <div className="overflow-hidden">
+                  View all {filteredAgents.length} matches
+                  <Icons.ArrowRight size={11} aria-hidden="true" />
+                </Link>
+              )}
+
+              {filteredAgents.length === 0 && (
+                <div className="py-6 text-center font-mono text-[11px] text-zinc-400 dark:text-text-muted">
+                  no entries
+                </div>
+              )}
+            </>
+          ) : (
+            categoryOrder.map((category, index) => {
+              const isActiveCategory = activeCategory === category
+              const isCategoryExpanded = isActiveCategory
+                ? collapsedCategories[category] !== true
+                : collapsedCategories[category] === false
+              const categoryAgents = categories[category]
+              const visibleCategoryAgents = categoryAgents.slice(
+                0,
+                SIDEBAR_CATEGORY_AGENT_LIMIT
+              )
+
+              return (
+                <div key={category}>
+                  <button
+                    type="button"
+                    onClick={() => toggleCategory(category)}
+                    aria-expanded={isCategoryExpanded}
+                    className={`rail-link w-full ${
+                      isActiveCategory ? 'text-black dark:text-white' : ''
+                    }`}
+                  >
+                    <span className="w-5 shrink-0 font-mono text-[10px] tabular-nums opacity-45">
+                      {pad(index + 1)}
+                    </span>
+                    <span className="min-w-0 flex-1 truncate text-left font-medium">
+                      {category}
+                    </span>
+                    <span className="font-mono text-[10px] tabular-nums opacity-55">
+                      {categoryAgents.length}
+                    </span>
+                    {isCategoryExpanded ? (
+                      <Icons.Minus size={11} className="shrink-0 opacity-50" aria-hidden="true" />
+                    ) : (
+                      <Icons.Plus size={11} className="shrink-0 opacity-50" aria-hidden="true" />
+                    )}
+                  </button>
+
+                  {isCategoryExpanded && (
                     <div className="border-l border-zinc-200 py-1 pl-2 dark:border-border">
-                      {categories[category].map((agent, agentIndex) => {
+                      {visibleCategoryAgents.map((agent, agentIndex) => {
                         const IconComponent = Icons[agent.icon] || Icons.Bot
 
                         return (
@@ -329,6 +382,7 @@ export default function Sidebar({ open, onClose }) {
                             key={agent.id}
                             to={`/agent/${agent.id}`}
                             onClick={onClose}
+                            title={`${agent.name} · ${agent.category}`}
                             className={({ isActive }) =>
                               `group flex items-center gap-2 py-1 pl-1.5 pr-1 text-[12.5px] transition-colors ${
                                 isActive
@@ -354,17 +408,22 @@ export default function Sidebar({ open, onClose }) {
                           </NavLink>
                         )
                       })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
 
-          {filteredAgents.length === 0 && (
-            <div className="py-6 text-center font-mono text-[11px] text-zinc-400 dark:text-text-muted">
-              no entries
-            </div>
+                      {categoryAgents.length > SIDEBAR_CATEGORY_AGENT_LIMIT && (
+                        <Link
+                          to={`/agents?category=${encodeURIComponent(category)}`}
+                          onClick={onClose}
+                          className="mt-1.5 inline-flex items-center gap-1.5 pl-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-500 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
+                        >
+                          View all {categoryAgents.length}
+                          <Icons.ArrowRight size={11} aria-hidden="true" />
+                        </Link>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )
+            })
           )}
         </nav>
 

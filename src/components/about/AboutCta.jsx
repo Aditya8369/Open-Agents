@@ -47,7 +47,7 @@ export default function AboutCta() {
           </a>
 
           <Link
-            to="/"
+            to="/agents"
             className="inline-flex items-center gap-2 h-8 px-3 text-sm font-bold text-zinc-200 bg-transparent hover:bg-white/5 border border-white/15 transition-colors duration-300"
           >
             <PlusCircle size={16} />

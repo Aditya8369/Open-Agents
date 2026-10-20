@@ -462,7 +462,7 @@ const handleRun = async () => {
     <div className="max-w-3xl mx-auto animate-fade-in">
       {/* Breadcrumb */}
       <Link
-        to="/"
+        to="/agents"
         className="inline-flex items-center gap-2 mb-5 h-8 px-3 bg-zinc-50 dark:bg-zinc-500/10 border border-zinc-200 dark:border-zinc-500/25 text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-500/20 transition-colors duration-200"
       >
         ← All Agents

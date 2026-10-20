@@ -6,6 +6,7 @@ import {
 import { SCHEDULE_PRESETS, createAutomation, updateAutomation } from '../lib/automationsService'
 import { MODEL_MAP, MODELS } from '../lib/resolveAgentModel'
 import { useAgents } from '../lib/useAgents'
+import { useProgressiveList } from '../lib/useProgressiveList'
 import { useApiKey } from '../lib/useApiKey'
 
 export default function CreateAutomationModal({
@@ -59,8 +60,6 @@ export default function CreateAutomationModal({
       setSelectedModel(MODEL_MAP[prov] || MODEL_MAP.openai)
     }
   }, [selectedAgentId, selectedAgent])
-
-  if (!isOpen) return null
 
   const handleInputChange = (id, val) => {
     setInputs(prev => ({ ...prev, [id]: val }))
@@ -144,6 +143,16 @@ export default function CreateAutomationModal({
     a.category.toLowerCase().includes(searchAgent.toLowerCase())
   )
 
+  const {
+    visibleItems: visibleAgents,
+    hasMore,
+    remaining,
+    showMore,
+    total: filteredCount,
+  } = useProgressiveList(filteredAgents, { pageSize: 24, resetKey: searchAgent })
+
+  if (!isOpen) return null
+
   const modelsForProvider = MODELS[provider] || MODELS.openai
 
   return (
@@ -217,10 +226,11 @@ export default function CreateAutomationModal({
                     placeholder="Search agents by name or category..."
                     value={searchAgent}
                     onChange={e => setSearchAgent(e.target.value)}
+                    aria-label="Search agents"
                     className="w-full h-9 px-3 text-xs dark:bg-surface-hover dark:border-border/60 bg-gray-100 border border-gray-200 outline-none"
                   />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-44 overflow-y-auto p-1 border dark:border-border/60 border-gray-200">
-                    {filteredAgents.map(a => (
+                    {visibleAgents.map(a => (
                       <button
                         type="button"
                         key={a.id}
@@ -238,6 +248,20 @@ export default function CreateAutomationModal({
                         {selectedAgentId === a.id && <CheckCircle2 size={14} className="shrink-0 text-zinc-600 dark:text-zinc-300 mt-0.5" />}
                       </button>
                     ))}
+                    {filteredCount === 0 && (
+                      <p className="sm:col-span-2 p-4 text-center text-xs text-gray-500 dark:text-gray-400">
+                        No agents match “{searchAgent}”.
+                      </p>
+                    )}
+                    {hasMore && (
+                      <button
+                        type="button"
+                        onClick={showMore}
+                        className="sm:col-span-2 p-2 text-center text-[11px] font-medium text-zinc-600 transition-colors hover:bg-gray-100 dark:text-text-secondary dark:hover:bg-surface-hover"
+                      >
+                        Show {Math.min(24, remaining)} more of {filteredCount}
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

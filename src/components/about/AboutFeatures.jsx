@@ -1,9 +1,12 @@
 import { Bot, Cpu, Swords, Workflow, Lock, Folder } from 'lucide-react'
+import { useAgents } from '../../lib/useAgents'
 
 export default function AboutFeatures() {
+  const { agents, catalogSize } = useAgents()
+  const agentCount = agents.length || catalogSize
   const features = [
     {
-      title: '162+ Specialized AI Agents',
+      title: `${agentCount} Specialized AI Agents`,
       description: 'Focused tools built for code reviews, SQL generation, blog optimization, resume screening, flashcard creation, and much more.',
       icon: Bot,
       color: 'bg-zinc-500/20 text-zinc-500',

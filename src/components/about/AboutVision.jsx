@@ -6,7 +6,7 @@ export default function AboutVision() {
       phase: 'Phase 1 • Core Foundation',
       status: 'Active',
       title: 'Config-Driven AI Agent Ecosystem',
-      description: 'Expand to 150+ specialized single-purpose agents across engineering, marketing, education, design, business, and healthcare with instant browser execution.',
+      description: 'Expand a growing library of specialized single-purpose agents across engineering, marketing, education, design, business, and healthcare with instant browser execution.',
       icon: Target,
     },
     {

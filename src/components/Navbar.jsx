@@ -50,8 +50,8 @@ export default function Navbar({ sidebarOpen, setSidebarOpen }) {
 
   const focusGlobalSearch = () => {
     setMobileMenuOpen(false)
-    if (window.location.pathname !== '/') {
-      navigate('/')
+    if (window.location.pathname !== '/agents') {
+      navigate('/agents')
     }
     window.setTimeout(() => document.getElementById('agent-search')?.focus(), 80)
   }

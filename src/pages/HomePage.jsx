@@ -1,6 +1,6 @@
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useRef } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { ArrowRight, Github, Search, X, Star, History, Swords, GitBranch, Lightbulb, LayoutGrid, Rows3, ExternalLink } from 'lucide-react'
+import { ArrowRight, ChevronDown, Github, Search, X, Star, History, Swords, GitBranch, Lightbulb, LayoutGrid, Rows3, ExternalLink } from 'lucide-react'
 import AgentCardSkeleton from '../components/AgentCardSkeleton'
 import AgentCard from '../components/AgentCard'
 import { useFavorites } from '../lib/useFavorites'
@@ -9,6 +9,7 @@ import RecentRuns from '../components/RecentRuns'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts'
 import { useAgents } from '../lib/useAgents'
+import { useProgressiveList } from '../lib/useProgressiveList'
 import RecommendationWizardEntry from '../components/recommendation/RecommendationWizardEntry'
 import { DEFAULT_COLLECTION_ID, useCollections } from '../lib/useCollections'
 import RecommendationWizardModal from '../components/recommendation/RecommendationWizardModal'
@@ -23,6 +24,8 @@ const providerLabels = {
   gemini: 'Gemini',
   openrouter: 'OpenRouter',
 }
+
+const CATALOG_PAGE_SIZE = 60
 
 /** A filter is a word, not a pill: active options invert to a solid block. */
 function RailOption({ selected, onClick, children }) {
@@ -44,16 +47,31 @@ function RailOption({ selected, onClick, children }) {
 
 export default function HomePage() {
   const navigate = useNavigate()
-  const [searchQuery, setSearchQuery] = useState('')
-  const { agents, loading: agentsLoading } = useAgents()
+  const { agents, loading: agentsLoading, catalogSize } = useAgents()
   const [isRecommendationWizardOpen, setIsRecommendationWizardOpen] = useState(false)
   const recommendationWizardHeroTriggerRef = useRef(null)
   const recommendationWizardReturnFocusRef = useRef(null)
-  const [selectedCategory, setSelectedCategory] = useState(null)
-  const [selectedProvider, setSelectedProvider] = useState(null)
   const [viewMode, setViewMode] = useState('index')
   const [searchParams, setSearchParams] = useSearchParams()
   const { collections, getAgentCollectionId } = useCollections()
+
+  // Filters live in the URL so a search or category can be linked to directly.
+  const searchQuery = searchParams.get('q') || ''
+  const selectedCategory = searchParams.get('category') || null
+  const selectedProvider = searchParams.get('provider') || null
+
+  const updateFilter = (key, value) => {
+    setSearchParams((previous) => {
+      const next = new URLSearchParams(previous)
+      if (value) next.set(key, value)
+      else next.delete(key)
+      return next
+    }, { replace: true })
+  }
+
+  const setSearchQuery = (value) => updateFilter('q', value)
+  const setSelectedCategory = (value) => updateFilter('category', value)
+  const setSelectedProvider = (value) => updateFilter('provider', value)
 
   // ── First-time banner: show only if no global keys saved and not dismissed
   const [showBanner, setShowBanner] = useState(() => {
@@ -186,6 +204,18 @@ export default function HomePage() {
     })
   }, [activeCollectionId, agents, getAgentCollectionId, searchQuery, selectedCategory, selectedProvider])
 
+  const {
+    visibleItems: visibleAgents,
+    visibleCount,
+    total: filteredCount,
+    hasMore,
+    remaining,
+    showMore,
+  } = useProgressiveList(filteredAgents, {
+    pageSize: CATALOG_PAGE_SIZE,
+    resetKey: [searchQuery, selectedCategory, selectedProvider, activeCollectionId].join('|'),
+  })
+
   const handleOpenRecommendationWizard = (event) => {
     event?.preventDefault()
     if (event?.currentTarget) recommendationWizardReturnFocusRef.current = event.currentTarget
@@ -219,16 +249,20 @@ export default function HomePage() {
     searchQuery.trim() || selectedCategory || selectedProvider || activeCollectionId !== DEFAULT_COLLECTION_ID
 
   const ledger = [
-    { label: 'Agents', value: agents.length },
+    { label: 'Agents', value: agents.length || catalogSize || 0 },
     { label: 'Categories', value: allCategories.length },
     { label: 'Providers', value: allProviders.length },
     { label: 'Starred', value: favoriteAgents.length },
   ]
 
   const clearFilters = () => {
-    setSearchQuery('')
-    setSelectedCategory(null)
-    setSelectedProvider(null)
+    setSearchParams((previous) => {
+      const next = new URLSearchParams(previous)
+      next.delete('q')
+      next.delete('category')
+      next.delete('provider')
+      return next
+    }, { replace: true })
   }
 
   return (
@@ -364,6 +398,7 @@ export default function HomePage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search agents by name, description, or category…"
+                aria-label="Search agents"
                 className="field h-9 pl-8 pr-16"
               />
               {searchQuery ? (
@@ -458,7 +493,7 @@ export default function HomePage() {
                 {showingFiltered ? 'Matching entries' : 'All entries'}
               </h2>
               <span className="font-mono text-[10px] tabular-nums text-zinc-400 dark:text-text-muted">
-                {filteredAgents.length}
+                {filteredCount}
               </span>
             </div>
 
@@ -488,16 +523,16 @@ export default function HomePage() {
                 />
               ))}
             </div>
-          ) : filteredAgents.length > 0 ? (
+          ) : filteredCount > 0 ? (
             viewMode === 'grid' ? (
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-                {filteredAgents.map((agent) => (
+                {visibleAgents.map((agent) => (
                   <AgentCard key={agent.id} agent={agent} variant="grid" />
                 ))}
               </div>
             ) : (
               <div className="border-t border-zinc-200 dark:border-border">
-                {filteredAgents.map((agent, i) => (
+                {visibleAgents.map((agent, i) => (
                   <AgentCard key={agent.id} agent={agent} variant="row" index={i + 1} />
                 ))}
               </div>
@@ -527,6 +562,24 @@ export default function HomePage() {
                   </button>
                 )}
               </div>
+            </div>
+          )}
+
+          {!agentsLoading && filteredCount > 0 && (
+            <div className="mt-4 flex items-center justify-between gap-3 border-t border-zinc-200 pt-3 dark:border-border">
+              <span className="font-mono text-[10px] tabular-nums text-zinc-400 dark:text-text-muted">
+                Showing {visibleCount} of {filteredCount}
+              </span>
+              {hasMore && (
+                <button
+                  type="button"
+                  onClick={showMore}
+                  className="btn-secondary h-7 text-[11px]"
+                >
+                  Load {Math.min(CATALOG_PAGE_SIZE, remaining)} more
+                  <ChevronDown size={12} aria-hidden="true" />
+                </button>
+              )}
             </div>
           )}
         </div>

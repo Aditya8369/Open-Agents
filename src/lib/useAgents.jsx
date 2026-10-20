@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { loadAllAgents } from '../agents/registry'
+import { AGENT_COUNT, loadAllAgents } from '../agents/registry'
 
 const AgentsContext = createContext(null)
 
@@ -32,7 +32,7 @@ export function AgentsProvider({ children }) {
   }, [])
 
   return (
-    <AgentsContext.Provider value={{ agents, loading, error, reloadAgents }}>
+    <AgentsContext.Provider value={{ agents, loading, error, reloadAgents, catalogSize: AGENT_COUNT }}>
       {children}
     </AgentsContext.Provider>
   )
@@ -40,7 +40,7 @@ export function AgentsProvider({ children }) {
 
 /**
  * Hook to access the lazily-loaded agents list.
- * @returns {{ agents: Array, loading: boolean, error: Error | null, reloadAgents: () => void }}
+ * @returns {{ agents: Array, loading: boolean, error: Error | null, reloadAgents: () => void, catalogSize: number }}
  */
 export function useAgents() {
   const context = useContext(AgentsContext)

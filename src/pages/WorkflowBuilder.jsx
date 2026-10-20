@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import * as Icons from 'lucide-react'
 import { useAgents } from '../lib/useAgents'
+import { useProgressiveList } from '../lib/useProgressiveList'
 import { saveWorkflow } from '../hooks/useWorkflows'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
@@ -71,6 +72,17 @@ export default function WorkflowBuilder() {
     agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     agent.category.toLowerCase().includes(searchQuery.toLowerCase())
   )
+
+  const {
+    visibleItems: visibleAgentOptions,
+    hasMore: hasMoreAgents,
+    remaining: remainingAgents,
+    showMore: showMoreAgents,
+    total: matchingAgentCount,
+  } = useProgressiveList(filteredAgents, {
+    pageSize: 30,
+    resetKey: searchQuery,
+  })
 
   const addAgent = (agent) => {
     if (selectedAgents.length >= MAX_AGENTS) return
@@ -288,17 +300,18 @@ export default function WorkflowBuilder() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search agents by name or category..."
+                    aria-label="Search agents"
                     className="w-full px-3 py-2 border text-xs transition-colors duration-200 dark:bg-surface-input dark:border-border dark:text-text-primary dark:placeholder-text-muted bg-gray-50 border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-zinc-500/40 focus:border-zinc-500"
                   />
                 </div>
 
-                {filteredAgents.length === 0 ? (
+                {matchingAgentCount === 0 ? (
                   <div className="px-4 py-3 text-sm dark:text-text-muted text-gray-400 text-center">
                     No agents found
                   </div>
                 ) : (
                   <>
-                    {filteredAgents.map((agent) => {
+                    {visibleAgentOptions.map((agent) => {
                       const IconComponent = Icons[agent.icon] || Icons.Bot
                       return (
                         <button
@@ -320,6 +333,15 @@ export default function WorkflowBuilder() {
                         </button>
                       )
                     })}
+                    {hasMoreAgents && (
+                      <button
+                        type="button"
+                        onClick={showMoreAgents}
+                        className="w-full px-3 py-2 text-center text-[11px] font-medium text-zinc-600 transition-colors hover:bg-gray-50 dark:text-text-secondary dark:hover:bg-surface-hover"
+                      >
+                        Show {Math.min(30, remainingAgents)} more of {matchingAgentCount}
+                      </button>
+                    )}
                     <div className="h-3" />
                   </>
                 )}

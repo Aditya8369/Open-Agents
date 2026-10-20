@@ -13,6 +13,10 @@
 
 const modules = import.meta.glob('./definitions/*.js', { eager: false });
 
+// Known synchronously from the glob, so count-sensitive UI can render the real
+// catalogue size during the lazy load instead of flashing a stale number.
+export const AGENT_COUNT = Object.keys(modules).length;
+
 const normalizeAgents = (agents) => {
   const seenIds = new Set();
   return agents.filter(Boolean).filter((agent) => {

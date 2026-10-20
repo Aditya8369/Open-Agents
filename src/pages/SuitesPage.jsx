@@ -216,7 +216,7 @@ export default function SuitesPage() {
       {/* Footer note */}
       <div>
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/agents')}
           className="font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:text-text-muted dark:hover:text-white"
         >
           Prefer to browse? View all agents →

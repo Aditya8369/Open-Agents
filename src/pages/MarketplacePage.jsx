@@ -11,6 +11,7 @@ import {
   Tag,
 } from 'lucide-react'
 import { useAgents } from '../lib/useAgents'
+import { useProgressiveList } from '../lib/useProgressiveList'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 import {
   MARKETPLACE_CATEGORIES,
@@ -68,9 +69,40 @@ function PublishModal({ agents, onClose, onPublished }) {
   const [category, setCategory] = useState(MARKETPLACE_CATEGORIES[0])
   const [readme, setReadme] = useState('')
   const [author, setAuthor] = useState('')
+  const [agentSearch, setAgentSearch] = useState('')
 
   const selected = agents.find((a) => a.id === agentId)
   const canPublish = agentId && name.trim() && description.trim()
+
+  const matchingAgents = useMemo(() => {
+    const q = agentSearch.trim().toLowerCase()
+    if (!q) return agents
+
+    return agents.filter((agent) =>
+      [agent.name, agent.description, agent.category, agent.id]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+        .includes(q)
+    )
+  }, [agentSearch, agents])
+
+  const {
+    visibleItems: visibleAgentOptions,
+    hasMore: hasMoreAgentOptions,
+    remaining: remainingAgentOptions,
+    showMore: showMoreAgentOptions,
+    total: matchingAgentCount,
+  } = useProgressiveList(matchingAgents, {
+    pageSize: 24,
+    resetKey: agentSearch,
+  })
+
+  // Keep the chosen agent visible if a later search would otherwise hide it.
+  const agentOptions =
+    selected && !visibleAgentOptions.some((agent) => agent.id === selected.id)
+      ? [selected, ...visibleAgentOptions]
+      : visibleAgentOptions
 
   const handlePublish = () => {
     if (!canPublish) return
@@ -122,12 +154,41 @@ function PublishModal({ agents, onClose, onPublished }) {
             <label className="block text-xs font-medium dark:text-text-secondary text-gray-600 mb-1">
               Agent <span className="text-zinc-400">*</span>
             </label>
-            <select value={agentId} onChange={(e) => setAgentId(e.target.value)} className={inputClass}>
+            <input
+              type="search"
+              value={agentSearch}
+              onChange={(e) => setAgentSearch(e.target.value)}
+              placeholder="Filter agents by name, description, or category..."
+              aria-label="Filter agents to publish"
+              className={inputClass}
+            />
+            <select
+              value={agentId}
+              onChange={(e) => setAgentId(e.target.value)}
+              aria-label="Agent to publish"
+              className={`${inputClass} mt-1.5`}
+            >
               <option value="">Select an agent to publish...</option>
-              {agents.map((a) => (
+              {agentOptions.map((a) => (
                 <option key={a.id} value={a.id}>{a.name}</option>
               ))}
             </select>
+            <div className="mt-1 flex items-center justify-between gap-2 text-[10px] dark:text-text-muted text-gray-400">
+              <span>
+                {matchingAgentCount === 0
+                  ? 'No matching agents'
+                  : `${visibleAgentOptions.length} of ${matchingAgentCount} shown`}
+              </span>
+              {hasMoreAgentOptions && (
+                <button
+                  type="button"
+                  onClick={showMoreAgentOptions}
+                  className="font-medium text-zinc-600 transition-colors hover:text-black dark:text-text-secondary dark:hover:text-white"
+                >
+                  Show {Math.min(24, remainingAgentOptions)} more
+                </button>
+              )}
+            </div>
           </div>
 
           <div>

@@ -20,7 +20,7 @@ export default function NotFoundPage() {
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-2">
-          <button onClick={() => navigate('/')} className="btn-primary">
+          <button onClick={() => navigate('/agents')} className="btn-primary">
             <Home size={14} aria-hidden="true" />
             Back to agents
           </button>
@@ -32,7 +32,7 @@ export default function NotFoundPage() {
 
         <button
           onClick={() => {
-            navigate('/')
+            navigate('/agents')
             window.setTimeout(() => document.getElementById('agent-search')?.focus(), 120)
           }}
           className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] text-zinc-400 transition-colors hover:text-black dark:hover:text-white dark:text-text-muted"

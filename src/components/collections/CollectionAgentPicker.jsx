@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Search } from 'lucide-react'
 import { MAX_AGENTS_PER_COLLECTION } from '../../lib/useCollections'
+import { useProgressiveList } from '../../lib/useProgressiveList'
 
 function getMutationError(result, fallback) {
   if (result === false) return fallback
@@ -34,6 +35,17 @@ export default function CollectionAgentPicker({
       agent.category?.toLowerCase().includes(q)
     ))
   }, [agents, searchQuery])
+
+  const {
+    visibleItems: visibleAgents,
+    hasMore,
+    remaining,
+    showMore,
+    total: matchingCount,
+  } = useProgressiveList(filteredAgents, {
+    pageSize: 40,
+    resetKey: searchQuery,
+  })
 
   const handleToggle = (agent) => {
     if (!agent?.id) return
@@ -74,6 +86,7 @@ export default function CollectionAgentPicker({
           value={searchQuery}
           onChange={(event) => setSearchQuery(event.target.value)}
           placeholder="Search agents by name, description, or category"
+          aria-label="Search agents"
           className="w-full bg-transparent text-sm text-gray-900 outline-none placeholder:text-gray-400 dark:text-text-primary"
         />
       </label>
@@ -86,7 +99,7 @@ export default function CollectionAgentPicker({
       {feedback && <p className="mt-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">{feedback}</p>}
 
       <div className="mt-4 max-h-[32rem] divide-y divide-gray-100 overflow-y-auto border border-gray-200 dark:divide-border dark:border-border">
-        {filteredAgents.map((agent) => {
+        {visibleAgents.map((agent) => {
           const checked = selectedIds.has(agent.id)
           const disabled = !checked && isFull
 
@@ -119,6 +132,16 @@ export default function CollectionAgentPicker({
           <p className="p-4 text-sm text-gray-500 dark:text-text-secondary">
             {agents.length === 0 ? 'No agents are available yet.' : 'No agents match your search.'}
           </p>
+        )}
+
+        {hasMore && (
+          <button
+            type="button"
+            onClick={showMore}
+            className="w-full p-3 text-center text-xs font-medium text-zinc-600 transition-colors hover:bg-gray-50 dark:text-text-secondary dark:hover:bg-white/5"
+          >
+            Show {Math.min(40, remaining)} more of {matchingCount}
+          </button>
         )}
       </div>
     </section>

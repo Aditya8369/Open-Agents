@@ -7,11 +7,11 @@ import { CATEGORIES } from '../agents/categories'
 export default function PortfolioPage() {
   useDocumentTitle('OpenAgents')
 
-  const { agents } = useAgents()
-  const agentCount = agents.length || 572
+  const { agents, catalogSize } = useAgents()
+  const agentCount = agents.length || catalogSize
 
   const index = [
-    { n: '01', title: 'Agent Marketplace', note: `${agentCount} agents, ${CATEGORIES.length} categories`, to: '/marketplace' },
+    { n: '01', title: 'Agent Catalogue', note: `${agentCount} agents, ${CATEGORIES.length} categories`, to: '/agents' },
     { n: '02', title: 'Battle Mode', note: 'Head-to-head model comparison', to: '/battle' },
     { n: '03', title: 'Workflow Builder', note: 'Chain agents into pipelines', to: '/workflows/build' },
     { n: '04', title: 'Automations', note: 'Schedules, retries, batch runs', to: '/automations' },

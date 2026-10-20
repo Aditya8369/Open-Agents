@@ -7,7 +7,7 @@
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, useLocation } from 'react-router-dom'
 
 const agents = [
   {
@@ -67,10 +67,16 @@ vi.mock('../hooks/useKeyboardShortcuts', () => ({ useKeyboardShortcuts: () => {}
 
 import HomePage from './HomePage'
 
-function renderPage() {
+function LocationProbe() {
+  const { search } = useLocation()
+  return <output data-testid="location-search">{search}</output>
+}
+
+function renderPage(initialEntries = ['/agents']) {
   return render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={initialEntries}>
       <HomePage />
+      <LocationProbe />
     </MemoryRouter>
   )
 }
@@ -123,6 +129,24 @@ describe('HomePage', () => {
 
     expect(screen.queryByText('Alpha Agent')).not.toBeInTheDocument()
     expect(screen.getByText('Beta Agent')).toBeInTheDocument()
+  })
+
+  it('hydrates the search filter from the URL', () => {
+    renderPage(['/agents?q=draws'])
+
+    expect(screen.getByPlaceholderText(/search agents/i)).toHaveValue('draws')
+    expect(screen.queryByText('Alpha Agent')).not.toBeInTheDocument()
+    expect(screen.getByText('Beta Agent')).toBeInTheDocument()
+  })
+
+  it('writes search changes back to the URL', () => {
+    renderPage()
+
+    fireEvent.change(screen.getByPlaceholderText(/search agents/i), {
+      target: { value: 'draws' },
+    })
+
+    expect(screen.getByTestId('location-search')).toHaveTextContent('q=draws')
   })
 
   it('shows the empty state when nothing matches', () => {
