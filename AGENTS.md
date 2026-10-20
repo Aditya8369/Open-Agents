@@ -494,6 +494,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 485 | Retry Budget Planner | Design retry limits, backoff, jitter, and deadlines that recover from transient failures without amplifying load. | Engineering |
 | 486 | Multi-Tenant Schema Planner | Choose and review a tenancy model with isolation, indexing, and noisy-neighbor controls. | Engineering |
 | 487 | Kubernetes Ingress Debugger | Trace 404, 502, and 504 responses through Ingress, Service, and Pod layers with a fix sequence. | DevOps |
+| 488 | Pod Crashloop Diagnoser | Classify CrashLoopBackOff causes from events, logs, and pod specs, then give an ordered fix plan. | DevOps |
+| 489 | On-Call Handoff Writer | Turn raw shift notes into a concise handoff with active incidents, risks, and owner actions. | DevOps |
+| 490 | Certificate Renewal Planner | Inventory TLS certificates, rank expiry risk, and build a renewal runbook with monitoring. | DevOps |
+| 491 | Cloud Cost Anomaly Explainer | Explain an unexpected cloud bill spike with likely drivers, verification queries, and containment steps. | DevOps |
+| 492 | Kubernetes Resource Quota Planner | Set namespace quotas and LimitRanges that protect the cluster without blocking normal workloads. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
