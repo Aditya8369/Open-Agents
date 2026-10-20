@@ -714,6 +714,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 705 | Mock API Server Designer | Design a mock API server from an OpenAPI spec with realistic data, state, and error scenarios. | Developer Tools |
 | 706 | Browser Extension Planner | Plan a browser extension with permissions, architecture, security, privacy, and store review. | Developer Tools |
 | 707 | Course Syllabus Designer | Design a course syllabus with outcomes, schedule, assessments, policies, and accessibility. | Education |
+| 708 | Learning Accommodation Planner | Turn learning needs into classroom accommodations and support plans that preserve rigor. | Education |
+| 709 | Academic Integrity Policy Writer | Draft an academic integrity policy covering AI use, collaboration, plagiarism, and fair process. | Education |
+| 710 | Teaching Philosophy Statement Writer | Turn teaching experience and beliefs into a specific, evidence-based teaching philosophy statement. | Education |
+| 711 | Feature Flag Debt Auditor | Find stale, conflicting, and risky feature flags and produce a cleanup plan. | Engineering |
+| 712 | API Deprecation Orchestrator | Plan and communicate an API deprecation with consumer segmentation, migration support, and sunset gates. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
