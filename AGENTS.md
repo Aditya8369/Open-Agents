@@ -854,6 +854,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 845 | Loyalty Program Designer | Design a loyalty program with earning, redemption, tiers, economics, anti-gaming rules, and launch measurement. | Marketing |
 | 846 | Boundary Setting Script Writer | Write clear boundary-setting scripts for work and relationships, with pushback responses and follow-through. | Personal Development |
 | 847 | Sabbatical Planner | Plan a sabbatical with purpose, financial runway, work coverage, logistics, health, and re-entry. | Personal Development |
+| 848 | Decision Fatigue Reset Planner | Reduce decision fatigue by auditing choices, setting defaults, batching decisions, and protecting high-stakes attention. | Personal Development |
+| 849 | Grief Processing Guide | Create a gentle grief-processing guide with prompts, rituals, support, and clear guidance on when to seek help. | Personal Development |
+| 850 | Voice of Customer Program Designer | Design a Voice of Customer program with sources, cadence, synthesis, closed-loop action, and ownership. | Product |
+| 851 | Beta Program Designer | Design a beta program with recruitment, onboarding, feedback loops, success metrics, support, and exit criteria. | Product |
+| 852 | Product Ops Charter Writer | Write a product operations charter covering scope, rituals, data, decision rights, and success metrics. | Product |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
