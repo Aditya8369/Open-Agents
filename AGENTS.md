@@ -634,6 +634,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 625 | Customer QBR Deck Builder | Build a quarterly business review deck that ties usage, outcomes, risks, and the next plan to customer goals. | Sales |
 | 626 | Renewal Risk Assessor | Assess renewal risk from usage, stakeholders, support, and commercial signals, then build a save plan. | Sales |
 | 627 | Sales Call Transcript Coach | Coach a rep from a call transcript with evidence on discovery, objection handling, talk ratio, and next steps. | Sales |
+| 628 | Competitive Battlecard Writer | Create a sales battlecard with positioning, proof points, competitor weaknesses, and ethical trap questions. | Sales |
+| 629 | Pipeline Hygiene Auditor | Audit pipeline data for stale opportunities, missing stakeholders, inflated stages, and forecast risk. | Sales |
+| 630 | Operating Cadence Designer | Design a company or team operating cadence with meetings, metrics, decisions, and async artifacts. | Business |
+| 631 | Investor Update Writer | Write a concise investor update with metrics, wins, misses, asks, and a clear narrative. | Business |
+| 632 | M&A Integration Checklist | Build a post-merger integration checklist across people, systems, customers, and finance with owners and sequencing. | Business |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
