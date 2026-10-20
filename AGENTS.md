@@ -589,6 +589,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 580 | Event-Driven Architecture Reviewer | Review event flows for ordering, idempotency, schema evolution, and failure recovery. | Engineering |
 | 581 | Test Data Strategy Planner | Design realistic, privacy-safe test data with seeding, masking, and environment-specific fixtures. | Engineering |
 | 582 | Architecture Fitness Function Designer | Turn architectural rules into automated fitness functions with thresholds, ownership, and CI enforcement. | Engineering |
+| 583 | Kubernetes Upgrade Planner | Plan a Kubernetes version upgrade with deprecation checks, node draining, and rollback gates. | DevOps |
+| 584 | Service Mesh Adoption Planner | Decide whether a service mesh fits, then plan a low-risk rollout with mTLS, traffic policy, and observability. | DevOps |
+| 585 | Cloud Networking Troubleshooter | Trace connectivity failures across VPCs, subnets, routes, security groups, DNS, and load balancers. | DevOps |
+| 586 | Secrets Management Migration Planner | Migrate hardcoded and scattered secrets to a managed vault with rotation, access control, and zero-downtime cutover. | DevOps |
+| 587 | CI Runner Cost Optimizer | Reduce CI compute spend through runner sizing, caching, concurrency, and workload placement without slowing feedback. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
