@@ -594,6 +594,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 585 | Cloud Networking Troubleshooter | Trace connectivity failures across VPCs, subnets, routes, security groups, DNS, and load balancers. | DevOps |
 | 586 | Secrets Management Migration Planner | Migrate hardcoded and scattered secrets to a managed vault with rotation, access control, and zero-downtime cutover. | DevOps |
 | 587 | CI Runner Cost Optimizer | Reduce CI compute spend through runner sizing, caching, concurrency, and workload placement without slowing feedback. | DevOps |
+| 588 | Backup Restore Drill Planner | Design and schedule restore drills that prove backups work, with RTO/RPO checks, evidence, and remediation. | DevOps |
+| 589 | Observability Cost Optimizer | Cut observability spend by controlling log volume, metric cardinality, trace sampling, and retention. | DevOps |
+| 590 | Cloud IAM Permission Boundary Designer | Design permission boundaries and guardrails that cap cloud IAM privileges without blocking legitimate work. | Cybersecurity |
+| 591 | Zero Trust Maturity Assessor | Assess identity, device, network, data, and workload controls against a practical zero-trust maturity model. | Cybersecurity |
+| 592 | SaaS Tenant Isolation Reviewer | Review multi-tenant architecture for data leakage, noisy neighbors, and cross-tenant authorization gaps. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
