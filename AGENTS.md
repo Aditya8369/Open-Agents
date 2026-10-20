@@ -789,6 +789,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 780 | Product Manual Writer | Turn product details into a structured user manual with setup, core tasks, troubleshooting, and safety notes. | Content Writing |
 | 781 | Obituary Writer | Draft a respectful obituary from memories and biographical details, with a clear fact-check list before publication. | Content Writing |
 | 782 | Email Authentication Auditor | Audit SPF, DKIM, DMARC, and alignment, then produce a prioritized rollout plan for safer email delivery. | Cybersecurity |
+| 783 | Incident Evidence Preservation Planner | Plan evidence preservation during an incident with order of volatility, chain of custody, and legal coordination. | Cybersecurity |
+| 784 | Session Management Reviewer | Review session lifecycle, cookie flags, rotation, revocation, and fixation defenses across a web application. | Cybersecurity |
+| 785 | GraphQL Security Auditor | Audit a GraphQL schema and resolvers for authorization gaps, query abuse, introspection exposure, and injection risk. | Cybersecurity |
+| 786 | Threat Modeling Workshop Facilitator | Facilitate a STRIDE threat modeling workshop with assets, data flows, threats, and owned mitigations. | Cybersecurity |
+| 787 | Security Exception & Risk Acceptance Reviewer | Review a security exception request with residual risk, compensating controls, expiry, and approval conditions. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
