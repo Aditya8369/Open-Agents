@@ -859,6 +859,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 850 | Voice of Customer Program Designer | Design a Voice of Customer program with sources, cadence, synthesis, closed-loop action, and ownership. | Product |
 | 851 | Beta Program Designer | Design a beta program with recruitment, onboarding, feedback loops, success metrics, support, and exit criteria. | Product |
 | 852 | Product Ops Charter Writer | Write a product operations charter covering scope, rituals, data, decision rights, and success metrics. | Product |
+| 853 | Product Compliance Review Planner | Review a product feature for privacy, accessibility, safety, and regulatory obligations before launch. | Product |
+| 854 | Home Maintenance Calendar | Build a seasonal home maintenance calendar with tasks, frequency, costs, vendors, and safety notes. | Productivity |
+| 855 | Warranty & Receipt Tracker | Organize purchases, warranties, receipts, claim deadlines, and service contacts into a usable tracker. | Productivity |
+| 856 | Deep Work Session Planner | Plan deep work sessions with one outcome, time blocks, friction removal, and a shutdown review. | Productivity |
+| 857 | Reading List & Note-Taking Planner | Turn a reading list into a note-taking system with capture, synthesis, review, and a sustainable reading rhythm. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
