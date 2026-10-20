@@ -719,6 +719,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 710 | Teaching Philosophy Statement Writer | Turn teaching experience and beliefs into a specific, evidence-based teaching philosophy statement. | Education |
 | 711 | Feature Flag Debt Auditor | Find stale, conflicting, and risky feature flags and produce a cleanup plan. | Engineering |
 | 712 | API Deprecation Orchestrator | Plan and communicate an API deprecation with consumer segmentation, migration support, and sunset gates. | Engineering |
+| 713 | Mobile Release Train Planner | Plan a mobile release train with feature freeze, testing, store review, phased rollout, and rollback. | Engineering |
+| 714 | App Store Rejection Appeal Writer | Draft an App Store or Google Play appeal with policy mapping, evidence, and a respectful resolution request. | Engineering |
+| 715 | Deep Link & Universal Link Auditor | Audit deep links and universal links for routing, attribution, security, and edge cases. | Engineering |
+| 716 | Payment Flow Reviewer | Review payment flows for correctness, idempotency, fraud, reconciliation, and failure recovery. | Engineering |
+| 717 | Subscription Billing State Machine Designer | Design a subscription billing state machine with trials, upgrades, dunning, and proration. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
