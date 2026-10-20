@@ -739,6 +739,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 730 | Succession Planning Facilitator | Facilitate succession planning with critical roles, candidate readiness, and development actions. | HR |
 | 731 | New Manager Onboarding Designer | Design a new manager onboarding program with expectations, people leadership, and early wins. | HR |
 | 732 | Medical Billing Denial Analyzer | Analyze medical claim denials to find root causes, appeal opportunities, and prevention fixes. | Healthcare |
+| 733 | HIPAA Risk Assessment Planner | Plan a HIPAA security risk analysis with scope, threats, controls, and remediation. | Healthcare |
+| 734 | Telehealth Workflow Designer | Design a telehealth workflow covering scheduling, consent, technology, clinical safety, and follow-up. | Healthcare |
+| 735 | Nursing Shift Handoff Writer | Turn shift notes into a structured nursing handoff with priorities, risks, and pending tasks. | Healthcare |
+| 736 | SaaS Subscription Agreement Reviewer | Review SaaS subscription agreements for commercial, legal, security, and exit risks. | Legal |
+| 737 | Independent Contractor Agreement Reviewer | Review contractor agreements for classification, IP, payment, termination, and liability risks. | Legal |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
