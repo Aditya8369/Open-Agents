@@ -814,6 +814,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 805 | GitHub Actions Reusable Workflow Designer | Design reusable GitHub Actions workflows with inputs, permissions, caching, versioning, and adoption guidance. | Developer Tools |
 | 806 | Student Feedback Comment Generator | Turn observations into specific, constructive report-card comments with evidence and next steps. | Education |
 | 807 | Substitute Teacher Plan Writer | Create a complete substitute plan with routines, lesson steps, access details, contingencies, and safety notes. | Education |
+| 808 | Classroom Management Plan Writer | Build a classroom management plan with values, routines, proactive strategies, responses, and reset practices. | Education |
+| 809 | Field Trip Planner | Plan a field trip with learning alignment, logistics, supervision, risk, accessibility, and communication. | Education |
+| 810 | IEP Goal Writer | Draft measurable IEP goals with present levels, baselines, benchmarks, services, and progress monitoring. | Education |
+| 811 | Background Job Reliability Reviewer | Review background jobs for idempotency, retries, ordering, backpressure, dead letters, and observability. | Engineering |
+| 812 | Distributed Lock Designer | Design distributed locking with leases, fencing tokens, failure handling, and contention controls. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
