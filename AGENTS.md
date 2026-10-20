@@ -844,6 +844,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 835 | Palliative Care Conversation Guide | Prepare for palliative care conversations around values, symptoms, goals, family roles, and documentation. | Healthcare |
 | 836 | Chronic Condition Flare Action Plan | Turn a chronic condition management plan into a clear flare action plan with triggers, early signs, home actions, and escalation. | Healthcare |
 | 837 | Demand Letter Drafter | Draft a demand letter with facts, legal basis, requested remedy, deadline, and an evidence checklist. | Legal |
+| 838 | Settlement Agreement Reviewer | Review a settlement agreement for scope, payment, releases, confidentiality, and enforcement risks. | Legal |
+| 839 | Power of Attorney Checklist | Organize power-of-attorney decisions, document requirements, agent duties, and safeguards before meeting a lawyer. | Legal |
+| 840 | Small Claims Court Filing Planner | Plan a small claims filing with claim assessment, jurisdiction, evidence, service, and hearing preparation. | Legal |
+| 841 | Short-Form Video Hook Writer | Write scroll-stopping hooks and opening beats for short-form video, with angles, visuals, and retention tests. | Marketing |
+| 842 | Journalist Outreach Pitch Writer | Write a concise journalist pitch with a news angle, evidence, quotes, and a respectful follow-up plan. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
