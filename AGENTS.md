@@ -484,6 +484,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 475 | API Idempotency Reviewer | Audit write endpoints for retry safety, duplicate side effects, and missing idempotency keys. | Engineering |
 | 476 | API Pagination Designer | Design stable cursor or offset pagination with clear contracts, limits, and edge-case handling. | Engineering |
 | 477 | Webhook Reliability Auditor | Audit webhook delivery for signature verification, replay protection, retries, and dead-letter handling. | Engineering |
+| 478 | Caching Invalidation Debugger | Trace stale-data bugs through cache layers and design invalidation rules that match the write path. | Engineering |
+| 479 | Postgres Vacuum Advisor | Diagnose table bloat and autovacuum tuning problems with a safe maintenance plan. | Engineering |
+| 480 | Redis Memory Optimizer | Reduce Redis memory use through key design, encoding choices, TTLs, and eviction policy tuning. | Engineering |
+| 481 | Kafka Partition Planner | Choose partition counts, message keys, and consumer parallelism without breaking ordering. | Engineering |
+| 482 | Database Connection Pool Sizer | Size connection pools from traffic, latency, and database limits, including timeout and queue policy. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
