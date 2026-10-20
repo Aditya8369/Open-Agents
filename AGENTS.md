@@ -704,6 +704,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 695 | Dashboard Design Reviewer | Review dashboards for decision clarity, hierarchy, chart choice, and data trust. | Design |
 | 696 | Voice Interaction Designer | Design voice and conversational flows with intent handling, error recovery, and accessibility. | Design |
 | 697 | Platform Engineering Maturity Assessor | Assess platform engineering maturity across self-service, golden paths, reliability, and developer experience. | DevOps |
+| 698 | Cloud Migration Cutover Planner | Plan a cloud migration cutover with dependencies, data sync, rollback, and business communication. | DevOps |
+| 699 | Production Readiness Review Planner | Review a service before launch for reliability, observability, security, capacity, and operational ownership. | DevOps |
+| 700 | Capacity Planning Planner | Forecast infrastructure and team capacity from growth, seasonality, and usage drivers. | DevOps |
+| 701 | Cloud Cost Allocation Planner | Design cloud cost allocation and showback with tagging, shared-cost rules, and accountability. | DevOps |
+| 702 | Service Catalog Designer | Design a service catalog with ownership, dependencies, SLAs, and lifecycle information. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
