@@ -764,6 +764,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 755 | Delegation Planner | Decide what to delegate, to whom, and with what context, checkpoints, and escalation. | Productivity |
 | 756 | Moving Checklist Generator | Generate a moving checklist by timeline, household, budget, and special requirements. | Productivity |
 | 757 | Home Inventory Planner | Build a home inventory for insurance, estate, and emergency planning. | Productivity |
+| 758 | Digital Legacy Planner | Organize digital accounts, data, and instructions for trusted people and end-of-life access. | Productivity |
+| 759 | HOA Document Reviewer | Review HOA rules and financial documents for buyer risks, restrictions, and questions. | Real Estate |
+| 760 | Home Inspection Report Summarizer | Turn a home inspection report into prioritized repairs, safety issues, and negotiation questions. | Real Estate |
+| 761 | Rental Property ROI Calculator | Calculate rental property returns with cash flow, financing, expenses, and sensitivity. | Real Estate |
+| 762 | Pre-registration Writer | Draft a study pre-registration with hypotheses, design, analysis, and deviations. | Research |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
