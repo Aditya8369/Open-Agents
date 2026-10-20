@@ -769,6 +769,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 760 | Home Inspection Report Summarizer | Turn a home inspection report into prioritized repairs, safety issues, and negotiation questions. | Real Estate |
 | 761 | Rental Property ROI Calculator | Calculate rental property returns with cash flow, financing, expenses, and sensitivity. | Real Estate |
 | 762 | Pre-registration Writer | Draft a study pre-registration with hypotheses, design, analysis, and deviations. | Research |
+| 763 | Meta-Analysis Planner | Plan a meta-analysis with search, screening, effect sizes, heterogeneity, and bias checks. | Research |
+| 764 | Reproducibility Checklist Generator | Generate a reproducibility checklist for code, data, environment, and analysis. | Research |
+| 765 | Partner Co-sell Plan Builder | Build a co-sell plan with partner fit, joint accounts, roles, and pipeline tracking. | Sales |
+| 766 | Deal Desk Review Planner | Review a complex deal for pricing, terms, approvals, and risk before signature. | Sales |
+| 767 | Expansion Playbook Writer | Build an account expansion playbook with signals, offers, stakeholders, and timing. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
