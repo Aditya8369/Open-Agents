@@ -549,6 +549,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 540 | Security Questionnaire Answerer | Answer buyer security questionnaires with evidence, honest gap disclosure, and review notes. | Sales |
 | 541 | Account Tiering Planner | Score and tier accounts by fit and potential, then define coverage and review cadence. | Sales |
 | 542 | RFP Compliance Matrix Builder | Turn RFP requirements into a compliance matrix with evidence, gaps, owners, and response priorities. | Sales |
+| 543 | Unit Economics Calculator | Calculate CAC, LTV, payback, and margin with explicit assumptions and sensitivity. | Business |
+| 544 | Market Entry Checklist | Evaluate a new market with readiness, entry options, regulatory checks, and a 90-day plan. | Business |
+| 545 | Market Sizing Calculator | Estimate TAM, SAM, and SOM with transparent assumptions and scenario ranges. | Business |
+| 546 | Business Continuity Planner | Plan continuity for critical business functions beyond IT disaster recovery. | Business |
+| 547 | Manager One-on-One Planner | Plan recurring one-on-ones with check-in structure, growth topics, and follow-through. | HR |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
