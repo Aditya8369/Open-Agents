@@ -619,6 +619,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 610 | Product Analytics Dashboard Spec Writer | Specify a product analytics dashboard with questions, metrics, event requirements, and interpretation guardrails. | Product |
 | 611 | Platform Strategy Planner | Design a platform strategy covering users, value exchange, APIs, governance, and adoption sequencing. | Product |
 | 612 | Activation Funnel Diagnoser | Diagnose activation drop-offs using funnel data, user segments, and qualitative evidence, then prioritize fixes. | Product |
+| 613 | Feature Adoption Playbook Writer | Create a post-launch adoption playbook with audience segments, enablement, messaging, and success metrics. | Product |
+| 614 | Design QA Checklist Generator | Generate a release-ready design QA checklist covering visual, responsive, content, interaction, and accessibility states. | Design |
+| 615 | Mobile Design Reviewer | Review mobile designs against platform conventions, touch ergonomics, accessibility, and performance constraints. | Design |
+| 616 | Design Ops Workflow Designer | Design a design-ops workflow for intake, critique, handoff, versioning, and quality tracking. | Design |
+| 617 | Accessibility Design Review | Review designs for WCAG risks before implementation, with concrete fixes and testable acceptance criteria. | Design |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
