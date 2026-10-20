@@ -544,6 +544,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 535 | Webinar Follow-Up Writer | Write segmented post-webinar follow-up emails that move attendees to the next step. | Marketing |
 | 536 | Email List Segmentation Planner | Design lifecycle and behavior segments with the data and triggers needed to maintain them. | Marketing |
 | 537 | Google Ads Search Terms Analyzer | Turn search term reports into negatives, new keywords, and ad group changes that reduce wasted spend. | Marketing |
+| 538 | MEDDICC Deal Scorecard | Score enterprise deals against MEDDICC and expose the evidence gaps that threaten the forecast. | Sales |
+| 539 | Mutual Action Plan Builder | Build a buyer and seller action plan with milestones, owners, dates, and close criteria. | Sales |
+| 540 | Security Questionnaire Answerer | Answer buyer security questionnaires with evidence, honest gap disclosure, and review notes. | Sales |
+| 541 | Account Tiering Planner | Score and tier accounts by fit and potential, then define coverage and review cadence. | Sales |
+| 542 | RFP Compliance Matrix Builder | Turn RFP requirements into a compliance matrix with evidence, gaps, owners, and response priorities. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
