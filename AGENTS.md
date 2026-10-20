@@ -869,6 +869,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 860 | Lab Notebook Standard Writer | Write a lab notebook standard for entries, versioning, storage, metadata, review, and reproducibility. | Research |
 | 861 | Citizen Science Project Planner | Plan a citizen science project with protocol, recruitment, training, data quality, ethics, and engagement. | Research |
 | 862 | Territory Design Planner | Design sales territories with balanced potential, workload, travel, coverage, and clear review rules. | Sales |
+| 863 | Sales Playbook Writer | Write a sales playbook with buyer stages, plays, talk tracks, proof, objections, and coaching metrics. | Sales |
+| 864 | Prospect Research Brief Writer | Create a prospect research brief with priorities, triggers, people, risks, and outreach angles from public evidence. | Sales |
+| 865 | Buying Committee Map Builder | Map a buying committee with roles, influence, priorities, relationships, and an ethical engagement plan. | Sales |
+| 866 | On-Chain Data Analytics Planner | Plan on-chain analytics with decision questions, data sources, metric definitions, dashboards, and validation caveats. | Web3 |
+| 867 | Layer 2 Migration Planner | Plan an application migration to a Layer 2 with contracts, state, wallets, bridges, rollout, and rollback. | Web3 |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
