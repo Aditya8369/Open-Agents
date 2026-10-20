@@ -669,6 +669,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 660 | LiveOps Event Planner | Plan a live-ops event with goals, player segments, rewards, pacing, and rollback. | Gaming |
 | 661 | Playtest Moderator Guide | Create a playtest moderation guide with session flow, unbiased prompts, observation capture, and synthesis. | Gaming |
 | 662 | Commercial Lease Abstractor | Extract key commercial lease terms, obligations, dates, and risks into a structured abstract. | Real Estate |
+| 663 | Real Estate Deal Memo Writer | Write an investment deal memo with thesis, financials, risks, and a clear recommendation. | Real Estate |
+| 664 | Technical Whitepaper Outliner | Outline a technical whitepaper with problem, prior art, approach, evaluation, and limitations. | Content Writing |
+| 665 | Speech Writer | Write a speech with a clear throughline, memorable opening, evidence, and a strong close for the occasion. | Content Writing |
+| 666 | Burnout Recovery Planner | Build a realistic burnout recovery plan around energy, boundaries, support, and gradual workload return. | Personal Development |
+| 667 | Career Pivot Roadmap | Build a career pivot roadmap with transferable skills, target roles, proof projects, and a financial runway. | Personal Development |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
