@@ -799,6 +799,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 790 | Marketing Mix Modeling Planner | Plan a marketing mix model with data requirements, adstock, saturation, controls, validation, and activation. | Data Science |
 | 791 | Price Elasticity Analyzer | Estimate and interpret price elasticity with a credible identification strategy, segments, and decision rules. | Data Science |
 | 792 | Data Skew & Partitioning Advisor | Diagnose data skew and recommend partitioning, salting, shuffle, and file-layout fixes with validation. | Data Science |
+| 793 | Design System Contribution Guide Writer | Write a contribution guide for proposing, building, reviewing, and releasing design system components. | Design |
+| 794 | Design Debt Auditor | Inventory design debt, connect it to user and delivery impact, and build a prioritized repayment plan. | Design |
+| 795 | UX Research Plan Writer | Write a UX research plan with decisions, questions, methods, participants, analysis, and ethics. | Design |
+| 796 | Design Token Migration Planner | Plan a design token migration across naming, aliases, themes, code, and rollout without breaking existing UI. | Design |
+| 797 | Cloud Landing Zone Planner | Design a cloud landing zone with accounts, identity, networking, guardrails, logging, and ownership. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
