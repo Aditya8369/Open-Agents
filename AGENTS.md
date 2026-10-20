@@ -804,6 +804,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 795 | UX Research Plan Writer | Write a UX research plan with decisions, questions, methods, participants, analysis, and ethics. | Design |
 | 796 | Design Token Migration Planner | Plan a design token migration across naming, aliases, themes, code, and rollout without breaking existing UI. | Design |
 | 797 | Cloud Landing Zone Planner | Design a cloud landing zone with accounts, identity, networking, guardrails, logging, and ownership. | DevOps |
+| 798 | Terraform Module Designer | Design reusable Terraform modules with clear interfaces, composition, testing, and versioning. | DevOps |
+| 799 | Kubernetes Admission Policy Designer | Design Kubernetes admission policies with validation, mutation, exemptions, rollout, and monitoring. | DevOps |
+| 800 | CDN Configuration Reviewer | Review CDN configuration for caching, compression, TLS, origin protection, purge behavior, and cost. | DevOps |
+| 801 | Cloud Network Segmentation Planner | Design cloud network segmentation with trust zones, subnets, routing, egress, inspection, and validation. | DevOps |
+| 802 | Repository Health Auditor | Audit a repository for hygiene, security, documentation, CI, ownership, and maintainability. | Developer Tools |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
