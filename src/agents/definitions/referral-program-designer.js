@@ -5,7 +5,7 @@ export default {
   description:
     "Design a referral program: incentives, mechanics, anti-gaming rules, and launch copy.",
   category: "Marketing",
-  icon: "UsersPlus",
+  icon: "UserPlus",
   provider: "any",
   defaultProvider: "anthropic",
   model: "claude-sonnet-4-6",

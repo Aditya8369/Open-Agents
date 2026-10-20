@@ -5,7 +5,7 @@ export default {
   description:
     "Analyze resource requests and limits to find over-provisioned workloads and right-sizing recommendations.",
   category: "DevOps",
-  icon: "Cube",
+  icon: "Boxes",
   provider: "any",
   defaultProvider: "anthropic",
   model: "claude-sonnet-4-6",
