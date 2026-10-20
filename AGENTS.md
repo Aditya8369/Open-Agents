@@ -829,6 +829,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 820 | College Financial Aid Appeal Writer | Draft a financial aid appeal with changed circumstances, evidence, and a specific, respectful request. | Finance |
 | 821 | Stock Option Exercise Planner | Plan stock option exercises across grant types, taxes, liquidity, concentration, and decision deadlines. | Finance |
 | 822 | Small Business Tax Deduction Finder | Identify plausible small-business deductions and organize the evidence and questions for an accountant. | Finance |
+| 823 | Equity Dilution Scenario Modeler | Model equity dilution across financing rounds, option pools, and exits with transparent cap-table assumptions. | Finance |
+| 824 | Game Monetization Ethics Reviewer | Review monetization mechanics for player harm, fairness, transparency, and platform or regulatory risk. | Gaming |
+| 825 | Game QA Test Plan Writer | Write a game QA plan covering platforms, progression, saves, multiplayer, localization, and release gates. | Gaming |
+| 826 | Game Narrative Branching Designer | Design branching narrative structure with meaningful choices, state tracking, convergence, and authoring costs. | Gaming |
+| 827 | Game Community Moderation Planner | Plan game community moderation with standards, reporting, enforcement, tooling, and moderator wellbeing. | Gaming |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
