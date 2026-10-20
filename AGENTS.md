@@ -839,6 +839,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 830 | Global Mobility Assignment Planner | Plan an international assignment with immigration, tax, payroll, benefits, relocation, and repatriation. | HR |
 | 831 | Layoff Communication Planner | Plan humane, factual layoff communication with sequencing, manager scripts, logistics, and survivor support. | HR |
 | 832 | Post-Surgery Recovery Planner | Organize a post-surgery recovery plan with discharge instructions, milestones, warning signs, and care-team questions. | Healthcare |
+| 833 | Physical Therapy Home Exercise Planner | Organize a clinician-prescribed home exercise program with scheduling, form cues, progress tracking, and safety checks. | Healthcare |
+| 834 | Dementia Care Communication Guide | Create person-centered communication strategies and daily routines for supporting someone living with dementia. | Healthcare |
+| 835 | Palliative Care Conversation Guide | Prepare for palliative care conversations around values, symptoms, goals, family roles, and documentation. | Healthcare |
+| 836 | Chronic Condition Flare Action Plan | Turn a chronic condition management plan into a clear flare action plan with triggers, early signs, home actions, and escalation. | Healthcare |
+| 837 | Demand Letter Drafter | Draft a demand letter with facts, legal basis, requested remedy, deadline, and an evidence checklist. | Legal |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
