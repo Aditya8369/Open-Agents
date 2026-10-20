@@ -709,6 +709,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 700 | Capacity Planning Planner | Forecast infrastructure and team capacity from growth, seasonality, and usage drivers. | DevOps |
 | 701 | Cloud Cost Allocation Planner | Design cloud cost allocation and showback with tagging, shared-cost rules, and accountability. | DevOps |
 | 702 | Service Catalog Designer | Design a service catalog with ownership, dependencies, SLAs, and lifecycle information. | DevOps |
+| 703 | VS Code Extension Planner | Plan a VS Code extension with commands, UX, performance, security, and marketplace launch. | Developer Tools |
+| 704 | GitHub Issue Triage Agent | Triage GitHub issues into duplicates, bugs, feature requests, and prioritized next actions. | Developer Tools |
+| 705 | Mock API Server Designer | Design a mock API server from an OpenAPI spec with realistic data, state, and error scenarios. | Developer Tools |
+| 706 | Browser Extension Planner | Plan a browser extension with permissions, architecture, security, privacy, and store review. | Developer Tools |
+| 707 | Course Syllabus Designer | Design a course syllabus with outcomes, schedule, assessments, policies, and accessibility. | Education |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
