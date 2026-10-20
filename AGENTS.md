@@ -734,6 +734,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 725 | Game Localization QA Planner | Plan localization QA for games covering text, audio, UI fit, cultural issues, and patch verification. | Gaming |
 | 726 | Game Tutorial Onboarding Designer | Design a game tutorial and onboarding flow that teaches through play and respects player time. | Gaming |
 | 727 | Internal Mobility Planner | Build an internal mobility program with role pathways, manager support, and fair access. | HR |
+| 728 | Remote Work Policy Writer | Draft a remote and hybrid work policy covering eligibility, location, expenses, security, and performance. | HR |
+| 729 | Learning Budget Allocator | Allocate a learning and development budget across teams, skills, and formats with fair criteria. | HR |
+| 730 | Succession Planning Facilitator | Facilitate succession planning with critical roles, candidate readiness, and development actions. | HR |
+| 731 | New Manager Onboarding Designer | Design a new manager onboarding program with expectations, people leadership, and early wins. | HR |
+| 732 | Medical Billing Denial Analyzer | Analyze medical claim denials to find root causes, appeal opportunities, and prevention fixes. | Healthcare |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
