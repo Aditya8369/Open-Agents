@@ -849,6 +849,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 840 | Small Claims Court Filing Planner | Plan a small claims filing with claim assessment, jurisdiction, evidence, service, and hearing preparation. | Legal |
 | 841 | Short-Form Video Hook Writer | Write scroll-stopping hooks and opening beats for short-form video, with angles, visuals, and retention tests. | Marketing |
 | 842 | Journalist Outreach Pitch Writer | Write a concise journalist pitch with a news angle, evidence, quotes, and a respectful follow-up plan. | Marketing |
+| 843 | Paid Social Creative Brief Writer | Write a paid social creative brief with audience insight, concept directions, formats, and a testing plan. | Marketing |
+| 844 | MQL Scoring Designer | Design a marketing-qualified lead score with fit and intent signals, thresholds, routing, and validation. | Marketing |
+| 845 | Loyalty Program Designer | Design a loyalty program with earning, redemption, tiers, economics, anti-gaming rules, and launch measurement. | Marketing |
+| 846 | Boundary Setting Script Writer | Write clear boundary-setting scripts for work and relationships, with pushback responses and follow-through. | Personal Development |
+| 847 | Sabbatical Planner | Plan a sabbatical with purpose, financial runway, work coverage, logistics, health, and re-entry. | Personal Development |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
