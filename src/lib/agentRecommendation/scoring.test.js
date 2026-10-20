@@ -1,0 +1,799 @@
+import { describe, it, expect } from 'vitest'
+import {
+  tokenizeFreeText,
+  normalizeScore,
+  scoreAgent,
+  getMaxPossibleScore,
+  recommendAgents,
+} from './scoring.js'
+import { buildRecommendationReasons } from './explanations.js'
+import {
+  DEFAULT_RECOMMENDATION_WEIGHTS,
+  MIN_CONFIDENT_SCORE,
+  RESULT_LIMIT,
+  STOP_WORDS,
+} from './constants.js'
+
+describe('Recommendation Engine Test Suite (Issue #175)', () => {
+  // =========================================================================
+  // 1. Tokenization: tokenizeFreeText
+  // =========================================================================
+  describe('tokenizeFreeText', () => {
+    it('returns empty array for empty string, whitespace, null, or undefined', () => {
+      expect(tokenizeFreeText('')).toEqual([])
+      expect(tokenizeFreeText('   ')).toEqual([])
+      expect(tokenizeFreeText(null)).toEqual([])
+      expect(tokenizeFreeText(undefined)).toEqual([])
+      expect(tokenizeFreeText()).toEqual([])
+    })
+
+    it('normalizes case and extracts valid words', () => {
+      expect(tokenizeFreeText('BUILD A REACT COMPONENT')).toEqual(['build', 'react', 'component'])
+    })
+
+    it('preserves allowed technical punctuation (+, #, ., -)', () => {
+      const tokens = tokenizeFreeText('C++ and Node.js with web-scraping')
+      expect(tokens).toContain('c++')
+      expect(tokens).toContain('node.js')
+      expect(tokens).toContain('web-scraping')
+    })
+
+    it('splits on disallowed punctuation and delimiters', () => {
+      const tokens = tokenizeFreeText('docker/kubernetes,python&fastapi!cloud;infra')
+      expect(tokens).toEqual(['docker', 'kubernetes', 'python', 'fastapi', 'cloud', 'infra'])
+    })
+
+    it('filters out configured stop words using STOP_WORDS set', () => {
+      // Test mixed valid tokens and actual stop words from STOP_WORDS
+      const input = 'build docker container for the developer with please'
+      const tokens = tokenizeFreeText(input)
+      expect(tokens).toEqual(['build', 'docker', 'container', 'developer'])
+      expect(tokens).not.toContain('for')
+      expect(tokens).not.toContain('the')
+      expect(tokens).not.toContain('with')
+      expect(tokens).not.toContain('please')
+
+      // Confirm all configured stop words (each length >= 3) are filtered
+      const allStopWords = Array.from(STOP_WORDS).join(' ')
+      expect(tokenizeFreeText(allStopWords)).toEqual([])
+    })
+
+    it('filters out short tokens of length 2 or less independently of stop words', () => {
+      const tokens = tokenizeFreeText('run a bot in my db to do it')
+      expect(tokens).toEqual(['run', 'bot'])
+      // 'a', 'in', 'my', 'db', 'to', 'do', 'it' are all length <= 2
+      expect(tokens).not.toContain('a')
+      expect(tokens).not.toContain('in')
+      expect(tokens).not.toContain('my')
+      expect(tokens).not.toContain('db')
+      expect(tokens).not.toContain('to')
+      expect(tokens).not.toContain('do')
+      expect(tokens).not.toContain('it')
+    })
+
+    it('enforces FREE_TEXT_TOKEN_LIMIT ceiling (12 tokens)', () => {
+      const longInput = 'one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen'
+      const tokens = tokenizeFreeText(longInput)
+      expect(tokens).toHaveLength(12)
+      expect(tokens).toEqual([
+        'one', 'two', 'three', 'four', 'five', 'six',
+        'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+      ])
+    })
+  })
+
+  // =========================================================================
+  // 2. Score Normalization: normalizeScore
+  // =========================================================================
+  describe('normalizeScore', () => {
+    it('scales normal fractional scores to rounded integers (0 - 100)', () => {
+      expect(normalizeScore(50, 100)).toBe(50)
+      expect(normalizeScore(100, 100)).toBe(100)
+      expect(normalizeScore(25, 100)).toBe(25)
+    })
+
+    it('rounds standard fractions correctly using Math.round', () => {
+      expect(normalizeScore(1, 3)).toBe(33) // 33.333% -> 33
+      expect(normalizeScore(2, 3)).toBe(67) // 66.666% -> 67
+      expect(normalizeScore(1, 200)).toBe(1) // 0.5% -> 1
+      expect(normalizeScore(1, 400)).toBe(0) // 0.25% -> 0
+    })
+
+    it('strictly clamps scores exceeding maxScore to 100 (percentage ceiling)', () => {
+      expect(normalizeScore(120, 100)).toBe(100)
+      expect(normalizeScore(250, 50)).toBe(100)
+    })
+
+    it('returns 0 for zero or negative score values', () => {
+      expect(normalizeScore(0, 100)).toBe(0)
+      expect(normalizeScore(-10, 100)).toBe(0)
+      expect(normalizeScore(-0.01, 100)).toBe(0)
+    })
+
+    it('returns 0 for zero or negative maxScore values (prevents division by zero)', () => {
+      expect(normalizeScore(50, 0)).toBe(0)
+      expect(normalizeScore(50, -100)).toBe(0)
+      expect(normalizeScore(0, 0)).toBe(0)
+    })
+
+    it('returns 0 for invalid or non-finite inputs', () => {
+      expect(normalizeScore(NaN, 100)).toBe(0)
+      expect(normalizeScore(50, NaN)).toBe(0)
+      expect(normalizeScore(Infinity, 100)).toBe(0)
+      expect(normalizeScore(50, Infinity)).toBe(0)
+      expect(normalizeScore(null, 100)).toBe(0)
+      expect(normalizeScore(undefined, 100)).toBe(0)
+      expect(normalizeScore('50', 100)).toBe(0) // String not coerced by Number.isFinite
+      expect(normalizeScore(50, '100')).toBe(0)
+    })
+  })
+
+  // =========================================================================
+  // 3. Agent Scoring: scoreAgent and getMaxPossibleScore
+  // =========================================================================
+  describe('scoreAgent', () => {
+    const baseAgent = {
+      id: 'agent-devops-1',
+      name: 'DeployBot',
+      description: 'Automates cloud deployments and kubernetes pipelines.',
+      category: 'DevOps',
+      provider: 'openai',
+    }
+
+    it('returns score 0 and empty signal collections for a zero-signal agent', () => {
+      const unrelatedAgent = {
+        id: 'agent-cooking-1',
+        name: 'ChefRecipe',
+        description: 'Bakes cakes and prepares dinner.',
+        category: 'Culinary',
+        provider: 'custom',
+      }
+      const preferences = {
+        primaryGoal: 'coding-development',
+        categories: ['DevOps'],
+        providerPreference: 'anthropic',
+      }
+
+      const result = scoreAgent(unrelatedAgent, preferences)
+      expect(result.agentId).toBe('agent-cooking-1')
+      expect(result.score).toBe(0)
+      expect(result.matchedSignals.exactCategory).toBeUndefined()
+      expect(result.matchedSignals.goalCategory).toBeUndefined()
+      expect(result.matchedSignals.provider).toBeUndefined()
+      expect(result.matchedSignals.taskTypes).toEqual([])
+      expect(result.matchedSignals.capabilities).toEqual([])
+      expect(result.matchedSignals.freeTextTerms).toEqual([])
+    })
+
+    it('awards exactCategory points (+30) when agent category matches preferences.categories', () => {
+      const preferences = {
+        primaryGoal: 'writing-content', // categories: Marketing, Productivity, Sales
+        categories: ['DevOps'], // Explicit preference category match
+      }
+      const result = scoreAgent(baseAgent, preferences)
+      expect(result.matchedSignals.exactCategory).toBe(true)
+      expect(result.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.exactCategory) // 30
+    })
+
+    it('awards goalCategory points (+20) cleanly when agent category matches goal categories', () => {
+      // Use an agent without task keywords in its text to isolate the goalCategory signal
+      const idleDevOpsAgent = {
+        id: 'agent-idle',
+        name: 'SilentService',
+        description: 'Standby worker instance.',
+        category: 'DevOps',
+      }
+      const preferences = {
+        primaryGoal: 'coding-development', // goal categories include 'DevOps'
+        categories: [], // no explicit category match
+      }
+      const result = scoreAgent(idleDevOpsAgent, preferences)
+      expect(result.matchedSignals.goalCategory).toBe(true)
+      expect(result.matchedSignals.exactCategory).toBeUndefined()
+      expect(result.matchedSignals.taskTypes).toEqual([])
+      expect(result.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.goalCategory) // exactly 20
+    })
+
+    it('awards taskType points (+18 per task) when agent text matches task keywords', () => {
+      const codeAgent = {
+        id: 'agent-coder',
+        name: 'CodeReviewer',
+        description: 'Performs code review and quality checks.',
+        category: 'Other',
+        provider: 'any',
+      }
+      const preferences = {
+        primaryGoal: 'coding-development', // taskTypes: code, debug, review, technical
+        categories: [],
+      }
+      const result = scoreAgent(codeAgent, preferences)
+      // Matches 'code' (from 'code') and 'review' (from 'review')
+      expect(result.matchedSignals.taskTypes).toContain('code')
+      expect(result.matchedSignals.taskTypes).toContain('review')
+      expect(result.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.taskType * 2) // 18 * 2 = 36
+    })
+
+    it('awards capabilityKeyword points (+6) for extra preferences', () => {
+      const toolAgent = {
+        id: 'agent-tools',
+        name: 'ToolMaster',
+        description: 'Executes tools and external API workflows with structured JSON schemas.',
+        category: 'Engineering',
+        provider: 'openai',
+      }
+      const preferences = {
+        extraPreferences: ['tool-calling', 'structured-output'],
+      }
+      const result = scoreAgent(toolAgent, preferences)
+      expect(result.matchedSignals.capabilities).toContain('tool-calling')
+      expect(result.matchedSignals.capabilities).toContain('structured-output')
+      expect(result.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.capabilityKeyword * 2) // 6 * 2 = 12
+    })
+
+    it('handles provider matching: exact provider (+8), compatible provider (+4), and mismatch (+0)', () => {
+      // 1. Exact provider match
+      const exactResult = scoreAgent(baseAgent, { providerPreference: 'openai' })
+      expect(exactResult.matchedSignals.provider).toBe('exact')
+      expect(exactResult.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.providerExact) // 8
+
+      // 2. Compatible ('any' provider) match
+      const flexibleAgent = { ...baseAgent, provider: 'any' }
+      const compatibleResult = scoreAgent(flexibleAgent, { providerPreference: 'anthropic' })
+      expect(compatibleResult.matchedSignals.provider).toBe('compatible')
+      expect(compatibleResult.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.providerAny) // 4
+
+      // 3. Provider mismatch
+      const mismatchResult = scoreAgent(baseAgent, { providerPreference: 'anthropic' })
+      expect(mismatchResult.matchedSignals.provider).toBeUndefined()
+      expect(mismatchResult.score).toBe(0)
+
+      // 4. Provider preference is 'any' -> no bonus
+      const anyPrefResult = scoreAgent(baseAgent, { providerPreference: 'any' })
+      expect(anyPrefResult.matchedSignals.provider).toBeUndefined()
+      expect(anyPrefResult.score).toBe(0)
+    })
+
+    it('awards freeTextName (+10) vs freeTextDescription (+5)', () => {
+      // Name match
+      const nameMatchResult = scoreAgent(baseAgent, { freeTextGoal: 'deploybot' })
+      expect(nameMatchResult.matchedSignals.freeTextTerms).toContain('deploybot')
+      expect(nameMatchResult.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.freeTextName) // 10
+
+      // Description-only match
+      const descMatchResult = scoreAgent(baseAgent, { freeTextGoal: 'pipelines' })
+      expect(descMatchResult.matchedSignals.freeTextTerms).toContain('pipelines')
+      expect(descMatchResult.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.freeTextDescription) // 5
+    })
+
+    it('awards experience points (+3) for beginner and advanced guidance preferences', () => {
+      const beginnerAgent = {
+        id: 'agent-guide',
+        name: 'StepGuidance',
+        description: 'A friendly step-by-step explainer and checklist creator.',
+      }
+      const advancedAgent = {
+        id: 'agent-pro',
+        name: 'CloudArch',
+        description: 'Deep architecture and kubernetes cluster optimization.',
+      }
+
+      const beginnerRes = scoreAgent(beginnerAgent, { experienceLevel: 'beginner' })
+      expect(beginnerRes.matchedSignals.experience).toBe('beginner')
+      expect(beginnerRes.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.experience) // 3
+
+      const advancedRes = scoreAgent(advancedAgent, { experienceLevel: 'advanced' })
+      expect(advancedRes.matchedSignals.experience).toBe('advanced')
+      expect(advancedRes.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.experience) // 3
+
+      // 'any' experience adds 0
+      const anyExpRes = scoreAgent(beginnerAgent, { experienceLevel: 'any' })
+      expect(anyExpRes.matchedSignals.experience).toBeUndefined()
+      expect(anyExpRes.score).toBe(0)
+    })
+
+    it('characterizes intermediate guidance preference matching beginner terms', () => {
+      // Production quirk: preferences.experienceLevel === 'advanced' ? advancedTerms : beginnerTerms
+      // When experienceLevel is 'intermediate', it matches beginner terms in implementation.
+      const beginnerAgent = {
+        id: 'agent-guide',
+        name: 'StepGuidance',
+        description: 'A friendly step-by-step explainer and checklist creator.',
+      }
+      const intermediateRes = scoreAgent(beginnerAgent, { experienceLevel: 'intermediate' })
+      expect(intermediateRes.matchedSignals.experience).toBe('intermediate')
+      expect(intermediateRes.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.experience) // 3
+    })
+
+    it('awards urgency points (+3) for fast vs capable budget preferences', () => {
+      const fastAgent = {
+        id: 'agent-quick',
+        name: 'QuickSummarizer',
+        description: 'Provides rapid summary and regex generator.',
+      }
+      const capableAgent = {
+        id: 'agent-deep',
+        name: 'DeepAudit',
+        description: 'Comprehensive code audit, architecture, and plan report.',
+      }
+
+      const fastRes = scoreAgent(fastAgent, { budgetPreference: 'fast' })
+      expect(fastRes.matchedSignals.preference).toBe('fast')
+      expect(fastRes.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.urgency) // 3
+
+      const capableRes = scoreAgent(capableAgent, { budgetPreference: 'capable' })
+      expect(capableRes.matchedSignals.preference).toBe('capable')
+      expect(capableRes.score).toBe(DEFAULT_RECOMMENDATION_WEIGHTS.urgency) // 3
+
+      // 'balanced' or 'any' adds 0
+      const balancedRes = scoreAgent(fastAgent, { budgetPreference: 'balanced' })
+      expect(balancedRes.matchedSignals.preference).toBeUndefined()
+      expect(balancedRes.score).toBe(0)
+    })
+
+    it('accumulates composite score across all active signals', () => {
+      const fullAgent = {
+        id: 'agent-full',
+        name: 'FullStackDeployer',
+        description: 'Complete kubernetes architecture, automated pipelines, with tool calling and structured json reports.',
+        category: 'Engineering',
+        provider: 'anthropic',
+      }
+      const preferences = {
+        primaryGoal: 'coding-development',
+        categories: ['Engineering'],
+        extraPreferences: ['tool-calling', 'structured-output'],
+        providerPreference: 'anthropic',
+        freeTextGoal: 'fullstackdeployer',
+        experienceLevel: 'advanced',
+        budgetPreference: 'capable',
+      }
+
+      const result = scoreAgent(fullAgent, preferences)
+      // exactCategory (30) + goalCategory (20)
+      // taskTypes: 'code' (kubernetes matches code keyword) + 'technical' (architecture) = 18 * 2 = 36
+      // capabilities: tool-calling (6) + structured-output (6) = 12
+      // provider: exact (8)
+      // freeText: name match 'fullstackdeployer' (10)
+      // experience: advanced (3)
+      // urgency: capable (3)
+      // Total expected = 30 + 20 + 36 + 12 + 8 + 10 + 3 + 3 = 122
+      expect(result.score).toBe(122)
+      expect(result.matchedSignals.exactCategory).toBe(true)
+      expect(result.matchedSignals.goalCategory).toBe(true)
+      expect(result.matchedSignals.taskTypes).toEqual(['code', 'technical'])
+      expect(result.matchedSignals.capabilities).toEqual(['tool-calling', 'structured-output'])
+      expect(result.matchedSignals.provider).toBe('exact')
+      expect(result.matchedSignals.experience).toBe('advanced')
+      expect(result.matchedSignals.preference).toBe('capable')
+    })
+
+    it('respects custom weight overrides', () => {
+      const customWeights = {
+        ...DEFAULT_RECOMMENDATION_WEIGHTS,
+        exactCategory: 100,
+        providerExact: 50,
+      }
+      const preferences = {
+        categories: ['DevOps'],
+        providerPreference: 'openai',
+      }
+      const result = scoreAgent(baseAgent, preferences, customWeights)
+      expect(result.score).toBe(150) // 100 + 50
+    })
+
+    it('handles empty or undefined agent objects safely in scoreAgent', () => {
+      expect(() => scoreAgent({})).not.toThrow()
+      expect(() => scoreAgent(undefined)).not.toThrow()
+
+      const res = scoreAgent({})
+      expect(res.score).toBe(0)
+      expect(res.agentId).toBeUndefined()
+    })
+
+    it('characterizes internal scoreAgent(null) behavior when called directly', () => {
+      // Calling internal scoreAgent(null) throws a TypeError because searchableText
+      // accesses agent.id directly without nullish coalescing.
+      // (Public caller recommendAgents shields this boundary by filtering falsy agents).
+      expect(() => scoreAgent(null)).toThrow(TypeError)
+    })
+  })
+
+  describe('getMaxPossibleScore', () => {
+    it('calculates the theoretical maximum score for given preferences', () => {
+      const preferences = {
+        primaryGoal: 'coding-development', // 4 taskTypes
+        extraPreferences: ['tool-calling', 'vision-support'], // 2 extras
+        freeTextGoal: 'build fast web app', // 4 tokens: 'build', 'fast', 'web', 'app'
+      }
+      // exactCategory (30) + goalCategory (20) + 4 * taskType (18*4=72)
+      // + 2 * capabilityKeyword (6*2=12) + providerExact (8)
+      // + freeTextName * 4 (10*4=40) + experience (3) + urgency (3)
+      // Total = 30 + 20 + 72 + 12 + 8 + 40 + 3 + 3 = 188
+      const maxScore = getMaxPossibleScore(preferences)
+      expect(maxScore).toBe(188)
+    })
+
+    it('handles empty preferences without error and returns base max score', () => {
+      const maxScore = getMaxPossibleScore({})
+      // exactCategory(30) + goalCategory(20) + Math.max(1,0)*18(18) + 0 + 8 + 0 + 3 + 3 = 82
+      expect(maxScore).toBe(82)
+    })
+  })
+
+  // =========================================================================
+  // 4. Recommendation Ranking and Public Boundary: recommendAgents
+  // =========================================================================
+  describe('recommendAgents', () => {
+    const agentsList = [
+      { id: 'agent-1', name: 'Alpha Agent', category: 'DevOps', provider: 'openai', description: 'kubernetes pipeline' },
+      { id: 'agent-2', name: 'Beta Agent', category: 'Design', provider: 'anthropic', description: 'visual design' },
+      { id: 'agent-3', name: 'Gamma Agent', category: 'Engineering', provider: 'gemini', description: 'code review' },
+    ]
+
+    it('returns empty array when agents array is empty, null, or undefined', () => {
+      expect(recommendAgents([])).toEqual([])
+      expect(recommendAgents(null)).toEqual([])
+      expect(recommendAgents(undefined)).toEqual([])
+      expect(recommendAgents('invalid')).toEqual([])
+    })
+
+    it('public boundary safely filters null, undefined, or missing id agent entries', () => {
+      const mixedAgents = [
+        null,
+        undefined,
+        { name: 'No ID Agent' },
+        { id: 'valid-agent', name: 'Valid Agent', category: 'Engineering' },
+      ]
+      const results = recommendAgents(mixedAgents, { categories: ['Engineering'] })
+      expect(results).toHaveLength(1)
+      expect(results[0].agentId).toBe('valid-agent')
+    })
+
+    it('deduplicates duplicate agents by id', () => {
+      const duplicates = [
+        { id: 'dup-1', name: 'Agent 1', category: 'DevOps' },
+        { id: 'dup-1', name: 'Agent 1 Clone', category: 'DevOps' },
+      ]
+      const results = recommendAgents(duplicates, { categories: ['DevOps'] })
+      expect(results).toHaveLength(1)
+      expect(results[0].agentId).toBe('dup-1')
+    })
+
+    describe('Confidence threshold boundary', () => {
+      it('evaluates isConfident correctly across below (11), at (12), and above (13) thresholds using default weights', () => {
+        // Agent 11: providerExact (8) + experience beginner (3) = 11 points (< 12 -> false)
+        const agent11 = {
+          id: 'agent-11',
+          name: 'UnderThreshold',
+          category: 'Other',
+          description: 'A helpful guide.', // matches beginner experience (+3)
+          provider: 'openai', // exact provider (+8)
+        }
+
+        // Agent 12: toolCalling capability (6) + visionSupport capability (6) = 12 points (== 12 -> true)
+        const agent12 = {
+          id: 'agent-12',
+          name: 'AtThreshold',
+          category: 'Other',
+          description: 'Automates tools and processes image prompts.', // matches toolCalling (6) + visionSupport (6)
+        }
+
+        // Agent 13: freeTextName (10) + experience beginner (3) = 13 points (> 12 -> true)
+        const agent13 = {
+          id: 'agent-13',
+          name: 'TargetBot', // matches freeTextGoal 'targetbot' (+10)
+          category: 'Other',
+          description: 'A helpful guide.', // matches beginner experience (+3)
+        }
+
+        const prefs11 = { providerPreference: 'openai', experienceLevel: 'beginner' }
+        const prefs12 = { extraPreferences: ['tool-calling', 'vision-support'] }
+        const prefs13 = { freeTextGoal: 'targetbot', experienceLevel: 'beginner' }
+
+        const res11 = recommendAgents([agent11], prefs11)
+        expect(res11[0].score).toBe(11)
+        expect(res11[0].isConfident).toBe(false)
+
+        const res12 = recommendAgents([agent12], prefs12)
+        expect(res12[0].score).toBe(12)
+        expect(res12[0].isConfident).toBe(true)
+
+        const res13 = recommendAgents([agent13], prefs13)
+        expect(res13[0].score).toBe(13)
+        expect(res13[0].isConfident).toBe(true)
+      })
+
+      it('allows overriding minScore option', () => {
+        const agent = { id: 'a-1', name: 'Agent One', category: 'DevOps' }
+        // exactCategory score = 30
+        const confidentDefault = recommendAgents([agent], { categories: ['DevOps'] })
+        expect(confidentDefault[0].isConfident).toBe(true)
+
+        const nonConfidentCustom = recommendAgents([agent], { categories: ['DevOps'] }, { minScore: 50 })
+        expect(nonConfidentCustom[0].isConfident).toBe(false)
+      })
+    })
+
+    describe('Deterministic 4-level sorting tie-breakers', () => {
+      it('Level 1: sorts higher scores before lower scores', () => {
+        const higher = { id: 'high', name: 'High', category: 'DevOps' } // score 30
+        const lower = { id: 'low', name: 'Low', category: 'Other', provider: 'openai' } // score 8
+        const results = recommendAgents([lower, higher], { categories: ['DevOps'], providerPreference: 'openai' })
+        expect(results[0].agentId).toBe('high')
+        expect(results[1].agentId).toBe('low')
+      })
+
+      it('Level 2: breaks score ties by preferring exactCategory match', () => {
+        const agentA = { id: 'agent-a', name: 'Category Matcher', category: 'TargetCategory' }
+        const agentB = {
+          id: 'agent-b',
+          name: 'Task Matcher',
+          category: 'OtherCategory',
+          description: 'code tool calling fast',
+        }
+
+        const prefs = {
+          categories: ['TargetCategory'],
+          primaryGoal: 'coding-development', // code task = 18
+          extraPreferences: ['tool-calling', 'fast-responses'], // 6 + 6 = 12
+        }
+
+        // Agent A: categories.includes('TargetCategory') => +30 (exactCategory: true)
+        // Agent B: no exactCategory, task code (+18) + tool calling (+6) + fast (+6) = 30
+        const results = recommendAgents([agentB, agentA], prefs)
+        expect(results[0].score).toBe(30)
+        expect(results[1].score).toBe(30)
+        expect(results[0].matchedSignals.exactCategory).toBe(true)
+        expect(results[1].matchedSignals.exactCategory).toBeUndefined()
+        expect(results[0].agentId).toBe('agent-a')
+        expect(results[1].agentId).toBe('agent-b')
+      })
+
+      it('Level 3: breaks equal score and category ties by preferring provider match', () => {
+        // Agent A: provider 'openai' (+8) => score 8, provider: 'exact'
+        // Agent B: description freeText 'deploy' (+5) + experience (+3) => score 8, provider: none
+        // Alphabetically, 'FreeText Agent' comes before 'Provider Agent' ('F' < 'P'),
+        // so Agent A ranking first proves Level 3 tie-breaker broke the tie.
+        const agentA = { id: 'agent-a', name: 'Provider Agent', provider: 'openai', category: 'CatX' }
+        const agentB = { id: 'agent-b', name: 'FreeText Agent', provider: 'other', category: 'CatX', description: 'deploy guide' }
+
+        const prefs = {
+          providerPreference: 'openai',
+          freeTextGoal: 'deploy',
+          experienceLevel: 'beginner',
+        }
+
+        const results = recommendAgents([agentB, agentA], prefs)
+        expect(results[0].score).toBe(8)
+        expect(results[1].score).toBe(8)
+        expect(results[0].matchedSignals.provider).toBe('exact')
+        expect(results[1].matchedSignals.provider).toBeUndefined()
+        expect(results[0].agentId).toBe('agent-a')
+        expect(results[1].agentId).toBe('agent-b')
+      })
+
+      it('Level 4: breaks all equal signals alphabetically by agent name', () => {
+        const agentZ = { id: 'agent-z', name: 'Zeta Agent', category: 'Common' }
+        const agentA = { id: 'agent-a', name: 'Alpha Agent', category: 'Common' }
+        const agentM = { id: 'agent-m', name: 'Beta Agent', category: 'Common' }
+
+        const results = recommendAgents([agentZ, agentA, agentM], { categories: ['Common'] })
+        expect(results.map((r) => r.agentId)).toEqual(['agent-a', 'agent-m', 'agent-z'])
+      })
+    })
+
+    it('enforces RESULT_LIMIT default (10) and custom options.limit', () => {
+      const agents = Array.from({ length: 15 }, (_, i) => ({
+        id: `agent-${i + 1}`,
+        name: `Agent ${String(i + 1).padStart(2, '0')}`,
+        category: 'Engineering',
+      }))
+
+      // Default limit 10
+      const defaultResults = recommendAgents(agents, { categories: ['Engineering'] })
+      expect(defaultResults).toHaveLength(RESULT_LIMIT)
+
+      // Custom limit 3
+      const customResults = recommendAgents(agents, { categories: ['Engineering'] }, { limit: 3 })
+      expect(customResults).toHaveLength(3)
+    })
+
+    it('calculates valid matchPercentage clamped within [0, 100]', () => {
+      const results = recommendAgents(agentsList, { categories: ['DevOps'] })
+      results.forEach((r) => {
+        expect(r.matchPercentage).toBeGreaterThanOrEqual(0)
+        expect(r.matchPercentage).toBeLessThanOrEqual(100)
+      })
+    })
+
+    it('returns result objects conforming to expected schema without leaking agent reference', () => {
+      const results = recommendAgents(agentsList, { categories: ['DevOps'] })
+      expect(results.length).toBeGreaterThan(0)
+      const first = results[0]
+      expect(first).toHaveProperty('agentId')
+      expect(first).toHaveProperty('score')
+      expect(first).toHaveProperty('matchedSignals')
+      expect(first).toHaveProperty('reasons')
+      expect(first).toHaveProperty('isConfident')
+      expect(first).toHaveProperty('matchPercentage')
+      expect(first).not.toHaveProperty('agent')
+    })
+  })
+
+  // =========================================================================
+  // 5. Explanation Integrity: buildRecommendationReasons
+  // =========================================================================
+  describe('buildRecommendationReasons', () => {
+    const defaultAgent = {
+      id: 'agent-test',
+      name: 'TestAgent',
+      category: 'Engineering',
+      description: 'Test agent description.',
+      provider: 'openai',
+    }
+
+    it('generates primary goal reason when exactCategory or goalCategory or taskTypes match', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        { primaryGoal: 'coding-development' },
+        { exactCategory: true }
+      )
+      expect(reasons).toContain('Matches your coding and development workflow.')
+    })
+
+    it('generates fallback workflow reason when primaryGoal is unknown but category matches', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        { primaryGoal: 'unknown-goal-id' },
+        { exactCategory: true }
+      )
+      expect(reasons).toContain('Matches your selected workflow.')
+    })
+
+    it('generates related goalCategory explanation when goalCategory matched', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        { primaryGoal: 'coding-development' },
+        { goalCategory: true }
+      )
+      expect(reasons).toContain('Listed in Engineering, a category related to this goal.')
+    })
+
+    it('generates specific task type explanations for matched task types', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        {},
+        { taskTypes: ['code', 'debug'] }
+      )
+      expect(reasons).toContain('Its metadata relates to coding tasks.')
+      expect(reasons).toContain('Its stated focus includes debugging or troubleshooting.')
+    })
+
+    it('generates capability preference explanations for matched extra preferences', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        {},
+        { capabilities: ['tool-calling', 'vision-support'] }
+      )
+      expect(reasons).toContain('Its metadata suggests relevance to your tool calling preference.')
+      expect(reasons).toContain('Its metadata suggests relevance to your vision support preference.')
+    })
+
+    it('generates exact provider explanation when provider is exact', () => {
+      const reasons = buildRecommendationReasons(defaultAgent, {}, { provider: 'exact' })
+      expect(reasons).toContain('Aligns with your preferred provider.')
+    })
+
+    it('generates compatible provider explanation when provider is compatible', () => {
+      const reasons = buildRecommendationReasons(defaultAgent, {}, { provider: 'compatible' })
+      expect(reasons).toContain('Uses flexible provider metadata compatible with your preference.')
+    })
+
+    it('generates free-text terms explanation listing at most 3 matched terms', () => {
+      const reasons = buildRecommendationReasons(
+        defaultAgent,
+        {},
+        { freeTextTerms: ['docker', 'deploy', 'kubernetes', 'extra-term'] }
+      )
+      expect(reasons).toContain('Matched terms from your goal: docker, deploy, kubernetes.')
+    })
+
+    it('generates fast budget preference explanation in isolation', () => {
+      const reasons = buildRecommendationReasons(defaultAgent, {}, { preference: 'fast' })
+      expect(reasons).toContain('Its focused scope aligns with your fast, lightweight preference.')
+    })
+
+    it('generates capable budget preference explanation in isolation', () => {
+      const reasons = buildRecommendationReasons(defaultAgent, {}, { preference: 'capable' })
+      expect(reasons).toContain('Its detailed scope aligns with your capability preference.')
+    })
+
+    it('generates experience guidance explanation in isolation', () => {
+      const beginnerReasons = buildRecommendationReasons(defaultAgent, {}, { experience: 'beginner' })
+      expect(beginnerReasons).toContain('Its metadata aligns with your beginner guidance preference.')
+
+      const advancedReasons = buildRecommendationReasons(defaultAgent, {}, { experience: 'advanced' })
+      expect(advancedReasons).toContain('Its metadata aligns with your advanced guidance preference.')
+    })
+
+    it('generates fallback metadata focus explanation when reasons count is under 3', () => {
+      const customAgent = { id: 'a1', category: 'Productivity' }
+      const reasons = buildRecommendationReasons(customAgent, {}, { provider: 'exact' })
+      // provider: exact is reason 1; reasons.length < 3 triggers metadata focus
+      expect(reasons).toContain('Aligns with your preferred provider.')
+      expect(reasons).toContain('Agent metadata identifies its focus as Productivity.')
+    })
+
+    it('deduplicates and limits reasons to maximum of 4', () => {
+      const agent = { id: 'a1', category: 'Engineering', description: 'Desc' }
+      const matchedSignals = {
+        exactCategory: true,
+        goalCategory: true,
+        taskTypes: ['code', 'debug', 'review', 'technical'],
+        capabilities: ['tool-calling'],
+        provider: 'exact',
+      }
+      const reasons = buildRecommendationReasons(agent, { primaryGoal: 'coding-development' }, matchedSignals)
+      expect(reasons).toHaveLength(4)
+      const uniqueReasons = new Set(reasons)
+      expect(uniqueReasons.size).toBe(reasons.length)
+    })
+  })
+
+  // =========================================================================
+  // 6. Characterization Tests for Known Defects (Issue #175)
+  // These tests pin and document existing production behavior for known defects
+  // cited in Issue #175 (keyword matching, invented explanations) awaiting
+  // future product-level fixes, without endorsing them as intended specifications.
+  // =========================================================================
+  describe('Characterization Tests for Known Defects (Issue #175)', () => {
+    it('Defect Characterization 1: two-letter technical acronyms (ai, ml, go, js, db, c#) are dropped by token.length > 2 filter', () => {
+      // Documenting existing behavior for known defect around keyword matching in Issue #175.
+      // In an AI/dev agent registry, two-letter technical keywords are critical, but
+      // tokenizeFreeText currently drops them because of the `token.length > 2` check.
+      const query = 'AI agent in Go with DB for ML and C#'
+      const tokens = tokenizeFreeText(query)
+      // 'ai', 'go', 'db', 'ml', 'c#' dropped by length <= 2; 'agent', 'with', 'for', 'and' dropped as stop words.
+      expect(tokens).toEqual([])
+
+      // Conversely, 3-character token 'c++' is preserved while 2-character 'c#' is dropped
+      expect(tokenizeFreeText('c++ c#')).toEqual(['c++'])
+    })
+
+    it('Defect Characterization 2: fallback explanations generate relevance claims without matched evidence', () => {
+      // Documenting existing behavior for known defect around "invented reasons" in Issue #175.
+      // When zero signals match, buildRecommendationReasons fabricates claims that the agent
+      // is a "closest available match" and its description is "relevant to the selected workflow".
+      const unrelatedAgent = {
+        id: 'zero-1',
+        name: 'PastryChef',
+        category: 'Culinary',
+        description: 'Bakes artisan croissants and pastries.',
+      }
+      const preferences = {
+        primaryGoal: 'coding-development',
+      }
+      const zeroSignals = {
+        taskTypes: [],
+        capabilities: [],
+        freeTextTerms: [],
+      }
+
+      const reasons = buildRecommendationReasons(unrelatedAgent, preferences, zeroSignals)
+      expect(reasons).toContain('Listed in Culinary; this is one of the closest available matches.')
+      expect(reasons).toContain('Its published description is relevant to the selected workflow.')
+    })
+
+    it('Boundary Pin 3: Normalization clamping strictly at 100% (percentage ceiling)', () => {
+      // Documenting normalizeScore percentage ceiling pinning
+      expect(normalizeScore(999, 100)).toBe(100)
+      expect(normalizeScore(100, 100)).toBe(100)
+    })
+
+    it('Boundary Pin 4: Zero and negative denominator in normalizeScore safely returns 0', () => {
+      expect(normalizeScore(100, 0)).toBe(0)
+      expect(normalizeScore(100, -50)).toBe(0)
+      expect(normalizeScore(-10, -50)).toBe(0)
+    })
+  })
+})
