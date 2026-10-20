@@ -674,6 +674,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 665 | Speech Writer | Write a speech with a clear throughline, memorable opening, evidence, and a strong close for the occasion. | Content Writing |
 | 666 | Burnout Recovery Planner | Build a realistic burnout recovery plan around energy, boundaries, support, and gradual workload return. | Personal Development |
 | 667 | Career Pivot Roadmap | Build a career pivot roadmap with transferable skills, target roles, proof projects, and a financial runway. | Personal Development |
+| 668 | Workshop Facilitation Planner | Design a workshop with a clear decision, exercises, timing, roles, and follow-up. | Productivity |
+| 669 | Async Update Writer | Turn scattered notes into a concise async update with decisions, progress, risks, and asks. | Productivity |
+| 670 | Calendar Audit Planner | Audit a calendar for time allocation, fragmentation, low-value meetings, and focus protection. | Productivity |
+| 671 | Personal CRM Planner | Design a lightweight personal CRM for relationships, follow-ups, and reciprocity without becoming a chore. | Productivity |
+| 672 | Knowledge Base Auditor | Audit a knowledge base for coverage, accuracy, duplication, findability, and ownership. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
