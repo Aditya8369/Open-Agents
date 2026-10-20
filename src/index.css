@@ -186,12 +186,31 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keep the classic scrollbar gutter reserved so overlays that lock page
+     scrolling cannot shift the layout when the scrollbar returns. */
+  scrollbar-gutter: stable;
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Lock the page behind the entry preloader without changing scroll position. */
+html.preloader-active,
+html.preloader-active body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Reserve room for the Skip button on short landscape/square viewports so it
+   never covers the boot card or the reveal tagline. */
+@media (max-height: 360px) {
+  .preloader-card,
+  .preloader-reveal {
+    padding-bottom: 4rem;
+  }
 }
 
 /* Dark mode defaults â€” pure black canvas, pure white ink */

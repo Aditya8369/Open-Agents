@@ -1,4 +1,4 @@
-import { useState, StrictMode } from 'react'
+import { useCallback, useState, StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { AgentsProvider } from './lib/useAgents'
@@ -18,11 +18,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 function PreloaderApp() {
   const [preloaderDone, setPreloaderDone] = useState(false)
+  const finishPreloader = useCallback(() => setPreloaderDone(true), [])
 
   return (
     <>
-      <App />
-      {!preloaderDone && <Preloader onFinish={() => setPreloaderDone(true)} />}
+      <div
+        aria-hidden={preloaderDone ? undefined : true}
+        aria-busy={preloaderDone ? undefined : true}
+        inert={preloaderDone ? undefined : ''}
+      >
+        <App />
+      </div>
+      {!preloaderDone && <Preloader onFinish={finishPreloader} />}
     </>
   )
 }
