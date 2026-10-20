@@ -529,6 +529,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 520 | Time Series Cross Validation Planner | Design time-aware validation splits and backtests that avoid leakage for forecasting models. | Data Science |
 | 521 | Analytics Event Taxonomy Designer | Design consistent event names, properties, and ownership for product analytics. | Product |
 | 522 | Feature Sunset Impact Analyzer | Assess usage, dependencies, and migration risk before removing a feature. | Product |
+| 523 | Support Macro Writer | Write clear support macros for common issues, with placeholders, tone rules, and escalation paths. | Product |
+| 524 | Usage-Based Pricing Planner | Design a usage-based pricing model with metering, guardrails, and a safe rollout. | Product |
+| 525 | PRD Reviewer | Review a PRD for problem clarity, scope, requirements, risks, and missing decisions. | Product |
+| 526 | Contrast Fixer | Find failing contrast pairs and recommend accessible token changes without flattening the visual system. | Design |
+| 527 | Icon Set Auditor | Audit icon consistency, sizing, stroke, semantics, and accessibility across a product. | Design |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
