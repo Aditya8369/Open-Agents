@@ -499,6 +499,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 490 | Certificate Renewal Planner | Inventory TLS certificates, rank expiry risk, and build a renewal runbook with monitoring. | DevOps |
 | 491 | Cloud Cost Anomaly Explainer | Explain an unexpected cloud bill spike with likely drivers, verification queries, and containment steps. | DevOps |
 | 492 | Kubernetes Resource Quota Planner | Set namespace quotas and LimitRanges that protect the cluster without blocking normal workloads. | DevOps |
+| 493 | Helm Values Override Auditor | Audit Helm values across environments for drift, duplication, and precedence surprises. | DevOps |
+| 494 | CI Cache Strategy Planner | Design CI cache keys, scopes, and eviction rules that improve hit rate without serving stale artifacts. | DevOps |
+| 495 | Alert Fatigue Auditor | Audit noisy alerts, grouping, and routing to reduce pages without hiding real incidents. | DevOps |
+| 496 | Kubernetes RBAC Auditor | Find over-privileged Roles, ClusterRoles, and bindings, then propose least-privilege replacements. | Cybersecurity |
+| 497 | OAuth Scope Minimizer | Reduce OAuth scopes to the minimum required, with consent and migration guidance. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
