@@ -659,6 +659,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 650 | Scholarship Essay Coach | Coach a scholarship essay with structure, authentic evidence, and revision feedback without inventing details. | Education |
 | 651 | Grant Resubmission Planner | Turn reviewer critiques into a resubmission plan with response strategy, revised aims, and evidence gaps. | Research |
 | 652 | Peer Review Response Writer | Draft a point-by-point response to peer review with evidence, revisions, and respectful disagreement. | Research |
+| 653 | Conference Abstract Writer | Write a conference abstract with a clear gap, method, results, and contribution within the word limit. | Research |
+| 654 | Prior Authorization Letter Writer | Draft a prior authorization request with clinical justification, criteria mapping, and supporting evidence. | Healthcare |
+| 655 | Clinical Documentation Improvement Planner | Improve clinical documentation quality for coding, compliance, and care continuity without altering the clinical record. | Healthcare |
+| 656 | Patient Education Material Writer | Turn clinical instructions into plain-language patient education with teach-back, cultural fit, and accessibility. | Healthcare |
+| 657 | Smart Contract Incident Response Planner | Plan a smart contract incident response with detection, containment, disclosure, and recovery steps. | Web3 |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
