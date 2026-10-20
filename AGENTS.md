@@ -699,6 +699,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 690 | Model Risk Management Assessor | Assess ML models for conceptual soundness, data quality, performance, governance, and ongoing monitoring. | Data Science |
 | 691 | Synthetic Data Policy Writer | Set rules for generating, validating, and using synthetic data without leaking sensitive information. | Data Science |
 | 692 | Responsible AI Impact Assessment | Assess an AI system for affected stakeholders, harms, mitigations, and ongoing accountability. | Data Science |
+| 693 | Usability Test Script Writer | Write a usability test script with tasks, neutral prompts, consent, and observation capture. | Design |
+| 694 | Localization Design Reviewer | Review designs for text expansion, right-to-left layouts, cultural fit, and locale-specific content. | Design |
+| 695 | Dashboard Design Reviewer | Review dashboards for decision clarity, hierarchy, chart choice, and data trust. | Design |
+| 696 | Voice Interaction Designer | Design voice and conversational flows with intent handling, error recovery, and accessibility. | Design |
+| 697 | Platform Engineering Maturity Assessor | Assess platform engineering maturity across self-service, golden paths, reliability, and developer experience. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
