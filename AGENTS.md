@@ -644,6 +644,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 635 | Cash Flow Forecast Builder | Build a 13-week cash flow forecast with drivers, scenarios, and early warning triggers. | Finance |
 | 636 | Retirement Withdrawal Planner | Compare retirement withdrawal strategies with taxes, sequence risk, and sustainable spending ranges. | Finance |
 | 637 | Equity Compensation Explainer | Explain equity compensation offers in plain English, including vesting, taxes, dilution, and exercise risks. | Finance |
+| 638 | Business Valuation Estimator | Estimate a small business valuation range using earnings, revenue, and market comparables with explicit assumptions. | Finance |
+| 639 | Job Architecture Designer | Design job levels, families, and career paths with consistent scope, competencies, and pay bands. | HR |
+| 640 | Skills Taxonomy Builder | Build a skills taxonomy with proficiency levels, relationships, and usage for hiring and development. | HR |
+| 641 | Performance Calibration Facilitator | Design and facilitate a fair performance calibration session with evidence, rating distributions, and bias checks. | HR |
+| 642 | Employee Survey Action Planner | Turn employee survey results into prioritized actions with owners, communication, and follow-up measurement. | HR |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
