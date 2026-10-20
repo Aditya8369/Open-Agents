@@ -749,6 +749,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 740 | Website Accessibility Legal Risk Reviewer | Assess website and app accessibility against WCAG and legal risk exposure, with a remediation plan. | Legal |
 | 741 | Brand Architecture Planner | Design a brand architecture with portfolio roles, naming, relationships, and governance. | Marketing |
 | 742 | Community Launch Playbook | Plan a community launch with audience, platform, rituals, moderation, and success metrics. | Marketing |
+| 743 | Product Hunt Launch Planner | Plan a Product Hunt launch with positioning, assets, community outreach, and launch-day operations. | Marketing |
+| 744 | Customer Advocacy Program Designer | Design a customer advocacy program with recruitment, activities, incentives, and measurement. | Marketing |
+| 745 | Marketing Attribution Planner | Design a marketing attribution model with tracking, channel roles, and reporting caveats. | Marketing |
+| 746 | Partner Marketing Campaign Planner | Plan a co-marketing campaign with a partner, including audience, offer, responsibilities, and measurement. | Marketing |
+| 747 | Habit Relapse Recovery Planner | Recover from a habit relapse with a no-shame review, trigger analysis, and a smaller restart plan. | Personal Development |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
