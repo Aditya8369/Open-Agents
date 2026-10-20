@@ -874,6 +874,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 865 | Buying Committee Map Builder | Map a buying committee with roles, influence, priorities, relationships, and an ethical engagement plan. | Sales |
 | 866 | On-Chain Data Analytics Planner | Plan on-chain analytics with decision questions, data sources, metric definitions, dashboards, and validation caveats. | Web3 |
 | 867 | Layer 2 Migration Planner | Plan an application migration to a Layer 2 with contracts, state, wallets, bridges, rollout, and rollback. | Web3 |
+| 868 | Validator Node Operations Planner | Plan validator operations with infrastructure, key management, monitoring, upgrades, and slashing response. | Web3 |
+| 869 | Crypto Payment Integration Reviewer | Review a crypto payment integration for finality, custody, reconciliation, refunds, volatility, and compliance. | Web3 |
+| 870 | Property Management Operations Planner | Design property management operations with leasing, maintenance, accounting, owner reporting, and risk controls. | Real Estate |
+| 871 | Short-Term Rental Compliance Reviewer | Review short-term rental compliance with permits, zoning, taxes, occupancy, safety, insurance, and platform rules. | Real Estate |
+| 872 | Closing Cost Estimator | Estimate buyer and seller closing costs with line items, local variability, cash-to-close, and a verification checklist. | Real Estate |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
