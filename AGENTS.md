@@ -449,6 +449,41 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 440 | Spreadsheet Formula Reviewer | Review spreadsheet formulas for correctness, errors, edge cases, and suggest cleaner alternatives. | Productivity |
 | 441 | Technical Brief Writer | Write technical briefs summarizing complex topics for decision-makers with clear recommendations. | Productivity |
 | 442 | Vendor Comparison Matrix | Build weighted vendor comparison matrices with evaluation criteria, scoring, and TCO analysis. | Business |
+| 443 | API Error Log Triage | Paste raw API error logs and stack traces to get root cause analysis, affected endpoints, and fix priority ranking. | Engineering |
+| 444 | Cloudflare Worker Security Reviewer | Audit Cloudflare Workers code for XSS, injection, insecure headers, and misconfigured KV bindings. | Cybersecurity |
+| 445 | Content Repurposing Pipeline | Turn one long-form piece (blog, video transcript, podcast) into a thread, newsletter, LinkedIn post, and short-form script. | Marketing |
+| 446 | Customer Churn Predictor | Analyze usage patterns, support tickets, and billing history to flag at-risk customers and suggest retention plays. | Data Science |
+| 447 | Database Index Advisor | Paste slow queries and schema to get missing index recommendations, EXPLAIN analysis, and rewrite suggestions. | Engineering |
+| 448 | Dependency Vulnerability Scanner | Paste package-lock or requirements output to get CVE triage, severity ratings, and upgrade paths. | Cybersecurity |
+| 449 | Design Token Generator | Convert brand colors, spacing, and typography into JSON/SDK tokens for design systems and Tailwind config. | Design |
+| 450 | Email Drip Campaign Writer | Generate a 5-email nurture sequence with subject lines, body copy, CTAs, and send-time spacing. | Marketing |
+| 451 | Excel Macro Generator | Write VBA macros for data cleaning, pivot table automation, and report generation with comments. | Developer Tools |
+| 452 | Feature Flag Impact Analyzer | Analyze rollout metrics to decide whether to expand, pause, or kill a feature flag based on error rates and conversion. | Engineering |
+| 453 | GitHub PR Reviewer | Paste a PR diff to get structured feedback on changed lines only, with security, performance, and style notes. | Engineering |
+| 454 | Incident Root Cause Analyzer | Paste incident timelines and logs to get a blameless post-mortem structure with contributing factors and action items. | DevOps |
+| 455 | Infographic Content Planner | Turn data or a topic into an infographic outline with section hierarchy, copy, and visual suggestions. | Design |
+| 456 | Internationalization (i18n) Localizer | Extract strings from code and generate localized JSON files with placeholders preserved and pluralization handled. | Engineering |
+| 457 | Job Application Tracker | Turn application notes into a structured tracker with follow-up dates, status, and next steps. | Productivity |
+| 458 | Kubernetes Cost Optimizer | Analyze resource requests and limits to find over-provisioned workloads and right-sizing recommendations. | DevOps |
+| 459 | Landing Page A/B Test Ideas | Generate prioritized A/B test hypotheses for headlines, hero sections, CTAs, and social proof placement. | Marketing |
+| 460 | Legal Contract Clause Extractor | Paste a contract to extract key clauses, obligations, dates, and red flags in a structured table. | Legal |
+| 461 | Meeting Action Item Extractor | Turn raw meeting notes or transcripts into decisions, owners, due dates, and follow-up questions. | Productivity |
+| 462 | Mobile App Permission Auditor | Review iOS/Android permission requests to flag over-reach and suggest minimal viable permissions. | Cybersecurity |
+| 463 | MongoDB Schema Migrator | Generate safe migration scripts for schema changes with rollback steps and data transformation logic. | Engineering |
+| 464 | Nginx Hardening Checklist | Get a production-ready Nginx config with TLS, rate limiting, security headers, and upstream hardening. | DevOps |
+| 465 | Notion Page Summarizer | Paste Notion page content to get a structured summary with key decisions, owners, and action items. | Productivity |
+| 466 | Onboarding Checklist Generator | Create role-specific new-hire onboarding checklists with day-1, week-1, and month-1 milestones. | HR |
+| 467 | OpenAPI Security Auditor | Audit OpenAPI specs for missing auth, excessive data exposure, and insecure parameter definitions. | Cybersecurity |
+| 468 | Payroll Tax Calculator | Calculate payroll taxes, deductions, and net pay across multiple jurisdictions with compliance notes. | Finance |
+| 469 | Performance Regression Detector | Compare before/after performance metrics to identify regressions, root causes, and rollback triggers. | Engineering |
+| 470 | Postgres Query Plan Analyzer | Paste EXPLAIN ANALYZE output to get index recommendations, join optimizations, and cost breakdowns. | Engineering |
+| 471 | Product Changelog Writer | Turn git commits or release notes into user-facing changelogs with benefit-focused copy and version grouping. | Marketing |
+| 472 | SaaS Pricing Tier Optimizer | Analyze pricing tiers, usage limits, and competitor benchmarks to recommend packagings and price points. | Business |
+| 473 | React Performance Profiler | Analyze React render behavior, state updates, and bundle hotspots to prioritize the smallest high-impact performance fixes. | Engineering |
+| 474 | React Hook Dependency Reviewer | Review useEffect and useCallback dependencies for stale closures, redundant runs, and cleanup bugs. | Engineering |
+| 475 | API Idempotency Reviewer | Audit write endpoints for retry safety, duplicate side effects, and missing idempotency keys. | Engineering |
+| 476 | API Pagination Designer | Design stable cursor or offset pagination with clear contracts, limits, and edge-case handling. | Engineering |
+| 477 | Webhook Reliability Auditor | Audit webhook delivery for signature verification, replay protection, retries, and dead-letter handling. | Engineering |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
