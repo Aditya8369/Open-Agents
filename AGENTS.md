@@ -604,6 +604,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 595 | Security Awareness Campaign Writer | Create a behavior-focused security awareness campaign with audiences, messages, channels, and measurement. | Cybersecurity |
 | 596 | Vendor Risk Tiering Planner | Tier vendors by data sensitivity and access, then define proportionate due diligence and review cadence. | Cybersecurity |
 | 597 | Causal Inference Study Planner | Design a credible causal study with treatment definition, identification strategy, power, and sensitivity checks. | Data Science |
+| 598 | Uplift Modeling Planner | Design an uplift model that identifies who benefits from treatment, with target metric, validation, and deployment rules. | Data Science |
+| 599 | Recommendation System Evaluator | Evaluate recommender quality across offline metrics, online experiments, coverage, and business constraints. | Data Science |
+| 600 | Semantic Layer Designer | Design a governed semantic layer with entities, metrics, dimensions, and ownership. | Data Science |
+| 601 | Feature Store Planner | Plan a feature store with offline and online consistency, freshness, ownership, and backfill. | Data Science |
+| 602 | LLM Evaluation Harness Designer | Design an evaluation harness for LLM features with datasets, graders, regression gates, and failure analysis. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
