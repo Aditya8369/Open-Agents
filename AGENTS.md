@@ -609,6 +609,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 600 | Semantic Layer Designer | Design a governed semantic layer with entities, metrics, dimensions, and ownership. | Data Science |
 | 601 | Feature Store Planner | Plan a feature store with offline and online consistency, freshness, ownership, and backfill. | Data Science |
 | 602 | LLM Evaluation Harness Designer | Design an evaluation harness for LLM features with datasets, graders, regression gates, and failure analysis. | Data Science |
+| 603 | RAG Evaluation Planner | Evaluate retrieval-augmented generation across retrieval quality, answer faithfulness, and end-to-end task success. | Data Science |
+| 604 | Dev Container Designer | Create a reproducible dev container with pinned tooling, services, caching, and onboarding checks. | Developer Tools |
+| 605 | GitHub Actions Security Hardener | Harden GitHub Actions workflows against injection, token abuse, and supply-chain attacks. | Developer Tools |
+| 606 | Renovate Config Generator | Generate a Renovate policy that batches updates by risk, respects support windows, and keeps CI green. | Developer Tools |
+| 607 | Makefile Generator | Generate a portable Makefile with discoverable targets, dependency tracking, and safe defaults. | Developer Tools |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
