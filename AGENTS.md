@@ -639,6 +639,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 630 | Operating Cadence Designer | Design a company or team operating cadence with meetings, metrics, decisions, and async artifacts. | Business |
 | 631 | Investor Update Writer | Write a concise investor update with metrics, wins, misses, asks, and a clear narrative. | Business |
 | 632 | M&A Integration Checklist | Build a post-merger integration checklist across people, systems, customers, and finance with owners and sequencing. | Business |
+| 633 | Strategic Narrative Writer | Turn strategy into a clear narrative with market context, choice, proof, and implications for teams. | Business |
+| 634 | Pricing Committee Memo Writer | Write a pricing decision memo with options, economics, risks, and a recommendation for approval. | Business |
+| 635 | Cash Flow Forecast Builder | Build a 13-week cash flow forecast with drivers, scenarios, and early warning triggers. | Finance |
+| 636 | Retirement Withdrawal Planner | Compare retirement withdrawal strategies with taxes, sequence risk, and sustainable spending ranges. | Finance |
+| 637 | Equity Compensation Explainer | Explain equity compensation offers in plain English, including vesting, taxes, dilution, and exercise risks. | Finance |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
