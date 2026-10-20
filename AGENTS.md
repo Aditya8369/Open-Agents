@@ -564,6 +564,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 555 | Employee IP Assignment Reviewer | Review employee and contractor IP assignment clauses for coverage gaps and ambiguous ownership. | Legal |
 | 556 | Grading Rubric Builder | Build analytic rubrics with learning outcomes, performance levels, and moderation guidance. | Education |
 | 557 | Parent-Teacher Conference Planner | Prepare a conference with student evidence, talking points, sensitive topics, and follow-up actions. | Education |
+| 558 | Exam Question Bank Auditor | Audit question banks for topic coverage, difficulty balance, clarity, and duplicate items. | Education |
+| 559 | Systematic Review Protocol Writer | Draft a systematic review protocol with search strategy, screening criteria, and bias assessment. | Research |
+| 560 | Research Data Management Plan Writer | Write a data management plan covering storage, access, retention, sharing, and compliance. | Research |
+| 561 | Health Insurance Claim Appeal Writer | Draft a clear insurance claim appeal with the denial reason, clinical support, and requested action. | Healthcare |
+| 562 | Clinical Trial Eligibility Explainer | Translate clinical trial eligibility criteria into plain language with questions to ask the study team. | Healthcare |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
