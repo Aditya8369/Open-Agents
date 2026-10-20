@@ -684,6 +684,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 675 | Supplier Diversification Planner | Reduce supplier and single-source risk with a tiered diversification plan and qualification roadmap. | Business |
 | 676 | Partnership Ecosystem Map Builder | Map partners, complementors, and dependencies to find co-sell, integration, and ecosystem opportunities. | Business |
 | 677 | Customer Advisory Board Planner | Design a customer advisory board with member selection, agenda, engagement, and measurable outcomes. | Business |
+| 678 | Book Proposal Writer | Turn a book idea into a compelling proposal with market positioning, chapter outline, and author platform. | Content Writing |
+| 679 | Annual Report Narrative Writer | Turn financial results and year highlights into a clear annual report narrative for investors and stakeholders. | Content Writing |
+| 680 | Documentary Treatment Writer | Develop a documentary treatment with story arc, characters, access, visuals, and a compelling logline. | Content Writing |
+| 681 | Incident Tabletop Scenario Writer | Create a role-based incident tabletop exercise with realistic injects, decisions, and debrief questions. | Cybersecurity |
+| 682 | Data Loss Prevention Policy Writer | Write a DLP policy covering data classification, allowed channels, monitoring, exceptions, and response. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
