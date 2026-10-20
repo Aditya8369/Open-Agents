@@ -759,6 +759,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 750 | API Product Manager | Define API strategy, developer personas, pricing, SLAs, and roadmap for an API product. | Product |
 | 751 | Pricing Packaging Experiment Designer | Design pricing and packaging experiments with hypotheses, variants, guardrails, and rollout plans. | Product |
 | 752 | Product Metrics Definition Auditor | Audit product metrics for clear definitions, ownership, and decision usefulness. | Product |
+| 753 | Trial-to-Paid Conversion Analyzer | Analyze trial behavior to find conversion blockers and prioritize experiments. | Product |
+| 754 | Product-Led Sales Trigger Designer | Design product signals and triggers that route expansion-ready users to sales without harming experience. | Product |
+| 755 | Delegation Planner | Decide what to delegate, to whom, and with what context, checkpoints, and escalation. | Productivity |
+| 756 | Moving Checklist Generator | Generate a moving checklist by timeline, household, budget, and special requirements. | Productivity |
+| 757 | Home Inventory Planner | Build a home inventory for insurance, estate, and emergency planning. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
