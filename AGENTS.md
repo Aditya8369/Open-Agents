@@ -524,6 +524,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 515 | Airflow DAG Reviewer | Review Airflow DAGs for idempotency, retries, scheduling, and observability gaps. | Data Science |
 | 516 | Data Retention Policy Writer | Define retention schedules, deletion mechanics, and audit evidence for each data class. | Data Science |
 | 517 | Feature Leakage Detector | Find target leakage and temporal leakage in ML features before model performance becomes untrustworthy. | Data Science |
+| 518 | Training Data Deduplication Planner | Plan near-duplicate detection and removal for training data without harming coverage. | Data Science |
+| 519 | Class Imbalance Strategy Selector | Choose resampling, weighting, or threshold strategies for imbalanced classification with the right metrics. | Data Science |
+| 520 | Time Series Cross Validation Planner | Design time-aware validation splits and backtests that avoid leakage for forecasting models. | Data Science |
+| 521 | Analytics Event Taxonomy Designer | Design consistent event names, properties, and ownership for product analytics. | Product |
+| 522 | Feature Sunset Impact Analyzer | Assess usage, dependencies, and migration risk before removing a feature. | Product |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
