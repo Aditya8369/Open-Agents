@@ -1,12 +1,17 @@
 ﻿import { useDocumentTitle } from '../lib/useDocumentTitle'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ArrowUpRight, Github, Mail } from 'lucide-react'
+import { useAgents } from '../lib/useAgents'
+import { CATEGORIES } from '../agents/categories'
 
 export default function PortfolioPage() {
   useDocumentTitle('OpenAgents')
 
+  const { agents } = useAgents()
+  const agentCount = agents.length || 572
+
   const index = [
-    { n: '01', title: 'Agent Marketplace', note: '392 agents, 8 categories', to: '/marketplace' },
+    { n: '01', title: 'Agent Marketplace', note: `${agentCount} agents, ${CATEGORIES.length} categories`, to: '/marketplace' },
     { n: '02', title: 'Battle Mode', note: 'Head-to-head model comparison', to: '/battle' },
     { n: '03', title: 'Workflow Builder', note: 'Chain agents into pipelines', to: '/workflows/build' },
     { n: '04', title: 'Automations', note: 'Schedules, retries, batch runs', to: '/automations' },
@@ -17,7 +22,7 @@ export default function PortfolioPage() {
     ['Frontend', 'React 18, Vite 6, Tailwind CSS 3'],
     ['Routing', 'React Router 6, lazy-loaded routes'],
     ['Backend', 'Supabase — Postgres, auth, storage'],
-    ['Agents', '392 file-based definitions, zero-config registry'],
+    ['Agents', `${agentCount} file-based definitions, zero-config registry`],
     ['Testing', 'Vitest'],
   ]
 
@@ -54,7 +59,7 @@ export default function PortfolioPage() {
               OpenAgents
             </h1>
             <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-neutral-400">
-              A self-hostable workspace for running AI agents. Pick from 392 definitions,
+              A self-hostable workspace for running AI agents. Pick from {agentCount} definitions,
               compare models side by side, chain steps into workflows, and schedule
               recurring runs — without handing your data to a black-box SaaS.
             </p>
@@ -77,7 +82,7 @@ export default function PortfolioPage() {
             <dl className="mt-14 grid grid-cols-3 max-w-lg gap-6 border-t border-white/10 pt-6">
               <div>
                 <dt className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest">Agents</dt>
-                <dd className="mt-1 text-2xl font-semibold tracking-tight">392</dd>
+                <dd className="mt-1 text-2xl font-semibold tracking-tight">{agentCount}</dd>
               </div>
               <div>
                 <dt className="font-mono text-[11px] text-neutral-500 uppercase tracking-widest">Routes</dt>

@@ -29,14 +29,17 @@ export default function Preloader({ onFinish }) {
       setProgress(p)
     }, 50)
 
-    const t2 = setTimeout(() => {
-      setStage('done')
+    const t2 = setTimeout(() => setStage('done'), 2200)
+
+    // Hand off only after the fade-out has played.
+    const t3 = setTimeout(() => {
       if (onFinish) onFinish()
-    }, 2800)
+    }, 3000)
 
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
+      clearTimeout(t3)
       clearInterval(iv)
     }
   }, [onFinish])
@@ -45,7 +48,7 @@ export default function Preloader({ onFinish }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-black text-white flex flex-col items-center justify-center transition-all duration-1000 ${
+      className={`fixed inset-0 z-[9999] bg-black text-white flex flex-col items-center justify-center transition-all duration-700 ${
         isDone ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
       }`}
     >

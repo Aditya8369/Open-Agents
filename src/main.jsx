@@ -1,4 +1,4 @@
-import { useState, useEffect, StrictMode } from 'react'
+import { useState, StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { AgentsProvider } from './lib/useAgents'
@@ -19,14 +19,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 function PreloaderApp() {
   const [preloaderDone, setPreloaderDone] = useState(false)
 
-  useEffect(() => {
-    const t = setTimeout(() => setPreloaderDone(true), 2200)
-    return () => clearTimeout(t)
-  }, [])
-
-  if (!preloaderDone) {
-    return <Preloader onFinish={() => setPreloaderDone(true)} />
-  }
-
-  return <App />
+  return (
+    <>
+      <App />
+      {!preloaderDone && <Preloader onFinish={() => setPreloaderDone(true)} />}
+    </>
+  )
 }
