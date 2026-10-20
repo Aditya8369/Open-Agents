@@ -539,6 +539,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 530 | Typography Scale Auditor | Audit type sizes, line heights, and weights for hierarchy, consistency, and responsive behavior. | Design |
 | 531 | Interaction State Matrix Builder | Define every interaction state for a component, including visual, copy, and accessibility requirements. | Design |
 | 532 | Email Deliverability Auditor | Audit authentication, list hygiene, content, and sending practices that affect inbox placement. | Marketing |
+| 533 | UTM Campaign Builder | Build consistent UTM naming conventions and campaign URLs with governance rules. | Marketing |
+| 534 | SEO Internal Link Planner | Plan internal links that strengthen priority pages without over-linking or anchor spam. | Marketing |
+| 535 | Webinar Follow-Up Writer | Write segmented post-webinar follow-up emails that move attendees to the next step. | Marketing |
+| 536 | Email List Segmentation Planner | Design lifecycle and behavior segments with the data and triggers needed to maintain them. | Marketing |
+| 537 | Google Ads Search Terms Analyzer | Turn search term reports into negatives, new keywords, and ad group changes that reduce wasted spend. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
