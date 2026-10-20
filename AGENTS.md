@@ -519,6 +519,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 510 | Semver Release Planner | Classify changes and choose the next semantic version with release notes and rollback guidance. | Developer Tools |
 | 511 | Dependency Upgrade Planner | Batch dependency upgrades by risk, with breaking-change checks and verification steps. | Developer Tools |
 | 512 | Embedding Index Planner | Choose an embedding index, dimensions, and retrieval parameters for latency, recall, and cost targets. | Data Science |
+| 513 | Data Quality Test Writer | Write data quality tests for freshness, volume, uniqueness, and referential integrity. | Data Science |
+| 514 | Model Cost Estimator | Estimate LLM usage cost from tokens, volume, caching, and retries, with sensitivity analysis. | Data Science |
+| 515 | Airflow DAG Reviewer | Review Airflow DAGs for idempotency, retries, scheduling, and observability gaps. | Data Science |
+| 516 | Data Retention Policy Writer | Define retention schedules, deletion mechanics, and audit evidence for each data class. | Data Science |
+| 517 | Feature Leakage Detector | Find target leakage and temporal leakage in ML features before model performance becomes untrustworthy. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
