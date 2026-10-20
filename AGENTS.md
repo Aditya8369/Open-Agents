@@ -679,6 +679,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 670 | Calendar Audit Planner | Audit a calendar for time allocation, fragmentation, low-value meetings, and focus protection. | Productivity |
 | 671 | Personal CRM Planner | Design a lightweight personal CRM for relationships, follow-ups, and reciprocity without becoming a chore. | Productivity |
 | 672 | Knowledge Base Auditor | Audit a knowledge base for coverage, accuracy, duplication, findability, and ownership. | Productivity |
+| 673 | Board Meeting Prep Planner | Prepare a board meeting with a decision-focused agenda, pre-reads, likely questions, and follow-up owners. | Business |
+| 674 | Business Exit Readiness Assessor | Assess how ready a business is for sale, acquisition, or succession, and build a value-protection plan. | Business |
+| 675 | Supplier Diversification Planner | Reduce supplier and single-source risk with a tiered diversification plan and qualification roadmap. | Business |
+| 676 | Partnership Ecosystem Map Builder | Map partners, complementors, and dependencies to find co-sell, integration, and ecosystem opportunities. | Business |
+| 677 | Customer Advisory Board Planner | Design a customer advisory board with member selection, agenda, engagement, and measurable outcomes. | Business |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
