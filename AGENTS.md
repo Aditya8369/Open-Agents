@@ -504,6 +504,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 495 | Alert Fatigue Auditor | Audit noisy alerts, grouping, and routing to reduce pages without hiding real incidents. | DevOps |
 | 496 | Kubernetes RBAC Auditor | Find over-privileged Roles, ClusterRoles, and bindings, then propose least-privilege replacements. | Cybersecurity |
 | 497 | OAuth Scope Minimizer | Reduce OAuth scopes to the minimum required, with consent and migration guidance. | Cybersecurity |
+| 498 | Passkey Rollout Planner | Plan a passkey and WebAuthn rollout with fallback, recovery, and adoption metrics. | Cybersecurity |
+| 499 | LLM Threat Modeler | Threat-model LLM features for prompt injection, data exfiltration, tool misuse, and unsafe output. | Cybersecurity |
+| 500 | SBOM Planner | Plan software bill of materials generation, fields, storage, and review across the dependency lifecycle. | Cybersecurity |
+| 501 | Cloud Storage Exposure Auditor | Find public buckets, overly broad ACLs, and risky sharing paths in cloud storage. | Cybersecurity |
+| 502 | Data Classification Policy Writer | Define data classification tiers with handling, access, retention, and enforcement rules. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
