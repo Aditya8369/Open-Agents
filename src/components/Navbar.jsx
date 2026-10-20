@@ -50,10 +50,18 @@ export default function Navbar({ sidebarOpen, setSidebarOpen }) {
 
   const focusGlobalSearch = () => {
     setMobileMenuOpen(false)
-    if (window.location.pathname !== '/agents') {
-      navigate('/agents')
+
+    // Focus synchronously when the catalogue is already mounted. This keeps
+    // the mobile keyboard opening from the original tap gesture.
+    const input = document.getElementById('agent-search')
+    if (input) {
+      input.focus()
+      return
     }
-    window.setTimeout(() => document.getElementById('agent-search')?.focus(), 80)
+
+    // The catalogue is lazy-loaded, so hand focus intent to HomePage via
+    // router state and let it focus once the search field exists.
+    navigate('/agents', { state: { focusSearch: true } })
   }
 
   return (

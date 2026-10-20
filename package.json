@@ -33,5 +33,18 @@
     "tailwindcss": "^3.4.15",
     "vite": "^6.4.3",
     "vitest": "^4.1.11"
-  }
+  },
+  "description": "Open-Agents is an open-source platform for building and managing AI agent workflows.",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivyashreeR008/Open-Agents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DivyashreeR008/Open-Agents/issues"
+  },
+  "homepage": "https://github.com/DivyashreeR008/Open-Agents#readme"
 }

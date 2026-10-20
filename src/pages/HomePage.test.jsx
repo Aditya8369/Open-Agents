@@ -149,6 +149,12 @@ describe('HomePage', () => {
     expect(screen.getByTestId('location-search')).toHaveTextContent('q=draws')
   })
 
+  it('focuses search when opened from the global search button', () => {
+    renderPage([{ pathname: '/agents', state: { focusSearch: true } }])
+
+    expect(screen.getByPlaceholderText(/search agents/i)).toHaveFocus()
+  })
+
   it('shows the empty state when nothing matches', () => {
     renderPage()
 

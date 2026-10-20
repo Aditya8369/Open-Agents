@@ -1,5 +1,5 @@
-import { useState, useMemo, useRef } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useEffect, useState, useMemo, useRef } from 'react'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowRight, ChevronDown, Github, Search, X, Star, History, Swords, GitBranch, Lightbulb, LayoutGrid, Rows3, ExternalLink } from 'lucide-react'
 import AgentCardSkeleton from '../components/AgentCardSkeleton'
 import AgentCard from '../components/AgentCard'
@@ -13,7 +13,6 @@ import { useProgressiveList } from '../lib/useProgressiveList'
 import RecommendationWizardEntry from '../components/recommendation/RecommendationWizardEntry'
 import { DEFAULT_COLLECTION_ID, useCollections } from '../lib/useCollections'
 import RecommendationWizardModal from '../components/recommendation/RecommendationWizardModal'
-import { Link } from "react-router-dom";
 import { getGlobalKeys } from '../lib/globalKeys'
 import Logo from '../components/Logo'
 
@@ -47,6 +46,7 @@ function RailOption({ selected, onClick, children }) {
 
 export default function HomePage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { agents, loading: agentsLoading, catalogSize } = useAgents()
   const [isRecommendationWizardOpen, setIsRecommendationWizardOpen] = useState(false)
   const recommendationWizardHeroTriggerRef = useRef(null)
@@ -134,6 +134,13 @@ export default function HomePage() {
   }, [allProviders, providerCounts, agents.length])
 
   useDocumentTitle()
+
+  // The global navbar search can arrive before this lazy-loaded page exists.
+  // Focus now that the input is mounted so the user can type immediately.
+  useEffect(() => {
+    if (!location.state?.focusSearch) return
+    document.getElementById('agent-search')?.focus()
+  }, [location.state])
 
   useKeyboardShortcuts({
     '/': (e) => {
