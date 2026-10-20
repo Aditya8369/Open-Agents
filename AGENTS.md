@@ -774,6 +774,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 765 | Partner Co-sell Plan Builder | Build a co-sell plan with partner fit, joint accounts, roles, and pipeline tracking. | Sales |
 | 766 | Deal Desk Review Planner | Review a complex deal for pricing, terms, approvals, and risk before signature. | Sales |
 | 767 | Expansion Playbook Writer | Build an account expansion playbook with signals, offers, stakeholders, and timing. | Sales |
+| 768 | Customer Health Score Designer | Design a customer health score with signals, weights, thresholds, and playbooks. | Sales |
+| 769 | Sales Kickoff Planner | Plan a sales kickoff with goals, narrative, training, recognition, and follow-through. | Sales |
+| 770 | DAO Treasury Diversification Planner | Plan DAO treasury diversification with risk limits, instruments, governance, and execution. | Web3 |
+| 771 | Token Unlock Communications Planner | Plan communications and market operations around a token unlock with transparency and coordination. | Web3 |
+| 772 | Smart Contract Monitoring Planner | Plan monitoring and alerting for deployed smart contracts, including threats, invariants, and response. | Web3 |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
