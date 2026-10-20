@@ -654,6 +654,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 645 | AI Usage Policy Writer | Draft an internal AI usage policy covering approved tools, data handling, review, and accountability. | Legal |
 | 646 | Employment Termination Checklist | Build a compliant, humane termination checklist covering documentation, access, pay, and communication. | Legal |
 | 647 | Curriculum Map Builder | Build a curriculum map that aligns outcomes, assessments, activities, and prerequisites across a program. | Education |
+| 648 | Lesson Plan Differentiator | Adapt a lesson plan for mixed readiness, language levels, and learning needs without lowering core outcomes. | Education |
+| 649 | Assessment Item Writer | Write valid assessment items aligned to outcomes, with difficulty, distractors, and scoring guidance. | Education |
+| 650 | Scholarship Essay Coach | Coach a scholarship essay with structure, authentic evidence, and revision feedback without inventing details. | Education |
+| 651 | Grant Resubmission Planner | Turn reviewer critiques into a resubmission plan with response strategy, revised aims, and evidence gaps. | Research |
+| 652 | Peer Review Response Writer | Draft a point-by-point response to peer review with evidence, revisions, and respectful disagreement. | Research |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
