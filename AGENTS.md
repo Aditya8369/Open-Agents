@@ -784,6 +784,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 775 | Joint Venture Term Sheet Planner | Structure a joint venture term sheet with scope, contributions, governance, economics, and exit mechanics. | Business |
 | 776 | Franchise Expansion Planner | Plan franchise expansion with market selection, unit economics, operating readiness, and franchisee support. | Business |
 | 777 | Government Contract Bid/No-Bid Planner | Evaluate a government contract opportunity with eligibility, compliance, capability, economics, and a clear bid decision. | Business |
+| 778 | Book Blurb Writer | Write back-cover copy, taglines, and hook lines that sell a book without spoiling it or inventing praise. | Content Writing |
+| 779 | Screenplay Coverage Analyst | Give screenplay coverage with a logline, synopsis, craft assessment, market view, and a clear recommendation. | Content Writing |
+| 780 | Product Manual Writer | Turn product details into a structured user manual with setup, core tasks, troubleshooting, and safety notes. | Content Writing |
+| 781 | Obituary Writer | Draft a respectful obituary from memories and biographical details, with a clear fact-check list before publication. | Content Writing |
+| 782 | Email Authentication Auditor | Audit SPF, DKIM, DMARC, and alignment, then produce a prioritized rollout plan for safer email delivery. | Cybersecurity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
