@@ -554,6 +554,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 545 | Market Sizing Calculator | Estimate TAM, SAM, and SOM with transparent assumptions and scenario ranges. | Business |
 | 546 | Business Continuity Planner | Plan continuity for critical business functions beyond IT disaster recovery. | Business |
 | 547 | Manager One-on-One Planner | Plan recurring one-on-ones with check-in structure, growth topics, and follow-through. | HR |
+| 548 | Compensation Band Auditor | Audit salary bands for internal equity, market positioning, and promotion overlap. | HR |
+| 549 | Employee Handbook Policy Updater | Find gaps and outdated language in employee handbook policies, with replacement text and rollout steps. | HR |
+| 550 | Accounts Receivable Aging Analyzer | Analyze AR aging to prioritize collections, flag risky accounts, and forecast cash. | Finance |
+| 551 | Budget Variance Explainer | Explain actual versus budget variances by driver, with forecast impact and corrective actions. | Finance |
+| 552 | Fundraising Data Room Checklist | Build an investor data room checklist with document status, owners, and diligence risks. | Finance |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
