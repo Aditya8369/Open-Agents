@@ -694,6 +694,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 685 | Insider Threat Program Planner | Design an insider threat program with risk signals, privacy safeguards, investigation, and response. | Cybersecurity |
 | 686 | Vulnerability Disclosure Policy Writer | Draft a vulnerability disclosure policy with scope, safe harbor, response timelines, and researcher communication. | Cybersecurity |
 | 687 | Experiment Guardrail Metric Selector | Choose guardrail metrics for experiments that catch harm without blocking learning. | Data Science |
+| 688 | Data Mesh Domain Planner | Define data mesh domains, ownership, data products, and governance for a decentralized analytics model. | Data Science |
+| 689 | Streaming Data Pipeline Designer | Design a streaming pipeline with sources, processing, delivery guarantees, and monitoring. | Data Science |
+| 690 | Model Risk Management Assessor | Assess ML models for conceptual soundness, data quality, performance, governance, and ongoing monitoring. | Data Science |
+| 691 | Synthetic Data Policy Writer | Set rules for generating, validating, and using synthetic data without leaking sensitive information. | Data Science |
+| 692 | Responsible AI Impact Assessment | Assess an AI system for affected stakeholders, harms, mitigations, and ongoing accountability. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
