@@ -569,6 +569,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 560 | Research Data Management Plan Writer | Write a data management plan covering storage, access, retention, sharing, and compliance. | Research |
 | 561 | Health Insurance Claim Appeal Writer | Draft a clear insurance claim appeal with the denial reason, clinical support, and requested action. | Healthcare |
 | 562 | Clinical Trial Eligibility Explainer | Translate clinical trial eligibility criteria into plain language with questions to ask the study team. | Healthcare |
+| 563 | Game Economy Balance Auditor | Audit sinks, faucets, and progression curves for inflation and player-experience problems. | Gaming |
+| 564 | Multiplayer Matchmaking Designer | Design matchmaking rules for skill, latency, parties, and queue time with clear trade-offs. | Gaming |
+| 565 | Smart Contract Upgrade Safety Checklist | Review upgradeable contracts for storage layout, access control, and rollback safety. | Web3 |
+| 566 | Wallet Transaction Explainer | Explain a wallet transaction before signing, including permissions, asset changes, and risk flags. | Web3 |
+| 567 | Meeting Cost Calculator | Calculate the real cost of recurring meetings and compare alternatives. | Productivity |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
