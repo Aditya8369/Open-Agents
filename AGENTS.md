@@ -514,6 +514,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 505 | Shell Safety Reviewer | Review shell scripts for quoting, error handling, destructive commands, and portability hazards. | Developer Tools |
 | 506 | Docker Compose Debugger | Diagnose Compose startup, networking, volume, and environment problems with an ordered fix path. | Developer Tools |
 | 507 | JSON to TypeScript Generator | Convert JSON samples into precise TypeScript types with optionality, unions, and runtime validation notes. | Developer Tools |
+| 508 | npm Script Explainer | Explain package.json scripts, their side effects, and hidden risks in plain language. | Developer Tools |
+| 509 | Git Hook Designer | Design pre-commit, commit-msg, and pre-push hooks that catch issues without slowing developers down. | Developer Tools |
+| 510 | Semver Release Planner | Classify changes and choose the next semantic version with release notes and rollback guidance. | Developer Tools |
+| 511 | Dependency Upgrade Planner | Batch dependency upgrades by risk, with breaking-change checks and verification steps. | Developer Tools |
+| 512 | Embedding Index Planner | Choose an embedding index, dimensions, and retrieval parameters for latency, recall, and cost targets. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
