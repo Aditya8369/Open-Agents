@@ -629,6 +629,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 620 | ABM Campaign Planner | Plan an account-based marketing campaign with tiered accounts, buying committees, plays, and measurement. | Marketing |
 | 621 | Lifecycle Campaign Auditor | Audit lifecycle email and in-product campaigns for segmentation, timing, overlap, and conversion. | Marketing |
 | 622 | SEO Technical Audit Planner | Plan a technical SEO audit covering crawlability, indexation, rendering, performance, and structured data. | Marketing |
+| 623 | Content Localization Planner | Plan content localization across markets, languages, and channels with terminology, workflow, and QA. | Marketing |
+| 624 | Developer Marketing Content Planner | Plan developer-focused content that earns trust through technical depth, runnable examples, and distribution. | Marketing |
+| 625 | Customer QBR Deck Builder | Build a quarterly business review deck that ties usage, outcomes, risks, and the next plan to customer goals. | Sales |
+| 626 | Renewal Risk Assessor | Assess renewal risk from usage, stakeholders, support, and commercial signals, then build a save plan. | Sales |
+| 627 | Sales Call Transcript Coach | Coach a rep from a call transcript with evidence on discovery, objection handling, talk ratio, and next steps. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
