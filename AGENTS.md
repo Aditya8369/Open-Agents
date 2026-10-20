@@ -744,6 +744,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 735 | Nursing Shift Handoff Writer | Turn shift notes into a structured nursing handoff with priorities, risks, and pending tasks. | Healthcare |
 | 736 | SaaS Subscription Agreement Reviewer | Review SaaS subscription agreements for commercial, legal, security, and exit risks. | Legal |
 | 737 | Independent Contractor Agreement Reviewer | Review contractor agreements for classification, IP, payment, termination, and liability risks. | Legal |
+| 738 | Privacy Impact Assessment Writer | Conduct a privacy impact assessment covering data flows, legal basis, risks, and mitigations. | Legal |
+| 739 | Influencer Contract Reviewer | Review influencer agreements for deliverables, disclosure, usage rights, exclusivity, and payment. | Legal |
+| 740 | Website Accessibility Legal Risk Reviewer | Assess website and app accessibility against WCAG and legal risk exposure, with a remediation plan. | Legal |
+| 741 | Brand Architecture Planner | Design a brand architecture with portfolio roles, naming, relationships, and governance. | Marketing |
+| 742 | Community Launch Playbook | Plan a community launch with audience, platform, rituals, moderation, and success metrics. | Marketing |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
