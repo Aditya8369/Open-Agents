@@ -664,6 +664,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 655 | Clinical Documentation Improvement Planner | Improve clinical documentation quality for coding, compliance, and care continuity without altering the clinical record. | Healthcare |
 | 656 | Patient Education Material Writer | Turn clinical instructions into plain-language patient education with teach-back, cultural fit, and accessibility. | Healthcare |
 | 657 | Smart Contract Incident Response Planner | Plan a smart contract incident response with detection, containment, disclosure, and recovery steps. | Web3 |
+| 658 | Token Vesting Schedule Designer | Design a token vesting schedule with cliffs, tranches, governance, and scenario analysis. | Web3 |
+| 659 | Cross-Chain Bridge Risk Reviewer | Review a cross-chain bridge design for custody, validation, replay, and liquidity risks. | Web3 |
+| 660 | LiveOps Event Planner | Plan a live-ops event with goals, player segments, rewards, pacing, and rollback. | Gaming |
+| 661 | Playtest Moderator Guide | Create a playtest moderation guide with session flow, unbiased prompts, observation capture, and synthesis. | Gaming |
+| 662 | Commercial Lease Abstractor | Extract key commercial lease terms, obligations, dates, and risks into a structured abstract. | Real Estate |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
