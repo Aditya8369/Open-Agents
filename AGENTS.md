@@ -729,6 +729,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 720 | Personal Net Worth Planner | Build a personal net worth statement with assets, liabilities, liquidity, and trend tracking. | Finance |
 | 721 | Tax Loss Harvesting Planner | Plan tax loss harvesting with wash-sale rules, asset location, and portfolio impact. | Finance |
 | 722 | R&D Tax Credit Organizer | Organize R&D tax credit documentation with qualifying activities, time, expenses, and audit evidence. | Finance |
+| 723 | SaaS Revenue Recognition Reviewer | Review SaaS contracts and billing data for revenue recognition issues under ASC 606 or IFRS 15. | Finance |
+| 724 | Game Accessibility Reviewer | Review game design for motor, visual, auditory, cognitive, and speech accessibility. | Gaming |
+| 725 | Game Localization QA Planner | Plan localization QA for games covering text, audio, UI fit, cultural issues, and patch verification. | Gaming |
+| 726 | Game Tutorial Onboarding Designer | Design a game tutorial and onboarding flow that teaches through play and respects player time. | Gaming |
+| 727 | Internal Mobility Planner | Build an internal mobility program with role pathways, manager support, and fair access. | HR |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
