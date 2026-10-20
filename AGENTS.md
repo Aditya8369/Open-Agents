@@ -724,6 +724,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 715 | Deep Link & Universal Link Auditor | Audit deep links and universal links for routing, attribution, security, and edge cases. | Engineering |
 | 716 | Payment Flow Reviewer | Review payment flows for correctness, idempotency, fraud, reconciliation, and failure recovery. | Engineering |
 | 717 | Subscription Billing State Machine Designer | Design a subscription billing state machine with trials, upgrades, dunning, and proration. | Engineering |
+| 718 | Row-Level Security Reviewer | Review database row-level security policies for tenant isolation, bypass paths, and performance. | Engineering |
+| 719 | Timezone & DST Bug Analyzer | Trace timezone and daylight-saving bugs across storage, APIs, scheduling, and display. | Engineering |
+| 720 | Personal Net Worth Planner | Build a personal net worth statement with assets, liabilities, liquidity, and trend tracking. | Finance |
+| 721 | Tax Loss Harvesting Planner | Plan tax loss harvesting with wash-sale rules, asset location, and portfolio impact. | Finance |
+| 722 | R&D Tax Credit Organizer | Organize R&D tax credit documentation with qualifying activities, time, expenses, and audit evidence. | Finance |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
