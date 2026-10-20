@@ -834,6 +834,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 825 | Game QA Test Plan Writer | Write a game QA plan covering platforms, progression, saves, multiplayer, localization, and release gates. | Gaming |
 | 826 | Game Narrative Branching Designer | Design branching narrative structure with meaningful choices, state tracking, convergence, and authoring costs. | Gaming |
 | 827 | Game Community Moderation Planner | Plan game community moderation with standards, reporting, enforcement, tooling, and moderator wellbeing. | Gaming |
+| 828 | Workplace Investigation Interview Planner | Plan a fair workplace investigation with interview outlines, evidence handling, documentation, and next steps. | HR |
+| 829 | Pay Transparency Compliance Reviewer | Review pay practices and job postings for pay transparency requirements, equity signals, and documentation gaps. | HR |
+| 830 | Global Mobility Assignment Planner | Plan an international assignment with immigration, tax, payroll, benefits, relocation, and repatriation. | HR |
+| 831 | Layoff Communication Planner | Plan humane, factual layoff communication with sequencing, manager scripts, logistics, and survivor support. | HR |
+| 832 | Post-Surgery Recovery Planner | Organize a post-surgery recovery plan with discharge instructions, milestones, warning signs, and care-team questions. | Healthcare |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
