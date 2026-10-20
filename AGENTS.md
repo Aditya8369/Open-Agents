@@ -864,6 +864,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 855 | Warranty & Receipt Tracker | Organize purchases, warranties, receipts, claim deadlines, and service contacts into a usable tracker. | Productivity |
 | 856 | Deep Work Session Planner | Plan deep work sessions with one outcome, time blocks, friction removal, and a shutdown review. | Productivity |
 | 857 | Reading List & Note-Taking Planner | Turn a reading list into a note-taking system with capture, synthesis, review, and a sustainable reading rhythm. | Productivity |
+| 858 | Research Interview Question Designer | Design a qualitative interview guide with sampling, open questions, probes, ethics, and an analysis plan. | Research |
+| 859 | Research Poster Designer | Turn research findings into a conference poster with a clear narrative, hierarchy, visuals, and accessible presentation notes. | Research |
+| 860 | Lab Notebook Standard Writer | Write a lab notebook standard for entries, versioning, storage, metadata, review, and reproducibility. | Research |
+| 861 | Citizen Science Project Planner | Plan a citizen science project with protocol, recruitment, training, data quality, ethics, and engagement. | Research |
+| 862 | Territory Design Planner | Design sales territories with balanced potential, workload, travel, coverage, and clear review rules. | Sales |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
