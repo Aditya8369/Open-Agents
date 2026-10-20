@@ -489,6 +489,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 480 | Redis Memory Optimizer | Reduce Redis memory use through key design, encoding choices, TTLs, and eviction policy tuning. | Engineering |
 | 481 | Kafka Partition Planner | Choose partition counts, message keys, and consumer parallelism without breaking ordering. | Engineering |
 | 482 | Database Connection Pool Sizer | Size connection pools from traffic, latency, and database limits, including timeout and queue policy. | Engineering |
+| 483 | Service Dependency Mapper | Map service-to-service dependencies from traces, configs, or descriptions to expose critical paths and cycles. | Engineering |
+| 484 | Canary Release Analyzer | Compare canary and baseline metrics to make a clear promote, hold, or rollback decision. | Engineering |
+| 485 | Retry Budget Planner | Design retry limits, backoff, jitter, and deadlines that recover from transient failures without amplifying load. | Engineering |
+| 486 | Multi-Tenant Schema Planner | Choose and review a tenancy model with isolation, indexing, and noisy-neighbor controls. | Engineering |
+| 487 | Kubernetes Ingress Debugger | Trace 404, 502, and 504 responses through Ingress, Service, and Pod layers with a fix sequence. | DevOps |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
