@@ -794,6 +794,11 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new agent in ~5 minute
 | 785 | GraphQL Security Auditor | Audit a GraphQL schema and resolvers for authorization gaps, query abuse, introspection exposure, and injection risk. | Cybersecurity |
 | 786 | Threat Modeling Workshop Facilitator | Facilitate a STRIDE threat modeling workshop with assets, data flows, threats, and owned mitigations. | Cybersecurity |
 | 787 | Security Exception & Risk Acceptance Reviewer | Review a security exception request with residual risk, compensating controls, expiry, and approval conditions. | Cybersecurity |
+| 788 | Experiment Assignment Auditor | Audit experiment randomization, assignment, sample ratio, and exposure before trusting the result. | Data Science |
+| 789 | Survival Analysis Planner | Plan a time-to-event analysis with time origin, censoring, covariates, model choice, and validation. | Data Science |
+| 790 | Marketing Mix Modeling Planner | Plan a marketing mix model with data requirements, adstock, saturation, controls, validation, and activation. | Data Science |
+| 791 | Price Elasticity Analyzer | Estimate and interpret price elasticity with a credible identification strategy, segments, and decision rules. | Data Science |
+| 792 | Data Skew & Partitioning Advisor | Diagnose data skew and recommend partitioning, salting, shuffle, and file-layout fixes with validation. | Data Science |
 
 <!-- Add new agents above this line, incrementing the number. 
 | 1 | A/B Test Analyzer | Paste test results to get significance, peeking/SRM checks, and a ship-or-kill verdict | Data Science |
