@@ -9,6 +9,9 @@ Open-Agents is an open-source platform for building and managing AI agent workfl
 - Extensible plugin system
 - Built-in monitoring
 
+## Roadmap & Priorities
+Looking to see where Open-Agents is heading or where your contributions will have the biggest impact? Check out our [Project Roadmap](ROADMAP.md) for current seasonal priorities, subsystem plans, and help-wanted focus areas.
+
 ## Contributing
 We welcome contributions! Please see the contributing guidelines below.
 
