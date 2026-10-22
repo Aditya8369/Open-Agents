@@ -3,6 +3,7 @@ import { Routes, Route, Outlet ,Link} from 'react-router-dom'
 import { Loader2 ,MessageSquare} from 'lucide-react'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import SkipToMainContentLink, { MAIN_CONTENT_ID } from './components/SkipToMainContentLink'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import ScrollToBottom from './components/ScrollToBottom'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -49,15 +50,7 @@ function PageLoader() {
 function MainLayout({ sidebarOpen, setSidebarOpen }) {
   return (
     <>
-      {/* Skip link (WCAG 2.4.1): first tabbable element, appears only on focus.
-          Target #main-content has tabIndex={-1} so the jump moves both focus
-          and reading position past the navbar + sidebar chrome. */}
-      <a
-        href="#main-content"
-        className="fixed top-3 left-3 z-[200] -translate-y-[200%] border border-zinc-300 bg-black px-4 py-2 text-sm font-medium text-white shadow-lg transition-transform focus:translate-y-0 focus:outline-2 focus:outline-offset-2 focus:outline-zinc-500 dark:border-border-light dark:bg-white dark:text-black"
-      >
-        Skip to main content
-      </a>
+      <SkipToMainContentLink />
       <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <Link
@@ -77,7 +70,7 @@ function MainLayout({ sidebarOpen, setSidebarOpen }) {
         <MessageSquare size={18} />
         <span>Feedback</span>
       </Link>
-      <main id="main-content" tabIndex={-1} className="pt-12 lg:pl-60 focus:outline-none">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="pt-12 lg:pl-60 focus:outline-none">
         <div className="p-4 sm:p-6 lg:p-8">
           <Outlet />
         </div>
