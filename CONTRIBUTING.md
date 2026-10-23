@@ -6,6 +6,10 @@ Thank you for your interest in contributing to Open-Agents! This document guidel
 
 Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
 
+## What to Work On
+
+Before picking an issue or proposing a new feature, please review our [Roadmap & Priorities](ROADMAP.md). It outlines what is actively being built, what is prioritized for the current season, and specific areas where we are looking for contributor help.
+
 ## Development Process
 
 1. **Fork the repository** - Click the "Fork" button on the top right of the GitHub page
