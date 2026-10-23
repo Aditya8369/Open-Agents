@@ -3,6 +3,7 @@ import { Routes, Route, Outlet ,Link} from 'react-router-dom'
 import { Loader2 ,MessageSquare} from 'lucide-react'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import SkipToMainContentLink, { MAIN_CONTENT_ID } from './components/SkipToMainContentLink'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import ScrollToBottom from './components/ScrollToBottom'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -49,6 +50,7 @@ function PageLoader() {
 function MainLayout({ sidebarOpen, setSidebarOpen }) {
   return (
     <>
+      <SkipToMainContentLink />
       <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <Link
@@ -68,7 +70,7 @@ function MainLayout({ sidebarOpen, setSidebarOpen }) {
         <MessageSquare size={18} />
         <span>Feedback</span>
       </Link>
-      <main className="pt-12 lg:pl-60">
+      <main id={MAIN_CONTENT_ID} tabIndex={-1} className="pt-12 lg:pl-60 focus:outline-none">
         <div className="p-4 sm:p-6 lg:p-8">
           <Outlet />
         </div>
