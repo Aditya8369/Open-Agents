@@ -13,7 +13,8 @@ import { Link } from 'react-router-dom'
 import * as Icons from 'lucide-react'
 import { ArrowRight, FolderPlus, Star, Copy, Check } from 'lucide-react'
 import { useFavorites } from '../lib/useFavorites'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import CollectionPicker from './CollectionPicker'
 
 const providerMeta = {
@@ -38,8 +39,7 @@ export default function AgentCard({ agent, variant = 'grid', index = null }) {
   const { isFavorite, toggleFavorite } = useFavorites()
   const [showCollectionPicker, setShowCollectionPicker] = useState(false)
   const favorited = isFavorite(agent.id)
-  const [copied, setCopied] = useState(false)
-  const copyTimer = useRef(null)
+  const [copied, setCopied] = useTimedState(false)
 
   const name = agent?.name || 'Unnamed agent'
   const description = agent?.description || 'No description provided.'
@@ -77,9 +77,7 @@ export default function AgentCard({ agent, variant = 'grid', index = null }) {
         document.execCommand('copy')
         document.body.removeChild(ta)
       }
-      setCopied(true)
-      if (copyTimer.current) clearTimeout(copyTimer.current)
-      copyTimer.current = setTimeout(() => setCopied(false), 1500)
+      setCopied(true, 1500)
     } catch {
       // Clipboard unavailable — stay silent rather than showing a broken toast.
     }

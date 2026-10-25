@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Trophy, Copy, Check, RotateCcw, ArrowLeft } from 'lucide-react'
 import BattleNavbar from '../components/BattleNavbar'
@@ -13,7 +13,7 @@ export default function BattleModeWinner() {
   const navigate = useNavigate()
   const location = useLocation()
   const { provider, content, duration, agentName } = location.state || {}
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useTimedState(false)
   useDocumentTitle(agentName ? `${agentName} Battle Winner` : 'Battle Winner')
 
   if (!provider || !content) {
@@ -26,8 +26,7 @@ export default function BattleModeWinner() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(content)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setCopied(true, 2000)
     } catch {
       const ta = document.createElement('textarea')
       ta.value = content
@@ -35,8 +34,7 @@ export default function BattleModeWinner() {
       ta.select()
       document.execCommand('copy')
       document.body.removeChild(ta)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setCopied(true, 2000)
     }
   }
 
