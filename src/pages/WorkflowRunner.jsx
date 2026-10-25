@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import {
   ArrowLeft,
@@ -48,7 +49,7 @@ function StepStatusIcon({ status }) {
 }
 
 function CopyAllButton({ steps }) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useTimedState(false)
 
   const handleCopy = async () => {
     const text = steps
@@ -66,8 +67,7 @@ function CopyAllButton({ steps }) {
       document.execCommand('copy')
       document.body.removeChild(ta)
     }
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setCopied(true, 2000)
   }
 
   return (

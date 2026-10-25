@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import { useParams, useNavigate } from 'react-router-dom'
 import {
   ArrowLeft,
@@ -65,7 +66,7 @@ export default function WorkflowDetail() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [usageCount, setUsageCount] = useState(0)
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useTimedState(false)
   useDocumentTitle(workflow?.title ?? 'Workflow Details')
 
   // Fetch workflow
@@ -105,8 +106,7 @@ export default function WorkflowDetail() {
       document.execCommand('copy')
       document.body.removeChild(ta)
     }
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setCopied(true, 2000)
   }
 
   const handleRun = () => {

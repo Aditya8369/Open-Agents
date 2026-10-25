@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTimedState } from "../lib/useTimedState";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   Cpu,
@@ -114,8 +115,8 @@ export default function BattleModeArena() {
     openrouter: null,
   });
 
-  const [copiedProvider, setCopiedProvider] = useState(null);
-  const [copyAnnouncement, setCopyAnnouncement] = useState("");
+  const [copiedProvider, setCopiedProvider] = useTimedState(null);
+  const [copyAnnouncement, setCopyAnnouncement] = useTimedState("");
 
   // Store AbortControllers for each provider so we can cancel requests if needed
   const abortControllersRef = useRef({
@@ -282,11 +283,8 @@ export default function BattleModeArena() {
       }
 
       await navigator.clipboard.writeText(copyText);
-      setCopiedProvider(providerId);
+      setCopiedProvider(providerId, 2000);
       setCopyAnnouncement(`${providerLabel} prompt copied to clipboard.`);
-      setTimeout(() => {
-        setCopiedProvider(null);
-      }, 2000);
     } catch {
       setCopiedProvider(null);
       setCopyAnnouncement(

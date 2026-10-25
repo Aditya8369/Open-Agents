@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import {
   X, CheckCircle2, AlertCircle, Clock, Zap, Copy, Check,
   Mail, Calendar, FileText, ChevronRight, Share2, Download
@@ -6,14 +6,13 @@ import {
 import OutputRenderer from './OutputRenderer'
 
 export default function AutomationRunDrawer({ run, isOpen, onClose }) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useTimedState(false, isOpen && Boolean(run))
 
   if (!isOpen || !run) return null
 
   const handleCopy = () => {
     navigator.clipboard.writeText(run.output || run.error || '')
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    setCopied(true, 2000)
   }
 
   const handleDownload = () => {

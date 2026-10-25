@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTimedState } from "../lib/useTimedState";
 import { X, Search, Star, Trash2, Copy, RotateCcw, History } from "lucide-react";
 import { usePromptHistory } from "../lib/usePromptHistory";
 
@@ -84,7 +85,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
   const { prompts, favorites, deletePrompt, clearHistory, toggleFavorite, searchPrompts } =
     usePromptHistory();
   const [query, setQuery] = useState("");
-  const [copiedId, setCopiedId] = useState(null);
+  const [copiedId, setCopiedId] = useTimedState(null, open);
   const [confirmClear, setConfirmClear] = useState(false);
 
   if (!open) return null;
@@ -101,8 +102,7 @@ export default function PromptHistoryPanel({ open, onClose, onUsePrompt }) {
   const handleCopy = async (entry) => {
     try {
       await navigator.clipboard.writeText(entry.text);
-      setCopiedId(entry.id);
-      setTimeout(() => setCopiedId(null), 1500);
+      setCopiedId(entry.id, 1500);
     } catch {}
   };
 

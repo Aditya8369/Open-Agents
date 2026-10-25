@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useTimedState } from '../lib/useTimedState'
 import { Copy, Check, FileText, Download } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -101,7 +101,7 @@ function stripMarkdown(text) {
 }
 
 function CopyButton({ text, label, icon: Icon = Copy }) {
-  const [copyState, setCopyState] = useState('idle')
+  const [copyState, setCopyState] = useTimedState('idle')
 
   const handleCopy = async () => {
     try {
@@ -110,8 +110,7 @@ function CopyButton({ text, label, icon: Icon = Copy }) {
       } else {
         throw new Error('Clipboard API is unavailable')
       }
-      setCopyState('copied')
-      setTimeout(() => setCopyState('idle'), 2000)
+      setCopyState('copied', 2000)
     } catch {
       let ta
       try {
@@ -125,8 +124,7 @@ function CopyButton({ text, label, icon: Icon = Copy }) {
         const copied = document.execCommand('copy')
 
         if (copied) {
-          setCopyState('copied')
-          setTimeout(() => setCopyState('idle'), 2000)
+          setCopyState('copied', 2000)
           return
         }
       } catch {
