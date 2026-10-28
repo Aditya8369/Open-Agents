@@ -27,6 +27,7 @@ Before picking an issue or proposing a new feature, please review our [Roadmap &
 - Ensure code follows the project's style guidelines
 - Add or update documentation as needed
 - Ensure all tests pass
+- Adhere to the contributor security rules in [SECURITY.md](SECURITY.md) (no third-party data transmission, no credential logging or storage, no analytics/tracking). Run `npm run check:security` to scan your changes locally.
 
 ## Report Bugs / Feature Requests
 
